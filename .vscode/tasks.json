@@ -10,7 +10,7 @@
                 "-Wall",
                 "${workspaceRoot}/src/risk.cpp",
                 "-v",
-                "-o${workspaceRoot}/build/risk"
+                "-o${workspaceRoot}/build/risk.out"
             ],
             "type": "shell",
             "presentation": {
@@ -39,7 +39,7 @@
         {
             "label": "Run",
             "type": "shell",
-            "command": "${workspaceRoot}/build/risk",
+            "command": "${workspaceRoot}/build/risk.out",
             "problemMatcher": []
         }
     ],

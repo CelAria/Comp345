@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "command": "clang++",
+            "args": [
+                "-I${workspaceRoot}/include",
+                "-L${workspaceRoot}/lib",
+                "-Wall",
+                "${workspaceRoot}/src/risk.cpp",
+                "-v",
+                "-o${workspaceRoot}/build/risk"
+            ],
+            "type": "shell",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "${workspaceRoot}/build/risk",
+            "problemMatcher": []
+        }
+    ],
+ }

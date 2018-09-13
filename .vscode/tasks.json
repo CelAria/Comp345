@@ -8,9 +8,9 @@
                 "-I${workspaceRoot}/include",
                 "-L${workspaceRoot}/lib",
                 "-Wall",
-                "${workspaceRoot}/src/risk.cpp",
+                "${file}",
                 "-v",
-                "-o${workspaceRoot}/build/risk.out"
+                "-o${workspaceRoot}/build/${fileBasenameNoExtension}.out"
             ],
             "type": "shell",
             "presentation": {
@@ -39,7 +39,7 @@
         {
             "label": "Run",
             "type": "shell",
-            "command": "${workspaceRoot}/build/risk.out",
+            "command": "${workspaceRoot}/build/${fileBasenameNoExtension}.out",
             "problemMatcher": []
         }
     ],

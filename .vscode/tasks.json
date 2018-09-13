@@ -14,7 +14,8 @@
             ],
             "type": "shell",
             "presentation": {
-                "reveal": "always"
+                "reveal": "always",
+                "panel": "new",
             },
             "problemMatcher": {
                 "owner": "cpp",
@@ -40,6 +41,10 @@
             "label": "Run",
             "type": "shell",
             "command": "${workspaceRoot}/build/${fileBasenameNoExtension}.out",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+            },
             "problemMatcher": []
         }
     ],

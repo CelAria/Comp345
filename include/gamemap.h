@@ -6,7 +6,9 @@
 #include <vector>
 using namespace std;
 
-struct Continent {
+class Continent {
+    public:
+    Continent();
     Continent(string name, int points);
     string name;
     int points;
@@ -18,7 +20,7 @@ class Country {
     string continentName;
     int iterationCount;
     //todo: store Player* (owner) pointer
-    int armiesCount = 0;
+    int armiesCount;
     set<Country*> neighbors;
 
     public:
@@ -44,6 +46,7 @@ class GameMap {
     map<string, Continent> continents;
     void addEdge(Country &fromCountry, Country &toCountry);
     void addAll(Country &fromCountry, vector<string> &neighborNames);
+    void traverse(Country* country, map<string, bool> &visited);
 
     public:
     int getCount();
@@ -52,4 +55,5 @@ class GameMap {
     Country* getCountry(string countryName);
     vector<Country*> getAllByContinent(string continentName);
     Continent getContinent(string name);
+    void traverseAll(string startingCountry);
 };

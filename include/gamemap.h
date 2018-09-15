@@ -47,6 +47,7 @@ class GameMap {
     void addEdge(Country &fromCountry, Country &toCountry);
     void addAll(Country &fromCountry, vector<string> &neighborNames);
     void traverse(Country* country, map<string, bool> &visited);
+    void continentTraverse(Country* country, map<string, bool> &visited, string continent);
 
     public:
     int getCount();
@@ -56,4 +57,5 @@ class GameMap {
     vector<Country*> getAllByContinent(string continentName);
     Continent getContinent(string name);
     void traverseAll(string startingCountry);
+    void traverseContinent(string startingCountry, string continent);
 };

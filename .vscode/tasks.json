@@ -11,7 +11,6 @@
                 "${file}",
                 "-v",
                 "-o${workspaceRoot}/build/${fileBasenameNoExtension}.out",
-                "/p:GenerateFullPaths=true",
             ],
             "type": "shell",
             "presentation": {

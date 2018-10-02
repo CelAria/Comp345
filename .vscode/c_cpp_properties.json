@@ -3,6 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
+                "${workspaceroot}",
                 "/usr/include",
                 "${workspaceFolder}/include",
                 "/usr/include",
@@ -25,13 +26,19 @@
             "clang.completion.enable": true,
             "clang.cxxflags": [
                 "-std=c++11",
-                "-I/your/CPP/include/path1",
-                "-I/your/CPP/include/path2"
+                "${workspaceroot}",
+                "/usr/include",
+                "${workspaceFolder}/include",
+                "/usr/include",
+                "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/sys"
             ],
             "clang.cflags": [
                 "-std=c99",
-                "-Ic:/your/C/include/path1",
-                "-Ic:/your/C/include/path2"
+                "${workspaceroot}",
+                "/usr/include",
+                "${workspaceFolder}/include",
+                "/usr/include",
+                "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/sys"
               ]
         },
         {

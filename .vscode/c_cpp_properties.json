@@ -3,9 +3,11 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceRoot}",
                 "/usr/include",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "/usr/include",
+                "/usr/include",
+                "/System/Library/Frameworks/Kernel.framework/Versions/A/Headers/sys"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
@@ -15,7 +17,22 @@
                 "/System/Library/Frameworks",
                 "/Library/Frameworks"
             ],
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11", 
+            
+            "clang.executable": "clang",    
+            "clang.completion.enable": true,
+            "clang.cxxflags": [
+                "-std=c++11",
+                "-I/your/CPP/include/path1",
+                "-I/your/CPP/include/path2"
+            ],
+            "clang.cflags": [
+                "-std=c99",
+                "-Ic:/your/C/include/path1",
+                "-Ic:/your/C/include/path2"
+              ]
         },
         {
             "name": "Linux",
@@ -26,7 +43,9 @@
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
             },
-            "intelliSenseMode": "gcc-x64"
+            "intelliSenseMode": "gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11"
         },
         {
             "name": "Win32",

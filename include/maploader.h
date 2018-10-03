@@ -8,4 +8,5 @@
 #include <iostream>
 using namespace std;
 
-static void readmap(); 
+static void readmapfile(); 
+static void parser();

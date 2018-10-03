@@ -10,6 +10,7 @@
                 "-Wall",
                 "${file}",
                 "-v",
+                "-std=c++11",
                 "-o${workspaceRoot}/build/${fileBasenameNoExtension}.out"
             ],
             "type": "shell",
@@ -43,7 +44,7 @@
             "command": "${workspaceRoot}/build/${fileBasenameNoExtension}.out",
             "presentation": {
                 "reveal": "always",
-                "panel": "dedicated",
+                "panel": "new",
             },
             "problemMatcher": []
         }

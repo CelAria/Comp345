@@ -19,11 +19,12 @@ class Country {
     string name;
     string continentName;
     int iterationCount;
-    //todo: store Player* (owner) pointer
+    int playerId;
     int armiesCount;
     set<Country*> neighbors;
 
     public:
+    Country();
     Country(string countryName, string continentName);
     string getName();
     string getContinentName();
@@ -32,8 +33,8 @@ class Country {
     void addNeighbor(Country &neighbor);
     int getNeighborCount();
     int getArmiesCount();
-    //todo: set owner Player*
-    //todo: get owner Player
+    void setOwner(int playerId);
+    void setArmiesCount(int count);
     void resetIterator();
     bool hasNext();
     Country getNextNeighbor();
@@ -46,8 +47,8 @@ class GameMap {
     map<string, Continent> continents;
     void addEdge(Country &fromCountry, Country &toCountry);
     void addAll(Country &fromCountry, vector<string> &neighborNames);
-    void traverse(Country* country, map<string, bool> &visited);
-    void continentTraverse(Country* country, map<string, bool> &visited, string continent);
+    void traverseHelper(Country* country, map<string, bool> &visited, bool isDebug);
+    void continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, bool isDebug);
 
     public:
     int getCount();
@@ -56,6 +57,7 @@ class GameMap {
     Country* getCountry(string countryName);
     vector<Country*> getAllByContinent(string continentName);
     Continent getContinent(string name);
-    void traverseAll(string startingCountry);
-    void traverseContinent(string startingCountry, string continent);
+    int traverseAll(string startingCountry, bool isDebug);
+    int traverseContinent(string startingCountry, string continent, bool isDebug);
+    bool isValid();
 };

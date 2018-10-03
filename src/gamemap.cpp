@@ -149,29 +149,31 @@ int GameMap::traverseAll(string startingCountry, bool isDebug = false) {
         visited[it->first] = false;
     }
 
-    traverseHelper(countries[startingCountry], visited, isDebug);
+    int count = 0;
+    traverseHelper(countries[startingCountry], visited, count, isDebug);
 
-    return visited.size();
+    return count;
 }
 
-void GameMap::traverseHelper(Country* country, map<string, bool> &visited, bool isDebug = false) {
+void GameMap::traverseHelper(Country* country, map<string, bool> &visited, int &count, bool isDebug = false) {
     
     visited[country->getName()] = true;
+    count++;
     vector<Country> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
-        cout << "Country: " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
+        cout << "Country " << count << ": " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
 
         for(int i = 0; i < neighbors.size(); i++) {
             cout << neighbors[i].getName() << "\n";
         }
 
-        cout << "\n------------------------------\n";
+        cout << "------------------------------\n";
     }
 
     for(int i = 0; i < neighbors.size(); i++) {
         if(!visited[neighbors[i].getName()]) {
-            traverseHelper(&neighbors[i], visited, isDebug);
+            traverseHelper(&neighbors[i], visited, count, isDebug);
         }
     }
 }
@@ -183,18 +185,20 @@ int GameMap::traverseContinent(string startingCountry, string continent, bool is
         visited[it->first] = false;
     }
 
-    continentTraverseHelper(countries[startingCountry], visited, continent, isDebug);
+    int count = 0;
+    continentTraverseHelper(countries[startingCountry], visited, continent, count, isDebug);
 
-    return visited.size();
+    return count;
 }
 
-void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, bool isDebug) {
+void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, int &count, bool isDebug) {
     
     visited[country->getName()] = true;
+    count++;
     vector<Country> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
-        cout << "Country: " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
+        cout << "Country " << count << ": " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
     
         for(int i = 0; i < neighbors.size(); i++) {
             cout << neighbors[i].getName() << "\n";
@@ -204,7 +208,7 @@ void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visit
 
     for(int i = 0; i < neighbors.size(); i++) {
         if(!visited[neighbors[i].getName()] && neighbors[i].getContinentName() == continent) {
-            continentTraverseHelper(&neighbors[i], visited, continent, isDebug);
+            continentTraverseHelper(&neighbors[i], visited, continent, count, isDebug);
         }
     }
 }
@@ -260,13 +264,26 @@ bool GameMap::isValid() {
     cout << "Expecting traversal of graph to visit " << gameMap.getCount() << " nodes" << endl << endl;
     cout << "Starting full DFS traversal:" << endl << endl;
 
-    int visited = gameMap.traverseAll("Nicaragua", true); 
+    int countriesVisited = gameMap.traverseAll("Costa Rica", true); 
 
-    cout << endl << "Actual visited nodes: " << visited << endl;
-    cout << "Connected graph (1 = yes / 0 = no): " << (visited == gameMap.getCount()) << endl;
+    cout << endl << "Actual visited nodes: " << countriesVisited << endl;
+    cout << "Connected graph (1 = yes / 0 = no): " << (countriesVisited == gameMap.getCount()) << endl << endl;
 
-    cout << "\nStarting continent DFS traversal of subgraph for Central America: \n";
-    gameMap.traverseContinent("Nicaragua", "Central America", true);
+    cout << "Expecting traversal of Central America to visit 3 countries." << endl;
+    cout << "Starting continent DFS traversal of subgraph for Central America: " << endl << endl;
+
+    int centralVisited = gameMap.traverseContinent("Panama", "Central America", true);
+
+    cout << endl << "Actual visited nodes: " << centralVisited << endl;
+    cout << "Connected graph (1 = yes / 0 = no): " << (centralVisited == 3) << endl << endl;
+
+    cout << "Expecting traversal of South America to visit 2 countries." << endl;
+    cout << "Starting continent DFS traversal of subgraph for South America: " << endl << endl;
+
+    int southVisited = gameMap.traverseContinent("Venezuela", "South America", true);
+
+    cout << endl << "Actual visited nodes: " << southVisited << endl;
+    cout << "Connected graph (1 = yes / 0 = no): " << (southVisited == 2) << endl << endl;
 
      return 0;
  }

@@ -47,8 +47,8 @@ class GameMap {
     map<string, Continent> continents;
     void addEdge(Country &fromCountry, Country &toCountry);
     void addAll(Country &fromCountry, vector<string> &neighborNames);
-    void traverseHelper(Country* country, map<string, bool> &visited, bool isDebug);
-    void continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, bool isDebug);
+    void traverseHelper(Country* country, map<string, bool> &visited, int &count, bool isDebug);
+    void continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, int &count, bool isDebug);
 
     public:
     int getCount();

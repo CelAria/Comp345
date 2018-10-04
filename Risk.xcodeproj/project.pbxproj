@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B315A4852165CC46005CAFD4 /* maploader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A4842165CC46005CAFD4 /* maploader.cpp */; };
-		B315A4872165CC8F005CAFD4 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = B315A4862165CC8F005CAFD4 /* maploader.h */; };
+		6BB65C9B2166A42E007AFC39 /* maploader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BB65C9A2166A42E007AFC39 /* maploader.cpp */; };
+		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
@@ -109,8 +109,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B315A4842165CC46005CAFD4 /* maploader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
-		B315A4862165CC8F005CAFD4 /* maploader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
+		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
+		6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3B2E8AB2166961C00C2A4BA /* BlahDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlahDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +228,8 @@
 		B3BB80A02165ABE9005177BB /* Risk */ = {
 			isa = PBXGroup;
 			children = (
+				6BB65C9C2166A444007AFC39 /* maploader.h */,
+				6BB65C9A2166A42E007AFC39 /* maploader.cpp */,
 				B3BB80D82165B35A005177BB /* Dice.cpp */,
 				B3BB80DA2165B35A005177BB /* Dice.h */,
 				B3BB80AD2165AD5B005177BB /* continent.h */,
@@ -236,8 +238,6 @@
 				B3BB80A82165AD32005177BB /* continent.cpp */,
 				B3BB80AA2165AD32005177BB /* country.cpp */,
 				B3BB80A92165AD32005177BB /* gamemap.cpp */,
-				B315A4842165CC46005CAFD4 /* maploader.cpp */,
-				B315A4862165CC8F005CAFD4 /* maploader.h */,
 				B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */,
 				B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */,
 			);
@@ -274,12 +274,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
-				B315A4872165CC8F005CAFD4 /* maploader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +484,7 @@
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
-				B315A4852165CC46005CAFD4 /* maploader.cpp in Sources */,
+				6BB65C9B2166A42E007AFC39 /* maploader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,54 +525,60 @@
 		B315A4912165CCCC005CAFD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B315A4922165CCCC005CAFD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		B3B2E8B02166961C00C2A4BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B3B2E8B12166961C00C2A4BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		B3B2E8D821669CE300C2A4BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B3B2E8D921669CE300C2A4BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -690,18 +696,20 @@
 		B3BB80E62165B7DA005177BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B3BB80E72165B7DA005177BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -730,18 +738,20 @@
 		B3BB81192165BF08005177BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B3BB811A2165BF08005177BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

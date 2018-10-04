@@ -17,6 +17,8 @@
 		B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8D521669CE300C2A4BA /* main.cpp */; };
 		B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8DA2166A89100C2A4BA /* player.cpp */; };
 		B3B2E8DD2166A89100C2A4BA /* player.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8DB2166A89100C2A4BA /* player.h */; };
+		B3B2E8E52166AD0100C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8E42166AD0100C2A4BA /* main.cpp */; };
+		B3B2E8EB2166AD1400C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3BB80E42165B7DA005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80E32165B7DA005177BB /* main.cpp */; };
 		B3BB81042165BE18005177BB /* Dice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80DA2165B35A005177BB /* Dice.h */; };
 		B3BB81052165BE18005177BB /* continent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AD2165AD5B005177BB /* continent.h */; };
@@ -40,6 +42,13 @@
 			remoteInfo = Risk;
 		};
 		B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B3B2E8E92166AD0E00C2A4BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
 			proxyType = 1;
@@ -90,6 +99,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		B3B2E8E02166AD0100C2A4BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B3BB80DF2165B7D9005177BB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +140,8 @@
 		B3B2E8D521669CE300C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3B2E8DA2166A89100C2A4BA /* player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
 		B3B2E8DB2166A89100C2A4BA /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		B3B2E8E22166AD0100C2A4BA /* PlayerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlayerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B2E8E42166AD0100C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3BB80A82165AD32005177BB /* continent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = continent.cpp; sourceTree = "<group>"; };
 		B3BB80A92165AD32005177BB /* gamemap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamemap.cpp; sourceTree = "<group>"; };
 		B3BB80AA2165AD32005177BB /* country.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = country.cpp; sourceTree = "<group>"; };
@@ -158,6 +178,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8DF2166AD0100C2A4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8EB2166AD1400C2A4BA /* libRisk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +231,14 @@
 			path = CardsDeckDriver;
 			sourceTree = "<group>";
 		};
+		B3B2E8E32166AD0100C2A4BA /* PlayerDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B3B2E8E42166AD0100C2A4BA /* main.cpp */,
+			);
+			path = PlayerDriver;
+			sourceTree = "<group>";
+		};
 		B3BB80952165ABE9005177BB = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +247,7 @@
 				B3BB81152165BF08005177BB /* DiceDriver */,
 				B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */,
 				B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */,
+				B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -225,6 +262,7 @@
 				B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */,
 				B3B2E8AB2166961C00C2A4BA /* BlahDriver */,
 				B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */,
+				B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,6 +384,24 @@
 			productReference = B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */;
 			productType = "com.apple.product-type.tool";
 		};
+		B3B2E8E12166AD0100C2A4BA /* PlayerDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3B2E8E62166AD0100C2A4BA /* Build configuration list for PBXNativeTarget "PlayerDriver" */;
+			buildPhases = (
+				B3B2E8DE2166AD0100C2A4BA /* Sources */,
+				B3B2E8DF2166AD0100C2A4BA /* Frameworks */,
+				B3B2E8E02166AD0100C2A4BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */,
+			);
+			name = PlayerDriver;
+			productName = PlayerDriver;
+			productReference = B3B2E8E22166AD0100C2A4BA /* PlayerDriver */;
+			productType = "com.apple.product-type.tool";
+		};
 		B3BB80E02165B7D9005177BB /* GameMapDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3BB80E52165B7DA005177BB /* Build configuration list for PBXNativeTarget "GameMapDriver" */;
@@ -417,6 +473,9 @@
 					B3B2E8D221669CE300C2A4BA = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					B3B2E8E12166AD0100C2A4BA = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					B3BB80E02165B7D9005177BB = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -446,6 +505,7 @@
 				B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */,
 				B3B2E8AA2166961C00C2A4BA /* BlahDriver */,
 				B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */,
+				B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
 			);
 		};
 /* End PBXProject section */
@@ -471,6 +531,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8DE2166AD0100C2A4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8E52166AD0100C2A4BA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +584,11 @@
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */;
+		};
+		B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B3B2E8E92166AD0E00C2A4BA /* PBXContainerItemProxy */;
 		};
 		B3BB81092165BE21005177BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -576,6 +649,24 @@
 			name = Debug;
 		};
 		B3B2E8D921669CE300C2A4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B3B2E8E72166AD0100C2A4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3B2E8E82166AD0100C2A4BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -781,6 +872,15 @@
 			buildConfigurations = (
 				B3B2E8D821669CE300C2A4BA /* Debug */,
 				B3B2E8D921669CE300C2A4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3B2E8E62166AD0100C2A4BA /* Build configuration list for PBXNativeTarget "PlayerDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3B2E8E72166AD0100C2A4BA /* Debug */,
+				B3B2E8E82166AD0100C2A4BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

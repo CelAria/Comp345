@@ -5,7 +5,6 @@
 #include "country.h"
 
 #include <map>
-#include <set>
 using namespace std;
 
 class Player {
@@ -13,12 +12,16 @@ private:
     int id;
     Hand hand;
     Dice dice;
-    set<string, Country*> countries;
+    map<string, Country*> countries;
     
 public:
-    Player();
-    Player(int playerId): id(playerId), dice(playerId) {}
+    Player(): id(1), dice(1) {};
+    Player(int playerId): id(playerId), dice(playerId) {};
     void attack();
     void fortify();
     void reinforce();
+    int getPlayerId();
+    void addCountry(Country* country);
+    int getCardsCount();
+    void drawCard(Deck* deck);
 };

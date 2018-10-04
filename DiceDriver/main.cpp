@@ -25,11 +25,16 @@ int main(int argc, const char * argv[]) {
     char keepGoing ='y';
     while (keepGoing == 'y')
     {
+        int amountOfDice = 0;
         cout << "Player "<< dice1.getPlayerNumber() <<" roll " <<" \n";
-        dice1.rollDice();
+        cout << "Choose between 1-3 dice, please enter amount of dice: ";
+        cin >> amountOfDice;
+        dice1.rollDice(amountOfDice);
         dice1.storeDice(dice1.getDiceValue());
         cout << "Player " << dice2.getPlayerNumber() << " roll "<< " \n";
-        dice2.rollDice();
+        cout << "Choose between 1-3 dice, please enter amount of dice: ";
+        cin >> amountOfDice;
+        dice2.rollDice(amountOfDice);
         dice2.storeDice(dice2.getDiceValue());
         
         cout << "do you want to roll again? type y to continue or n to exit \n";

@@ -691,7 +691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -700,7 +700,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

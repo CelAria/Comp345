@@ -58,16 +58,16 @@ static void parser(ifstream mystream){
             //for every line that isn't "[territories]" AKA WHILE CONTINENTS
             while(line != territories){
                 //tokenize the line. Read characters into name until "=". read int into points
-                string name;
-                int points;
-                char* token;
-                //make one token until it sees =
-                token =strtok(line, "=");
-                name = token;
-                token=strtok(NULL, "=");
-                points= token;
-                //new continent
-                Continent(name, points);
+//                string name;
+//                int points;
+//                char* token;
+//                //make one token until it sees =
+//                token =strtok(line, "=");
+//                name = token;
+//                token=strtok(NULL, "=");
+//                points= token;
+//                //new continent
+//                Continent(name, points);
             }
         }
         if(line==territories){

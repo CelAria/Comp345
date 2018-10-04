@@ -9,6 +9,9 @@ class Dice
 	
 public:
 	Dice(); // default constructor
+    Dice(int playerNumber): playerNumber(playerNumber) {
+        
+    }
 
 	void rollDice();
 

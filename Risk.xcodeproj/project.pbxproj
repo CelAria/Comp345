@@ -15,6 +15,8 @@
 		B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */; };
 		B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */; };
 		B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8D521669CE300C2A4BA /* main.cpp */; };
+		B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8DA2166A89100C2A4BA /* player.cpp */; };
+		B3B2E8DD2166A89100C2A4BA /* player.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8DB2166A89100C2A4BA /* player.h */; };
 		B3BB80E42165B7DA005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80E32165B7DA005177BB /* main.cpp */; };
 		B3BB81042165BE18005177BB /* Dice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80DA2165B35A005177BB /* Dice.h */; };
 		B3BB81052165BE18005177BB /* continent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AD2165AD5B005177BB /* continent.h */; };
@@ -118,6 +120,8 @@
 		B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardsdeck.h; sourceTree = "<group>"; };
 		B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardsDeckDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B2E8D521669CE300C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B3B2E8DA2166A89100C2A4BA /* player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		B3B2E8DB2166A89100C2A4BA /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		B3BB80A82165AD32005177BB /* continent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = continent.cpp; sourceTree = "<group>"; };
 		B3BB80A92165AD32005177BB /* gamemap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamemap.cpp; sourceTree = "<group>"; };
 		B3BB80AA2165AD32005177BB /* country.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = country.cpp; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				B315A4862165CC8F005CAFD4 /* maploader.h */,
 				B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */,
 				B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */,
+				B3B2E8DA2166A89100C2A4BA /* player.cpp */,
+				B3B2E8DB2166A89100C2A4BA /* player.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
+				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
 				B315A4872165CC8F005CAFD4 /* maploader.h in Headers */,
@@ -485,6 +492,7 @@
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
 				B315A4852165CC46005CAFD4 /* maploader.cpp in Sources */,
+				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,18 +698,20 @@
 		B3BB80E62165B7DA005177BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RDVU6E2FP5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B3BB80E72165B7DA005177BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RDVU6E2FP5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -24,7 +24,16 @@ int main(int argc, const char * argv[]) {
     
     //player.drawCard(<#Deck *deck#>)
     
-    count << "New card count is: " << player.getCardsCount() << endl << endl;
+    cout << "New card count is: " << player.getCardsCount() << endl << endl;
+    
+    cout << "Rolling the 1 die:" << endl;
+    cout << player.rollDice(1) << endl << endl;
+    
+    cout << "Rolling the 2 die:" << endl;
+    cout << player.rollDice(1) << endl << endl;
+    
+    cout << "Rolling the 3 die:" << endl;
+    cout << player.rollDice(1) << endl << endl;
     
     return 0;
 }

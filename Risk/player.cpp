@@ -32,3 +32,7 @@ int Player::getCardsCount() {
 void Player::drawCard(Deck* deck) {
     deck->draw(&hand);
 }
+
+int Player::rollDice(int amountOfDice) {
+    return dice.rollDice(amountOfDice);
+}

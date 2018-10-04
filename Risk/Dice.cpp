@@ -20,11 +20,10 @@ Dice::Dice()
 
 }
 
-void Dice ::rollDice()
+int Dice ::rollDice(int amountOfDice)
 {
 	srand(time(0));
-	cout << "Choose between 1-3 dice, please enter amount of dice: ";
-	cin >> amountOfDice;
+	
 	
 	if (amountOfDice == 1) 
 	{
@@ -54,7 +53,7 @@ void Dice ::rollDice()
 	cout << diceValue << endl;
 	cout << "\n" << endl;
 	
-
+    return diceValue;
 	
 }
 

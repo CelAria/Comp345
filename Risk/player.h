@@ -24,4 +24,5 @@ public:
     void addCountry(Country* country);
     int getCardsCount();
     void drawCard(Deck* deck);
+    int rollDice(int amountOfDice);
 };

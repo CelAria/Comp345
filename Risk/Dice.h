@@ -13,7 +13,7 @@ public:
         
     }
 
-	void rollDice();
+	int rollDice(int amountOfDice);
 
 	void storeDice(int diceResult);
 
@@ -39,7 +39,7 @@ private:
 	int playerNumber;
 	int numbOfDice;
 	int diceValue;
-	int amountOfDice;
+//    int amountOfDice;
 	int containerValue;
 	vector<int> diceContainer;
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B315A4852165CC46005CAFD4 /* maploader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A4842165CC46005CAFD4 /* maploader.cpp */; };
+		B315A4872165CC8F005CAFD4 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = B315A4862165CC8F005CAFD4 /* maploader.h */; };
+		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
+		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3BB80E42165B7DA005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80E32165B7DA005177BB /* main.cpp */; };
 		B3BB81042165BE18005177BB /* Dice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80DA2165B35A005177BB /* Dice.h */; };
 		B3BB81052165BE18005177BB /* continent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AD2165AD5B005177BB /* continent.h */; };
@@ -22,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
 		B3BB81082165BE21005177BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
@@ -39,6 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B315A48A2165CCCC005CAFD4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B3BB80DF2165B7D9005177BB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +80,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B315A4842165CC46005CAFD4 /* maploader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
+		B315A4862165CC8F005CAFD4 /* maploader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
+		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3BB80A82165AD32005177BB /* continent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = continent.cpp; sourceTree = "<group>"; };
 		B3BB80A92165AD32005177BB /* gamemap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamemap.cpp; sourceTree = "<group>"; };
 		B3BB80AA2165AD32005177BB /* country.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = country.cpp; sourceTree = "<group>"; };
@@ -76,6 +100,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B315A4892165CCCC005CAFD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3BB80DE2165B7D9005177BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,12 +134,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B315A48E2165CCCC005CAFD4 /* main.cpp */,
+			);
+			path = MapLoaderDriver;
+			sourceTree = "<group>";
+		};
 		B3BB80952165ABE9005177BB = {
 			isa = PBXGroup;
 			children = (
 				B3BB80A02165ABE9005177BB /* Risk */,
 				B3BB80E22165B7DA005177BB /* GameMapDriver */,
 				B3BB81152165BF08005177BB /* DiceDriver */,
+				B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -119,6 +160,7 @@
 				B3BB80E12165B7D9005177BB /* GameMapDriver */,
 				B3BB81002165BE05005177BB /* libRisk.a */,
 				B3BB81142165BF08005177BB /* Dice */,
+				B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +176,8 @@
 				B3BB80A82165AD32005177BB /* continent.cpp */,
 				B3BB80AA2165AD32005177BB /* country.cpp */,
 				B3BB80A92165AD32005177BB /* gamemap.cpp */,
+				B315A4842165CC46005CAFD4 /* maploader.cpp */,
+				B315A4862165CC8F005CAFD4 /* maploader.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -172,12 +216,31 @@
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
+				B315A4872165CC8F005CAFD4 /* maploader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */;
+			buildPhases = (
+				B315A4882165CCCC005CAFD4 /* Sources */,
+				B315A4892165CCCC005CAFD4 /* Frameworks */,
+				B315A48A2165CCCC005CAFD4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B315A4942165CCD6005CAFD4 /* PBXTargetDependency */,
+			);
+			name = MapLoaderDriver;
+			productName = MapLoaderDriver;
+			productReference = B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */;
+			productType = "com.apple.product-type.tool";
+		};
 		B3BB80E02165B7D9005177BB /* GameMapDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3BB80E52165B7DA005177BB /* Build configuration list for PBXNativeTarget "GameMapDriver" */;
@@ -240,6 +303,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = comp345;
 				TargetAttributes = {
+					B315A48B2165CCCC005CAFD4 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					B3BB80E02165B7D9005177BB = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -266,11 +332,20 @@
 				B3BB80FF2165BE05005177BB /* Risk */,
 				B3BB80E02165B7D9005177BB /* GameMapDriver */,
 				B3BB81132165BF08005177BB /* Dice */,
+				B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B315A4882165CCCC005CAFD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3BB80DD2165B7D9005177BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +362,7 @@
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
+				B315A4852165CC46005CAFD4 /* maploader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +377,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B315A4942165CCD6005CAFD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */;
+		};
 		B3BB81092165BE21005177BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
@@ -314,6 +395,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		B315A4912165CCCC005CAFD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B315A4922165CCCC005CAFD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B3BB80A32165ABE9005177BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +585,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B315A4912165CCCC005CAFD4 /* Debug */,
+				B315A4922165CCCC005CAFD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B3BB80992165ABE9005177BB /* Build configuration list for PBXProject "Risk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

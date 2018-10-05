@@ -18,6 +18,7 @@ class GameMap {
     void continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, int &count, bool isDebug);
 
     public:
+    ~GameMap();
     int getCount();
     void addContinent(Continent continent);
     void addCountry(string countryName, string continentName, vector<string> neighborNames);

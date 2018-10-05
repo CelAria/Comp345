@@ -139,3 +139,9 @@ bool GameMap::isValid() {
     return false;
 }
  
+GameMap::~GameMap() {
+    for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
+        delete it->second;
+        it->second = NULL;
+    }
+}

@@ -1,935 +1,933 @@
 // !$*UTF8*$!
 {
-    archiveVersion = 1;
-    classes = {
-    };
-    objectVersion = 50;
-    objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
 
 /* Begin PBXBuildFile section */
-        6BB65C9B2166A42E007AFC39 /* maploader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BB65C9A2166A42E007AFC39 /* maploader.cpp */; };
-        6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
-        B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
-        B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
-        B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
-        B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */; };
-        B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */; };
-        B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8D521669CE300C2A4BA /* main.cpp */; };
-        B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8DA2166A89100C2A4BA /* player.cpp */; };
-        B3B2E8DD2166A89100C2A4BA /* player.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8DB2166A89100C2A4BA /* player.h */; };
-        B3B2E8E52166AD0100C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8E42166AD0100C2A4BA /* main.cpp */; };
-        B3B2E8EB2166AD1400C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
-        B3BB80E42165B7DA005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80E32165B7DA005177BB /* main.cpp */; };
-        B3BB81042165BE18005177BB /* Dice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80DA2165B35A005177BB /* Dice.h */; };
-        B3BB81052165BE18005177BB /* continent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AD2165AD5B005177BB /* continent.h */; };
-        B3BB81062165BE18005177BB /* country.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AB2165AD5A005177BB /* country.h */; };
-        B3BB81072165BE18005177BB /* gamemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AC2165AD5A005177BB /* gamemap.h */; };
-        B3BB810A2165BE5B005177BB /* continent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80A82165AD32005177BB /* continent.cpp */; };
-        B3BB810B2165BE5B005177BB /* country.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80AA2165AD32005177BB /* country.cpp */; };
-        B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80A92165AD32005177BB /* gamemap.cpp */; };
-        B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80D82165B35A005177BB /* Dice.cpp */; };
-        B3BB810F2165BEB9005177BB /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
-        B3BB81172165BF08005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB81162165BF08005177BB /* main.cpp */; };
-        B3BB811D2165BF83005177BB /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
+		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
+		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */; };
+		B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */; };
+		B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8D521669CE300C2A4BA /* main.cpp */; };
+		B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8DA2166A89100C2A4BA /* player.cpp */; };
+		B3B2E8DD2166A89100C2A4BA /* player.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8DB2166A89100C2A4BA /* player.h */; };
+		B3B2E8E52166AD0100C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8E42166AD0100C2A4BA /* main.cpp */; };
+		B3B2E8EB2166AD1400C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B3BB80E42165B7DA005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80E32165B7DA005177BB /* main.cpp */; };
+		B3BB81042165BE18005177BB /* Dice.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80DA2165B35A005177BB /* Dice.h */; };
+		B3BB81052165BE18005177BB /* continent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AD2165AD5B005177BB /* continent.h */; };
+		B3BB81062165BE18005177BB /* country.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AB2165AD5A005177BB /* country.h */; };
+		B3BB81072165BE18005177BB /* gamemap.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BB80AC2165AD5A005177BB /* gamemap.h */; };
+		B3BB810A2165BE5B005177BB /* continent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80A82165AD32005177BB /* continent.cpp */; };
+		B3BB810B2165BE5B005177BB /* country.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80AA2165AD32005177BB /* country.cpp */; };
+		B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80A92165AD32005177BB /* gamemap.cpp */; };
+		B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB80D82165B35A005177BB /* Dice.cpp */; };
+		B3BB810F2165BEB9005177BB /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B3BB81172165BF08005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB81162165BF08005177BB /* main.cpp */; };
+		B3BB811D2165BF83005177BB /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-        B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = B3BB80962165ABE9005177BB /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = B3BB80FF2165BE05005177BB;
-            remoteInfo = Risk;
-        };
-        B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = B3BB80962165ABE9005177BB /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = B3BB80FF2165BE05005177BB;
-            remoteInfo = Risk;
-        };
-        B3B2E8E92166AD0E00C2A4BA /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = B3BB80962165ABE9005177BB /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = B3BB80FF2165BE05005177BB;
-            remoteInfo = Risk;
-        };
-        B3BB81082165BE21005177BB /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = B3BB80962165ABE9005177BB /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = B3BB80FF2165BE05005177BB;
-            remoteInfo = Risk;
-        };
-        B3BB811B2165BF7D005177BB /* PBXContainerItemProxy */ = {
-            isa = PBXContainerItemProxy;
-            containerPortal = B3BB80962165ABE9005177BB /* Project object */;
-            proxyType = 1;
-            remoteGlobalIDString = B3BB80FF2165BE05005177BB;
-            remoteInfo = Risk;
-        };
+		B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B3B2E8E92166AD0E00C2A4BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B3BB81082165BE21005177BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B3BB811B2165BF7D005177BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-        B315A48A2165CCCC005CAFD4 /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = /usr/share/man/man1/;
-            dstSubfolderSpec = 0;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 1;
-        };
-        B3B2E8A92166961C00C2A4BA /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = /usr/share/man/man1/;
-            dstSubfolderSpec = 0;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 1;
-        };
-        B3B2E8D121669CE300C2A4BA /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = /usr/share/man/man1/;
-            dstSubfolderSpec = 0;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 1;
-        };
-        B3B2E8E02166AD0100C2A4BA /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = /usr/share/man/man1/;
-            dstSubfolderSpec = 0;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 1;
-        };
-        B3BB80DF2165B7D9005177BB /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = /usr/share/man/man1/;
-            dstSubfolderSpec = 0;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 1;
-        };
-        B3BB81122165BF08005177BB /* CopyFiles */ = {
-            isa = PBXCopyFilesBuildPhase;
-            buildActionMask = 2147483647;
-            dstPath = /usr/share/man/man1/;
-            dstSubfolderSpec = 0;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 1;
-        };
+		B315A48A2165CCCC005CAFD4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B3B2E8A92166961C00C2A4BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B3B2E8D121669CE300C2A4BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B3B2E8E02166AD0100C2A4BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B3BB80DF2165B7D9005177BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		B3BB81122165BF08005177BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-        6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
-        6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
-        B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
-        B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-        B3B2E8AB2166961C00C2A4BA /* BlahDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlahDriver; sourceTree = BUILT_PRODUCTS_DIR; };
-        B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cardsdeck.cpp; sourceTree = "<group>"; };
-        B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardsdeck.h; sourceTree = "<group>"; };
-        B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardsDeckDriver; sourceTree = BUILT_PRODUCTS_DIR; };
-        B3B2E8D521669CE300C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-        B3B2E8DA2166A89100C2A4BA /* player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
-        B3B2E8DB2166A89100C2A4BA /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
-        B3B2E8E22166AD0100C2A4BA /* PlayerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlayerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
-        B3B2E8E42166AD0100C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-        B3BB80A82165AD32005177BB /* continent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = continent.cpp; sourceTree = "<group>"; };
-        B3BB80A92165AD32005177BB /* gamemap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamemap.cpp; sourceTree = "<group>"; };
-        B3BB80AA2165AD32005177BB /* country.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = country.cpp; sourceTree = "<group>"; };
-        B3BB80AB2165AD5A005177BB /* country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = country.h; sourceTree = "<group>"; };
-        B3BB80AC2165AD5A005177BB /* gamemap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamemap.h; sourceTree = "<group>"; };
-        B3BB80AD2165AD5B005177BB /* continent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = continent.h; sourceTree = "<group>"; };
-        B3BB80D82165B35A005177BB /* Dice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dice.cpp; sourceTree = "<group>"; };
-        B3BB80DA2165B35A005177BB /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
-        B3BB80E12165B7D9005177BB /* GameMapDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameMapDriver; sourceTree = BUILT_PRODUCTS_DIR; };
-        B3BB80E32165B7DA005177BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-        B3BB81002165BE05005177BB /* libRisk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRisk.a; sourceTree = BUILT_PRODUCTS_DIR; };
-        B3BB81142165BF08005177BB /* Dice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dice; sourceTree = BUILT_PRODUCTS_DIR; };
-        B3BB81162165BF08005177BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
+		6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
+		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B3B2E8AB2166961C00C2A4BA /* BlahDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlahDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cardsdeck.cpp; sourceTree = "<group>"; };
+		B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardsdeck.h; sourceTree = "<group>"; };
+		B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardsDeckDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B2E8D521669CE300C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B3B2E8DA2166A89100C2A4BA /* player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
+		B3B2E8DB2166A89100C2A4BA /* player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		B3B2E8E22166AD0100C2A4BA /* PlayerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlayerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B2E8E42166AD0100C2A4BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B3BB80A82165AD32005177BB /* continent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = continent.cpp; sourceTree = "<group>"; };
+		B3BB80A92165AD32005177BB /* gamemap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamemap.cpp; sourceTree = "<group>"; };
+		B3BB80AA2165AD32005177BB /* country.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = country.cpp; sourceTree = "<group>"; };
+		B3BB80AB2165AD5A005177BB /* country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = country.h; sourceTree = "<group>"; };
+		B3BB80AC2165AD5A005177BB /* gamemap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamemap.h; sourceTree = "<group>"; };
+		B3BB80AD2165AD5B005177BB /* continent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = continent.h; sourceTree = "<group>"; };
+		B3BB80D82165B35A005177BB /* Dice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dice.cpp; sourceTree = "<group>"; };
+		B3BB80DA2165B35A005177BB /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
+		B3BB80E12165B7D9005177BB /* GameMapDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameMapDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BB80E32165B7DA005177BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B3BB81002165BE05005177BB /* libRisk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRisk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BB81142165BF08005177BB /* Dice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dice; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3BB81162165BF08005177BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-        B315A4892165CCCC005CAFD4 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3B2E8A82166961C00C2A4BA /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3B2E8D021669CE300C2A4BA /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3B2E8DF2166AD0100C2A4BA /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3B2E8EB2166AD1400C2A4BA /* libRisk.a in Frameworks */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3BB80DE2165B7D9005177BB /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3BB810F2165BEB9005177BB /* libRisk.a in Frameworks */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3BB80FE2165BE05005177BB /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3BB81112165BF08005177BB /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3BB811D2165BF83005177BB /* libRisk.a in Frameworks */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		B315A4892165CCCC005CAFD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8A82166961C00C2A4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8D021669CE300C2A4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8DF2166AD0100C2A4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8EB2166AD1400C2A4BA /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB80DE2165B7D9005177BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3BB810F2165BEB9005177BB /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB80FE2165BE05005177BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB81112165BF08005177BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3BB811D2165BF83005177BB /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-        B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
-            isa = PBXGroup;
-            children = (
-                B315A48E2165CCCC005CAFD4 /* main.cpp */,
-            );
-            path = MapLoaderDriver;
-            sourceTree = "<group>";
-        };
-        B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */ = {
-            isa = PBXGroup;
-            children = (
-                B3B2E8D521669CE300C2A4BA /* main.cpp */,
-            );
-            path = CardsDeckDriver;
-            sourceTree = "<group>";
-        };
-        B3B2E8E32166AD0100C2A4BA /* PlayerDriver */ = {
-            isa = PBXGroup;
-            children = (
-                B3B2E8E42166AD0100C2A4BA /* main.cpp */,
-            );
-            path = PlayerDriver;
-            sourceTree = "<group>";
-        };
-        B3BB80952165ABE9005177BB = {
-            isa = PBXGroup;
-            children = (
-                B3BB80A02165ABE9005177BB /* Risk */,
-                B3BB80E22165B7DA005177BB /* GameMapDriver */,
-                B3BB81152165BF08005177BB /* DiceDriver */,
-                B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */,
-                B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */,
-                B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
-                B3BB809F2165ABE9005177BB /* Products */,
-                B3BB810E2165BEB9005177BB /* Frameworks */,
-            );
-            sourceTree = "<group>";
-        };
-        B3BB809F2165ABE9005177BB /* Products */ = {
-            isa = PBXGroup;
-            children = (
-                B3BB80E12165B7D9005177BB /* GameMapDriver */,
-                B3BB81002165BE05005177BB /* libRisk.a */,
-                B3BB81142165BF08005177BB /* Dice */,
-                B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */,
-                B3B2E8AB2166961C00C2A4BA /* BlahDriver */,
-                B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */,
-                B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
-            );
-            name = Products;
-            sourceTree = "<group>";
-        };
-        B3BB80A02165ABE9005177BB /* Risk */ = {
-            isa = PBXGroup;
-            children = (
-                6BB65C9C2166A444007AFC39 /* maploader.h */,
-                6BB65C9A2166A42E007AFC39 /* maploader.cpp */,
-                B3BB80D82165B35A005177BB /* Dice.cpp */,
-                B3BB80DA2165B35A005177BB /* Dice.h */,
-                B3BB80AD2165AD5B005177BB /* continent.h */,
-                B3BB80AB2165AD5A005177BB /* country.h */,
-                B3BB80AC2165AD5A005177BB /* gamemap.h */,
-                B3BB80A82165AD32005177BB /* continent.cpp */,
-                B3BB80AA2165AD32005177BB /* country.cpp */,
-                B3BB80A92165AD32005177BB /* gamemap.cpp */,
-                B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */,
-                B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */,
-                B3B2E8DA2166A89100C2A4BA /* player.cpp */,
-                B3B2E8DB2166A89100C2A4BA /* player.h */,
-            );
-            path = Risk;
-            sourceTree = "<group>";
-        };
-        B3BB80E22165B7DA005177BB /* GameMapDriver */ = {
-            isa = PBXGroup;
-            children = (
-                B3BB80E32165B7DA005177BB /* main.cpp */,
-            );
-            path = GameMapDriver;
-            sourceTree = "<group>";
-        };
-        B3BB810E2165BEB9005177BB /* Frameworks */ = {
-            isa = PBXGroup;
-            children = (
-            );
-            name = Frameworks;
-            sourceTree = "<group>";
-        };
-        B3BB81152165BF08005177BB /* DiceDriver */ = {
-            isa = PBXGroup;
-            children = (
-                B3BB81162165BF08005177BB /* main.cpp */,
-            );
-            path = DiceDriver;
-            sourceTree = "<group>";
-        };
+		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B315A48E2165CCCC005CAFD4 /* main.cpp */,
+			);
+			path = MapLoaderDriver;
+			sourceTree = "<group>";
+		};
+		B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B3B2E8D521669CE300C2A4BA /* main.cpp */,
+			);
+			path = CardsDeckDriver;
+			sourceTree = "<group>";
+		};
+		B3B2E8E32166AD0100C2A4BA /* PlayerDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B3B2E8E42166AD0100C2A4BA /* main.cpp */,
+			);
+			path = PlayerDriver;
+			sourceTree = "<group>";
+		};
+		B3BB80952165ABE9005177BB = {
+			isa = PBXGroup;
+			children = (
+				B3BB80A02165ABE9005177BB /* Risk */,
+				B3BB80E22165B7DA005177BB /* GameMapDriver */,
+				B3BB81152165BF08005177BB /* DiceDriver */,
+				B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */,
+				B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */,
+				B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
+				B3BB809F2165ABE9005177BB /* Products */,
+				B3BB810E2165BEB9005177BB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B3BB809F2165ABE9005177BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3BB80E12165B7D9005177BB /* GameMapDriver */,
+				B3BB81002165BE05005177BB /* libRisk.a */,
+				B3BB81142165BF08005177BB /* Dice */,
+				B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */,
+				B3B2E8AB2166961C00C2A4BA /* BlahDriver */,
+				B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */,
+				B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3BB80A02165ABE9005177BB /* Risk */ = {
+			isa = PBXGroup;
+			children = (
+				6BB65C9C2166A444007AFC39 /* maploader.h */,
+				6BB65C9A2166A42E007AFC39 /* maploader.cpp */,
+				B3BB80D82165B35A005177BB /* Dice.cpp */,
+				B3BB80DA2165B35A005177BB /* Dice.h */,
+				B3BB80AD2165AD5B005177BB /* continent.h */,
+				B3BB80AB2165AD5A005177BB /* country.h */,
+				B3BB80AC2165AD5A005177BB /* gamemap.h */,
+				B3BB80A82165AD32005177BB /* continent.cpp */,
+				B3BB80AA2165AD32005177BB /* country.cpp */,
+				B3BB80A92165AD32005177BB /* gamemap.cpp */,
+				B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */,
+				B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */,
+				B3B2E8DA2166A89100C2A4BA /* player.cpp */,
+				B3B2E8DB2166A89100C2A4BA /* player.h */,
+			);
+			path = Risk;
+			sourceTree = "<group>";
+		};
+		B3BB80E22165B7DA005177BB /* GameMapDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B3BB80E32165B7DA005177BB /* main.cpp */,
+			);
+			path = GameMapDriver;
+			sourceTree = "<group>";
+		};
+		B3BB810E2165BEB9005177BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3BB81152165BF08005177BB /* DiceDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B3BB81162165BF08005177BB /* main.cpp */,
+			);
+			path = DiceDriver;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-        B3BB80FC2165BE05005177BB /* Headers */ = {
-            isa = PBXHeadersBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
-                B3BB81042165BE18005177BB /* Dice.h in Headers */,
-                B3BB81052165BE18005177BB /* continent.h in Headers */,
-                B3BB81062165BE18005177BB /* country.h in Headers */,
-                B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
-                B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
-                B3BB81072165BE18005177BB /* gamemap.h in Headers */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		B3BB80FC2165BE05005177BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
+				B3BB81042165BE18005177BB /* Dice.h in Headers */,
+				B3BB81052165BE18005177BB /* continent.h in Headers */,
+				B3BB81062165BE18005177BB /* country.h in Headers */,
+				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
+				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
+				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-        B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */;
-            buildPhases = (
-                B315A4882165CCCC005CAFD4 /* Sources */,
-                B315A4892165CCCC005CAFD4 /* Frameworks */,
-                B315A48A2165CCCC005CAFD4 /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                B315A4942165CCD6005CAFD4 /* PBXTargetDependency */,
-            );
-            name = MapLoaderDriver;
-            productName = MapLoaderDriver;
-            productReference = B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */;
-            productType = "com.apple.product-type.tool";
-        };
-        B3B2E8AA2166961C00C2A4BA /* BlahDriver */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B3B2E8AF2166961C00C2A4BA /* Build configuration list for PBXNativeTarget "BlahDriver" */;
-            buildPhases = (
-                B3B2E8A72166961C00C2A4BA /* Sources */,
-                B3B2E8A82166961C00C2A4BA /* Frameworks */,
-                B3B2E8A92166961C00C2A4BA /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                B3B2E8B32166962700C2A4BA /* PBXTargetDependency */,
-            );
-            name = BlahDriver;
-            productName = BlahDriver;
-            productReference = B3B2E8AB2166961C00C2A4BA /* BlahDriver */;
-            productType = "com.apple.product-type.tool";
-        };
-        B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B3B2E8D721669CE300C2A4BA /* Build configuration list for PBXNativeTarget "CardsDeckDriver" */;
-            buildPhases = (
-                B3B2E8CF21669CE300C2A4BA /* Sources */,
-                B3B2E8D021669CE300C2A4BA /* Frameworks */,
-                B3B2E8D121669CE300C2A4BA /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
-            name = CardsDeckDriver;
-            productName = CardsDeckDriver;
-            productReference = B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */;
-            productType = "com.apple.product-type.tool";
-        };
-        B3B2E8E12166AD0100C2A4BA /* PlayerDriver */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B3B2E8E62166AD0100C2A4BA /* Build configuration list for PBXNativeTarget "PlayerDriver" */;
-            buildPhases = (
-                B3B2E8DE2166AD0100C2A4BA /* Sources */,
-                B3B2E8DF2166AD0100C2A4BA /* Frameworks */,
-                B3B2E8E02166AD0100C2A4BA /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */,
-            );
-            name = PlayerDriver;
-            productName = PlayerDriver;
-            productReference = B3B2E8E22166AD0100C2A4BA /* PlayerDriver */;
-            productType = "com.apple.product-type.tool";
-        };
-        B3BB80E02165B7D9005177BB /* GameMapDriver */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B3BB80E52165B7DA005177BB /* Build configuration list for PBXNativeTarget "GameMapDriver" */;
-            buildPhases = (
-                B3BB80DD2165B7D9005177BB /* Sources */,
-                B3BB80DE2165B7D9005177BB /* Frameworks */,
-                B3BB80DF2165B7D9005177BB /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                B3BB81092165BE21005177BB /* PBXTargetDependency */,
-            );
-            name = GameMapDriver;
-            productName = GameMapDriver;
-            productReference = B3BB80E12165B7D9005177BB /* GameMapDriver */;
-            productType = "com.apple.product-type.tool";
-        };
-        B3BB80FF2165BE05005177BB /* Risk */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B3BB81012165BE05005177BB /* Build configuration list for PBXNativeTarget "Risk" */;
-            buildPhases = (
-                B3BB80FC2165BE05005177BB /* Headers */,
-                B3BB80FD2165BE05005177BB /* Sources */,
-                B3BB80FE2165BE05005177BB /* Frameworks */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-            );
-            name = Risk;
-            productName = Risk;
-            productReference = B3BB81002165BE05005177BB /* libRisk.a */;
-            productType = "com.apple.product-type.library.static";
-        };
-        B3BB81132165BF08005177BB /* Dice */ = {
-            isa = PBXNativeTarget;
-            buildConfigurationList = B3BB81182165BF08005177BB /* Build configuration list for PBXNativeTarget "Dice" */;
-            buildPhases = (
-                B3BB81102165BF08005177BB /* Sources */,
-                B3BB81112165BF08005177BB /* Frameworks */,
-                B3BB81122165BF08005177BB /* CopyFiles */,
-            );
-            buildRules = (
-            );
-            dependencies = (
-                B3BB811C2165BF7D005177BB /* PBXTargetDependency */,
-            );
-            name = Dice;
-            productName = Dice;
-            productReference = B3BB81142165BF08005177BB /* Dice */;
-            productType = "com.apple.product-type.tool";
-        };
+		B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */;
+			buildPhases = (
+				B315A4882165CCCC005CAFD4 /* Sources */,
+				B315A4892165CCCC005CAFD4 /* Frameworks */,
+				B315A48A2165CCCC005CAFD4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B315A4942165CCD6005CAFD4 /* PBXTargetDependency */,
+			);
+			name = MapLoaderDriver;
+			productName = MapLoaderDriver;
+			productReference = B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		B3B2E8AA2166961C00C2A4BA /* BlahDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3B2E8AF2166961C00C2A4BA /* Build configuration list for PBXNativeTarget "BlahDriver" */;
+			buildPhases = (
+				B3B2E8A72166961C00C2A4BA /* Sources */,
+				B3B2E8A82166961C00C2A4BA /* Frameworks */,
+				B3B2E8A92166961C00C2A4BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3B2E8B32166962700C2A4BA /* PBXTargetDependency */,
+			);
+			name = BlahDriver;
+			productName = BlahDriver;
+			productReference = B3B2E8AB2166961C00C2A4BA /* BlahDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3B2E8D721669CE300C2A4BA /* Build configuration list for PBXNativeTarget "CardsDeckDriver" */;
+			buildPhases = (
+				B3B2E8CF21669CE300C2A4BA /* Sources */,
+				B3B2E8D021669CE300C2A4BA /* Frameworks */,
+				B3B2E8D121669CE300C2A4BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardsDeckDriver;
+			productName = CardsDeckDriver;
+			productReference = B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		B3B2E8E12166AD0100C2A4BA /* PlayerDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3B2E8E62166AD0100C2A4BA /* Build configuration list for PBXNativeTarget "PlayerDriver" */;
+			buildPhases = (
+				B3B2E8DE2166AD0100C2A4BA /* Sources */,
+				B3B2E8DF2166AD0100C2A4BA /* Frameworks */,
+				B3B2E8E02166AD0100C2A4BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */,
+			);
+			name = PlayerDriver;
+			productName = PlayerDriver;
+			productReference = B3B2E8E22166AD0100C2A4BA /* PlayerDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		B3BB80E02165B7D9005177BB /* GameMapDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3BB80E52165B7DA005177BB /* Build configuration list for PBXNativeTarget "GameMapDriver" */;
+			buildPhases = (
+				B3BB80DD2165B7D9005177BB /* Sources */,
+				B3BB80DE2165B7D9005177BB /* Frameworks */,
+				B3BB80DF2165B7D9005177BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3BB81092165BE21005177BB /* PBXTargetDependency */,
+			);
+			name = GameMapDriver;
+			productName = GameMapDriver;
+			productReference = B3BB80E12165B7D9005177BB /* GameMapDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		B3BB80FF2165BE05005177BB /* Risk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3BB81012165BE05005177BB /* Build configuration list for PBXNativeTarget "Risk" */;
+			buildPhases = (
+				B3BB80FC2165BE05005177BB /* Headers */,
+				B3BB80FD2165BE05005177BB /* Sources */,
+				B3BB80FE2165BE05005177BB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Risk;
+			productName = Risk;
+			productReference = B3BB81002165BE05005177BB /* libRisk.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B3BB81132165BF08005177BB /* Dice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3BB81182165BF08005177BB /* Build configuration list for PBXNativeTarget "Dice" */;
+			buildPhases = (
+				B3BB81102165BF08005177BB /* Sources */,
+				B3BB81112165BF08005177BB /* Frameworks */,
+				B3BB81122165BF08005177BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3BB811C2165BF7D005177BB /* PBXTargetDependency */,
+			);
+			name = Dice;
+			productName = Dice;
+			productReference = B3BB81142165BF08005177BB /* Dice */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-        B3BB80962165ABE9005177BB /* Project object */ = {
-            isa = PBXProject;
-            attributes = {
-                LastUpgradeCheck = 1000;
-                ORGANIZATIONNAME = comp345;
-                TargetAttributes = {
-                    B315A48B2165CCCC005CAFD4 = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                    B3B2E8AA2166961C00C2A4BA = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                    B3B2E8D221669CE300C2A4BA = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                    B3B2E8E12166AD0100C2A4BA = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                    B3BB80E02165B7D9005177BB = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                    B3BB80FF2165BE05005177BB = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                    B3BB81132165BF08005177BB = {
-                        CreatedOnToolsVersion = 10.0;
-                    };
-                };
-            };
-            buildConfigurationList = B3BB80992165ABE9005177BB /* Build configuration list for PBXProject "Risk" */;
-            compatibilityVersion = "Xcode 9.3";
-            developmentRegion = en;
-            hasScannedForEncodings = 0;
-            knownRegions = (
-                en,
-            );
-            mainGroup = B3BB80952165ABE9005177BB;
-            productRefGroup = B3BB809F2165ABE9005177BB /* Products */;
-            projectDirPath = "";
-            projectRoot = "";
-            targets = (
-                B3BB80FF2165BE05005177BB /* Risk */,
-                B3BB80E02165B7D9005177BB /* GameMapDriver */,
-                B3BB81132165BF08005177BB /* Dice */,
-                B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */,
-                B3B2E8AA2166961C00C2A4BA /* BlahDriver */,
-                B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */,
-                B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
-            );
-        };
+		B3BB80962165ABE9005177BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = comp345;
+				TargetAttributes = {
+					B315A48B2165CCCC005CAFD4 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B3B2E8AA2166961C00C2A4BA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B3B2E8D221669CE300C2A4BA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B3B2E8E12166AD0100C2A4BA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B3BB80E02165B7D9005177BB = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B3BB80FF2165BE05005177BB = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B3BB81132165BF08005177BB = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = B3BB80992165ABE9005177BB /* Build configuration list for PBXProject "Risk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B3BB80952165ABE9005177BB;
+			productRefGroup = B3BB809F2165ABE9005177BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3BB80FF2165BE05005177BB /* Risk */,
+				B3BB80E02165B7D9005177BB /* GameMapDriver */,
+				B3BB81132165BF08005177BB /* Dice */,
+				B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */,
+				B3B2E8AA2166961C00C2A4BA /* BlahDriver */,
+				B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */,
+				B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-        B315A4882165CCCC005CAFD4 /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3B2E8A72166961C00C2A4BA /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3B2E8CF21669CE300C2A4BA /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3B2E8DE2166AD0100C2A4BA /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3B2E8E52166AD0100C2A4BA /* main.cpp in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3BB80DD2165B7D9005177BB /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3BB80E42165B7DA005177BB /* main.cpp in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3BB80FD2165BE05005177BB /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
-                B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
-                B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
-                B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
-                B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
-				B315A4852165CC46005CAFD4 /* maploader.cpp in Sources */,
+		B315A4882165CCCC005CAFD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8A72166961C00C2A4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8CF21669CE300C2A4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3B2E8DE2166AD0100C2A4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8E52166AD0100C2A4BA /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB80DD2165B7D9005177BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3BB80E42165B7DA005177BB /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB80FD2165BE05005177BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
+				B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
+				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
+				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
+				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
-        B3BB81102165BF08005177BB /* Sources */ = {
-            isa = PBXSourcesBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-                B3BB81172165BF08005177BB /* main.cpp in Sources */,
-            );
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB81102165BF08005177BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3BB81172165BF08005177BB /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-        B315A4942165CCD6005CAFD4 /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = B3BB80FF2165BE05005177BB /* Risk */;
-            targetProxy = B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */;
-        };
-        B3B2E8B32166962700C2A4BA /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = B3BB80FF2165BE05005177BB /* Risk */;
-            targetProxy = B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */;
-        };
-        B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = B3BB80FF2165BE05005177BB /* Risk */;
-            targetProxy = B3B2E8E92166AD0E00C2A4BA /* PBXContainerItemProxy */;
-        };
-        B3BB81092165BE21005177BB /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = B3BB80FF2165BE05005177BB /* Risk */;
-            targetProxy = B3BB81082165BE21005177BB /* PBXContainerItemProxy */;
-        };
-        B3BB811C2165BF7D005177BB /* PBXTargetDependency */ = {
-            isa = PBXTargetDependency;
-            target = B3BB80FF2165BE05005177BB /* Risk */;
-            targetProxy = B3BB811B2165BF7D005177BB /* PBXContainerItemProxy */;
-        };
+		B315A4942165CCD6005CAFD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */;
+		};
+		B3B2E8B32166962700C2A4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */;
+		};
+		B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B3B2E8E92166AD0E00C2A4BA /* PBXContainerItemProxy */;
+		};
+		B3BB81092165BE21005177BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B3BB81082165BE21005177BB /* PBXContainerItemProxy */;
+		};
+		B3BB811C2165BF7D005177BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B3BB811B2165BF7D005177BB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-        B315A4912165CCCC005CAFD4 /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Debug;
-        };
-        B315A4922165CCCC005CAFD4 /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Release;
-        };
-        B3B2E8B02166961C00C2A4BA /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Debug;
-        };
-        B3B2E8B12166961C00C2A4BA /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Release;
-        };
-        B3B2E8D821669CE300C2A4BA /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Debug;
-        };
-        B3B2E8D921669CE300C2A4BA /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Release;
-        };
-        B3B2E8E72166AD0100C2A4BA /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = RDVU6E2FP5;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-            };
-            name = Debug;
-        };
-        B3B2E8E82166AD0100C2A4BA /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = RDVU6E2FP5;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-            };
-            name = Release;
-        };
-        B3BB80A32165ABE9005177BB /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "Mac Developer";
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = dwarf;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                ENABLE_TESTABILITY = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_DYNAMIC_NO_PIC = NO;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_OPTIMIZATION_LEVEL = 0;
-                GCC_PREPROCESSOR_DEFINITIONS = (
-                    "DEBUG=1",
-                    "$(inherited)",
-                );
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                MACOSX_DEPLOYMENT_TARGET = 10.14;
-                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-                MTL_FAST_MATH = YES;
-                ONLY_ACTIVE_ARCH = YES;
-                SDKROOT = macosx;
-            };
-            name = Debug;
-        };
-        B3BB80A42165ABE9005177BB /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                ALWAYS_SEARCH_USER_PATHS = NO;
-                CLANG_ANALYZER_NONNULL = YES;
-                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-                CLANG_CXX_LIBRARY = "libc++";
-                CLANG_ENABLE_MODULES = YES;
-                CLANG_ENABLE_OBJC_ARC = YES;
-                CLANG_ENABLE_OBJC_WEAK = YES;
-                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-                CLANG_WARN_BOOL_CONVERSION = YES;
-                CLANG_WARN_COMMA = YES;
-                CLANG_WARN_CONSTANT_CONVERSION = YES;
-                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-                CLANG_WARN_EMPTY_BODY = YES;
-                CLANG_WARN_ENUM_CONVERSION = YES;
-                CLANG_WARN_INFINITE_RECURSION = YES;
-                CLANG_WARN_INT_CONVERSION = YES;
-                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-                CLANG_WARN_STRICT_PROTOTYPES = YES;
-                CLANG_WARN_SUSPICIOUS_MOVE = YES;
-                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-                CLANG_WARN_UNREACHABLE_CODE = YES;
-                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-                CODE_SIGN_IDENTITY = "Mac Developer";
-                COPY_PHASE_STRIP = NO;
-                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                ENABLE_NS_ASSERTIONS = NO;
-                ENABLE_STRICT_OBJC_MSGSEND = YES;
-                GCC_C_LANGUAGE_STANDARD = gnu11;
-                GCC_NO_COMMON_BLOCKS = YES;
-                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-                GCC_WARN_UNDECLARED_SELECTOR = YES;
-                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-                GCC_WARN_UNUSED_FUNCTION = YES;
-                GCC_WARN_UNUSED_VARIABLE = YES;
-                MACOSX_DEPLOYMENT_TARGET = 10.14;
-                MTL_ENABLE_DEBUG_INFO = NO;
-                MTL_FAST_MATH = YES;
-                SDKROOT = macosx;
-            };
-            name = Release;
-        };
-        B3BB80E62165B7DA005177BB /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
+		B315A4912165CCCC005CAFD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Debug;
-        };
-        B3BB80E72165B7DA005177BB /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		B315A4922165CCCC005CAFD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Release;
-        };
-        B3BB81022165BE05005177BB /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = RDVU6E2FP5;
-                EXECUTABLE_PREFIX = lib;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SKIP_INSTALL = YES;
-            };
-            name = Debug;
-        };
-        B3BB81032165BE05005177BB /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Automatic;
-                DEVELOPMENT_TEAM = RDVU6E2FP5;
-                EXECUTABLE_PREFIX = lib;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                SKIP_INSTALL = YES;
-            };
-            name = Release;
-        };
-        B3BB81192165BF08005177BB /* Debug */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Debug;
-        };
-        B3BB811A2165BF08005177BB /* Release */ = {
-            isa = XCBuildConfiguration;
-            buildSettings = {
-                CODE_SIGN_STYLE = Manual;
-                DEVELOPMENT_TEAM = XM25KFD587;
-                PRODUCT_NAME = "$(TARGET_NAME)";
-                PROVISIONING_PROFILE_SPECIFIER = "";
-            };
-            name = Release;
-        };
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		B3B2E8B02166961C00C2A4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		B3B2E8B12166961C00C2A4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		B3B2E8D821669CE300C2A4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		B3B2E8D921669CE300C2A4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		B3B2E8E72166AD0100C2A4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3B2E8E82166AD0100C2A4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B3BB80A32165ABE9005177BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B3BB80A42165ABE9005177BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B3BB80E62165B7DA005177BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		B3BB80E72165B7DA005177BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		B3BB81022165BE05005177BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B3BB81032165BE05005177BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B3BB81192165BF08005177BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		B3BB811A2165BF08005177BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-        B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B315A4912165CCCC005CAFD4 /* Debug */,
-                B315A4922165CCCC005CAFD4 /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3B2E8AF2166961C00C2A4BA /* Build configuration list for PBXNativeTarget "BlahDriver" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3B2E8B02166961C00C2A4BA /* Debug */,
-                B3B2E8B12166961C00C2A4BA /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3B2E8D721669CE300C2A4BA /* Build configuration list for PBXNativeTarget "CardsDeckDriver" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3B2E8D821669CE300C2A4BA /* Debug */,
-                B3B2E8D921669CE300C2A4BA /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3B2E8E62166AD0100C2A4BA /* Build configuration list for PBXNativeTarget "PlayerDriver" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3B2E8E72166AD0100C2A4BA /* Debug */,
-                B3B2E8E82166AD0100C2A4BA /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3BB80992165ABE9005177BB /* Build configuration list for PBXProject "Risk" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3BB80A32165ABE9005177BB /* Debug */,
-                B3BB80A42165ABE9005177BB /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3BB80E52165B7DA005177BB /* Build configuration list for PBXNativeTarget "GameMapDriver" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3BB80E62165B7DA005177BB /* Debug */,
-                B3BB80E72165B7DA005177BB /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3BB81012165BE05005177BB /* Build configuration list for PBXNativeTarget "Risk" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3BB81022165BE05005177BB /* Debug */,
-                B3BB81032165BE05005177BB /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
-        B3BB81182165BF08005177BB /* Build configuration list for PBXNativeTarget "Dice" */ = {
-            isa = XCConfigurationList;
-            buildConfigurations = (
-                B3BB81192165BF08005177BB /* Debug */,
-                B3BB811A2165BF08005177BB /* Release */,
-            );
-            defaultConfigurationIsVisible = 0;
-            defaultConfigurationName = Release;
-        };
+		B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B315A4912165CCCC005CAFD4 /* Debug */,
+				B315A4922165CCCC005CAFD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3B2E8AF2166961C00C2A4BA /* Build configuration list for PBXNativeTarget "BlahDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3B2E8B02166961C00C2A4BA /* Debug */,
+				B3B2E8B12166961C00C2A4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3B2E8D721669CE300C2A4BA /* Build configuration list for PBXNativeTarget "CardsDeckDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3B2E8D821669CE300C2A4BA /* Debug */,
+				B3B2E8D921669CE300C2A4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3B2E8E62166AD0100C2A4BA /* Build configuration list for PBXNativeTarget "PlayerDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3B2E8E72166AD0100C2A4BA /* Debug */,
+				B3B2E8E82166AD0100C2A4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3BB80992165ABE9005177BB /* Build configuration list for PBXProject "Risk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3BB80A32165ABE9005177BB /* Debug */,
+				B3BB80A42165ABE9005177BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3BB80E52165B7DA005177BB /* Build configuration list for PBXNativeTarget "GameMapDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3BB80E62165B7DA005177BB /* Debug */,
+				B3BB80E72165B7DA005177BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3BB81012165BE05005177BB /* Build configuration list for PBXNativeTarget "Risk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3BB81022165BE05005177BB /* Debug */,
+				B3BB81032165BE05005177BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3BB81182165BF08005177BB /* Build configuration list for PBXNativeTarget "Dice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3BB81192165BF08005177BB /* Debug */,
+				B3BB811A2165BF08005177BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-    };
-    rootObject = B3BB80962165ABE9005177BB /* Project object */;
+	};
+	rootObject = B3BB80962165ABE9005177BB /* Project object */;
 }

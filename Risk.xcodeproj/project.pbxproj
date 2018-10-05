@@ -10,6 +10,7 @@
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B38CB9572167D1B600EF5E5C /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */; };
 		B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */; };
@@ -34,6 +35,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B38CB9582167D1BB00EF5E5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
 			proxyType = 1;
@@ -177,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38CB9572167D1B600EF5E5C /* libRisk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +386,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B38CB9592167D1BB00EF5E5C /* PBXTargetDependency */,
 			);
 			name = CardsDeckDriver;
 			productName = CardsDeckDriver;
@@ -577,6 +587,11 @@
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */;
+		};
+		B38CB9592167D1BB00EF5E5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B38CB9582167D1BB00EF5E5C /* PBXContainerItemProxy */;
 		};
 		B3B2E8B32166962700C2A4BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

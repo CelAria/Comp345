@@ -31,8 +31,6 @@ int main()
     cout << "Number of artillery cards in deck: " + to_string(artilleryCounter) << endl;
     cout << "Number of cavalry cards in deck: " + to_string(cavalryCounter) << endl;
     
-    hand1 = NULL;
-    
     cout << "" << endl;
     
     Deck deck2;
@@ -58,12 +56,12 @@ int main()
     
     cout << "" << endl;
     
-    cout << "Exchange#1 armies recieved: " + to_string(hand2->exchange("1 of each Card Type")) << endl;
-    cout << "Exchange#2 armies recieved: " + to_string(hand2->exchange("3 Infantry Cards")) << endl;
-    cout << "Exchange#3 armies recieved: " + to_string(hand2->exchange("3 Artillery Cards")) << endl;
-    cout << "Exchange#4 armies recieved: " + to_string(hand2->exchange("3 Cavalry Cards")) << endl;
+    cout << "Exchange#1 armies recieved: " + to_string(hand2.exchange("1 of each Card Type")) << endl;
+    cout << "Exchange#2 armies recieved: " + to_string(hand2.exchange("3 Infantry Cards")) << endl;
+    cout << "Exchange#3 armies recieved: " + to_string(hand2.exchange("3 Artillery Cards")) << endl;
+    cout << "Exchange#4 armies recieved: " + to_string(hand2.exchange("3 Cavalry Cards")) << endl;
     
-    cout << "Total number of armies: " + to_string(hand2->getTotalNumOfArmies()) << endl;
+    cout << "Total number of armies: " + to_string(hand2.getTotalNumOfArmies()) << endl;
     
     return 0;
 }

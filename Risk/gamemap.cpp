@@ -76,21 +76,21 @@ void GameMap::traverseHelper(Country* country, map<string, bool> &visited, int &
     
     visited[country->getName()] = true;
     count++;
-    vector<Country> neighbors = country->getAllNeighbors();
+    vector<Country*> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
         cout << "Country " << count << ": " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
 
         for(int i = 0; i < neighbors.size(); i++) {
-            cout << neighbors[i].getName() << "\n";
+            cout << neighbors[i]->getName() << "\n";
         }
 
         cout << "------------------------------\n";
     }
 
     for(int i = 0; i < neighbors.size(); i++) {
-        if(!visited[neighbors[i].getName()]) {
-            traverseHelper(&neighbors[i], visited, count, isDebug);
+        if(!visited[neighbors[i]->getName()]) {
+            traverseHelper(neighbors[i], visited, count, isDebug);
         }
     }
 }
@@ -112,20 +112,20 @@ void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visit
     
     visited[country->getName()] = true;
     count++;
-    vector<Country> neighbors = country->getAllNeighbors();
+    vector<Country*> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
         cout << "Country " << count << ": " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
     
         for(int i = 0; i < neighbors.size(); i++) {
-            cout << neighbors[i].getName() << "\n";
+            cout << neighbors[i]->getName() << "\n";
         }
         cout << "------------------------------\n";
     }
 
     for(int i = 0; i < neighbors.size(); i++) {
-        if(!visited[neighbors[i].getName()] && neighbors[i].getContinentName() == continent) {
-            continentTraverseHelper(&neighbors[i], visited, continent, count, isDebug);
+        if(!visited[neighbors[i]->getName()] && neighbors[i]->getContinentName() == continent) {
+            continentTraverseHelper(neighbors[i], visited, continent, count, isDebug);
         }
     }
 }

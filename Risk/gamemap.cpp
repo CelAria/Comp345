@@ -8,18 +8,9 @@
 #include <iostream>
 using namespace std;
 
-void GameMap::addContinent(Continent continent) {
-    continents[continent.name] = continent;
-}
-
-Continent GameMap::getContinent(string name) {
-    return continents[name];
-}
-
-Country* GameMap::getCountry(string countryName) {
-    return countries[countryName];
-}
-
+/**
+ Return a vector of all countries belonging to a given continent
+ */
 vector<Country*> GameMap::getAllByContinent(string continentName) {
     vector<Country*> byContinent;
     for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
@@ -30,11 +21,17 @@ vector<Country*> GameMap::getAllByContinent(string continentName) {
     return byContinent;
 }
 
+/*
+ Creates an edge in the graph between two countries
+ */
 void GameMap::addEdge(Country &fromCountry, Country &toCountry) {
     fromCountry.addNeighbor(toCountry);
     toCountry.addNeighbor(fromCountry);
 }
 
+/*
+ Create edges from one given country to all the other neighboring countries
+ */
 void GameMap::addAll(Country &fromCountry, vector<string> &neighborNames) {
     for(int i = 0; i < neighborNames.size(); ++i) {
         Country* neighborPointer = getCountry(neighborNames[i]);
@@ -44,6 +41,9 @@ void GameMap::addAll(Country &fromCountry, vector<string> &neighborNames) {
     }
 }
 
+/**
+ Add a country to the graph
+ */
 void GameMap::addCountry(string countryName, string continentName, vector<string> neighborNames) {
     Country* countryPointer = getCountry(countryName);
     if(countryPointer != nullptr) {
@@ -55,11 +55,11 @@ void GameMap::addCountry(string countryName, string continentName, vector<string
     }
 }
 
-int GameMap::getCount() {
-    return countries.size();
-}
-
-int GameMap::traverseAll(string startingCountry, bool isDebug = false) {
+/**
+ Performs a depth-first-search traversal of the graph and return the number
+ of nodes visited
+ */
+int GameMap::traverseAll(bool isDebug = false) {
     map<string, bool> visited;
     
     for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
@@ -67,7 +67,7 @@ int GameMap::traverseAll(string startingCountry, bool isDebug = false) {
     }
 
     int count = 0;
-    traverseHelper(countries[startingCountry], visited, count, isDebug);
+    traverseHelper(countries.begin()->second, visited, count, isDebug);
 
     return count;
 }
@@ -95,7 +95,10 @@ void GameMap::traverseHelper(Country* country, map<string, bool> &visited, int &
     }
 }
 
-int GameMap::traverseContinent(string startingCountry, string continent, bool isDebug = false) {
+/**
+ Perform a depth-first-search traversal of a continent subgraph
+ */
+int GameMap::traverseContinent(string continent, bool isDebug = false) {
     map<string, bool> visited;
     
     for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
@@ -103,7 +106,8 @@ int GameMap::traverseContinent(string startingCountry, string continent, bool is
     }
 
     int count = 0;
-    continentTraverseHelper(countries[startingCountry], visited, continent, count, isDebug);
+    Country* startingCountry = getAllByContinent(continent)[0];
+    continentTraverseHelper(startingCountry, visited, continent, count, isDebug);
 
     return count;
 }
@@ -130,10 +134,12 @@ void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visit
     }
 }
 
+/**
+ Return true if this map is a connected graph
+ */
 bool GameMap::isValid() {
     if(countries.size() > 0) {
-        map<string, Country*>::iterator it = countries.begin();
-        return traverseAll(it->first) == countries.size();
+        return traverseAll() == countries.size();
     }
 
     return false;

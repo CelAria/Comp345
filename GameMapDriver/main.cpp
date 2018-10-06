@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
     cout << "Expecting traversal of graph to visit " << gameMap.getCount() << " nodes" << endl << endl;
     cout << "Starting full DFS traversal:" << endl << endl;
     
-    int countriesVisited = gameMap.traverseAll("Costa Rica", true);
+    int countriesVisited = gameMap.traverseAll(true);
     
     cout << endl << "Actual visited nodes: " << countriesVisited << endl;
     cout << "Connected graph (1 = yes / 0 = no): " << (countriesVisited == gameMap.getCount()) << endl << endl;
@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
     cout << "Expecting traversal of Central America to visit 3 countries." << endl;
     cout << "Starting continent DFS traversal of subgraph for Central America: " << endl << endl;
     
-    int centralVisited = gameMap.traverseContinent("Panama", "Central America", true);
+    int centralVisited = gameMap.traverseContinent("Central America", true);
     
     cout << endl << "Actual visited nodes: " << centralVisited << endl;
     cout << "Connected graph (1 = yes / 0 = no): " << (centralVisited == 3) << endl << endl;
@@ -72,10 +72,24 @@ int main(int argc, const char * argv[]) {
     cout << "Expecting traversal of South America to visit 2 countries." << endl;
     cout << "Starting continent DFS traversal of subgraph for South America: " << endl << endl;
     
-    int southVisited = gameMap.traverseContinent("Venezuela", "South America", true);
+    int southVisited = gameMap.traverseContinent("South America", true);
     
     cout << endl << "Actual visited nodes: " << southVisited << endl;
     cout << "Connected graph (1 = yes / 0 = no): " << (southVisited == 2) << endl << endl;
+    
+    cout << "Testing invalid map" << endl << endl;
+    
+    cout << "Adding 1 unconnected country..." << endl;
+    
+    gameMap.addCountry("Australia", "Australia", {});
+    
+    cout << "Map now cointains " << gameMap.getCount() << " nodes" << endl;
+    cout << "Expecting DFS traversal of graph to visit 5 nodes..." << endl << endl;
+    
+    int ausVisited = gameMap.traverseAll(true);
+    
+    cout << endl << "Actual visited nodes: " << ausVisited << endl;
+    cout << "Connected graph (1 = yes / 0 = no): " << gameMap.isValid() << endl << endl;
     
     cout << "Finished testing map." << endl << endl;
     

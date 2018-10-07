@@ -31,11 +31,15 @@ int main(int argc, const char * argv[]) {
         cin >> amountOfDice;
         dice1.rollDice(amountOfDice);
         dice1.storeDice(dice1.getDiceValue());
+        cout << dice1.getDiceValue() << endl;
+        cout << "\n" << endl;
         cout << "Player " << dice2.getPlayerNumber() << " roll "<< " \n";
         cout << "Choose between 1-3 dice, please enter amount of dice: ";
         cin >> amountOfDice;
         dice2.rollDice(amountOfDice);
         dice2.storeDice(dice2.getDiceValue());
+        cout << dice2.getDiceValue() << endl;
+        cout << "\n" << endl;
         
         cout << "do you want to roll again? type y to continue or n to exit \n";
         cin >> keepGoing;

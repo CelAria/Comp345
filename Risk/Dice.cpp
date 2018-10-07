@@ -11,12 +11,9 @@ using namespace std;
 
 Dice::Dice() 
 {
-	cout << "Enter playerNumber \n";
-	cin >> playerNumber;
+	
 	vector<int> diceContainer;
-	
-	
-	
+
 
 }
 
@@ -29,29 +26,21 @@ int Dice ::rollDice(int amountOfDice)
 	{
 
 		diceValue = (rand() % 6 + 1);
-		
-		
 
-		
 	}
 	else if (amountOfDice == 2) 
 	{
 		diceValue = (rand() % 6 + 1) + (rand() % 6 + 1);
-		
-		
-		
-		
+	
 	}
 
 	else if (amountOfDice == 3) 
 	{
 		diceValue = (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1);
 		
-
 	}
 
-	cout << diceValue << endl;
-	cout << "\n" << endl;
+
 	
     return diceValue;
 	

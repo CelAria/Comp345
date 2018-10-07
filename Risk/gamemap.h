@@ -18,13 +18,14 @@ class GameMap {
     void continentTraverseHelper(Country* country, map<string, bool> &visited, string continent, int &count, bool isDebug);
 
     public:
-    int getCount();
-    void addContinent(Continent continent);
+    ~GameMap();
+    int getCount() { return (int)countries.size(); };
+    void addContinent(Continent continent) { continents[continent.name] = continent; };
     void addCountry(string countryName, string continentName, vector<string> neighborNames);
-    Country* getCountry(string countryName);
+    Country* getCountry(string countryName) { return countries[countryName]; };
     vector<Country*> getAllByContinent(string continentName);
-    Continent getContinent(string name);
-    int traverseAll(string startingCountry, bool isDebug);
-    int traverseContinent(string startingCountry, string continent, bool isDebug);
+    Continent getContinent(string name) { return continents[name]; };
+    int traverseAll(bool isDebug);
+    int traverseContinent(string continent, bool isDebug);
     bool isValid();
 };

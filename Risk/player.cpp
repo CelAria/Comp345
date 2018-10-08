@@ -1,8 +1,11 @@
 #include "player.h"
 #include "cardsdeck.h"
+#include "country.h"
 
 #include <iostream>
 #include <string>
+#include <map>
+#include <vector>
 using namespace std;
 
 void Player::attack() {
@@ -17,16 +20,8 @@ void Player::reinforce() {
     cout << "This is reinforce" << endl;
 }
 
-int Player::getPlayerId() {
-    return id;
-}
-
 void Player::addCountry(Country *country) {
     countries[country->getName()] = country;
-}
-
-int Player::getCardsCount() {
-    return hand.getTotalCardsInHand();
 }
 
 void Player::drawCard(Deck* deck) {
@@ -35,4 +30,22 @@ void Player::drawCard(Deck* deck) {
 
 int Player::rollDice(int amountOfDice) {
     return dice.rollDice(amountOfDice);
+}
+
+vector<Country*> Player::getAllCountries() {
+    vector<Country*> theCountries;
+    for(auto &country: countries) {
+        theCountries.push_back(country.second);
+    }
+    return theCountries;
+}
+
+vector<Country*> Player::getCountriesByContinent(string continent) {
+    vector<Country*> theCountries;
+    for(auto &country: countries) {
+        if(country.second->getContinentName() == continent) {
+            theCountries.push_back(country.second);
+        }
+    }
+    return theCountries;
 }

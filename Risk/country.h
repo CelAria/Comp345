@@ -25,7 +25,7 @@ class Country {
     bool hasNeighbors(){ return !neighbors.empty(); };
     bool isNeighborOf(Country &country);
     void addNeighbor(Country &neighbor);
-    int getNeighborCount() { return neighbors.size(); };
+    int getNeighborCount() { return (int)neighbors.size(); };
     int getArmiesCount() { return armiesCount; };
     void setOwner(int playerId) { this->playerId = playerId; };
     void setArmiesCount(int count) { this->armiesCount = count; };

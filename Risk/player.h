@@ -5,6 +5,8 @@
 #include "country.h"
 
 #include <map>
+#include <vector>
+#include <string>
 using namespace std;
 
 class Player {
@@ -20,9 +22,13 @@ public:
     void attack();
     void fortify();
     void reinforce();
-    int getPlayerId();
+    int getPlayerId() { return id; };
     void addCountry(Country* country);
-    int getCardsCount();
+    int getCardsCount() { return hand.getTotalCardsInHand(); };
     void drawCard(Deck* deck);
     int rollDice(int amountOfDice);
+    Hand getHand() { return hand; }
+    int getCountriesCount() { return (int)countries.size(); }
+    vector<Country*> getAllCountries();
+    vector<Country*> getCountriesByContinent(string continent);
 };

@@ -6,6 +6,7 @@
 #include <set>
 #include <map>
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 /**
@@ -67,7 +68,10 @@ int GameMap::traverseAll(bool isDebug = false) {
     }
 
     int count = 0;
-    traverseHelper(countries.begin()->second, visited, count, isDebug);
+    srand(time(NULL));
+    map<string, Country*>::iterator it = countries.begin();
+    advance(it, rand() % countries.size());
+    traverseHelper(it->second, visited, count, isDebug);
 
     return count;
 }

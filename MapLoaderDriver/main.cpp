@@ -13,6 +13,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    Maploader::readmapfile();
+    cout << "hello world" << endl;
+    Maploader::readmapfile;
     return 0;
 }

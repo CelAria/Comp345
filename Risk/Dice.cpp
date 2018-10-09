@@ -9,9 +9,9 @@ using namespace std;
 
 
 
-Dice::Dice() 
+Dice::Dice(int player)
 {
-	
+    playerNumber = player;
 	vector<int> diceContainer;
 
 
@@ -56,21 +56,15 @@ int Dice::getDiceValue()
 
 void Dice::storeDice(int diceValue)
 {
-	
-
 	diceContainer.push_back(diceValue);
-
 }
 
 void Dice::diceStats()
 {
-	
-	
 	cout << "Dice roll percentages for player " << playerNumber  << endl;
 	cout << "-----------------------------------------------------------------" << endl;
 	cout << "total number of rolls " << diceContainer.size() << "\n" << endl;
 
-	
 	map<int, int> diceCount;
 
 	for (int i = 0; i < diceContainer.size(); i++)

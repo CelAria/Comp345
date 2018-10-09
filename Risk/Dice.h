@@ -8,10 +8,8 @@ class Dice
 	
 	
 public:
-	Dice(); // default constructor
-    Dice(int playerNumber): playerNumber(playerNumber) {
-        
-    }
+//    Dice(); // default constructor
+    Dice(int playerNumber);
 
 	int rollDice(int amountOfDice);
 
@@ -39,7 +37,6 @@ private:
 	int playerNumber;
 	int numbOfDice;
 	int diceValue;
-//    int amountOfDice;
 	int containerValue;
 	vector<int> diceContainer;
 

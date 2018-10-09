@@ -15,8 +15,8 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    Dice dice1;
-    Dice dice2;
+    Dice dice1(1);
+    Dice dice2(2);
     
     
     

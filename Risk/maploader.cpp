@@ -15,10 +15,6 @@ using namespace std;
 
 static void Maploader::parser(string line){
     //loop for each line of the .map file
-    istringstream mystream(line);
-    string continents= "[Continents]";
-    string territories= "[Territories]";
-
     while(getline(mystream,line)){
         // if the current line is "[continents]"
         if(line==continents){
@@ -26,10 +22,7 @@ static void Maploader::parser(string line){
         //for every line that isn't "[territories]" AKA WHILE CONTINENTS
           while(line != territories){
           //tokenize the line. Read characters into name until "=". read int into points
-          string name;
-          int points;
           char split_char= '=';
-          vector<string> token;
           for(string each; getline(mystream,each, split_char); token.push_back(each));
             name=token[0];
             cout << name << endl;

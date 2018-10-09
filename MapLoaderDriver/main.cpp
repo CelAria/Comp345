@@ -14,6 +14,6 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     cout << "hello world" << endl;
-    Maploader::readmapfile;
+    //Maploader::readmapfile;
     return 0;
 }

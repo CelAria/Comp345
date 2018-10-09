@@ -13,7 +13,7 @@ using namespace std;
 /*free function to read in map file and parse */ 
 
 
-  static void parser(string line){
+static void Maploader::parser(string line){
     //loop for each line of the .map file
     istringstream mystream(line);
     string continents= "[Continents]";
@@ -23,7 +23,7 @@ using namespace std;
         // if the current line is "[continents]"
         if(line==continents){
         //go to next line
-         //for every line that isn't "[territories]" AKA WHILE CONTINENTS
+        //for every line that isn't "[territories]" AKA WHILE CONTINENTS
           while(line != territories){
           //tokenize the line. Read characters into name until "=". read int into points
           string name;
@@ -38,18 +38,8 @@ using namespace std;
             cout << points << endl;
             Continent(name, points);
           }
-          /* name = token;
-          cout << name << endl;
-          getline(mystream,line, '=');
-          points = stoi(token);
-          cout << points << endl; */
-           /*  token =strtok(line, "=");
-            name = token;
-            token=strtok(NULL, "=");
-            points= token;
-            //new continent */
-          }
-      }  
+        }
+        
         if(line==territories){
           string countryname;
           string continentname;
@@ -95,7 +85,7 @@ using namespace std;
         }
     }
 
-  static void readmapfile(){
+static void Maploader::readmapfile(){
     string filename;
     ifstream fstream; 
     cout << "\nplease type the name of the map file you would like to open. File must be of the type .map\n";   
@@ -158,7 +148,4 @@ using namespace std;
   }
  */
 
-int main(){
-readmapfile(); 
-return 0;
-}
+

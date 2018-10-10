@@ -17,8 +17,17 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     Dice dice1(1);
     Dice dice2(2);
-    
-    
+   
+//
+//
+//        dice1.rollDice(1);
+//        cout << dice1.getDiceValue() << endl;
+//        dice1.rollDice(1);
+//        cout << dice1.getDiceValue() << endl;
+//        dice1.rollDice(1);
+//        cout << dice1.getDiceValue() << endl;
+//        dice2.rollDice(1);
+//        cout << dice2.getDiceValue() << endl;
     
     
     
@@ -40,7 +49,7 @@ int main(int argc, const char * argv[]) {
         dice2.storeDice(dice2.getDiceValue());
         cout << dice2.getDiceValue() << endl;
         cout << "\n" << endl;
-        
+
         cout << "do you want to roll again? type y to continue or n to exit \n";
         cin >> keepGoing;
         cout << "\n";
@@ -49,16 +58,16 @@ int main(int argc, const char * argv[]) {
             cout << "thanks for rolling! players " << dice1.getPlayerNumber() << " & "  << dice2.getPlayerNumber() << "\n" <<endl;
             break;
         }
-        
+
     }
-    
-    
-    
-    
+
+
+
+
     dice1.diceStats();
     dice1.diceContainerValues();
     dice2.diceStats();
     dice2.diceContainerValues();
-    
+
     return 0;
 }

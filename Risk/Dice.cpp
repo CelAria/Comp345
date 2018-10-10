@@ -9,19 +9,23 @@ using namespace std;
 
 
 
+
 Dice::Dice(int player)
 {
     playerNumber = player;
 	vector<int> diceContainer;
-
+    srand((unsigned)time(0));
+   
 
 }
 
 int Dice ::rollDice(int amountOfDice)
 {
-	srand(time(0));
-	
-	
+    
+   
+
+    
+    
 	if (amountOfDice == 1) 
 	{
 

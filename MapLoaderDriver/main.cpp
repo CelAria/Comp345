@@ -13,9 +13,10 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-   //Maploader* mymaploader= new Maploader();
-
+    Maploader mymaploader;
+    
     cout << "hello world" << endl;
+    cout << "test test!!!!" << endl;
     try
     {
     //mymaploader.readmapfile();

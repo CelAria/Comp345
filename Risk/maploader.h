@@ -1,5 +1,4 @@
 #pragma once
-
 #include <vector>
 #include <string>
 #include <sstream>
@@ -25,12 +24,8 @@ private:
 
     
 public:
-    Maploader();
-    ~Maploader();
+    Maploader(){};
+    ~Maploader(){};
     void readmapfile();
     void parser(string line);
-    
-/* void tokenizeTerritories(const string& str, vector<string>& tokens);
-void tokenizeContinents(const string& str, vector<string>& tokens, const string& delimiters = "=");
- */
 };

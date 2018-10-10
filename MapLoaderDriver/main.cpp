@@ -13,7 +13,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-   // mymaploader= new Maploader();
+   //Maploader* mymaploader= new Maploader();
 
     cout << "hello world" << endl;
     try

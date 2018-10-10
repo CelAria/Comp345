@@ -27,8 +27,8 @@ private:
 public:
     Maploader();
     ~Maploader();
-    void readmapfile() throw(runtime_error);
-    void parser(ifstream mystream);
+    void readmapfile();
+    void parser(string line);
     
 /* void tokenizeTerritories(const string& str, vector<string>& tokens);
 void tokenizeContinents(const string& str, vector<string>& tokens, const string& delimiters = "=");

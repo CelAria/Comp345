@@ -14,12 +14,13 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     Maploader mymaploader;
+    //mymaploader.readmapfile();
     
     cout << "hello world" << endl;
-    cout << "test test!!!!" << endl;
     try
     {
     //mymaploader.readmapfile();
+    //cout << "read mapfile runs" << endl;
     }
     catch (runtime_error e)
     {

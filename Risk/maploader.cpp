@@ -10,11 +10,6 @@
 
 using namespace std;
 
-//default constructor
-Maploader::Maploader(){}
-
-//destructor
-Maploader::~Maploader(){}
 
 void Maploader::readmapfile(){
     //string variable for each line parsed by fstream

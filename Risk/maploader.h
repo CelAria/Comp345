@@ -21,7 +21,6 @@ private:
     string territories= "[Territories]";
     string countryname;
     string continentname;
-
     
 public:
     Maploader(){};

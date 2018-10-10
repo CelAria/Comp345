@@ -10,23 +10,25 @@
 #include <fstream>
 #include <iostream>
 
+/* WHEN THE DRIVER ASKS FOR THE FILE, MUST PASTE THE ENTIRE FILE PATH*/
+
 using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    //Maploader mymaploader;
-    //mymaploader.readmapfile();
+    Maploader mymaploader;
+    mymaploader.readmapfile();
     
-    Dice dice3(1);
-    dice3.rollDice(3);
-    cout << dice3.getDiceValue() << endl;
-    dice3.rollDice(3);
-    cout << dice3.getDiceValue() << endl;
-    dice3.rollDice(3);
-    cout << dice3.getDiceValue() << endl;
-    dice3.rollDice(3);
-    cout << dice3.getDiceValue() << endl;
-    
+//    Dice dice3(1);
+//    dice3.rollDice(3);
+//    cout << dice3.getDiceValue() << endl;
+//    dice3.rollDice(3);
+//    cout << dice3.getDiceValue() << endl;
+//    dice3.rollDice(3);
+//    cout << dice3.getDiceValue() << endl;
+//    dice3.rollDice(3);
+//    cout << dice3.getDiceValue() << endl;
+//
 //    try
 //    {
 //    //mymaploader.readmapfile();

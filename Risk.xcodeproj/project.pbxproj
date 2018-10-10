@@ -228,6 +228,7 @@
 		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
 			isa = PBXGroup;
 			children = (
+				6BB65C9E216BEFD0007AFC39 /* World.map */,
 				B315A48E2165CCCC005CAFD4 /* main.cpp */,
 			);
 			path = MapLoaderDriver;
@@ -280,7 +281,6 @@
 		B3BB80A02165ABE9005177BB /* Risk */ = {
 			isa = PBXGroup;
 			children = (
-				6BB65C9E216BEFD0007AFC39 /* World.map */,
 				6BB65C9C2166A444007AFC39 /* maploader.h */,
 				6BB65C9A2166A42E007AFC39 /* maploader.cpp */,
 				B3BB80D82165B35A005177BB /* Dice.cpp */,

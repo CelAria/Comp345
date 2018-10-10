@@ -15,7 +15,7 @@ void Maploader::readmapfile(){
     //string variable for each line parsed by fstream
     string line;
     //uses filename and fstream
-    cout << "\nplease type the name of the map file you would like to open. File must be of the type .map\n";
+    cout << "\nplease type the complete file path of the map file you would like to open. File must be of the type .map\n";
     getline (cin, filename);
     
     //reject if not a .map file
@@ -26,7 +26,7 @@ void Maploader::readmapfile(){
         return;
     }
     
-    fstream.open("include/" + filename);
+    fstream.open(filename);
     
     //if file opens succesfully
     if(fstream.is_open()){
@@ -34,6 +34,7 @@ void Maploader::readmapfile(){
         
         //make gamemap (only one for program)
         GameMap gamemap;
+        cout << "gamemap created" << endl;
         //HOW TO CALL PARSER FUNCTION **TO DO***
         
         //WHILE THERE ARE LINES IN THE FILE TO PARSE
@@ -46,10 +47,11 @@ void Maploader::readmapfile(){
             }
             getline(fstream, line);
             parser(line);
+            cout << line << endl;
         }
     }
     else{
-        cout << "\ncould not open file:" << " \"" << "include/" << filename << "\"" << "\nTry again with a valid .map file\n";
+        cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
         readmapfile();
         return;
     }
@@ -85,6 +87,7 @@ void Maploader::parser(string line){
             for(string each; getline(fstream,each,split_charcomma); token.push_back(each)){
                 countryname =token[0];
                 continentname =token[1];
+                //these variables will not be used (for now)
                 int xcoord = stoi(token[2]);
                 int ycoord = stoi(token[3]);
                 //
@@ -102,46 +105,6 @@ void Maploader::parser(string line){
                 }
             }
         }
-    }
-    
-    //uses filename and fstream
-    cout << "\nplease type the name of the map file you would like to open. File must be of the type .map\n";
-    getline (cin, filename);
-    
-    //reject if not a .map file
-    if(filename.substr(filename.find_last_of(".") + 1) != "map"){
-        cout << "file is not of type map. Try again with a valid .map file.\n";
-        filename.clear();
-        readmapfile();
-        return;
-    }
-    
-    fstream.open("include/" + filename);
-    
-    //if file opens succesfully
-    if(fstream.is_open()){
-        cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
-        
-        //make gamemap (only one for program)
-        GameMap gamemap;
-        //HOW TO CALL PARSER FUNCTION **TO DO***
-        
-        //WHILE THERE ARE LINES IN THE FILE TO PARSE
-        while(true){
-            if(fstream.eof()){
-                //if end of file reached, close stream.
-                fstream.close();
-                cout << "stream successfully closed\n";
-                return;
-            }
-            getline(fstream, line);
-            parser(line);
-        }
-    }
-    else{
-        cout << "\ncould not open file:" << " \"" << "include/" << filename << "\"" << "\nTry again with a valid .map file\n";
-        readmapfile();
-        return;
     }
 }
 

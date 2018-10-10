@@ -31,6 +31,7 @@
 		B3BB810F2165BEB9005177BB /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3BB81172165BF08005177BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3BB81162165BF08005177BB /* main.cpp */; };
 		B3BB811D2165BF83005177BB /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B3F5B9DB216E5F6300A20B50 /* maploader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BB65C9A2166A42E007AFC39 /* maploader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -565,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F5B9DB216E5F6300A20B50 /* maploader.cpp in Sources */,
 				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
 				B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,

@@ -10,10 +10,13 @@
 
 using namespace std;
 
-/*free function to read in map file and parse */ 
+//default constructor
+Maploader::Maploader(){}
 
+//destructor
+Maploader::~Maploader(){}
 
-static void Maploader::parser(string line){
+void Maploader::parser(string line){
     //loop for each line of the .map file
     while(getline(mystream,line)){
         // if the current line is "[continents]"
@@ -23,7 +26,7 @@ static void Maploader::parser(string line){
           while(line != territories){
           //tokenize the line. Read characters into name until "=". read int into points
           char split_char= '=';
-          for(string each; getline(mystream,each, split_char); token.push_back(each));
+          for(string each; getline(mystream,each,split_char); token.push_back(each));
             name=token[0];
             cout << name << endl;
             //cast to int
@@ -34,53 +37,34 @@ static void Maploader::parser(string line){
         }
         
         if(line==territories){
-          string countryname;
-          string continentname;
           //go to next line
           getline(mystream, line);
           //for each line, until a COMMA is found, create a new country name
-          // MULTIPLE SPLIT CHARACTERS: comma, all numvrers
+          // MULTIPLE SPLIT CHARACTERS: comma
           char split_charcomma = ',';
-          char split_char0 = '0';
-          char split_char1 = '1';
-          char split_char2 = '2';
-          char split_char3= '3';
-          char split_char4= '4';
-          char split_char5= '5';
-          char split_char6= '6';
-          char split_char7= '7';
-          char split_char8= '8';
-          char split_char9= '9';
-
-          vector<string> token;
-//          for(string each; getline(mystream,each,(split_char0 || split_char1 || split_char2 || split_char3 || split_char4 || split_char5 ||split_char6 || split_char7 || split_char8 || split_char9)); token.push_back(each));{
+          for(string each; getline(mystream,each,split_charcomma); token.push_back(each));{
             countryname =token[0];
             continentname =token[1];
-            cout << countryname << endl;
-            cout << continentname << endl;
-            //new pointer for country
-            //Create new country object
-            Country(countryname, continentname);
-            
-          //skip all numbers
-          //NEXT token is continent
-          //each token afterwards as a country "neighbour"
-          for (int i=2; i < token.size(); i++){
-            //create new country object where token[i] is name
-            //add continent info
-            //TEST IF ALREADY A COUNTRY!!
-            string neighbourcountry;
-            Country(token[i], continentname);
-            //HOW TO ADD NEIGHBOUR???? NEED TO DO
-            //this.addNeighbour(neighbour);
-
-          }
+            xcoord = token[2];
+            ycoord = token[3];
+              //
+              cout << countryname << endl;
+              cout << continentname << endl;
+              //new pointer for country
+              //Create new country object
+              Country(countryname, continentname);
+              for (t=3; (token.size())-4.0; t++){
+                  //LOOP FOR ADDING NEIGHBOUR COUNTRIES
+                  string neighbourcountry = token[t];
+                  //create NEW country object (with name token[i] and continent token[1]
+                  Country(token[i],token[1]);
+                  //add neighbours (USE .addneighbours function)
+              }
         }
     }
 
-static void Maploader::readmapfile(){
-    string filename;
-    ifstream fstream; 
+void Maploader::readmapfile(){
+    //uses filename and fstream
     cout << "\nplease type the name of the map file you would like to open. File must be of the type .map\n";   
     getline (cin, filename);
 
@@ -100,7 +84,7 @@ static void Maploader::readmapfile(){
       //make gamemap (only one for program)
         GameMap gamemap;
         //HOW TO CALL PARSER FUNCTION **TO DO***
-        //parser(line);
+        parser(line);
         fstream.close();
         cout << "stream successfully closed\n";
         return;

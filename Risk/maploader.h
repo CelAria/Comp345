@@ -11,6 +11,8 @@ using namespace std;
 
 class Maploader{
 private:
+    string filename;
+    ifstream fstream;
     vector<string> token;
     int points;
     string name;
@@ -18,11 +20,15 @@ private:
     istringstream mystream(string);
     string continents= "[Continents]";
     string territories= "[Territories]";
+    string countryname;
+    string continentname;
+
     
 public:
-    
-    static void readmapfile();
-    static void parser(ifstream mystream);
+    Maploader();
+    ~Maploader();
+    void readmapfile() throw(runtime_error);
+    void parser(ifstream mystream);
     
 /* void tokenizeTerritories(const string& str, vector<string>& tokens);
 void tokenizeContinents(const string& str, vector<string>& tokens, const string& delimiters = "=");

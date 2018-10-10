@@ -1,5 +1,6 @@
 
 #include "maploader.h"
+#include "Dice.h"
 #include "gamemap.h"
 #include <vector>
 #include <string>
@@ -13,19 +14,28 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    Maploader mymaploader;
+    //Maploader mymaploader;
     //mymaploader.readmapfile();
     
-    cout << "hello world" << endl;
-    try
-    {
-    //mymaploader.readmapfile();
-    //cout << "read mapfile runs" << endl;
-    }
-    catch (runtime_error e)
-    {
-        cout << e.what() <<endl;
-    }
+    Dice dice3(1);
+    dice3.rollDice(3);
+    cout << dice3.getDiceValue() << endl;
+    dice3.rollDice(3);
+    cout << dice3.getDiceValue() << endl;
+    dice3.rollDice(3);
+    cout << dice3.getDiceValue() << endl;
+    dice3.rollDice(3);
+    cout << dice3.getDiceValue() << endl;
+    
+//    try
+//    {
+//    //mymaploader.readmapfile();
+//    //cout << "read mapfile runs" << endl;
+//    }
+//    catch (runtime_error e)
+//    {
+//        cout << e.what() <<endl;
+//    }
     
     return 0;
 }

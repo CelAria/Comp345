@@ -64,6 +64,8 @@ void Maploader::parser(string line){
     }
 
 void Maploader::readmapfile(){
+    //string variable for each line parsed by fstream
+    String line;
     //uses filename and fstream
     cout << "\nplease type the name of the map file you would like to open. File must be of the type .map\n";   
     getline (cin, filename);
@@ -81,13 +83,22 @@ void Maploader::readmapfile(){
     //if file opens succesfully
     if(fstream.is_open()){
       cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
-      //make gamemap (only one for program)
+      
+        //make gamemap (only one for program)
         GameMap gamemap;
         //HOW TO CALL PARSER FUNCTION **TO DO***
-        parser(line);
-        fstream.close();
-        cout << "stream successfully closed\n";
-        return;
+        
+        //WHILE THERE ARE LINES IN THE FILE TO PARSE
+        while(true){
+            if(fstream.eoi()){
+                //if end of file reached, close stream.
+                fstream.close();
+                cout << "stream successfully closed\n";
+                return;
+            }
+            getline(fstream, line);
+            parser(line);
+        }
     }
     else{
       cout << "\ncould not open file:" << " \"" << "include/" << filename << "\"" << "\nTry again with a valid .map file\n"; 
@@ -96,33 +107,6 @@ void Maploader::readmapfile(){
     }
   }
 
-  //function for tokenizing the "continents" section
-/*   void tokenizeContinents(const string& str, vector<string>& tokens, const string& delimiters = "=")
-  {
-    // Skip delimiters at beginning.
-    string::size_type lastPos = str.find_first_not_of(delimiters, 0);
-    // Find first "non-delimiter".
-    string::size_type pos     = str.find_first_of(delimiters, lastPos);
-
-    while (string::npos != pos || string::npos != lastPos)
-    {
-        // Found a token, add it to the vector.
-        tokens.push_back(str.substr(lastPos, pos - lastPos));
-        // Skip delimiters.  Note the "not_of"
-        lastPos = str.find_first_not_of(delimiters, pos);
-        // Find next "non-delimiter"
-        pos = str.find_first_of(delimiters, lastPos);
-    }
-}
-
-  void tokenizeTerritories(const string& str, vector<string>& tokens){
-    boost::char_seperator<char> sep("=");
-    typedef boost::tokenizer<boost::char_seperator<char>> t_tokenizer;
-    t_tokenizer tok(str,sep);
-    for(t_tokenizer::iterator beg= tok.begin(); beg !=tok.end(); ++beg){
-      cout << *beg << "\n"
-    }
-  }
- */
+ 
 
 

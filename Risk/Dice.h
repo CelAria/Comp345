@@ -1,3 +1,12 @@
+// ASSIGNMENT 1#
+//  Dice.h
+//  This file is the header of Dice
+//
+//  Created by Matthew Salaciak 29644490
+//  Copyright © 2018 comp345. All rights reserved.
+//
+
+
 #pragma once
 #include <vector>
 using namespace std;
@@ -8,7 +17,8 @@ class Dice
 	
 	
 public:
-//    Dice(); // default constructor
+//    methods to roll, store, save and calculate dice stats
+//
     Dice(int playerNumber);
 
 	int rollDice(int amountOfDice);
@@ -31,7 +41,7 @@ public:
 
 
 
-	
+	//variables needed for dice class
 private:
 	
 	int playerNumber;

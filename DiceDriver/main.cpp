@@ -1,36 +1,27 @@
-//
+//  ASSIGNMENT 1#
 //  main.cpp
 //  Dice
-//
-//  Created by Allan Pichardo on 10/3/18.
+//  this main tests all the required functions for the dice class
+//  Created by Matthew Salaciak 29644490
 //  Copyright © 2018 comp345. All rights reserved.
 //
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
-
+#include <ctime>
 #include "Dice.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
+    // create two dice objects for player 1 and player 2
     Dice dice1(1);
     Dice dice2(2);
    
-//
-//
-//        dice1.rollDice(1);
-//        cout << dice1.getDiceValue() << endl;
-//        dice1.rollDice(1);
-//        cout << dice1.getDiceValue() << endl;
-//        dice1.rollDice(1);
-//        cout << dice1.getDiceValue() << endl;
-//        dice2.rollDice(1);
-//        cout << dice2.getDiceValue() << endl;
-    
-    
-    
+    // while loop to ask players how many dice they want to roll
+    //if they want to keep rolling
+    // and stores each dice value
     char keepGoing ='y';
     while (keepGoing == 'y')
     {
@@ -63,7 +54,9 @@ int main(int argc, const char * argv[]) {
 
 
 
-
+    //when done rolling, diceStats and containerValue will print out for both players
+    //the percentage of each value rolled, how many rolls occured and all the values rolled.
+    
     dice1.diceStats();
     dice1.diceContainerValues();
     dice2.diceStats();

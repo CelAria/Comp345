@@ -1,3 +1,11 @@
+// ASSIGNMENT 1#
+//  Dice.cpp
+//  This file contains all the implementation of the Dice Class
+//
+//  Created by Matthew Salaciak 29644490
+//  Copyright © 2018 comp345. All rights reserved.
+//
+
 #include <iostream>
 #include <vector>
 #include <cstdlib>
@@ -9,47 +17,40 @@ using namespace std;
 
 
 
-
+//Constructor that takes the player's id
+//creates a vector called diceContainer to store dice rolls
+//seeds the random generator with the computers system's time.
 Dice::Dice(int player)
 {
     playerNumber = player;
 	vector<int> diceContainer;
     srand((unsigned)time(0));
-   
-
 }
+
+// roll dice function, takes the amount of dice you want to roll
+// diceValue is calcuated by random number % 6 +1 to make sure values stay between 1-6
 
 int Dice ::rollDice(int amountOfDice)
 {
     
-   
-
-    
-    
 	if (amountOfDice == 1) 
 	{
-
 		diceValue = (rand() % 6 + 1);
-
 	}
 	else if (amountOfDice == 2) 
 	{
 		diceValue = (rand() % 6 + 1) + (rand() % 6 + 1);
-	
 	}
-
 	else if (amountOfDice == 3) 
 	{
 		diceValue = (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1);
-		
 	}
 
-
-	
     return diceValue;
 	
 }
 
+// Getter method - returns the diceValue
 int Dice::getDiceValue() 
 {
 
@@ -57,11 +58,16 @@ int Dice::getDiceValue()
 }
 
 
-
+//Stores dice value in a vector
 void Dice::storeDice(int diceValue)
 {
 	diceContainer.push_back(diceValue);
 }
+
+//calculates the roll percentage and number of rolls for the given player
+// number of rolls is vector size
+// to calculate the percentage, a map is created called diceCount that takes the vector diceContainer
+// and calculates the percentage based on how many times that key has appeared divided by the vector size.
 
 void Dice::diceStats()
 {
@@ -86,6 +92,7 @@ void Dice::diceStats()
 	
 }
 
+// prints all the dice roll values that the player has rolled during the game
 void Dice::diceContainerValues()
 {
 	cout << "Dice container values for player "<<playerNumber  << endl;
@@ -97,7 +104,7 @@ void Dice::diceContainerValues()
 
 
 }
-
+// returns playerNumber
 int Dice::getPlayerNumber() 
 {
 	return playerNumber;

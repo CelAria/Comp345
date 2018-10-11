@@ -17,8 +17,8 @@ private:
     string name;
     string line;
     istringstream mystream(string);
-    string continents= "[Continents]";
-    string territories= "[Territories]";
+    string continents= "[Continents]\r";
+    string territories= "[Territories]\r";
     string countryname;
     string continentname;
     

@@ -1,3 +1,8 @@
+// Team project assignment #1 - Part 5
+// COMP 345: Advanced program design with C++, Fall 2018
+// Written by: Martin-John Hearty
+// Description: cpp file for the deck and hand
+// ------------------------------------------------------
 #include "cardsdeck.h"
 #include <iostream>
 #include <cstdlib>
@@ -5,8 +10,10 @@
 #include <string>
 using namespace std;
 
+//implementing the constroctor for Deck
 Deck::Deck() {
     totalNumberOfCards = 42;
+    //checking if the deck can be evenly divisible by 3
     if(totalNumberOfCards % 3 == 0)
     {
         infantryCards = (totalNumberOfCards/3);
@@ -15,6 +22,7 @@ Deck::Deck() {
     }
     else if(totalNumberOfCards % 3 == 1)
     {
+        //initializing a random number between 0 and 2 to determine which type of card recives the reminder/extra
         int randNum = (0 + (rand() % (int)(2 - 0 + 1)));
         string extraCard;
         if(randNum == 0)
@@ -23,12 +31,14 @@ Deck::Deck() {
             extraCard = "010";
         else if(randNum == 2)
             extraCard = "100";
+        //add +0 or +1 to each type of card to ensure all cards are evenly and randomly distributed
         infantryCards = ((totalNumberOfCards/3) + (extraCard.at(0)-48));
         artilleryCards = ((totalNumberOfCards/3) + (extraCard.at(1)-48));
         cavalryCards = ((totalNumberOfCards/3) + (extraCard.at(2)-48));
     }
     else if(totalNumberOfCards % 3 == 2)
     {
+        //initializing a random number between 0 and 2 to determine which type of card recives the reminder/extra
         int randNum = (0 + (rand() % (int)(2 - 0 + 1)));
         string extraCard;
         if(randNum == 0)
@@ -37,12 +47,14 @@ Deck::Deck() {
             extraCard = "101";
         else if(randNum == 2)
             extraCard = "011";
+        //add +0 or +1 to each type of card to ensure all cards are evenly and randomly distributed
         infantryCards = ((totalNumberOfCards/3) + (extraCard.at(0)-48));
         artilleryCards = ((totalNumberOfCards/3) + (extraCard.at(1)-48));
         cavalryCards = ((totalNumberOfCards/3) + (extraCard.at(2)-48));
     }
 }
 
+//determining how many type of each cards are left in the deck
 int Deck::howManyCardTypesLeft(){
     if(infantryCards > 0 && artilleryCards > 0 && cavalryCards > 0)
         return 3;
@@ -56,10 +68,13 @@ int Deck::howManyCardTypesLeft(){
         return 0;
 }
 
+//implementing the draw method in Deck
 void Deck::draw(Hand *hand)
 {
+    //check if the number of cards left in the deck is equal to 3 or equal to 2 or equal to 1
     if(howManyCardTypesLeft() == 3)
     {
+        //initializing a random number between 0 and 2 to determine which type of card the hand recives
         int randNum = (0 + (rand() % (int)(2 - 0 + 1)));
         if(randNum == 0)
         {
@@ -82,7 +97,9 @@ void Deck::draw(Hand *hand)
     }
     else if(howManyCardTypesLeft() == 2)
     {
+        //initializing a random number between 0 and 1 to determine which type of card the hand recives
         int randNum = (0 + (rand() % (int)(1 - 0 + 1)));
+        //checks which type of cards are left from deck to determine which type of card the hand recives
         if(getNumOfInfantryCards() == 0 && getNumOfArtilleryCards() > 0 && getNumOfCavalryCards() > 0)
         {
             if(randNum == 0)
@@ -131,6 +148,7 @@ void Deck::draw(Hand *hand)
     }
     else if(howManyCardTypesLeft() == 1)
     {
+        //checks whiich type of card is left in the deck and gives that card to the hand
         if(getNumOfInfantryCards() > 0 && getNumOfArtilleryCards() == 0 && getNumOfCavalryCards() == 0)
         {
             infantryCardMinusOne();
@@ -156,6 +174,7 @@ void Deck::draw(Hand *hand)
     }
 }
 
+//implementing the constroctor for Hand
 Hand::Hand()
 {
     totalNumOfCardsInHand = 0;
@@ -166,6 +185,7 @@ Hand::Hand()
     totalNumberOfArmies = 0;
 }
 
+//return true if the number of cards in the hand is 0 and false otherwise
 bool Hand::isHandEmpty()
 {
     if(getTotalCardsInHand() == 0)
@@ -173,6 +193,8 @@ bool Hand::isHandEmpty()
     else
         return false;
 }
+
+//returns true if the hand contains one type of each card and false otherwise
 bool Hand::handContainsOneOfEachCardType()
 {
     if(getNumOfInfantryCards() > 0 && getNumOfArtilleryCards() > 0 && getNumOfCavalryCards() > 0)
@@ -180,6 +202,8 @@ bool Hand::handContainsOneOfEachCardType()
     else
         return false;
 }
+
+//returns ture is the hand contains 3 infrantry cards and false otherwise
 bool Hand::handContains3InfantryCards()
 {
     if(getNumOfInfantryCards() >= 3)
@@ -187,6 +211,8 @@ bool Hand::handContains3InfantryCards()
     else
         return false;
 }
+
+//returns tru if the hand contains 3 artillery cards and false otherwise
 bool Hand::handContains3ArtilleryCards()
 {
     if(getNumOfArtilleryCards() >= 3)
@@ -194,6 +220,8 @@ bool Hand::handContains3ArtilleryCards()
     else
         return false;
 }
+
+//returns true if the hand contains 3 cavarly cards and false otherwise
 bool Hand::handContains3CavalryCards()
 {
     if(getNumOfCavalryCards() >= 3)
@@ -201,13 +229,17 @@ bool Hand::handContains3CavalryCards()
     else
         return false;
 }
+
+//increments the number of armies the hand will recieve for the current and the next set of cards exchanged
 void Hand::incrementNumOfArmies()
 {
     numOfArmies = numOfArmies + 5;
     totalNumberOfArmies += numOfArmies;
 }
 
+//implementing the exchange method for Hand
 int Hand::exchange(string s){
+    //if and else if statments determines if the exchange requested by the hand is valid or not and returns the number of recieved armies
     if(!isHandEmpty() && s.compare("1 of each Card Type") == 0 && handContainsOneOfEachCardType())
     {
         infantryMinusOne();

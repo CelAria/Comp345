@@ -10,14 +10,12 @@
 
 using namespace std;
 
-GameMap* ptrgamemap= new GameMap();
-//ptrgamemap =&gamemap;
-//GameMap gamemap;
+GameMap* ptrgamemap;
+GameMap gamemap;
 
 
 void Maploader::readmapfile(){
-    //assign pointer to gamemap;
-   // ptrgamemap =&gamemap;
+    ptrgamemap =&gamemap;
     
     //string variable for each line parsed by fstream
     string line;
@@ -95,7 +93,7 @@ void Maploader::readmapfile(){
       
         if(!ptrgamemap->isValid()){
         cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
-        GameMap *ptrgamemap = new GameMap();
+        //GameMap *ptrgamemap = new GameMap();
         readmapfile();
         return;
         }

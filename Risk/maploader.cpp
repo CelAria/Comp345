@@ -84,8 +84,8 @@ void Maploader::parser(string line){
             {vec.push_back(line);}
             cout << "entered main parser getline loop" << endl;
             // if the current line is "[continents]"
-           rtrim(continents);
-           rtrim(territories);
+           //rtrim(continents);
+           //rtrim(territories);
     
     
     for(int t=0; t <= vec.size(); t++) {
@@ -103,7 +103,7 @@ void Maploader::parser(string line){
                     std::stringstream ss(vec[t2]);
                     while (std::getline(ss, token, delimiter)) {
                         objectinfo.push_back(token);
-                        cout << token << " THIS IS THE TOKEN" << endl;
+                        cout << token << "token [from continents loops]" << endl;
                 if(objectinfo.size()==2){
                     name=objectinfo[0];
                     cout << name << " this is name" << endl;
@@ -117,11 +117,16 @@ void Maploader::parser(string line){
                 t++;
                 }
             }
-        
+            
             if(vec[t]==(territories)){
-                cout << "entered territories" << endl;
+                cout << "test test test" << endl;
+                int t2 =0;
+                int looper = 1;
+              while(looper ==1)
+              {
+                  cout << "entered territories" << endl;
                 //go to next line
-                int t2=t+1;
+                  t2++;
                 cout <<  vec[t2] << " ***" << endl;
                 std::string token;
                 std:string continent;
@@ -130,7 +135,7 @@ void Maploader::parser(string line){
                 std::stringstream ss(vec[t2]);
                 while (std::getline(ss, token, delimiter)) {
                     objectinfo.push_back(token);
-                    cout << token << " THIS IS THE TOKEN" << endl;
+                    cout << token << " this is the token" << endl;
                 }
                     // add object info
                         name=objectinfo[0];
@@ -140,6 +145,7 @@ void Maploader::parser(string line){
                         cout << endl;
                         Country(name, continent);
                         objectinfo.clear();
+              }
             }
             else{
                 cout << line << " this is the line ^" << endl;

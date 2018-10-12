@@ -162,6 +162,7 @@ void Maploader::parser(string line){
             rtrim(continents);
             rtrim(territories);
     
+    
     for(int t=0; t <= vec.size(); t++) {
         //print each line
         cout << vec[t] << "*****" << endl;
@@ -169,31 +170,31 @@ void Maploader::parser(string line){
                 while(vec[t]!= territories){
                     cout << "entered section of map file \"CONTINENTS\"" << endl;
                     //for each token, push into the array of tokens.
-                    int t2 =t+1;
+                    int t2=t+1;
+                    cout <<  vec[t2] << " ***" << endl;
                     std::string token;
-                    std::string delimiter = "=";
-                    size_t pos = 0;
-                   
-                   if((pos = vec[t2].find(delimiter)) != std::string::npos) {
-                        vector<string> objectinfo;
-                        token = vec[t2].substr(0, pos);
+                    char delimiter = '=';
+                    vector<string> objectinfo;
+                    std::stringstream ss(vec[t2]);
+                    while (std::getline(ss, token, delimiter)) {
                         objectinfo.push_back(token);
-                        std::cout << token << " was saved into the vector" << std::endl;
-                        token.erase(0, pos + delimiter.length());
-                if(vec.size()==2){
+                        cout << token << " THIS IS THE TOKEN" << endl;
+                if(objectinfo.size()==2){
                     name=objectinfo[0];
+                    cout << name << " this is name" << endl;
                     points=stoi(objectinfo[1]);
+                    cout << points << " this is points" << endl;
+                    cout << endl;
                     Continent(name, points);
                     objectinfo.clear();
-                   // fstream.ignore();
                     }
-                  }
+                 }
                 t++;
                 }
             }
-                
-         //   if(vec[t]==(territories){
-         //       t++;
+        
+           // if(vec[t]==(territories){
+          //   t++;
 //                //go to next line
 //               // getline(fstream, line);
 //                //for each line, until a COMMA is found, create a new country name

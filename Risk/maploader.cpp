@@ -76,81 +76,6 @@ void Maploader::readmapfile(){
     }
 }
 
-//void Maploader::parser(string line){
-//    //remove trailing character from lines
-//    //loop for each line of the .map file
-//    while(getline(fstream,line)){
-//        cout << "entered main parser getline loop" << endl;
-//        // if the current line is "[continents]"
-//        rtrim(continents);
-//        rtrim(territories);
-//        if(line==(continents) && line != territories){
-//            cout << "entered section of map file \"CONTINENTS\"" << endl;
-//                char split_char= '=';
-//                //for each token, push into the array of tokens.
-//                for(string each; getline(fstream,ntrim(each),split_char);){
-//                    cout << each << endl;
-//                    token.push_back(each);
-//                    if(token.size()==2){
-//
-//                        cout << token.size() << " token size" << endl;
-//                        cout << "token[0]:" << token[0] << " token [1]:" << token[1] << " end" << endl;
-//
-//                        //the name of the continent is value of token array at 0.
-//                        name=token[0];
-//                        cout << name << " is name" << endl;
-//                        cout << token[0] << " is token at 0" << endl;
-//                        cout << token[1] << " is token at 1" << endl;
-//
-//                        //cast to int
-//                        points=stoi(token[1]);
-//                        cout << points << " is points" << endl;
-//                        Continent(name, points);
-//
-//                        //clear vector array
-//                        token.clear();
-//                        fstream.ignore();
-//                     }
-//                 }
-//            }
-//        if(line==territories){
-//            //go to next line
-//           // getline(fstream, line);
-//            //for each line, until a COMMA is found, create a new country name
-//            // MULTIPLE SPLIT CHARACTERS: comma
-//            char split_charcomma = ',';
-//            vector<string> tokens;
-//            for(string eachtoken; getline(fstream,eachtoken,split_charcomma); tokens.push_back(eachtoken)){
-//                countryname =tokens[0];
-//                cout << tokens.size() <<  " tokens size" << endl;
-//                continentname =token[1];
-//                //these variables will not be used (for now)
-//                int xcoord = stoi(token[2]);
-//                int ycoord = stoi(token[3]);
-//                //
-//                cout << countryname << " is country name" << endl;
-//                cout << continentname << " is continent name" << endl;
-//                //new pointer for country
-//                //Create new country object
-//                Country(countryname, continentname);
-//                for (int t=3; (token.size())-4.0; t++){
-//                    //LOOP FOR ADDING NEIGHBOUR COUNTRIES
-//                    string neighbourcountry = token[t];
-//                    //create NEW country object (with name token[i] and continent token[1]
-//                    Country(token[t],token[1]);
-//                    //add neighbours (USE .addneighbours function)
-//                }
-//            }
-//        }
-//        else{
-//            cout << line << " this is the line ^" << endl;
-//            cout << "line equals neither!!" << endl;
-//            cout << j++ << " number of lines" << endl;
-//            cout << endl;
-//        }
-//    }
-//}
-
 void Maploader::parser(string line){
         //remove trailing character from lines
         //loop for each line of the .map file
@@ -159,8 +84,8 @@ void Maploader::parser(string line){
             {vec.push_back(line);}
             cout << "entered main parser getline loop" << endl;
             // if the current line is "[continents]"
-            rtrim(continents);
-            rtrim(territories);
+           rtrim(continents);
+           rtrim(territories);
     
     
     for(int t=0; t <= vec.size(); t++) {
@@ -193,37 +118,29 @@ void Maploader::parser(string line){
                 }
             }
         
-           // if(vec[t]==(territories){
-          //   t++;
-//                //go to next line
-//               // getline(fstream, line);
-//                //for each line, until a COMMA is found, create a new country name
-//                // MULTIPLE SPLIT CHARACTERS: comma
-//                char split_charcomma = ',';
-//                vector<string> tokens;
-//                for(string eachtoken; getline(fstream,eachtoken,split_charcomma); tokens.push_back(eachtoken)){
-//                    countryname =tokens[0];
-//                    cout << tokens.size() <<  " tokens size" << endl;
-//                    continentname =token[1];
-//                    //these variables will not be used (for now)
-//                    int xcoord = stoi(token[2]);
-//                    int ycoord = stoi(token[3]);
-//                    //
-//                    cout << countryname << " is country name" << endl;
-//                    cout << continentname << " is continent name" << endl;
-//                    //new pointer for country
-//                    //Create new country object
-//                    Country(countryname, continentname);
-//                    for (int t=3; (token.size())-4.0; t++){
-//                        //LOOP FOR ADDING NEIGHBOUR COUNTRIES
-//                        string neighbourcountry = token[t];
-//                        //create NEW country object (with name token[i] and continent token[1]
-//                        Country(token[t],token[1]);
-//                        //add neighbours (USE .addneighbours function)
-//                    }
-//                }
-//            }
-        
+            if(vec[t]==(territories)){
+                cout << "entered territories" << endl;
+                //go to next line
+                int t2=t+1;
+                cout <<  vec[t2] << " ***" << endl;
+                std::string token;
+                std:string continent;
+                char delimiter = ',';
+                vector<string> objectinfo;
+                std::stringstream ss(vec[t2]);
+                while (std::getline(ss, token, delimiter)) {
+                    objectinfo.push_back(token);
+                    cout << token << " THIS IS THE TOKEN" << endl;
+                }
+                    // add object info
+                        name=objectinfo[0];
+                        cout << name << " this is name" << endl;
+                        continent=(objectinfo[3]);
+                        cout << continent << " this is continent" << endl;
+                        cout << endl;
+                        Country(name, continent);
+                        objectinfo.clear();
+            }
             else{
                 cout << line << " this is the line ^" << endl;
                 cout << "line equals neither!!" << endl;

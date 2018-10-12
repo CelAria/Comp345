@@ -96,14 +96,14 @@ void Maploader::parser(string line){
                     cout << "entered section of map file \"CONTINENTS\"" << endl;
                     //for each token, push into the array of tokens.
                     int t2=t+1;
-                    cout <<  vec[t2] << " ***" << endl;
+                    cout <<  vec[t2] << "***" << endl;
                     std::string token;
                     char delimiter = '=';
                     vector<string> objectinfo;
                     std::stringstream ss(vec[t2]);
                     while (std::getline(ss, token, delimiter)) {
                         objectinfo.push_back(token);
-                        cout << token << "token [from continents loops]" << endl;
+                        cout << token << " token [from continents loops]" << endl;
                 if(objectinfo.size()==2){
                     name=objectinfo[0];
                     cout << name << " this is name" << endl;
@@ -117,16 +117,19 @@ void Maploader::parser(string line){
                 t++;
                 }
             }
-            
             if(vec[t]==(territories)){
-                cout << "test test test" << endl;
+                cout << "entered territory loop" <<endl;
                 int t2 =0;
-                int looper = 1;
-              while(looper ==1)
+                int c;
+                c= vec.size()-t;
+                cout << c << " size of vec" << endl;
+                for(int j=0; j < c; j++)
               {
-                  cout << "entered territories" << endl;
+
+                  cout << "entered non EOF" << endl;
                 //go to next line
-                  t2++;
+                t2++;
+               //rtrim(vec[t2]);
                 cout <<  vec[t2] << " ***" << endl;
                 std::string token;
                 std:string continent;
@@ -138,12 +141,18 @@ void Maploader::parser(string line){
                     cout << token << " this is the token" << endl;
                 }
                     // add object info
+                    //if empty, return.
+                        //if(token.empty()){ cout << "empty line" << endl; return;}
                         name=objectinfo[0];
                         cout << name << " this is name" << endl;
                         continent=(objectinfo[3]);
                         cout << continent << " this is continent" << endl;
                         cout << endl;
                         Country(name, continent);
+                  for(int h= 4; h < objectinfo.size(); h++){
+                    /** ADD NEIGHBOURS ** PUSH INTO GAMEMAP **/
+                     // addNeighbor(objectinfo[h]);
+                  }
                         objectinfo.clear();
               }
             }

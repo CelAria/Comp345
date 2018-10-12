@@ -12,6 +12,22 @@ using namespace std;
 
 int j=1;
 
+//trim off the end line characters from each line
+std::string& rtrim(std::string& str) {
+    size_t endpos = str.find_last_not_of("\r");
+    if(endpos != std::string::npos) {
+        str.substr(0,endpos+1).swap(str);
+    }
+    return str;
+}
+std::string& ntrim(std::string& str) {
+    size_t endpos = str.find_last_not_of("\n");
+    if(endpos != std::string::npos) {
+        str.substr(0,endpos+1).swap(str);
+    }
+    return str;
+}
+
 void Maploader::readmapfile(){
     //string variable for each line parsed by fstream
     string line;
@@ -41,17 +57,16 @@ void Maploader::readmapfile(){
         //WHILE THERE ARE LINES IN THE FILE TO PARSE
         while(true){
             cout << "entered while there are lines in the file loop" << endl << endl;
+            
             if(fstream.eof()){
                 //if end of file reached, close stream.
                 fstream.close();
                 cout << "end of file, stream successfully closed\n";
                 return;
             }
-            getline(fstream, line);
-            cout << "\"get this line\" entered" << endl << endl;
+            cout << "entering parser function" << endl;
             parser(line);
             cout << "parser function completed" << endl << endl;
-            cout << line << "\"line\" variable printed" << endl;
         }
     }
     else{
@@ -61,41 +76,42 @@ void Maploader::readmapfile(){
     }
 }
 
-
 void Maploader::parser(string line){
+    //remove trailing character from lines
     //loop for each line of the .map file
     while(getline(fstream,line)){
         cout << "entered main parser getline loop" << endl;
         // if the current line is "[continents]"
-        if(line==continents && line != territories){
+        rtrim(continents);
+        rtrim(territories);
+        if(line==(continents) && line != territories){
             cout << "entered section of map file \"CONTINENTS\"" << endl;
-            //for every line that isn't "[territories]" AKA WHILE CONTINENTS
-           // while(line != territories){
-                cout << "entered section where line is tokenized" << endl;
-                //tokenize the line. Read characters into name until "=". read int into points
                 char split_char= '=';
                 //for each token, push into the array of tokens.
-            for(string each; getline(fstream,each,split_char);){
-                token.push_back(each);
-                if (token.size() ==2){
-                //the name of the continent is value of token array at 0.
-                name=token[0];
-                cout << name << " is name" << endl;
-                //cast to int
-                points=stoi(token[1]);
-                cout << points << " is points" << endl;
-                Continent(name, points);
-                token.clear();
-                }
-                //ERROR HANDLING? 
-//                if(stoi(token[1]) throws error){
-//                    cout << "INVALID MAP FILE" << endl;
-//                }
+                for(string each; getline(fstream,ntrim(each),split_char);){
+                    cout << each << endl;
+                    token.push_back(each);
+                    if(token.size()==2){
+                        cout << token.size() << " token size" << endl;
+                        cout << "token[0]:" << token[0] << " token [1]:" << token[1] << " end" << endl;
+                        //the name of the continent is value of token array at 0.
+                        name=token[0];
+                        cout << name << " is name" << endl;
+                        cout << token[0] << " is token at 0" << endl;
+                            cout << token[1] << " is token at 1" << endl;
+                        //cast to int
+                        points=stoi(token[1]);
+                        cout << points << " is points" << endl;
+                        Continent(name, points);
+                        //clear vector array
+                        token.clear();
+                        fstream.ignore();
+                     }
+                 }
             }
-        }
         if(line==territories){
             //go to next line
-            getline(fstream, line);
+           // getline(fstream, line);
             //for each line, until a COMMA is found, create a new country name
             // MULTIPLE SPLIT CHARACTERS: comma
             char split_charcomma = ',';
@@ -108,8 +124,8 @@ void Maploader::parser(string line){
                 int xcoord = stoi(token[2]);
                 int ycoord = stoi(token[3]);
                 //
-                cout << countryname << endl;
-                cout << continentname << endl;
+                cout << countryname << " is country name" << endl;
+                cout << continentname << " is continent name" << endl;
                 //new pointer for country
                 //Create new country object
                 Country(countryname, continentname);
@@ -123,9 +139,10 @@ void Maploader::parser(string line){
             }
         }
         else{
+            cout << line << " this is the line ^" << endl;
             cout << "line equals neither!!" << endl;
-            cout << line << "this is the line ^" << endl;
-            cout << line << j++ << " number of lines" << endl;
+            cout << j++ << " number of lines" << endl;
+            cout << endl;
         }
     }
 }

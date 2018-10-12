@@ -14,8 +14,12 @@ private:
     ifstream fstream;
     vector<string> token;
     int points;
+    int xcoord;
+    int ycoord;
     string name;
     string line;
+    string neighbor;
+    vector<string> neighbors;
     istringstream mystream(string);
     string continents= "[Continents]\r";
     string territories= "[Territories]\r";

@@ -12,7 +12,6 @@ using namespace std;
 
 GameMap gamemap;
 
-
 void Maploader::readmapfile(){
     //string variable for each line parsed by fstream
     string line;
@@ -40,9 +39,7 @@ void Maploader::readmapfile(){
         bool isInTerritory = false;
         
         while(!fstream.eof()){
-            cout << "entered while there are lines in the file loop" << endl << endl;
-            
-            cout << "entering parser function" << endl;
+    
             
             getline(fstream,line);
             
@@ -75,13 +72,14 @@ void Maploader::readmapfile(){
         }
         
         fstream.close();
-        cout << "end of file, stream successfully closed\n";
+        cout << "end of file, stream successfully closed\n" << endl;
         
         
         //If map invalid, reject and offer readmap() again, if valid, accept
         
         if(gamemap.isValid()){
-            cout << "gamemap is valid! There are " << gamemap.isValid() << " countries in this map. Add any other maps you want:\n";
+            gamemap.traverseAll(true);
+            cout << "gamemap is valid! Add any other maps you want:\n";
         }
         
       
@@ -101,10 +99,9 @@ void Maploader::readmapfile(){
 }
 
 void Maploader::parseContinent(string line) {
-    cout << "entered section of map file \"CONTINENTS\"" << endl;
     //for each token, push into the array of tokens.
     
-    cout <<  line << "***" << endl;
+    cout <<  line  << endl;
     std::string token;
     char delimiter = '=';
     
@@ -112,20 +109,17 @@ void Maploader::parseContinent(string line) {
     
     std::getline(ss, token, delimiter);
     name = token;
-    cout << name << " is name" << endl;
     
     std::getline(ss, token, delimiter);
     points = stoi(token);
-    cout << points << " this is points" << endl;
     
     Continent continent = Continent(name, points);
     gamemap.addContinent(continent);
 }
 
 void Maploader::parseTerritory(string line) {
-    cout << "entered section of map file \"TERRITORIES\"" << endl;
    
-    cout <<  line << "***" << endl;
+    cout <<  line  << endl;
     std::string token;
     char delimiter = ',';
     
@@ -133,26 +127,22 @@ void Maploader::parseTerritory(string line) {
     
     std::getline(ss, token, delimiter);
     name = token;
-    cout << name << " is name" << endl;
     
     std::getline(ss, token, delimiter);
     xcoord = stoi(token);
-    cout << xcoord << " this is xcoord" << endl;
     
     std::getline(ss, token, delimiter);
     ycoord = stoi(token);
-    cout << ycoord << " this is ycoord" << endl;
     
     std::getline(ss, token, delimiter);
     continentname = token;
-    cout << continentname << " this is continent name" << endl;
    
     while(std::getline(ss, token, delimiter)){
          neighbor = token;
          neighbors.push_back(token);
-        cout << token << " this is a neighbor" << endl;
     }
     Country country =Country(name, continentname);
     gamemap.addCountry(name, continentname, neighbors);
+    neighbors.clear();
 }
 

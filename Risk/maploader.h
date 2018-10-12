@@ -6,6 +6,7 @@
 #include <map>
 #include <fstream>
 #include <iostream>
+#include "gamemap.h"
 using namespace std;
 
 class Maploader{
@@ -14,8 +15,8 @@ private:
     ifstream fstream;
     vector<string> token;
     int points;
-    int xcoord;
-    int ycoord;
+    string xcoord;
+    string ycoord;
     string name;
     string line;
     string neighbor;
@@ -25,6 +26,7 @@ private:
     string territories= "[Territories]\r";
     string countryname;
     string continentname;
+    vector<GameMap> maps;
     
 public:
     Maploader(){};

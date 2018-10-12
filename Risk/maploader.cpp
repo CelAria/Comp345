@@ -61,14 +61,14 @@ void Maploader::readmapfile(){
             } else if(line == "") {
                 continue;
             }
-            
-            if(isInContinent) {
-                parseContinent(line);
-            }
-            if(isInTerritory) {
-                parseTerritory(line);
-            }
-            
+           
+                if(isInContinent) {
+                    parseContinent(line);
+                }
+                if(isInTerritory) {
+                    parseTerritory(line);
+                }
+        
         }
         
         fstream.close();
@@ -79,17 +79,21 @@ void Maploader::readmapfile(){
         
         if(gamemap.isValid()){
             gamemap.traverseAll(true);
-            cout << "gamemap is valid! Add any other maps you want:\n";
+            
+//            GameMap maptopush= gamemap;
+//            maps.push_back(maptopush);
+            cout << "there are " << maps.size() << " valid maps.";
+            cout << " This gamemap is valid! Add any other maps you want:\n";
         }
         
       
         if(!gamemap.isValid()){
-        gamemap.~GameMap();
         cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
+        readmapfile();
         return;
         }
         
-        readmapfile();
+        
     }
     else{
         cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
@@ -129,10 +133,10 @@ void Maploader::parseTerritory(string line) {
     name = token;
     
     std::getline(ss, token, delimiter);
-    xcoord = stoi(token);
+    xcoord = token;
     
     std::getline(ss, token, delimiter);
-    ycoord = stoi(token);
+    ycoord = token;
     
     std::getline(ss, token, delimiter);
     continentname = token;

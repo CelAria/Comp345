@@ -88,9 +88,10 @@ void Maploader::parser(string line){
             {vec.push_back(line);}
             cout << "entered main parser getline loop" << endl;
             // if the current line is "[continents]"
-           //rtrim(continents);
+          // rtrim(continents);
            //rtrim(territories);
-    
+    //rntrim(continents);
+    //rntrim(territories);
     
     for(int t=0; t <= vec.size(); t++) {
         //print each line

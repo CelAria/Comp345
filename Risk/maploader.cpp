@@ -10,9 +10,15 @@
 
 using namespace std;
 
-GameMap gamemap;
+GameMap* ptrgamemap= new GameMap();
+//ptrgamemap =&gamemap;
+//GameMap gamemap;
+
 
 void Maploader::readmapfile(){
+    //assign pointer to gamemap;
+   // ptrgamemap =&gamemap;
+    
     //string variable for each line parsed by fstream
     string line;
     //uses filename and fstream
@@ -31,6 +37,8 @@ void Maploader::readmapfile(){
     
     //if file opens succesfully
     if(fstream.is_open()){
+        
+        
         cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
         
         //make gamemap (only one for program)
@@ -77,22 +85,20 @@ void Maploader::readmapfile(){
         
         //If map invalid, reject and offer readmap() again, if valid, accept
         
-        if(gamemap.isValid()){
-            gamemap.traverseAll(true);
-            
-//            GameMap maptopush= gamemap;
-//            maps.push_back(maptopush);
-            cout << "there are " << maps.size() << " valid maps.";
+        if(ptrgamemap->isValid()){
+            ptrgamemap->traverseAll(true);
             cout << " This gamemap is valid! Add any other maps you want:\n";
+            readmapfile();
+            return;
         }
         
       
-        if(!gamemap.isValid()){
+        if(!ptrgamemap->isValid()){
         cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
+        GameMap *ptrgamemap = new GameMap();
         readmapfile();
         return;
         }
-        
         
     }
     else{
@@ -118,7 +124,7 @@ void Maploader::parseContinent(string line) {
     points = stoi(token);
     
     Continent continent = Continent(name, points);
-    gamemap.addContinent(continent);
+    ptrgamemap->addContinent(continent);
 }
 
 void Maploader::parseTerritory(string line) {
@@ -146,7 +152,7 @@ void Maploader::parseTerritory(string line) {
          neighbors.push_back(token);
     }
     Country country =Country(name, continentname);
-    gamemap.addCountry(name, continentname, neighbors);
+    ptrgamemap->addCountry(name, continentname, neighbors);
     neighbors.clear();
 }
 

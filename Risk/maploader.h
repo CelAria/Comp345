@@ -6,7 +6,7 @@
 #include <map>
 #include <fstream>
 #include <iostream>
-#include "gamemap.h"
+
 using namespace std;
 
 class Maploader{
@@ -26,7 +26,7 @@ private:
     string territories= "[Territories]\r";
     string countryname;
     string continentname;
-    vector<GameMap> maps;
+  \
     
 public:
     Maploader(){};

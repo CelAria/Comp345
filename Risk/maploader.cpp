@@ -27,6 +27,10 @@ std::string& ntrim(std::string& str) {
     }
     return str;
 }
+std::string& rntrim(std::string& str) {
+    ntrim(rtrim(str));
+    return str;
+}
 
 void Maploader::readmapfile(){
     //string variable for each line parsed by fstream
@@ -91,7 +95,8 @@ void Maploader::parser(string line){
     for(int t=0; t <= vec.size(); t++) {
         //print each line
         cout << vec[t] << "*****" << endl;
-            if(vec[t]==(continents) && vec[t]!= territories){
+        
+            if(vec[t]==(continents)){
                 while(vec[t]!= territories){
                     cout << "entered section of map file \"CONTINENTS\"" << endl;
                     //for each token, push into the array of tokens.

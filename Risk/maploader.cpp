@@ -59,19 +59,47 @@ void Maploader::readmapfile(){
         //HOW TO CALL PARSER FUNCTION **TO DO***
         
         //WHILE THERE ARE LINES IN THE FILE TO PARSE
-        while(true){
+        
+        bool isInContinent = false;
+        bool isInTerritory = false;
+        
+        while(!fstream.eof()){
             cout << "entered while there are lines in the file loop" << endl << endl;
             
-            if(fstream.eof()){
-                //if end of file reached, close stream.
-                fstream.close();
-                cout << "end of file, stream successfully closed\n";
-                return;
-            }
             cout << "entering parser function" << endl;
-            parser(line);
-            cout << "parser function completed" << endl << endl;
+            
+            getline(fstream,line);
+            
+            //Removing the windows \r character"
+            if(!line.empty() && *line.rbegin() == '\r') {
+                line.erase( line.length()-1, 1);
+            }
+            
+            if(line == "[Continents]") {
+                isInContinent = true;
+                isInTerritory = false;
+                continue;
+                
+            } else if(line == "[Territories]") {
+                isInContinent = false;
+                isInTerritory = true;
+                continue;
+                
+            } else if(line == "") {
+                continue;
+            }
+            
+            if(isInContinent) {
+                parseContinent(line);
+            }
+            if(isInTerritory) {
+                parseTerritory(line);
+            }
+            
         }
+        
+        fstream.close();
+        cout << "end of file, stream successfully closed\n";
     }
     else{
         cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
@@ -80,93 +108,97 @@ void Maploader::readmapfile(){
     }
 }
 
-void Maploader::parser(string line){
-        //remove trailing character from lines
-        //loop for each line of the .map file
-    vector<string> vec;
-            for(string line; getline(fstream, line ); )
-            {vec.push_back(line);}
-            cout << "entered main parser getline loop" << endl;
-            // if the current line is "[continents]"
-          // rtrim(continents);
-           //rtrim(territories);
-    //rntrim(continents);
-    //rntrim(territories);
+void Maploader::parseContinent(string line) {
+    cout << "entered section of map file \"CONTINENTS\"" << endl;
+    //for each token, push into the array of tokens.
     
-    for(int t=0; t <= vec.size(); t++) {
-        //print each line
-        cout << vec[t] << "*****" << endl;
-        
-            if(vec[t]==(continents)){
-                while(vec[t]!= territories){
-                    cout << "entered section of map file \"CONTINENTS\"" << endl;
-                    //for each token, push into the array of tokens.
-                    int t2=t+1;
-                    cout <<  vec[t2] << "***" << endl;
-                    std::string token;
-                    char delimiter = '=';
-                    vector<string> objectinfo;
-                    std::stringstream ss(vec[t2]);
-                    while (std::getline(ss, token, delimiter)) {
-                        objectinfo.push_back(token);
-                        cout << token << " token [from continents loops]" << endl;
-                if(objectinfo.size()==2){
-                    name=objectinfo[0];
-                    cout << name << " this is name" << endl;
-                    points=stoi(objectinfo[1]);
-                    cout << points << " this is points" << endl;
-                    cout << endl;
-                    Continent(name, points);
-                    objectinfo.clear();
-                    }
-                 }
-                t++;
-                }
-            }
-            if(vec[t]==(territories)){
-                cout << "entered territory loop" <<endl;
-                int t2 =0;
-                int c;
-                c= vec.size()-t;
-                cout << c << " size of vec" << endl;
-                for(int j=0; j < c; j++)
-              {
+    cout <<  line << "***" << endl;
+    std::string token;
+    char delimiter = '=';
+    
+    std::stringstream ss(line);
+    
+    std::getline(ss, token, delimiter);
+    name = token;
+    cout << name << " this is name" << endl;
+    
+    std::getline(ss, token, delimiter);
+    points = stoi(token);
+    cout << points << " this is points" << endl;
+    
+    Continent continent = Continent(name, points);
+    
+}
 
-                  cout << "entered non EOF" << endl;
-                //go to next line
-                t2++;
-               //rtrim(vec[t2]);
-                cout <<  vec[t2] << " ***" << endl;
-                std::string token;
-                std:string continent;
-                char delimiter = ',';
-                vector<string> objectinfo;
-                std::stringstream ss(vec[t2]);
-                while (std::getline(ss, token, delimiter)) {
-                    objectinfo.push_back(token);
-                    cout << token << " this is the token" << endl;
-                }
-                    // add object info
-                    //if empty, return.
-                        //if(token.empty()){ cout << "empty line" << endl; return;}
-                        name=objectinfo[0];
-                        cout << name << " this is name" << endl;
-                        continent=(objectinfo[3]);
-                        cout << continent << " this is continent" << endl;
-                        cout << endl;
-                        Country(name, continent);
-                  for(int h= 4; h < objectinfo.size(); h++){
-                    /** ADD NEIGHBOURS ** PUSH INTO GAMEMAP **/
-                     // addNeighbor(objectinfo[h]);
-                  }
-                        objectinfo.clear();
-              }
-            }
-            else{
-                cout << line << " this is the line ^" << endl;
-                cout << "line equals neither!!" << endl;
-                cout << j++ << " number of lines" << endl;
-                cout << endl;
-            }
-        }
-    }
+void Maploader::parseTerritory(string line) {
+    
+}
+
+void Maploader::parser(string line){
+    //remove trailing character from lines
+    //loop for each line of the .map file
+    
+//    cout << "entered main parser getline loop" << endl;
+//    // if the current line is "[continents]"
+//    // rtrim(continents);
+//    //rtrim(territories);
+//    //rntrim(continents);
+//    //rntrim(territories);
+//
+//    for(int t=0; t <= vec.size(); t++) {
+//        //print each line
+//        cout << vec[t] << "*****" << endl;
+//
+//        if(vec[t]==(continents)){
+//            while(vec[t]!= territories){
+//
+//                t++;
+//            }
+//        }
+//        if(vec[t]==(territories)){
+//            cout << "entered territory loop" <<endl;
+//            int t2 =0;
+//            int c;
+//            c= vec.size()-t;
+//            cout << c << " size of vec" << endl;
+//            for(int j=0; j < c; j++)
+//            {
+//
+//                cout << "entered non EOF" << endl;
+//                //go to next line
+//                t2++;
+//                //rtrim(vec[t2]);
+//                cout <<  vec[t2] << " ***" << endl;
+//                std::string token;
+//            std:string continent;
+//                char delimiter = ',';
+//                vector<string> objectinfo;
+//                std::stringstream ss(vec[t2]);
+//                while (std::getline(ss, token, delimiter)) {
+//                    objectinfo.push_back(token);
+//                    cout << token << " this is the token" << endl;
+//                }
+//                // add object info
+//                //if empty, return.
+//                //if(token.empty()){ cout << "empty line" << endl; return;}
+//                name=objectinfo[0];
+//                cout << name << " this is name" << endl;
+//                continent=(objectinfo[3]);
+//                cout << continent << " this is continent" << endl;
+//                cout << endl;
+//                Country(name, continent);
+//                for(int h= 4; h < objectinfo.size(); h++){
+//                    /** ADD NEIGHBOURS ** PUSH INTO GAMEMAP **/
+//                    // addNeighbor(objectinfo[h]);
+//                }
+//                objectinfo.clear();
+//            }
+//        }
+//        else{
+//            cout << line << " this is the line ^" << endl;
+//            cout << "line equals neither!!" << endl;
+//            cout << j++ << " number of lines" << endl;
+//            cout << endl;
+//        }
+//    }
+}

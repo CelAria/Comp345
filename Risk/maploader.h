@@ -27,4 +27,6 @@ public:
     ~Maploader(){};
     void readmapfile();
     void parser(string line);
+    void parseContinent(string line);
+    void parseTerritory(string line);
 };

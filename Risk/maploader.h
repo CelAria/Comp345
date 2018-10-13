@@ -6,6 +6,7 @@
 #include <map>
 #include <fstream>
 #include <iostream>
+#include "gamemap.h"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ private:
     string territories= "[Territories]\r";
     string countryname;
     string continentname;
-  \
+  
     
 public:
     Maploader(){};
@@ -35,4 +36,6 @@ public:
     void parser(string line);
     void parseContinent(string line);
     void parseTerritory(string line);
+    
+    
 };

@@ -150,7 +150,7 @@ void Maploader::parseTerritory(string line) {
          neighbor = token;
          neighbors.push_back(token);
     }
-    Country country =Country(name, continentname);
+    
     ptrgamemap->addCountry(name, continentname, neighbors);
     neighbors.clear();
 }

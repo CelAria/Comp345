@@ -24,6 +24,8 @@ void Maploader::readmapfile(){
     //reject if not a .map file
     if(filename.substr(filename.find_last_of(".") + 1) != "map"){
         cout << "file is not of type map. Try again with a valid .map file.\n";
+        delete ptrgamemap;
+        ptrgamemap= NULL;
         filename.clear();
         readmapfile();
         return;

@@ -93,8 +93,8 @@ void Maploader::readmapfile(){
       
         if(!ptrgamemap->isValid()){
         cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
-        //delete ptrgamemap;
-        //ptrgamemap= NULL;
+        delete ptrgamemap;
+        ptrgamemap= NULL;
         readmapfile();
         return;
         }

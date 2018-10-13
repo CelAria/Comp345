@@ -18,15 +18,7 @@ int main(int argc, const char * argv[]) {
     
 Maploader mymaploader;
     
-//example using hardcoding
-    
-//this example will print invalid
-   mymaploader.readmapfile("./MapLoaderDriver/Brazil(brokenmap).map");
-    
-//these examples will work
-   mymaploader.readmapfile("./MapLoaderDriver/Canada.map");
-   mymaploader.readmapfile("./MapLoaderDriver/World.map");
-
+    //Type in the full file path to the file you want to open
     
     //example of "user input" style with terminal using filepaths
     try

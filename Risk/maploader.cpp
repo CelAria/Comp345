@@ -12,6 +12,96 @@ using namespace std;
 
 GameMap *ptrgamemap;
 
+void Maploader::readmapfile(string file){
+    ptrgamemap = new GameMap();
+    filename = file;
+    //string variable for each line parsed by fstream
+    string line;
+    //uses filename and fstream
+   // cout << "\nplease type the complete file path of the map file you would like to open. File must be of the type .map\n";
+    
+    //reject if not a .map file
+    if(filename.substr(filename.find_last_of(".") + 1) != "map"){
+        cout << "file is not of type map.";
+        delete ptrgamemap;
+        ptrgamemap= NULL;
+        filename.clear();
+        return;
+    }
+    
+    fstream.open(filename);
+    
+    //if file opens succesfully
+    if(fstream.is_open()){
+        
+        
+        cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
+        
+        //make gamemap (only one for program)
+        
+        bool isInContinent = false;
+        bool isInTerritory = false;
+        
+        while(!fstream.eof()){
+            
+            
+            getline(fstream,line);
+            
+            //Removing the windows \r character"
+            if(!line.empty() && *line.rbegin() == '\r') {
+                line.erase( line.length()-1, 1);
+            }
+            
+            if(line == "[Continents]") {
+                isInContinent = true;
+                isInTerritory = false;
+                continue;
+                
+            } else if(line == "[Territories]") {
+                isInContinent = false;
+                isInTerritory = true;
+                continue;
+                
+            } else if(line == "") {
+                continue;
+            }
+            
+            if(isInContinent) {
+                parseContinent(line);
+            }
+            if(isInTerritory) {
+                parseTerritory(line);
+            }
+            
+        }
+        
+        fstream.close();
+        cout << "end of file, stream successfully closed\n" << endl;
+        
+        
+        //If map invalid, reject and offer readmap() again, if valid, accept
+        
+        if(ptrgamemap->isValid()){
+            ptrgamemap->traverseAll(true);
+            cout << " This gamemap is valid! \n";
+            return;
+        }
+        
+        
+        if(!ptrgamemap->isValid()){
+            cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
+            delete ptrgamemap;
+            ptrgamemap= NULL;
+            return;
+        }
+        
+    }
+    else{
+        cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
+        return;
+    }
+}
+
 void Maploader::readmapfile(){
     ptrgamemap = new GameMap();
     

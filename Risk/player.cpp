@@ -19,8 +19,8 @@ void Player::fortify() {
 }
 
 void Player::reinforce(GameMap* gameMap) {
-    FortifyController fortifyController;
-    fortifyController.doFortify(this, gameMap);
+    FortifyController fortifyController = FortifyController(this, gameMap);
+    fortifyController.start();
 }
 
 void Player::addCountry(Country *country) {

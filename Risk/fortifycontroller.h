@@ -11,11 +11,22 @@
 #include "player.h"
 #include "gamemap.h"
 #include "country.h"
+#include "fortifyview.h"
 
 class FortifyController {
+private:
+    FortifyView view;
+    Player* player;
+    GameMap* gameMap;
+    
+    bool moveArmies(Country* fromCountry, Country* toCountry, int amount);
     
 public:
-    void doFortify(Player* player, GameMap* gameMap);
-    bool moveArmies(Country* fromCountry, Country* toCountry, int amount);
+    FortifyController(Player* player, GameMap* gameMap) {
+        this->player = player;
+        this->gameMap = gameMap;
+        view = FortifyView();
+    };
+    void start();
 };
 

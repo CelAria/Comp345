@@ -28,6 +28,7 @@ class Country {
     int getNeighborCount() { return (int)neighbors.size(); };
     int getArmiesCount() { return armiesCount; };
     void setOwner(int playerId) { this->playerId = playerId; };
+    int getOwner() { return playerId; }
     void setArmiesCount(int count) { this->armiesCount = count; };
     vector<Country*> getAllNeighbors();
 };

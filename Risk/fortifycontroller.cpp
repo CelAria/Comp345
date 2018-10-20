@@ -7,13 +7,31 @@
 //
 
 #include "fortifycontroller.h"
+#include <vector>
 
-void FortifyController::doFortify(Player *player, GameMap *gameMap) {
+using namespace std;
+
+void FortifyController::start() {
+    view.presentFortify();
     
+    Country* fromCountry = view.promptUserForDestination(player->getAllCountries());
+    
+    vector<Country*> neighbors = fromCountry->getAllNeighbors();
+    vector<Country*> eligibleNeighbors;
+    for(int i = 0; i < neighbors.size(); ++i) {
+        if(neighbors[i]->getOwner() == player->getPlayerId()) {
+            eligibleNeighbors.push_back(neighbors[i]);
+        }
+    }
+    
+    Country* toCountry = view.promptUserForDestination(eligibleNeighbors);
+    
+    int amount = view.promptUserForAmountOfArmies(fromCountry);
+    
+    moveArmies(fromCountry, toCountry, amount);
 }
 
 bool FortifyController::moveArmies(Country *fromCountry, Country *toCountry, int amount) {
-    
     if(amount > 0 && amount < fromCountry->getArmiesCount()) {
         fromCountry->setArmiesCount(fromCountry->getArmiesCount() - amount);
         toCountry->setArmiesCount(toCountry->getArmiesCount() + amount);
@@ -21,5 +39,4 @@ bool FortifyController::moveArmies(Country *fromCountry, Country *toCountry, int
     } else {
         return false;
     }
-    
 }

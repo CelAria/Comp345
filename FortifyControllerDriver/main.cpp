@@ -20,7 +20,7 @@
 
 using namespace std;
 
-void initMockGameMap(GameMap* gameMap) {
+void initMockGameMapAndPlayer(GameMap* gameMap, Player* player) {
     Continent centralAmerica = Continent("Central America", 3);
     Continent southAmerica = Continent("South America", 2);
     
@@ -49,6 +49,10 @@ void initMockGameMap(GameMap* gameMap) {
     vector<string> venNeighbors;
     venNeighbors.push_back("Colombia");
     gameMap->addCountry("Venezuela", "South America", venNeighbors);
+    
+    player->addCountry(gameMap->getCountry("Costa Rica"));
+    player->addCountry(gameMap->getCountry("Venezuela"));
+    player->addCountry(gameMap->getCountry("Colombia"));
 }
 
 int main(int argc, const char * argv[]) {
@@ -57,11 +61,11 @@ int main(int argc, const char * argv[]) {
     Deck deck = Deck();
     GameMap gameMap;
     
-    initMockGameMap(&gameMap);
+    initMockGameMapAndPlayer(&gameMap, &player);
     
-    FortifyView view = FortifyView(&player);
+    FortifyController controller = FortifyController(&player, &gameMap);
     
-    view.showCountrySelectList(gameMap.getAllByContinent("Central America"));
+    controller.start();
 }
 
 

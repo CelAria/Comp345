@@ -17,11 +17,12 @@ using namespace std;
 class FortifyView {
     
 private:
-    Player* player;
     
 public:
-    FortifyView(Player* player) {this->player = player;};
-    Country* showCountrySelectList(vector<Country*> countries);
+    Country* promptCountrySelect(string prompt, vector<Country*> countries);
     void presentFortify();
+    Country* promptUserForOrigin(vector<Country*> countries);
+    Country* promptUserForDestination(vector<Country*> countries);
+    int promptUserForAmountOfArmies(Country* fromCountry);
 };
 

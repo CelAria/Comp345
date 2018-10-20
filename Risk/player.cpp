@@ -1,6 +1,8 @@
 #include "player.h"
 #include "cardsdeck.h"
 #include "country.h"
+#include "gamemap.h"
+#include "fortifycontroller.h"
 
 #include <iostream>
 #include <string>
@@ -16,8 +18,9 @@ void Player::fortify() {
     cout << "This is fortify" << endl;
 }
 
-void Player::reinforce() {
-    cout << "This is reinforce" << endl;
+void Player::reinforce(GameMap* gameMap) {
+    FortifyController fortifyController;
+    fortifyController.doFortify(this, gameMap);
 }
 
 void Player::addCountry(Country *country) {

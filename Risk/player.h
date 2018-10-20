@@ -3,6 +3,7 @@
 #include "cardsdeck.h"
 #include "Dice.h"
 #include "country.h"
+#include "gamemap.h"
 
 #include <map>
 #include <vector>
@@ -21,7 +22,7 @@ public:
     Player(int playerId): id(playerId), dice(playerId) {};
     void attack();
     void fortify();
-    void reinforce();
+    void reinforce(GameMap* gameMap);
     int getPlayerId() { return id; };
     void addCountry(Country* country);
     int getCardsCount() { return hand.getTotalCardsInHand(); };

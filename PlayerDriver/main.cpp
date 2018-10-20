@@ -17,9 +17,9 @@ int main(int argc, const char * argv[]) {
     
     cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
     
-    player.attack();
-    player.fortify();
-    player.reinforce();
+//    player.attack();
+//    player.fortify();
+//    player.reinforce();
     
     cout << endl;
     

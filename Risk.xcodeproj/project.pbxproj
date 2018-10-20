@@ -10,8 +10,13 @@
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */; };
+		B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */ = {isa = PBXBuildFile; fileRef = B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */; };
+		B35FED75217ADD2B00FE6FA7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B35FED74217ADD2B00FE6FA7 /* main.cpp */; };
+		B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B35FED79217AE56D00FE6FA7 /* fortifyview.cpp */; };
+		B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */ = {isa = PBXBuildFile; fileRef = B35FED7A217AE56D00FE6FA7 /* fortifyview.h */; };
+		B35FED7F217AEA7400FE6FA7 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B38CB9572167D1B600EF5E5C /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
-		B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */; };
 		B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */; };
 		B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8D521669CE300C2A4BA /* main.cpp */; };
@@ -42,14 +47,14 @@
 			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
 			remoteInfo = Risk;
 		};
-		B38CB9582167D1BB00EF5E5C /* PBXContainerItemProxy */ = {
+		B35FED7D217AEA6800FE6FA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
 			remoteInfo = Risk;
 		};
-		B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */ = {
+		B38CB9582167D1BB00EF5E5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
 			proxyType = 1;
@@ -89,7 +94,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		B3B2E8A92166961C00C2A4BA /* CopyFiles */ = {
+		B35FED70217ADD2B00FE6FA7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -145,7 +150,12 @@
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		B3B2E8AB2166961C00C2A4BA /* BlahDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlahDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fortifycontroller.cpp; sourceTree = "<group>"; };
+		B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fortifycontroller.h; sourceTree = "<group>"; };
+		B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FortifyControllerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B35FED74217ADD2B00FE6FA7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B35FED79217AE56D00FE6FA7 /* fortifyview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fortifyview.cpp; sourceTree = "<group>"; };
+		B35FED7A217AE56D00FE6FA7 /* fortifyview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fortifyview.h; sourceTree = "<group>"; };
 		B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cardsdeck.cpp; sourceTree = "<group>"; };
 		B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardsdeck.h; sourceTree = "<group>"; };
 		B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardsDeckDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,11 +188,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3B2E8A82166961C00C2A4BA /* Frameworks */ = {
+		B35FED6F217ADD2B00FE6FA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3B2E8B42166962F00C2A4BA /* libRisk.a in Frameworks */,
+				B35FED7F217AEA7400FE6FA7 /* libRisk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +250,14 @@
 			path = MapLoaderDriver;
 			sourceTree = "<group>";
 		};
+		B35FED73217ADD2B00FE6FA7 /* FortifyControllerDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B35FED74217ADD2B00FE6FA7 /* main.cpp */,
+			);
+			path = FortifyControllerDriver;
+			sourceTree = "<group>";
+		};
 		B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +283,7 @@
 				B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */,
 				B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
+				B35FED73217ADD2B00FE6FA7 /* FortifyControllerDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -277,9 +296,9 @@
 				B3BB81002165BE05005177BB /* libRisk.a */,
 				B3BB81142165BF08005177BB /* Dice */,
 				B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */,
-				B3B2E8AB2166961C00C2A4BA /* BlahDriver */,
 				B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
+				B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,6 +320,10 @@
 				B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */,
 				B3B2E8DA2166A89100C2A4BA /* player.cpp */,
 				B3B2E8DB2166A89100C2A4BA /* player.h */,
+				B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */,
+				B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */,
+				B35FED79217AE56D00FE6FA7 /* fortifyview.cpp */,
+				B35FED7A217AE56D00FE6FA7 /* fortifyview.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -337,8 +360,10 @@
 			files = (
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
+				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
+				B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */,
 				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
@@ -366,22 +391,22 @@
 			productReference = B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */;
 			productType = "com.apple.product-type.tool";
 		};
-		B3B2E8AA2166961C00C2A4BA /* BlahDriver */ = {
+		B35FED71217ADD2B00FE6FA7 /* FortifyControllerDriver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3B2E8AF2166961C00C2A4BA /* Build configuration list for PBXNativeTarget "BlahDriver" */;
+			buildConfigurationList = B35FED76217ADD2B00FE6FA7 /* Build configuration list for PBXNativeTarget "FortifyControllerDriver" */;
 			buildPhases = (
-				B3B2E8A72166961C00C2A4BA /* Sources */,
-				B3B2E8A82166961C00C2A4BA /* Frameworks */,
-				B3B2E8A92166961C00C2A4BA /* CopyFiles */,
+				B35FED6E217ADD2B00FE6FA7 /* Sources */,
+				B35FED6F217ADD2B00FE6FA7 /* Frameworks */,
+				B35FED70217ADD2B00FE6FA7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B3B2E8B32166962700C2A4BA /* PBXTargetDependency */,
+				B35FED7E217AEA6800FE6FA7 /* PBXTargetDependency */,
 			);
-			name = BlahDriver;
-			productName = BlahDriver;
-			productReference = B3B2E8AB2166961C00C2A4BA /* BlahDriver */;
+			name = FortifyControllerDriver;
+			productName = FortifyControllerDriver;
+			productReference = B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */;
 			productType = "com.apple.product-type.tool";
 		};
 		B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */ = {
@@ -485,7 +510,7 @@
 					B315A48B2165CCCC005CAFD4 = {
 						CreatedOnToolsVersion = 10.0;
 					};
-					B3B2E8AA2166961C00C2A4BA = {
+					B35FED71217ADD2B00FE6FA7 = {
 						CreatedOnToolsVersion = 10.0;
 					};
 					B3B2E8D221669CE300C2A4BA = {
@@ -521,9 +546,9 @@
 				B3BB80E02165B7D9005177BB /* GameMapDriver */,
 				B3BB81132165BF08005177BB /* Dice */,
 				B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */,
-				B3B2E8AA2166961C00C2A4BA /* BlahDriver */,
 				B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
+				B35FED71217ADD2B00FE6FA7 /* FortifyControllerDriver */,
 			);
 		};
 /* End PBXProject section */
@@ -537,10 +562,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3B2E8A72166961C00C2A4BA /* Sources */ = {
+		B35FED6E217ADD2B00FE6FA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35FED75217ADD2B00FE6FA7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +603,8 @@
 				B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
+				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
+				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
 			);
@@ -598,15 +626,15 @@
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */;
 		};
+		B35FED7E217AEA6800FE6FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B35FED7D217AEA6800FE6FA7 /* PBXContainerItemProxy */;
+		};
 		B38CB9592167D1BB00EF5E5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = B38CB9582167D1BB00EF5E5C /* PBXContainerItemProxy */;
-		};
-		B3B2E8B32166962700C2A4BA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B3BB80FF2165BE05005177BB /* Risk */;
-			targetProxy = B3B2E8B22166962700C2A4BA /* PBXContainerItemProxy */;
 		};
 		B3B2E8EA2166AD0E00C2A4BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -646,23 +674,25 @@
 			};
 			name = Release;
 		};
-		B3B2E8B02166961C00C2A4BA /* Debug */ = {
+		B35FED77217ADD2B00FE6FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XM25KFD587;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
-		B3B2E8B12166961C00C2A4BA /* Release */ = {
+		B35FED78217ADD2B00FE6FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XM25KFD587;
+				DEVELOPMENT_TEAM = RDVU6E2FP5;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -895,11 +925,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3B2E8AF2166961C00C2A4BA /* Build configuration list for PBXNativeTarget "BlahDriver" */ = {
+		B35FED76217ADD2B00FE6FA7 /* Build configuration list for PBXNativeTarget "FortifyControllerDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B3B2E8B02166961C00C2A4BA /* Debug */,
-				B3B2E8B12166961C00C2A4BA /* Release */,
+				B35FED77217ADD2B00FE6FA7 /* Debug */,
+				B35FED78217ADD2B00FE6FA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

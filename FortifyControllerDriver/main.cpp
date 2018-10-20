@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <stdio.h>
 #include <vector>
 #include <string>
 #include "fortifycontroller.h"
@@ -65,7 +66,9 @@ int main(int argc, const char * argv[]) {
     
     FortifyController controller = FortifyController(&player, &gameMap);
     
-    controller.start();
+    //controller.start();
+    
+    printf("\033[%d;%dH", 5, 20);
 }
 
 

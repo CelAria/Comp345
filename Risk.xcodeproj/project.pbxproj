@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
+		B30C1660217BF2440091C565 /* mapvisualizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30C165E217BF2440091C565 /* mapvisualizer.cpp */; };
+		B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B30C165F217BF2440091C565 /* mapvisualizer.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */; };
@@ -148,6 +150,8 @@
 		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
 		6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
+		B30C165E217BF2440091C565 /* mapvisualizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mapvisualizer.cpp; sourceTree = "<group>"; };
+		B30C165F217BF2440091C565 /* mapvisualizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mapvisualizer.h; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fortifycontroller.cpp; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */,
 				B35FED79217AE56D00FE6FA7 /* fortifyview.cpp */,
 				B35FED7A217AE56D00FE6FA7 /* fortifyview.h */,
+				B30C165E217BF2440091C565 /* mapvisualizer.cpp */,
+				B30C165F217BF2440091C565 /* mapvisualizer.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
+				B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */,
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
 				B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */,
@@ -606,6 +613,7 @@
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
+				B30C1660217BF2440091C565 /* mapvisualizer.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

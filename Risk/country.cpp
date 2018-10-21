@@ -10,12 +10,14 @@ Country::Country() {
     name = "";
     continentName = "";
     armiesCount = 0;
+    playerId = 0;
 }
 
 Country::Country(string countryName, string continentName) {
     this->name = countryName;
     this->continentName = continentName;
     armiesCount = 0;
+    playerId = 0;
 }
 
 /**

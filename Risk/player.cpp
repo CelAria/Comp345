@@ -24,6 +24,7 @@ void Player::reinforce(GameMap* gameMap) {
 }
 
 void Player::addCountry(Country *country) {
+    country->setOwner(id);
     countries[country->getName()] = country;
 }
 

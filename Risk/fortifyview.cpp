@@ -10,6 +10,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include "country.h"
 
 using namespace std;
@@ -41,10 +42,25 @@ int FortifyView::promptUserForAmountOfArmies(Country* fromCountry) {
     return amount;
 }
 
+string FortifyView::countryToString(Country *country) {
+    stringstream str;
+    str << country->getName() << ", " << country->getContinentName() << "\t(" << country->getArmiesCount() << " Armies)" << " *P" << country->getOwner();
+    return str.str();
+}
+
 Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countries) {
     cout << prompt << endl << endl;
     for(int i = 0; i < countries.size(); ++i) {
-        cout << i + 1 << ".\t" << countries[i]->getName() << "\t\t(" << countries[i]->getArmiesCount() << " Armies)" << endl;
+        cout << i + 1 << ".\t" << countryToString(countries[i]) << endl;
+        
+        vector<Country*> neighbors = countries[i]->getAllNeighbors();
+        for(int j = 0; j < neighbors.size(); j++) {
+            cout << "\t|" << endl;
+            cout << "\t -- ";
+            cout << countryToString(neighbors[j]) << endl;
+        }
+        
+        cout << endl;
     }
     cout << endl;
     
@@ -56,5 +72,5 @@ Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countr
         return NULL;
     }
 
-    return countries[selection];
+    return countries[selection - 1];
 }

@@ -11,6 +11,7 @@
 #include "player.h"
 #include "country.h"
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -24,5 +25,6 @@ public:
     Country* promptUserForOrigin(vector<Country*> countries);
     Country* promptUserForDestination(vector<Country*> countries);
     int promptUserForAmountOfArmies(Country* fromCountry);
+    string countryToString(Country* country);
 };
 

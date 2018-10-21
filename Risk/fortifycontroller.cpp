@@ -14,7 +14,7 @@ using namespace std;
 void FortifyController::start() {
     view.presentFortify();
     
-    Country* fromCountry = view.promptUserForDestination(player->getAllCountries());
+    Country* fromCountry = view.promptUserForOrigin(player->getAllCountries());
     
     vector<Country*> neighbors = fromCountry->getAllNeighbors();
     vector<Country*> eligibleNeighbors;

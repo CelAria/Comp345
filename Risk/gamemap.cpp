@@ -83,13 +83,13 @@ void GameMap::traverseHelper(Country* country, map<string, bool> &visited, int &
     vector<Country*> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
-        cout << "Country " << count << ": " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
-
+        cout << "[ P" << country->getOwner() << ": " << country->getName() << ", " << country->getContinentName() << " (" << country->getArmiesCount() << " Armies) ]\t---> " << endl;
+        
         for(int i = 0; i < neighbors.size(); i++) {
-            cout << neighbors[i]->getName() << "\n";
+            cout << "{ P" << neighbors[i]->getOwner() << ": " << neighbors[i]->getName() << ", " << neighbors[i]->getContinentName() << " (" << neighbors[i]->getArmiesCount() << " Armies) }  ";
         }
-
-        cout << "------------------------------\n";
+        
+        cout << endl << endl;
     }
 
     for(int i = 0; i < neighbors.size(); i++) {
@@ -123,12 +123,13 @@ void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visit
     vector<Country*> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
-        cout << "Country " << count << ": " << country->getName() << ", Continent: " << country->getContinentName() << " with " << country->getNeighborCount() << " neighbors:\n";
-    
+        cout << "[ P" << country->getOwner() << ": " << country->getName() << ", " << country->getContinentName() << " (" << country->getArmiesCount() << " Armies) ]\t---> " << endl;
+        
         for(int i = 0; i < neighbors.size(); i++) {
-            cout << neighbors[i]->getName() << "\n";
+            cout << "{ P" << neighbors[i]->getOwner() << ": " << neighbors[i]->getName() << ", " << neighbors[i]->getContinentName() << " (" << neighbors[i]->getArmiesCount() << " Armies) }  ";
         }
-        cout << "------------------------------\n";
+        
+        cout << endl << endl;
     }
 
     for(int i = 0; i < neighbors.size(); i++) {

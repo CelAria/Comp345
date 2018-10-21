@@ -12,7 +12,7 @@ using namespace std;
 
 GameMap *ptrgamemap;
 
-void Maploader::readmapfile(string file){
+GameMap* Maploader::readmapfile(string file){
     ptrgamemap = new GameMap();
     filename = file;
     //string variable for each line parsed by fstream
@@ -26,7 +26,6 @@ void Maploader::readmapfile(string file){
         delete ptrgamemap;
         ptrgamemap= NULL;
         filename.clear();
-        return;
     }
     
     fstream.open(filename);
@@ -84,7 +83,6 @@ void Maploader::readmapfile(string file){
         if(ptrgamemap->isValid()){
             ptrgamemap->traverseAll(true);
             cout << " This gamemap is valid! \n";
-            return;
         }
         
         
@@ -92,17 +90,16 @@ void Maploader::readmapfile(string file){
             cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
             delete ptrgamemap;
             ptrgamemap= NULL;
-            return;
         }
         
     }
     else{
         cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
-        return;
     }
+    return ptrgamemap;
 }
 
-void Maploader::readmapfile(){
+GameMap* Maploader::readmapfile(){
     ptrgamemap = new GameMap();
     
     //string variable for each line parsed by fstream
@@ -118,7 +115,6 @@ void Maploader::readmapfile(){
         ptrgamemap= NULL;
         filename.clear();
         readmapfile();
-        return;
     }
     
     fstream.open(filename);
@@ -177,7 +173,6 @@ void Maploader::readmapfile(){
             ptrgamemap->traverseAll(true);
             cout << " This gamemap is valid! Add any other maps you want:\n";
             readmapfile();
-            return;
         }
         
       
@@ -186,15 +181,14 @@ void Maploader::readmapfile(){
         delete ptrgamemap;
         ptrgamemap= NULL;
         readmapfile();
-        return;
         }
         
     }
     else{
         cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
         readmapfile();
-        return;
     }
+    return ptrgamemap;
 }
 
 void Maploader::parseContinent(string line) {

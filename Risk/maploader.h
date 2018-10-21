@@ -32,8 +32,8 @@ private:
 public:
     Maploader(){};
     ~Maploader(){};
-    void readmapfile();
-    void readmapfile(string file);
+    GameMap* readmapfile();
+    GameMap* readmapfile(string file);
     void parser(string line);
     void parseContinent(string line);
     void parseTerritory(string line);

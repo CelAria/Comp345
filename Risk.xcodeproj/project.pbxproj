@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
+		6B0E7690217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
+		6B0E7691217E62D5006CECD2 /* controllergamestart.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B0E768E217E62D5006CECD2 /* controllergamestart.h */; };
+		6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */; };
+		6B0E7695217FD5F0006CECD2 /* viewgamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */; };
+		6B0E7696217FD5F0006CECD2 /* viewgamestart.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B0E7693217FD5F0006CECD2 /* viewgamestart.h */; };
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B30C1660217BF2440091C565 /* mapvisualizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30C165E217BF2440091C565 /* mapvisualizer.cpp */; };
 		B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B30C165F217BF2440091C565 /* mapvisualizer.h */; };
@@ -144,6 +150,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controllergamestart.cpp; sourceTree = "<group>"; };
+		6B0E768E217E62D5006CECD2 /* controllergamestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = controllergamestart.h; sourceTree = "<group>"; };
+		6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viewgamestart.cpp; sourceTree = "<group>"; };
+		6B0E7693217FD5F0006CECD2 /* viewgamestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewgamestart.h; sourceTree = "<group>"; };
 		6B690C36216FEF93001CFB90 /* Canada.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Canada.map; sourceTree = "<group>"; };
 		6B9E4A132170F5C3003F8DBC /* Africa.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Africa.map; sourceTree = "<group>"; };
 		6B9E4A142170F605003F8DBC /* Brazil(brokenmap).map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Brazil(brokenmap).map"; sourceTree = "<group>"; };
@@ -310,8 +320,12 @@
 		B3BB80A02165ABE9005177BB /* Risk */ = {
 			isa = PBXGroup;
 			children = (
-				6BB65C9C2166A444007AFC39 /* maploader.h */,
+				6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */,
+				6B0E768E217E62D5006CECD2 /* controllergamestart.h */,
+				6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */,
+				6B0E7693217FD5F0006CECD2 /* viewgamestart.h */,
 				6BB65C9A2166A42E007AFC39 /* maploader.cpp */,
+				6BB65C9C2166A444007AFC39 /* maploader.h */,
 				B3BB80D82165B35A005177BB /* Dice.cpp */,
 				B3BB80DA2165B35A005177BB /* Dice.h */,
 				B3BB80AD2165AD5B005177BB /* continent.h */,
@@ -366,6 +380,7 @@
 			files = (
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
+				6B0E7696217FD5F0006CECD2 /* viewgamestart.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
 				B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */,
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
@@ -374,6 +389,7 @@
 				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
+				6B0E7691217E62D5006CECD2 /* controllergamestart.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +581,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B0E7690217E62D5006CECD2 /* controllergamestart.cpp in Sources */,
 				B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */,
+				6B0E7695217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +628,8 @@
 				B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
+				6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,
+				6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */,
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,

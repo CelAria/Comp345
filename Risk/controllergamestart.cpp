@@ -7,6 +7,7 @@
 //
 // this file is to do the game start functions
 #include "controllergamestart.h"
+#include <boost/filesystem.hpp>
 #include <vector>
 #include <string>
 #include <sstream>

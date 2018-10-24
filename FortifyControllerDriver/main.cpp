@@ -71,8 +71,15 @@ int main(int argc, const char * argv[]) {
     FortifyController controller = FortifyController(&player, &gameMap);
     
     controller.start();
-    //controllerGameStart game;
     
+    cout << "Result:" << endl << endl;
+    
+    vector<Country*> cs = player.getAllCountries();
+    for(int i = 0; i < cs.size(); ++i) {
+        cout << cs[i]->toString() << endl;
+    }
+    
+    return 0;
 }
 
 

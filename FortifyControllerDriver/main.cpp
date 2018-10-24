@@ -67,6 +67,7 @@ int main(int argc, const char * argv[]) {
     FortifyController controller = FortifyController(&player, &gameMap);
     
     controller.start();
+    controllerGameStart game;
     
 }
 

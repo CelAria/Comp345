@@ -2,6 +2,8 @@
 #include "maploader.h"
 #include "Dice.h"
 #include "gamemap.h"
+#include "viewgamestart.h"
+#include "controllergamestart.h"
 #include <vector>
 #include <string>
 #include <sstream>
@@ -18,18 +20,21 @@ int main(int argc, const char * argv[]) {
     
 Maploader mymaploader;
     
-    //Type in the full file path to the file you want to open
+//    //Type in the full file path to the file you want to open
+//
+//    //example of "user input" style with terminal using filepaths
+//    try
+//    {
+//    mymaploader.readmapfile();
+//    cout << "read mapfile runs" << endl;
+//    }
+//    catch (runtime_error e)
+//    {
+//        cout << e.what() <<endl;
+//    }
+//
+//    return 0;
+    GameStart game;
+    game.selectPlayers();
     
-    //example of "user input" style with terminal using filepaths
-    try
-    {
-    mymaploader.readmapfile();
-    cout << "read mapfile runs" << endl;
-    }
-    catch (runtime_error e)
-    {
-        cout << e.what() <<endl;
-    }
-
-    return 0;
 }

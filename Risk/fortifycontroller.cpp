@@ -41,7 +41,10 @@ void FortifyController::start() {
                     //bad destination. go back?
                 }
             } else {
-                //don't own any adjacent countries to move to. go back?
+                string prompt = fromCountry->getName() + " doesn't have any adjacent countries to move armies to. Try again? (y/n)";
+                if(view.promptUserYesNo(prompt)) {
+                    start();
+                }
             }
         } else {
             string prompt = fromCountry->getName() + " doesn't have enough armies. Try again? (y/n)";

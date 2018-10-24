@@ -16,19 +16,45 @@ void FortifyController::start() {
     
     Country* fromCountry = view.promptUserForOrigin(player->getAllCountries());
     
-    vector<Country*> neighbors = fromCountry->getAllNeighbors();
-    vector<Country*> eligibleNeighbors;
-    for(int i = 0; i < neighbors.size(); ++i) {
-        if(neighbors[i]->getOwner() == player->getPlayerId()) {
-            eligibleNeighbors.push_back(neighbors[i]);
+    if(fromCountry != NULL) {
+        if(fromCountry->getArmiesCount() > 1) {
+            vector<Country*> neighbors = fromCountry->getAllNeighbors();
+            vector<Country*> eligibleNeighbors;
+            for(int i = 0; i < neighbors.size(); ++i) {
+                if(neighbors[i]->getOwner() == player->getPlayerId()) {
+                    eligibleNeighbors.push_back(neighbors[i]);
+                }
+            }
+            
+            if(eligibleNeighbors.size() > 0) {
+                Country* toCountry = view.promptUserForDestination(eligibleNeighbors);
+                
+                if(toCountry != NULL) {
+                    int amount = view.promptUserForAmountOfArmies(fromCountry);
+                    
+                    if(amount > 0) {
+                        moveArmies(fromCountry, toCountry, amount);
+                    } else {
+                        //invalid amount. go back?
+                    }
+                } else {
+                    //bad destination. go back?
+                }
+            } else {
+                //don't own any adjacent countries to move to. go back?
+            }
+        } else {
+            string prompt = fromCountry->getName() + " doesn't have enough armies. Try again? (y/n)";
+            if(view.promptUserYesNo(prompt)) {
+                start();
+            }
+        }
+    } else {
+        if(!view.promptUserYesNo("Skip the fortify phase? (y/n)")) {
+            start();
         }
     }
     
-    Country* toCountry = view.promptUserForDestination(eligibleNeighbors);
-    
-    int amount = view.promptUserForAmountOfArmies(fromCountry);
-    
-    moveArmies(fromCountry, toCountry, amount);
 }
 
 bool FortifyController::moveArmies(Country *fromCountry, Country *toCountry, int amount) {

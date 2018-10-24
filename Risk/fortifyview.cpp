@@ -36,7 +36,7 @@ int FortifyView::promptUserForAmountOfArmies(Country* fromCountry) {
     cin >> amount;
     
     if(!cin.good() || amount < 1 || amount > fromCountry->getArmiesCount() - 1) {
-        //handle invalid input
+        return 0;
     }
     
     return amount;
@@ -69,4 +69,23 @@ Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countr
     }
     
     return countries[selection - 1];
+}
+
+bool FortifyView::promptUserYesNo(string prompt) {
+    cout << prompt << endl;
+    
+    char answer;
+    cin >> answer;
+    
+    if(cin.good()) {
+        if(answer == 'y' || answer == 'Y') {
+            return true;
+        } else if(answer == 'n' || answer == 'N') {
+            return false;
+        } else {
+            return promptUserYesNo(prompt);
+        }
+    } else {
+        return promptUserYesNo(prompt);
+    }
 }

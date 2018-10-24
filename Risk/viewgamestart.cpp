@@ -7,7 +7,7 @@
 //
 
 #include "viewgamestart.h"
-//#include <boost/filesystem.hpp>
+#include <boost/filesystem.hpp>
 #include <vector>
 #include <string>
 #include <set>
@@ -19,7 +19,9 @@ using namespace std;
 //print the available maps
 void viewGameStart::printMapDirectory(){
 cout << "here are all the maps in the directory:" << endl;
+    
 };
+
 
 
 

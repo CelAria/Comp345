@@ -24,7 +24,7 @@ Country* FortifyView::promptUserForOrigin(vector<Country *> countries) {
 }
 
 Country* FortifyView::promptUserForDestination(vector<Country *> countries) {
-    return promptCountrySelect("Choose a country to move armies to:", countries);
+    return promptCountrySelect("Choose a country to move armies to:", countries, true);
 }
 
 int FortifyView::promptUserForAmountOfArmies(Country* fromCountry) {
@@ -44,20 +44,22 @@ int FortifyView::promptUserForAmountOfArmies(Country* fromCountry) {
 
 string FortifyView::countryToString(Country *country) {
     stringstream str;
-    str << country->getName() << ", " << country->getContinentName() << "\t(" << country->getArmiesCount() << " Armies)" << " *P" << country->getOwner();
+    str << country->getName() << ", " << country->getContinentName() << "\t(" << country->getArmiesCount() << " Armies)" << " [P" << country->getOwner() << "]";
     return str.str();
 }
 
-Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countries) {
+Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countries, bool oneline) {
     cout << prompt << endl << endl;
     for(int i = 0; i < countries.size(); ++i) {
         cout << i + 1 << ".\t" << countryToString(countries[i]) << endl;
         
-        vector<Country*> neighbors = countries[i]->getAllNeighbors();
-        for(int j = 0; j < neighbors.size(); j++) {
-            cout << "\t|" << endl;
-            cout << "\t -- ";
-            cout << countryToString(neighbors[j]) << endl;
+        if(!oneline) {
+            vector<Country*> neighbors = countries[i]->getAllNeighbors();
+            for(int j = 0; j < neighbors.size(); j++) {
+                cout << "\t|" << endl;
+                cout << "\t -- ";
+                cout << countryToString(neighbors[j]) << endl;
+            }
         }
         
         cout << endl;
@@ -71,6 +73,6 @@ Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countr
     if(!cin.good() || selection < 1 || selection > countries.size()) {
         return NULL;
     }
-
+    
     return countries[selection - 1];
 }

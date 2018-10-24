@@ -20,7 +20,7 @@ class FortifyView {
 private:
     
 public:
-    Country* promptCountrySelect(string prompt, vector<Country*> countries);
+    Country* promptCountrySelect(string prompt, vector<Country*> countries, bool oneline = false);
     void presentFortify();
     Country* promptUserForOrigin(vector<Country*> countries);
     Country* promptUserForDestination(vector<Country*> countries);

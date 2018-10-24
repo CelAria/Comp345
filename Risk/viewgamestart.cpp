@@ -17,9 +17,11 @@
 using namespace std;
 
 //print the available maps
-void viewGameStart::printMapDirectory(){
-cout << "here are all the maps in the directory:" << endl;
-    
+
+void printMapDirectory(const string& name){
+    cout << "here are all the maps in the directory:" << endl;
+    boost::filesystem::path p(name);
+    for(auto & p : boost::filesystem::directory_iterator(name)){ std::cout << p << std::endl; }
 };
 
 

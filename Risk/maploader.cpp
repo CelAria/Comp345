@@ -18,8 +18,7 @@ GameMap* Maploader::readmapfile(string file){
     //string variable for each line parsed by fstream
     string line;
     //uses filename and fstream
-   // cout << "\nplease type the complete file path of the map file you would like to open. File must be of the type .map\n";
-    
+   
     //reject if not a .map file
     if(filename.substr(filename.find_last_of(".") + 1) != "map"){
         cout << "file is not of type map.";
@@ -36,7 +35,6 @@ GameMap* Maploader::readmapfile(string file){
         
         cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
         
-        //make gamemap (only one for program)
         
         bool isInContinent = false;
         bool isInTerritory = false;
@@ -105,7 +103,7 @@ GameMap* Maploader::readmapfile(){
     //string variable for each line parsed by fstream
     string line;
     //uses filename and fstream
-    cout << "\nplease type the complete file path of the map file you would like to open. File must be of the type .map\n";
+    cout << "\nplease type the complete file path of the map file you would like to open. File must be of the type .map. Do not include quotation marks in the file path.\n";
     getline (cin, filename);
     
     //reject if not a .map file

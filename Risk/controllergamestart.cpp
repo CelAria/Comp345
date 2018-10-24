@@ -8,6 +8,7 @@
 // this file is to do the game start functions
 #include "controllergamestart.h"
 #include <boost/filesystem.hpp>
+#include <boost/lexical_cast.hpp>
 #include <vector>
 #include <string>
 #include <sstream>
@@ -17,28 +18,53 @@
 
 using namespace std;
 
-//read in using string stream, turn into integer, return integer value for number of players
-int GameStart::selectPlayers(){
-    cout << "please input the number of players (2-6). Type using numbers such as 1,2,3,4." << endl;
-    string tempinput;
-    cin >> tempinput;
-    numberofplayers= stoi(tempinput);
-    
-    if (cin.fail()){
-        cout <<"not a valid player amount. Select players (2-6). Enter an integer";
-        cin.clear();
-        selectPlayers();
+bool verifyInputStringIsInteger(string s){
+    int tempint;
+    if (boost::conversion::try_lexical_convert(s, tempint)){
+        return true;
     }
-    
-    if(numberofplayers== 1 || numberofplayers== 2 ||numberofplayers== 3 ||numberofplayers== 4 ||numberofplayers== 5 ||numberofplayers== 6){
-        cout << numberofplayers << " has been created" << endl;
+    if (!boost::conversion::try_lexical_convert(s, tempint)){
+        return false;
     }
-    return numberofplayers;
+    else return false;
 };
 
-
-
-
+// works but prints multiple times when the correct value is found?
+int GameStart::selectPlayers(){
+    cout << "please input the number of players (2-6). Type using numbers such as 2,3,4,5,6." << endl;
+    string tempinput;
+    cin >> tempinput;
+    
+    if (verifyInputStringIsInteger(tempinput)==true){
+        numberofplayers= stoi(tempinput);
+        if(numberofplayers >=7 || numberofplayers <=1){
+            numberofplayers= stoi(tempinput);
+            cin.clear();
+            cin.ignore(BC_STRING_MAX, '\n');
+            tempinput.clear();
+            tempinput.erase();
+            cout << "value is less than 2 or greater than 7" << endl;
+            cout << tempinput;
+            selectPlayers();
+        }
+        else{
+            cout << "(" <<  numberofplayers << ")" << " players have been created\n" << endl;
+            return numberofplayers;
+        }
+    }
+    if (verifyInputStringIsInteger(tempinput)==false){
+        cout << tempinput << endl;
+        cout <<"not a integer number value. Select players (2-6). Enter an integer";
+        cin.clear();
+        tempinput.clear();
+        tempinput.erase();
+        cin.ignore(BC_STRING_MAX, '\n');
+        selectPlayers();
+        return numberofplayers;
+    }
+  
+    return numberofplayers;
+};
 
 
 

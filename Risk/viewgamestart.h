@@ -8,12 +8,19 @@
 
 #pragma once
 
+#include <vector>
+#include <string>
+
+using namespace std;
+
 class viewGameStart{
   
 public:
-    void printMapDirectory();
-    
     
 private:
     
 };
+
+// declared outside of class definition
+void printMapDirectory(const string& name);
+

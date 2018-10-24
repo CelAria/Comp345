@@ -18,7 +18,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-Maploader mymaploader;
+
     
 //    //Type in the full file path to the file you want to open
 //
@@ -37,4 +37,10 @@ Maploader mymaploader;
     GameStart game;
     game.selectPlayers();
     
+    //directory where maps are stored
+    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
+    // print maps
+    printMapDirectory(directory);
+    Maploader mymaploader;
+    mymaploader.readmapfile();
 }

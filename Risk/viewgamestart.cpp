@@ -17,7 +17,6 @@
 using namespace std;
 
 //print the available maps
-
 void printMapDirectory(const string& name){
     cout << "here are all the maps in the directory:" << endl;
     boost::filesystem::path p(name);

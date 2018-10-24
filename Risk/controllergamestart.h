@@ -19,20 +19,21 @@ class GameStart{
     
 public:
     
-    int selectPlayers(); //return the number of players selected by user
+    const int selectPlayers(); //return the number of players selected by user
+    const vector<Player*> createPlayers();  //return vector of pointers to player objects
+    const Player* createPlayerHand();       //return pointer to each player
+    const vector<Player*> playerOrder(); //return vector of randomly ordered players ??
     
-    static vector<Player*> createPlayers();  //return vector of pointers to player objects
-    static Player* createPlayerHand();        //return pointer to each player
-    static vector<Player*> playerOrder(); //return vector of randomly ordered players ??
-    
-    static Deck* createDeck();              //return pointer to global deck
-    static GameMap* createGameMap();        //return pointer to global gamemap
-    static Player* assignCountries();          //assign countries to each player round robin style
-    static Player* placeArmies();              //assign armies to each country round robin style
+    const Deck* createDeck();              //return pointer to global deck
+    const GameMap* createGameMap();        //return pointer to global gamemap
+    const Player* assignCountries();          //assign countries to each player round robin style
+    const Player* placeArmies();              //assign armies to each country round robin style
     
 private:
     int numberofplayers;  //number of players in game
     static Deck* gamedeck;     //pointer to global deck
     static GameMap* map;       //pointer to global map
-    
+    vector<Player*> players;    //vector of all players that has been created
 };
+
+bool verifyInputStringIsInteger(string s);

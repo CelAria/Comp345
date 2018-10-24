@@ -169,8 +169,8 @@ GameMap* Maploader::readmapfile(){
         
         if(ptrgamemap->isValid()){
             ptrgamemap->traverseAll(true);
-            cout << " This gamemap is valid! Add any other maps you want:\n";
-            readmapfile();
+            cout << " This gamemap is valid!\n" << endl;
+            //readmapfile();
         }
         
       

@@ -34,8 +34,6 @@ int main(int argc, const char * argv[]) {
 //    }
 //
 //    return 0;
-    GameStart game;
-    game.selectPlayers();
     
     //directory where maps are stored
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
@@ -43,4 +41,7 @@ int main(int argc, const char * argv[]) {
     printMapDirectory(directory);
     Maploader mymaploader;
     mymaploader.readmapfile();
+    GameStart game;
+    game.selectPlayers();
+    game.createPlayers();
 }

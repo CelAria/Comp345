@@ -30,7 +30,7 @@ bool verifyInputStringIsInteger(string s){
 };
 
 // works but prints multiple times when the correct value is found?
-int GameStart::selectPlayers(){
+const int GameStart::selectPlayers(){
     cout << "please input the number of players (2-6). Type using numbers such as 2,3,4,5,6." << endl;
     string tempinput;
     cin >> tempinput;
@@ -66,6 +66,21 @@ int GameStart::selectPlayers(){
     return numberofplayers;
 };
 
+
+
+// returns vector array of player pointers
+const vector<Player*> GameStart::createPlayers(){
+    
+    for(int j=1; j <= numberofplayers; j++){
+        
+        // create new player object (initialize with player ID= j and push into vector players
+        players.push_back(new Player(j));
+    }
+    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i)
+        std::cout << "player Id: " << (*i)->getPlayerId() << ' ';
+    
+    return players;
+};
 
 
 

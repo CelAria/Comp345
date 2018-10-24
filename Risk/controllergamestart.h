@@ -8,6 +8,7 @@
 #pragma once
 
 #include "maploader.h"
+#include <boost/filesystem.hpp>
 #include "player.h"
 #include "gamemap.h"
 #include "country.h"

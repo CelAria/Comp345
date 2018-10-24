@@ -36,29 +36,23 @@ int FortifyView::promptUserForAmountOfArmies(Country* fromCountry) {
     cin >> amount;
     
     if(!cin.good() || amount < 1 || amount > fromCountry->getArmiesCount() - 1) {
-        //handle invalid input
+        return 0;
     }
     
     return amount;
 }
 
-string FortifyView::countryToString(Country *country) {
-    stringstream str;
-    str << country->getName() << ", " << country->getContinentName() << "\t(" << country->getArmiesCount() << " Armies)" << " [P" << country->getOwner() << "]";
-    return str.str();
-}
-
 Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countries, bool oneline) {
     cout << prompt << endl << endl;
     for(int i = 0; i < countries.size(); ++i) {
-        cout << i + 1 << ".\t" << countryToString(countries[i]) << endl;
+        cout << i + 1 << ".\t" << countries[i]->toString() << endl;
         
         if(!oneline) {
             vector<Country*> neighbors = countries[i]->getAllNeighbors();
             for(int j = 0; j < neighbors.size(); j++) {
                 cout << "\t|" << endl;
                 cout << "\t -- ";
-                cout << countryToString(neighbors[j]) << endl;
+                cout << neighbors[j]->toString() << endl;
             }
         }
         
@@ -75,4 +69,23 @@ Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countr
     }
     
     return countries[selection - 1];
+}
+
+bool FortifyView::promptUserYesNo(string prompt) {
+    cout << prompt << endl;
+    
+    char answer;
+    cin >> answer;
+    
+    if(cin.good()) {
+        if(answer == 'y' || answer == 'Y') {
+            return true;
+        } else if(answer == 'n' || answer == 'N') {
+            return false;
+        } else {
+            return promptUserYesNo(prompt);
+        }
+    } else {
+        return promptUserYesNo(prompt);
+    }
 }

@@ -4,6 +4,7 @@
 #include <set>
 #include <map>
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 Country::Country() {
@@ -41,4 +42,10 @@ vector<Country*> Country::getAllNeighbors() {
         countries.push_back(country);
     }
     return countries;
+}
+
+string Country::toString() {
+    stringstream str;
+    str << this->getName() << ", " << this->getContinentName() << "\t(" << this->getArmiesCount() << " Armies)" << " [P" << this->getOwner() << "]";
+    return str.str();
 }

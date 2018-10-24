@@ -26,5 +26,6 @@ public:
     Country* promptUserForDestination(vector<Country*> countries);
     int promptUserForAmountOfArmies(Country* fromCountry);
     string countryToString(Country* country);
+    bool promptUserYesNo(string prompt);
 };
 

@@ -51,6 +51,10 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player) {
     venNeighbors.push_back("Colombia");
     gameMap->addCountry("Venezuela", "South America", venNeighbors);
     
+    gameMap->getCountry("Costa Rica")->setArmiesCount(2);
+    gameMap->getCountry("Venezuela")->setArmiesCount(4);
+    gameMap->getCountry("Colombia")->setArmiesCount(1);
+    
     player->addCountry(gameMap->getCountry("Costa Rica"));
     player->addCountry(gameMap->getCountry("Venezuela"));
     player->addCountry(gameMap->getCountry("Colombia"));
@@ -67,8 +71,15 @@ int main(int argc, const char * argv[]) {
     FortifyController controller = FortifyController(&player, &gameMap);
     
     controller.start();
-    //controllerGameStart game;
     
+    cout << "Result:" << endl << endl;
+    
+    vector<Country*> cs = player.getAllCountries();
+    for(int i = 0; i < cs.size(); ++i) {
+        cout << cs[i]->toString() << endl;
+    }
+    
+    return 0;
 }
 
 

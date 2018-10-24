@@ -887,6 +887,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				OTHER_LDFLAGS = (
 					/usr/local/Cellar/boost/1.67.0_1/lib/libboost_filesystem.dylib,
 					/usr/local/Cellar/boost/1.67.0_1/lib/libboost_system.dylib,

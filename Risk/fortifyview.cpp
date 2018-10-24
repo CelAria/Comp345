@@ -42,23 +42,17 @@ int FortifyView::promptUserForAmountOfArmies(Country* fromCountry) {
     return amount;
 }
 
-string FortifyView::countryToString(Country *country) {
-    stringstream str;
-    str << country->getName() << ", " << country->getContinentName() << "\t(" << country->getArmiesCount() << " Armies)" << " [P" << country->getOwner() << "]";
-    return str.str();
-}
-
 Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countries, bool oneline) {
     cout << prompt << endl << endl;
     for(int i = 0; i < countries.size(); ++i) {
-        cout << i + 1 << ".\t" << countryToString(countries[i]) << endl;
+        cout << i + 1 << ".\t" << countries[i]->toString() << endl;
         
         if(!oneline) {
             vector<Country*> neighbors = countries[i]->getAllNeighbors();
             for(int j = 0; j < neighbors.size(); j++) {
                 cout << "\t|" << endl;
                 cout << "\t -- ";
-                cout << countryToString(neighbors[j]) << endl;
+                cout << neighbors[j]->toString() << endl;
             }
         }
         

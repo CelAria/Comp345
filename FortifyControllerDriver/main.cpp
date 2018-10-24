@@ -51,6 +51,10 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player) {
     venNeighbors.push_back("Colombia");
     gameMap->addCountry("Venezuela", "South America", venNeighbors);
     
+    gameMap->getCountry("Costa Rica")->setArmiesCount(2);
+    gameMap->getCountry("Venezuela")->setArmiesCount(4);
+    gameMap->getCountry("Colombia")->setArmiesCount(1);
+    
     player->addCountry(gameMap->getCountry("Costa Rica"));
     player->addCountry(gameMap->getCountry("Venezuela"));
     player->addCountry(gameMap->getCountry("Colombia"));

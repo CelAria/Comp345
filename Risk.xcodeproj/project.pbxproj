@@ -328,12 +328,12 @@
 				6BB65C9C2166A444007AFC39 /* maploader.h */,
 				B3BB80D82165B35A005177BB /* Dice.cpp */,
 				B3BB80DA2165B35A005177BB /* Dice.h */,
-				B3BB80AD2165AD5B005177BB /* continent.h */,
-				B3BB80AB2165AD5A005177BB /* country.h */,
-				B3BB80AC2165AD5A005177BB /* gamemap.h */,
 				B3BB80A82165AD32005177BB /* continent.cpp */,
+				B3BB80AD2165AD5B005177BB /* continent.h */,
 				B3BB80AA2165AD32005177BB /* country.cpp */,
+				B3BB80AB2165AD5A005177BB /* country.h */,
 				B3BB80A92165AD32005177BB /* gamemap.cpp */,
+				B3BB80AC2165AD5A005177BB /* gamemap.h */,
 				B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */,
 				B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */,
 				B3B2E8DA2166A89100C2A4BA /* player.cpp */,
@@ -887,7 +887,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "";
 				OTHER_LDFLAGS = (
 					/usr/local/Cellar/boost/1.67.0_1/lib/libboost_filesystem.dylib,
 					/usr/local/Cellar/boost/1.67.0_1/lib/libboost_system.dylib,

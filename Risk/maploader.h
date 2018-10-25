@@ -37,6 +37,6 @@ public:
     void parser(string line);
     void parseContinent(string line);
     void parseTerritory(string line);
-    
+    GameMap* ptrgamemap;
     
 };

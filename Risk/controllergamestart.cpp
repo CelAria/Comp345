@@ -7,6 +7,8 @@
 //
 // this file is to do the game start functions
 #include "controllergamestart.h"
+#include "maploader.h"
+#include "gamemap.h"
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
 #include <vector>
@@ -17,6 +19,7 @@
 #include <iostream>
 
 using namespace std;
+
 
 bool verifyInputStringIsInteger(string s){
     int tempint;
@@ -67,7 +70,6 @@ const int GameStart::selectPlayers(){
 };
 
 
-
 // returns vector array of player pointers
 const vector<Player*> GameStart::createPlayers(){
     
@@ -82,5 +84,9 @@ const vector<Player*> GameStart::createPlayers(){
     return players;
 };
 
+const Deck* GameStart::createDeck(){
+    //cout << (ptrgamemap)->getCount() << endl;
+    return gamedeck;
+};
 
 

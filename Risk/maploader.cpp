@@ -10,7 +10,6 @@
 
 using namespace std;
 
-GameMap *ptrgamemap;
 
 GameMap* Maploader::readmapfile(string file){
     ptrgamemap = new GameMap();
@@ -170,7 +169,6 @@ GameMap* Maploader::readmapfile(){
         if(ptrgamemap->isValid()){
             ptrgamemap->traverseAll(true);
             cout << " This gamemap is valid!\n" << endl;
-            //readmapfile();
         }
         
       

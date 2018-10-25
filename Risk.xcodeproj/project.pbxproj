@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34362E06218167C900838F6F /* attackphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34362E05218167C900838F6F /* attackphase.cpp */; };
+		34362E08218167EE00838F6F /* attackphase.h in Headers */ = {isa = PBXBuildFile; fileRef = 34362E07218167EE00838F6F /* attackphase.h */; };
 		6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
 		6B0E7690217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
 		6B0E7691217E62D5006CECD2 /* controllergamestart.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B0E768E217E62D5006CECD2 /* controllergamestart.h */; };
@@ -150,6 +152,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34362E05218167C900838F6F /* attackphase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackphase.cpp; sourceTree = "<group>"; };
+		34362E07218167EE00838F6F /* attackphase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackphase.h; sourceTree = "<group>"; };
 		6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controllergamestart.cpp; sourceTree = "<group>"; };
 		6B0E768E217E62D5006CECD2 /* controllergamestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = controllergamestart.h; sourceTree = "<group>"; };
 		6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viewgamestart.cpp; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 				B35FED7A217AE56D00FE6FA7 /* fortifyview.h */,
 				B30C165E217BF2440091C565 /* mapvisualizer.cpp */,
 				B30C165F217BF2440091C565 /* mapvisualizer.h */,
+				34362E05218167C900838F6F /* attackphase.cpp */,
+				34362E07218167EE00838F6F /* attackphase.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
+				34362E08218167EE00838F6F /* attackphase.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
 				B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */,
@@ -630,6 +637,7 @@
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,
 				6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */,
+				34362E06218167C900838F6F /* attackphase.cpp in Sources */,
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
@@ -887,7 +895,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "";
 				OTHER_LDFLAGS = (
 					/usr/local/Cellar/boost/1.67.0_1/lib/libboost_filesystem.dylib,
 					/usr/local/Cellar/boost/1.67.0_1/lib/libboost_system.dylib,

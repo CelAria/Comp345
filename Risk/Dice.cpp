@@ -12,6 +12,8 @@
 #include <ctime>
 #include<random>
 #include <map>
+#include <array>
+#include <algorithm>
 using namespace std;
 #include "Dice.h"
 
@@ -23,38 +25,117 @@ using namespace std;
 Dice::Dice(int player)
 {
     playerNumber = player;
-	vector<int> diceContainer;
+	vector<int> diceContainer1;
+   
+   
+
     srand((unsigned)time(0));
 }
 
 // roll dice function, takes the amount of dice you want to roll
 // diceValue is calcuated by random number % 6 +1 to make sure values stay between 1-6
 
-int Dice ::rollDice(int amountOfDice)
+void Dice ::rollDice(int amountOfDice)
 {
     
 	if (amountOfDice == 1) 
 	{
-		diceValue = (rand() % 6 + 1);
+        diceRollsAttack[0] = (rand() % 6 + 1);
+        
+        storeDice(diceRollsAttack[0]);
+        
 	}
 	else if (amountOfDice == 2) 
 	{
-		diceValue = (rand() % 6 + 1) + (rand() % 6 + 1);
+        diceRollsAttack[0]=  (rand() % 6 + 1);
+        diceRollsAttack[1]=  (rand() % 6 + 1);
+        
+       
+        
+        storeDice(diceRollsAttack[0]);
+        storeDice(diceRollsAttack[1]);
 	}
 	else if (amountOfDice == 3) 
 	{
-		diceValue = (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1);
+        diceRollsAttack[0]=  (rand() % 6 + 1);
+        diceRollsAttack[1]=  (rand() % 6 + 1);
+        diceRollsAttack[2]=  (rand() % 6 + 1);
+   
+       
+		storeDice(diceRollsAttack[0]);
+        storeDice(diceRollsAttack[1]);
+        storeDice(diceRollsAttack[2]);
 	}
-
-    return diceValue;
+    
+    sort(diceRollsAttack.rbegin(), diceRollsAttack.rend());
+  
 	
 }
 
-// Getter method - returns the diceValue
-int Dice::getDiceValue() 
-{
 
-	return diceValue;
+void Dice ::defendRollDice(int amountOfDice)
+{
+    
+    if (amountOfDice == 1)
+    {
+        diceRollsDefend[0] = (rand() % 6 + 1);
+        
+        storeDice(diceRollsDefend[0]);
+        
+    }
+    else if (amountOfDice == 2)
+    {
+        diceRollsDefend[0]=  (rand() % 6 + 1);
+        diceRollsDefend[1]=  (rand() % 6 + 1);
+        
+        
+        
+        storeDice(diceRollsDefend[0]);
+        storeDice(diceRollsDefend[1]);
+    }
+    
+    
+    sort(diceRollsDefend.rbegin(), diceRollsDefend.rend());
+    
+    
+}
+
+// Getter method - returns the diceValue
+
+void Dice:: getDiceValuesAttack(int amountOfDice)
+{
+    if(amountOfDice == 1)
+    {
+        cout << diceRollsAttack[0];
+        
+    }
+    else if(amountOfDice == 2)
+    {
+        cout << diceRollsAttack[0] << " " << diceRollsAttack[1] << endl;
+    }
+   else  if(amountOfDice == 3)
+    {
+      cout << diceRollsAttack[0] << " " << diceRollsAttack[1] << " " << diceRollsAttack[2] << endl;
+    }
+    
+    
+    
+}
+
+void Dice:: getDiceValuesDefend(int amountOfDice)
+{
+    if(amountOfDice == 1)
+    {
+        cout << diceRollsDefend[0];
+        
+    }
+    else if(amountOfDice == 2)
+    {
+        cout << diceRollsDefend[0] << " " << diceRollsDefend[1] << endl;
+    }
+   
+
+    
 }
 
 

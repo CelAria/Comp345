@@ -3,6 +3,7 @@
 #include "country.h"
 #include "gamemap.h"
 #include "fortifycontroller.h"
+#include "attackphase.h"
 
 #include <iostream>
 #include <string>
@@ -12,6 +13,11 @@ using namespace std;
 
 void Player::attack() {
     cout << "This is attack" << endl;
+    AttackPhase playerAttack(this);
+    playerAttack.attackLoop();
+    
+    
+    
 }
 
 void Player::fortify() {
@@ -32,9 +38,24 @@ void Player::drawCard(Deck* deck) {
     deck->draw(&hand);
 }
 
-int Player::rollDice(int amountOfDice) {
-    return dice.rollDice(amountOfDice);
+void Player::rollDice(int amountOfDice) {
+    dice.rollDice(amountOfDice);
 }
+
+void Player::defendRollDice(int amountOfDice) {
+    dice.defendRollDice(amountOfDice);
+}
+
+void Player:: getDiceRollsAttack(int amountOfDice){
+    dice.getDiceValuesAttack(amountOfDice);
+}
+
+void Player:: getDiceRollsDefend(int amountOfDice){
+    dice.getDiceValuesDefend(amountOfDice);
+}
+
+
+
 
 vector<Country*> Player::getAllCountries() {
     vector<Country*> theCountries;

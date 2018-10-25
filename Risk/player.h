@@ -5,6 +5,7 @@
 #include "country.h"
 #include "gamemap.h"
 
+
 #include <map>
 #include <vector>
 #include <string>
@@ -27,7 +28,11 @@ public:
     void addCountry(Country* country);
     int getCardsCount() { return hand.getTotalCardsInHand(); };
     void drawCard(Deck* deck);
-    int rollDice(int amountOfDice);
+    //had to change this to fix dice container issue changed from int to void 
+    void rollDice(int amountOfDice);
+    void defendRollDice(int amountOfDice);
+    void getDiceRollsAttack(int amountOfDice);
+    void getDiceRollsDefend(int amountOfDice);
     Hand getHand() { return hand; }
     int getCountriesCount() { return (int)countries.size(); }
     vector<Country*> getAllCountries();

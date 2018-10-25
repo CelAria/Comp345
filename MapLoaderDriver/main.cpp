@@ -44,4 +44,6 @@ int main(int argc, const char * argv[]) {
     GameStart game;
     game.selectPlayers();
     game.createPlayers();
+    createDeck(mymaploader.ptrgamemap);
+    printDeck(game.gamedeck);
 }

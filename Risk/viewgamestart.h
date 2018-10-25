@@ -10,6 +10,9 @@
 
 #include <vector>
 #include <string>
+#include "cardsdeck.h"
+#include "gamemap.h"
+#include "controllergamestart.h"
 
 using namespace std;
 
@@ -23,4 +26,4 @@ private:
 
 // declared outside of class definition
 void printMapDirectory(const string& name);
-
+void printDeck(Deck* deck);

@@ -23,6 +23,12 @@ void printMapDirectory(const string& name){
     for(auto & p : boost::filesystem::directory_iterator(name)){ std::cout << p << std::endl; }
 };
 
+void printDeck(Deck* deck){
+    cout << "there are " << (deck)->getTotalCardsInDeck() << " cards in the deck" << endl;
+    cout << "there are " << (deck)->getNumOfCavalryCards() << " cards in the deck" << endl;
+    cout << "there are " << (deck)->getNumOfInfantryCards() << " cards in the deck" << endl;
+    cout << "there are " << (deck)->getNumOfArtilleryCards() << " cards in the deck" << endl;
+};
 
 
 

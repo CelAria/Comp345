@@ -12,7 +12,8 @@ using namespace std;
 
 
 GameMap* Maploader::readmapfile(string file){
-    ptrgamemap = new GameMap();
+   ptrgamemap = new GameMap();
+    
     filename = file;
     //string variable for each line parsed by fstream
     string line;

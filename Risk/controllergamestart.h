@@ -27,7 +27,7 @@ public:
     const Player* assignCountries();          //assign countries to each player round robin style
     const Player* placeArmies();              //assign armies to each country round robin style
    //made public
-    const Deck* gamedeck;     //pointer to global deck
+    Deck* gamedeck;     //pointer to global deck
     
 private:
     int numberofplayers;  //number of players in game
@@ -36,3 +36,4 @@ private:
 };
 
 bool verifyInputStringIsInteger(string s);
+const Deck* createDeck(GameMap* pointertogamemap);

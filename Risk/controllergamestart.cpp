@@ -84,10 +84,9 @@ const vector<Player*> GameStart::createPlayers(){
     return players;
 };
 
-const Deck* createDeck(GameMap* pointertogamemap){
-    Deck* gamedeck = new Deck();
-   // gamedeck->totalNumberOfCards =(pointertogamemap)->getCount();
-    
+const Deck* GameStart::createDeck(GameMap* pointertogamemap){
+    int numberofcards= (pointertogamemap)->getCount();
+    Deck* gamedeck = new Deck(numberofcards);
     return gamedeck;
 };
 

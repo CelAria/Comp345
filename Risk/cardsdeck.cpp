@@ -11,8 +11,8 @@
 using namespace std;
 
 //implementing the constroctor for Deck
-Deck::Deck() {
-    totalNumberOfCards = 42;
+Deck::Deck(int numberofcards) {
+    totalNumberOfCards = numberofcards;
     //checking if the deck can be evenly divisible by 3
     if(totalNumberOfCards % 3 == 0)
     {

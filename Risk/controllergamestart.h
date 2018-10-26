@@ -21,7 +21,7 @@ public:
     
     const int selectPlayers(); //return the number of players selected by user
     const vector<Player*> createPlayers();  //return vector of pointers to player objects
-    const Deck* createDeck();
+    const Deck* createDeck(GameMap* pointertogamemap);
     const vector<Player*> playerOrder(); //return vector of randomly ordered players ??
     const GameMap* createGameMap();        //return pointer to global gamemap
     const Player* assignCountries();          //assign countries to each player round robin style
@@ -36,4 +36,4 @@ private:
 };
 
 bool verifyInputStringIsInteger(string s);
-const Deck* createDeck(GameMap* pointertogamemap);
+//const Deck* createDeck(GameMap* pointertogamemap);

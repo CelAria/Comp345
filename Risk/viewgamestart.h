@@ -11,6 +11,7 @@
 #include <vector>
 #include <string>
 #include "cardsdeck.h"
+#include "maploader.h"
 #include "gamemap.h"
 #include "controllergamestart.h"
 

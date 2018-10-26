@@ -55,7 +55,7 @@ private:
     string cardTypeBeingDrawn;
     
 public:
-    Deck();
+    Deck(int numberofcards);
     //draw method that has a Hand parameter being passed by pointer
     void draw(Hand *hand);
     //getter methods

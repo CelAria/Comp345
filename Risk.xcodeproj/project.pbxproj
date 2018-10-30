@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		34362E06218167C900838F6F /* attackphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34362E05218167C900838F6F /* attackphase.cpp */; };
 		34362E08218167EE00838F6F /* attackphase.h in Headers */ = {isa = PBXBuildFile; fileRef = 34362E07218167EE00838F6F /* attackphase.h */; };
+		34CB6CD92188E297004054F6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34CB6CD82188E297004054F6 /* main.cpp */; };
+		34CB6CDF2188E2BA004054F6 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
 		6B0E7690217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
 		6B0E7691217E62D5006CECD2 /* controllergamestart.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B0E768E217E62D5006CECD2 /* controllergamestart.h */; };
@@ -50,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		34CB6CDD2188E2AD004054F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
 		B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
@@ -95,6 +104,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		34CB6CD42188E297004054F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B315A48A2165CCCC005CAFD4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -154,6 +172,8 @@
 /* Begin PBXFileReference section */
 		34362E05218167C900838F6F /* attackphase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackphase.cpp; sourceTree = "<group>"; };
 		34362E07218167EE00838F6F /* attackphase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackphase.h; sourceTree = "<group>"; };
+		34CB6CD62188E297004054F6 /* AttackDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AttackDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		34CB6CD82188E297004054F6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controllergamestart.cpp; sourceTree = "<group>"; };
 		6B0E768E217E62D5006CECD2 /* controllergamestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = controllergamestart.h; sourceTree = "<group>"; };
 		6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viewgamestart.cpp; sourceTree = "<group>"; };
@@ -198,6 +218,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		34CB6CD32188E297004054F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34CB6CDF2188E2BA004054F6 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B315A4892165CCCC005CAFD4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +284,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34CB6CD72188E297004054F6 /* AttackDriver */ = {
+			isa = PBXGroup;
+			children = (
+				34CB6CD82188E297004054F6 /* main.cpp */,
+			);
+			path = AttackDriver;
+			sourceTree = "<group>";
+		};
 		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +338,7 @@
 				B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
 				B35FED73217ADD2B00FE6FA7 /* FortifyControllerDriver */,
+				34CB6CD72188E297004054F6 /* AttackDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -317,6 +354,7 @@
 				B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
 				B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */,
+				34CB6CD62188E297004054F6 /* AttackDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -403,6 +441,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		34CB6CD52188E297004054F6 /* AttackDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34CB6CDC2188E297004054F6 /* Build configuration list for PBXNativeTarget "AttackDriver" */;
+			buildPhases = (
+				34CB6CD22188E297004054F6 /* Sources */,
+				34CB6CD32188E297004054F6 /* Frameworks */,
+				34CB6CD42188E297004054F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34CB6CDE2188E2AD004054F6 /* PBXTargetDependency */,
+			);
+			name = AttackDriver;
+			productName = AttackDriver;
+			productReference = 34CB6CD62188E297004054F6 /* AttackDriver */;
+			productType = "com.apple.product-type.tool";
+		};
 		B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */;
@@ -537,6 +593,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = comp345;
 				TargetAttributes = {
+					34CB6CD52188E297004054F6 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					B315A48B2165CCCC005CAFD4 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -579,11 +638,20 @@
 				B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
 				B35FED71217ADD2B00FE6FA7 /* FortifyControllerDriver */,
+				34CB6CD52188E297004054F6 /* AttackDriver */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		34CB6CD22188E297004054F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34CB6CD92188E297004054F6 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B315A4882165CCCC005CAFD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -657,6 +725,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		34CB6CDE2188E2AD004054F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = 34CB6CDD2188E2AD004054F6 /* PBXContainerItemProxy */;
+		};
 		B315A4942165CCD6005CAFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
@@ -690,6 +763,26 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		34CB6CDA2188E297004054F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P43RQJDL8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		34CB6CDB2188E297004054F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P43RQJDL8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		B315A4912165CCCC005CAFD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -968,6 +1061,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		34CB6CDC2188E297004054F6 /* Build configuration list for PBXNativeTarget "AttackDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34CB6CDA2188E297004054F6 /* Debug */,
+				34CB6CDB2188E297004054F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

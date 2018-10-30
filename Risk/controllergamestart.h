@@ -32,7 +32,7 @@ public:
 private:
     int numberofplayers;  //number of players in game
     static GameMap* map;       //pointer to global map
-    vector<Player*> players;    //vector of all players that has been created
+    vector<Player*> players; //vector of all players that has been created
 };
 
 bool verifyInputStringIsInteger(string s);

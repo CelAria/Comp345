@@ -17,6 +17,8 @@
 #include <set>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
+#include <random>
 
 using namespace std;
 
@@ -51,7 +53,7 @@ const int GameStart::selectPlayers(){
             selectPlayers();
         }
         else{
-            cout << "(" <<  numberofplayers << ")" << " players have been created\n" << endl;
+            cout << "(" <<  numberofplayers << ")" << " players have been created. Assign each player a unique player number ID between (1) and" << " (" << numberofplayers << ")." << " Player order will now be shuffled...\n" << endl;
             return numberofplayers;
         }
     }
@@ -78,9 +80,6 @@ const vector<Player*> GameStart::createPlayers(){
         // create new player object (initialize with player ID= j and push into vector players
         players.push_back(new Player(j));
     }
-    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i)
-        std::cout << "player Id: " << (*i)->getPlayerId() << ' ';
-    
     return players;
 };
 
@@ -90,4 +89,16 @@ const Deck* GameStart::createDeck(GameMap* pointertogamemap){
     return gamedeck;
 };
 
+const vector<Player*> GameStart::playerOrder(){
+    
+    auto randomizer = default_random_engine {};
+    shuffle(begin(players), end(players), randomizer);
+    
+    cout << "Order of Play: ";
+    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
+        std::cout << "player " << (*i)->getPlayerId() << ", ";
+    }
+    cout << endl;
+    return players;
+};
 

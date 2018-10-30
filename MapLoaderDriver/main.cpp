@@ -11,6 +11,7 @@
 #include <map>
 #include <fstream>
 #include <iostream>
+#include <math.h>
 
 /* WHEN THE DRIVER ASKS FOR THE FILE, MUST PASTE THE ENTIRE FILE PATH*/
 
@@ -45,5 +46,10 @@ int main(int argc, const char * argv[]) {
     game.selectPlayers();
     game.createPlayers();
     game.createDeck(mymaploader.ptrgamemap);
+    game.playerOrder();
+    
     //cout << game.gamedeck->getTotalCardsInDeck();
+
+   
 }
+

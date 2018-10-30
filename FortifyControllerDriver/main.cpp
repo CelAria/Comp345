@@ -63,7 +63,7 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player) {
 int main(int argc, const char * argv[]) {
     
     Player player;
-    Deck deck = Deck();
+    //Deck deck;
     GameMap gameMap;
     
     initMockGameMapAndPlayer(&gameMap, &player);

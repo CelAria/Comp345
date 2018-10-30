@@ -45,6 +45,10 @@ public:
     inline int getDefenseDice1() {return diceRollsDefend[0];}
     inline int getDefenseDice2() {return diceRollsDefend[1];}
     
+   
+    
+    
+    
     
 	//variables needed for dice class
 private:

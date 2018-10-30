@@ -31,21 +31,44 @@ void AttackPhase :: attackLoop()
     cin >> attacking;
     while(attacking == 'y')
     {
-        
+        attackDiceLoop = true;
+        defendDiceLoop = true;
         playerID = player->getPlayerId();
         
-        cout<< playerID <<endl;
+        cout<<"Player# " <<playerID<< " Attack" <<endl;
         cout<<" how many dice do you want to roll?" << endl;
+        
+        while(attackDiceLoop){
         cin>> diceAmountAttack;
-        player->rollDice(diceAmountAttack);
+        if((diceAmountAttack >=1 && (diceAmountAttack<4)))
+        {
+            player->rollDice(diceAmountAttack);
+            attackDiceLoop = false;
+        }else
+            cout<<"Dice Amount invalid, please choose again " <<endl;
+            
+        
+        }
         player ->getDiceRollsAttack(diceAmountAttack);
-        cout<<" defending player how many dice do you want to roll?" << endl;
-        cin>>diceAmountDefend;
+        
+        cout<<" defending player how many dice do you want to roll? " << endl;
+        while(defendDiceLoop){
+            cin>>diceAmountDefend;
+            if((diceAmountDefend >=1 && (diceAmountDefend<3)))
+            {
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            } else
+            cout<<"Dice Amount invalid, please choose again " <<endl;
+            
+            
+        }
 
-        player ->defendRollDice(diceAmountDefend);
         player ->getDiceRollsDefend(diceAmountDefend);
         
+        compare(diceAmountAttack, diceAmountDefend);
         
+
         cout<<"Keep attacking? " <<endl;
         cin>> attacking;
         
@@ -56,10 +79,102 @@ void AttackPhase :: attackLoop()
 }
 
 
-void AttackPhase :: compare()
+void AttackPhase :: compare(int attackDice, int defendDice)
 {
+    if(attackDice ==3 && defendDice ==2) {
+        
+        if(player->getAttackDice1() > player->getDefenseDice1())
+        {
+            cout<<"attack wins " <<player->getAttackDice1()<< " beats "<<player->getDefenseDice1()  << endl;
+        }else if(player->getAttackDice1() <= player->getDefenseDice1()) {
+            
+            cout<<"defender wins " <<player->getDefenseDice1()<< " beats or is equal to "<<player->getAttackDice1()  << endl;
+        }
+        
+        if(player->getAttackDice2() > player->getDefenseDice2())
+        {
+    
+            cout<<"attack wins " <<player->getAttackDice2()<< " beats "<<player->getDefenseDice2()  << endl;
+        }else if(player->getAttackDice2() <= player->getDefenseDice2()) {
+           
+            cout<<"defender wins " <<player->getDefenseDice2()<< " beats or is equal to "<<player->getAttackDice2()  << endl;
+        }
+    
+        
+        
+    }
+    if(attackDice ==3 && defendDice ==1) {
+        
+        if(player->getAttackDice1() > player->getDefenseDice1())
+        {
+           
+            cout<<"attack wins " <<player->getAttackDice1()<< " beats "<<player->getDefenseDice1()  << endl;
+        }else if(player->getAttackDice1() <= player->getDefenseDice1()) {
+           
+           cout<<"defender wins " <<player->getDefenseDice1()<< " beats or is equal to "<<player->getAttackDice1()  << endl;
+        }
+
+        
+    }
+    
+    
+    if(attackDice ==2 && defendDice ==2) {
+        if(player->getAttackDice1() > player->getDefenseDice1())
+        {
+           cout<<"attack wins " <<player->getAttackDice1()<< " beats "<<player->getDefenseDice1()  << endl;
+        }else if(player->getAttackDice1() <= player->getDefenseDice1()) {
+           cout<<"defender wins " <<player->getDefenseDice1()<< " beats or is equal to "<<player->getAttackDice1()  << endl;
+        }
+        
+        if(player->getAttackDice2() > player->getDefenseDice2())
+        {
+            
+            cout<<"attack wins " <<player->getAttackDice2()<< " beats "<<player->getDefenseDice2()  << endl;
+        }else if(player->getAttackDice2() <= player->getDefenseDice2()) {
+           cout<<"defender wins " <<player->getDefenseDice2()<< " beats or is equal to "<<player->getAttackDice2()  << endl;
+        }
+        
+        
+    }
+    if(attackDice ==2 && defendDice ==1) {
+        if(player->getAttackDice1() > player->getDefenseDice1())
+        {
+             cout<<"attack wins " <<player->getAttackDice1()<< " beats "<<player->getDefenseDice1()  << endl;
+        }else if(player->getAttackDice1() <= player->getDefenseDice1()) {
+           cout<<"defender wins " <<player->getDefenseDice1()<< " beats or is equal to "<<player->getAttackDice1()  << endl;
+        }
+        
+        
+        
+        
+    }
+    if(attackDice ==1 && defendDice ==2) {
+        if(player->getAttackDice1() > player->getDefenseDice1())
+        {
+            cout<<"attack wins " <<player->getAttackDice1()<< " beats "<<player->getDefenseDice1()  << endl;
+        }else if(player->getAttackDice1() <= player->getDefenseDice1()) {
+            
+            cout<<"defender wins " <<player->getDefenseDice1()<< " beats or is equal to "<<player->getAttackDice1()  << endl;
+        }
+        
+    }
+    
+    if(attackDice ==1 && defendDice ==1) {
+        
+        if(player->getAttackDice1() > player->getDefenseDice1())
+        {
+            cout<<"attack wins " <<player->getAttackDice1()<< " beats "<<player->getDefenseDice1()  << endl;
+        }else if(player->getAttackDice1() <= player->getDefenseDice1()) {
+           cout<<"defender wins " <<player->getDefenseDice1()<< " beats or is equal to "<<player->getAttackDice1()  << endl;
+        }
+        
+        
+        
+    }
+    
    
     
+  
 }
 
 

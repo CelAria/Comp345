@@ -106,7 +106,7 @@ void Dice:: getDiceValuesAttack(int amountOfDice)
 {
     if(amountOfDice == 1)
     {
-        cout << diceRollsAttack[0];
+        cout << diceRollsAttack[0] <<" " << endl;
         
     }
     else if(amountOfDice == 2)
@@ -126,7 +126,7 @@ void Dice:: getDiceValuesDefend(int amountOfDice)
 {
     if(amountOfDice == 1)
     {
-        cout << diceRollsDefend[0];
+        cout << diceRollsDefend[0] <<" " << endl;
         
     }
     else if(amountOfDice == 2)

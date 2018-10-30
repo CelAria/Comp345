@@ -37,6 +37,7 @@ public:
     int getCountriesCount() { return (int)countries.size(); }
     vector<Country*> getAllCountries();
     vector<Country*> getCountriesByContinent(string continent);
+    bool controlsContinent(string name, GameMap* gameMap);
     
     inline int getAttackDice1() {return dice.getAttackDice1();}
     inline int getAttackDice2() {return dice.getAttackDice2();}

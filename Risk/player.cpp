@@ -74,3 +74,7 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
     }
     return theCountries;
 }
+
+bool Player::controlsContinent(string name, GameMap *gameMap) {
+    return getCountriesByContinent(name).size() == gameMap->getAllByContinent(name).size();
+}

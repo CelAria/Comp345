@@ -7,9 +7,27 @@
 //
 
 #include <iostream>
+#include "player.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+    Player player;
+    Country canada = Country("Canada", "North America");
+
+    cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
+    
+    
+    cout << "Player currently has " << player.getCountriesCount() << " countries..." << endl;
+    
+    player.addCountry(&canada);
+    
+    cout << "Player now has " << player.getCountriesCount() << " countries." << endl;
+    
+    
+    
+    player.attack();
+    
+    
+    
     return 0;
 }

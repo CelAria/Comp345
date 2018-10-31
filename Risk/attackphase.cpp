@@ -10,10 +10,10 @@
 
 
 
-AttackPhase :: AttackPhase(Player *player)
+AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
 {
     this->player = player;
-    
+    this-> gameMap = gameMap;
 }
 
 void AttackPhase :: attackLoop()
@@ -36,6 +36,21 @@ void AttackPhase :: attackLoop()
         playerID = player->getPlayerId();
         
         cout<<"Player# " <<playerID<< " Attack" <<endl;
+        cout<<"getting countries owned "  <<endl <<endl;
+       
+            vector<Country*> allCountries = player->getAllCountries();
+            for(int i = 0; i < allCountries.size(); i++) {
+                cout << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
+            }
+            cout << endl;
+        
+        cout<<"Neighbours you can attack " << endl;
+        
+       
+        cout << endl;
+        
+        
+        cout<<"" << endl;
         cout<<" how many dice do you want to roll?" << endl;
         
         while(attackDiceLoop){

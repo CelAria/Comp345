@@ -11,12 +11,13 @@
 #include <vector>
 using namespace std;
 
-void Player::attack() {
+void Player::attack(GameMap *gameMap) {
     cout << "This is attack" << endl;
-    AttackPhase playerAttack(this);
+    AttackPhase playerAttack(this, gameMap);
     playerAttack.attackLoop();
     
     
+                             
     
 }
 

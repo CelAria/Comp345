@@ -18,7 +18,7 @@ class AttackPhase
 
     
 public:
-    AttackPhase(Player* player);
+    AttackPhase(Player* player,GameMap *gameMap);
     void attackLoop();
     void moveArmy();
     void compare(int attackDice, int defendDice);

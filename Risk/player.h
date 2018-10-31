@@ -22,7 +22,7 @@ public:
     Player(): id(1), dice(1) {};
     Player(int playerId): id(playerId), dice(playerId) {};
     void attack(GameMap *gameMap);
-    void fortify();
+    void fortify(GameMap* gameMap);
     void reinforce(GameMap* gameMap);
     int getPlayerId() { return id; };
     void addCountry(Country* country);

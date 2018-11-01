@@ -105,6 +105,41 @@ const vector<Player*> GameStart::playerOrder(){
     return players;
 };
 
+const vector<Player*> GameStart::placeArmies(){
+    /*Players are given a number of armies (A), to be placed one by one in a round-robin fashion on some of
+     the countries that they own, where A is:
+      If 2 players, A=40
+      If 3 players, A=35
+      If 4 players, A=30
+      If 5 players, A=25
+      If 6 players, A=20
+     You must deliver a driver that demon*/
+    // values for number of armies
+    
+    int numArmies= 0;
+    int i= players.size();
+
+    switch(i){
+        case 2: numArmies=40;
+        case 3: numArmies=35;
+        case 4: numArmies=30;
+        case 5: numArmies=25;
+        case 6: numArmies=20;
+    }
+    
+    /*be placed one by one in a round-robin fashion on some of
+    the countries that they own, where A is*/
+    //loop through players array repeatedly
+    for (int l= 0; l < l % players.size(); l++){
+        // for player
+        players.at(m)
+        cout << "pick country to place army";
+        //setArmiesCount();
+    l++;
+    }
+    return players;
+};
+
 // NOTE: NEED TO RANDOMIZE*** the order
 const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     //All countries in the map are randomly assigned to players one by one in a round-robin fashion.
@@ -121,24 +156,24 @@ const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     shuffle(begin(randomorder), end(randomorder), randomizer);
 
     vector<int>::iterator it;
-    int m= 0;
+    int m = 0;
     int i = 0;
     for(it = randomorder.begin(); it != randomorder.end(); it++,i++){
         cout << "assign country number " << *it << " to player ID" << m % players.size() + 1 << endl;
         //HOW TO GO TO EACH COUNTRY IN THE GAMEMAP ONE BY ONE?
         
-//        for (auto const& x : pointertogamemap->countries){
-//            cout << x.first  // name (key)
-//            << ':'
-//            << x.second // Country pointer
-//            << std::endl ;
-//            //add country to player object
-//            players.at(m)->addCountry(x.second);
-//        }
+        for (auto const& x : pointertogamemap->countries){
+            cout << x.first  // name (key)
+            << ':'
+            << x.second // Country pointer
+            << std::endl ;
+            //add country to player object
+            players.at(m)->addCountry(x.second);
+        }
         m++;
     }
-        for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
-            std::cout << " " << (*i)->getPlayerId() << ", ";
-        }
     return players;
 };
+
+
+    

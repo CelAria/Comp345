@@ -24,7 +24,6 @@ public:
     const Deck* createDeck(GameMap* pointertogamemap);
     const vector<Player*> assignCountries(GameMap* pointertogamemap); //assign countries to each player round robin style
     const vector<Player*> playerOrder(); //return vector of randomly ordered players ??
-    
     const vector<Player*> placeArmies();              //assign armies to each country round robin style
    //made public
     Deck* gamedeck;     //pointer to global deck

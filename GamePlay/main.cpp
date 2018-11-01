@@ -27,6 +27,4 @@ int main(int argc, const char * argv[]) {
     game.playerOrder();
     game.createDeck(mymaploader.ptrgamemap);
     game.assignCountries(mymaploader.ptrgamemap);
-    
-    
 }

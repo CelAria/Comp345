@@ -18,10 +18,11 @@ private:
     Dice dice;
     map<string, Country*> countries;
     
+    
 public:
     Player(): id(1), dice(1) {};
     Player(int playerId): id(playerId), dice(playerId) {};
-    void attack(GameMap *gameMap);
+    void attack();
     void fortify();
     void reinforce(GameMap* gameMap);
     int getPlayerId() { return id; };

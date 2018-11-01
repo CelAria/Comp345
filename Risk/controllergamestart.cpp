@@ -86,11 +86,14 @@ const vector<Player*> GameStart::createPlayers(){
 const Deck* GameStart::createDeck(GameMap* pointertogamemap){
     int numberofcards= (pointertogamemap)->getCount();
     Deck* gamedeck = new Deck(numberofcards);
+    cout << "there are " << numberofcards << " cards in the deck" << endl;
     return gamedeck;
+    
 };
 
 const vector<Player*> GameStart::playerOrder(){
     
+    //srand(time(0));
     auto randomizer = default_random_engine {};
     shuffle(begin(players), end(players), randomizer);
     
@@ -102,3 +105,40 @@ const vector<Player*> GameStart::playerOrder(){
     return players;
 };
 
+// NOTE: NEED TO RANDOMIZE*** the order
+const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
+    //All countries in the map are randomly assigned to players one by one in a round-robin fashion.
+    
+    int size = pointertogamemap->getCount();
+    vector<int> randomorder;
+    //make a vector with integers of the number of countries.
+    for (int j=0; j < size; j++){
+        randomorder.push_back(j);
+    }
+    auto randomizer = default_random_engine {};
+    //randomize the "random order" array!
+    srand((unsigned)time(0));
+    shuffle(begin(randomorder), end(randomorder), randomizer);
+
+    vector<int>::iterator it;
+    int m= 0;
+    int i = 0;
+    for(it = randomorder.begin(); it != randomorder.end(); it++,i++){
+        cout << "assign country number " << *it << " to player ID" << m % players.size() + 1 << endl;
+        //HOW TO GO TO EACH COUNTRY IN THE GAMEMAP ONE BY ONE?
+        
+//        for (auto const& x : pointertogamemap->countries){
+//            cout << x.first  // name (key)
+//            << ':'
+//            << x.second // Country pointer
+//            << std::endl ;
+//            //add country to player object
+//            players.at(m)->addCountry(x.second);
+//        }
+        m++;
+    }
+        for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
+            std::cout << " " << (*i)->getPlayerId() << ", ";
+        }
+    return players;
+};

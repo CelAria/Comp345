@@ -7,9 +7,35 @@
 //
 
 #include <iostream>
+#include "maploader.h"
+#include "controllergamestart.h"
+#include "viewgamestart.h"
+#include "gamemap.h"
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+
+    /*Provide a group of C++ classes that implement a user interaction mechanism to start the game by allowing the
+     player to 1) select a map from a list of map files as stored in a directory 2) select the number of players in the
+     game (2-6 players). The code should then use the map loader to load the selected map, create all the players,
+     assign dice rolling facilities to the players, create a deck of cards, and assign an empty hand of cards to each
+     player. You must deliver a driver that demonstrates that 1) different valid maps can be loaded and their validity is
+     verified (i.e. it is a connected graph, etc), and invalid maps are gracefully rejected; 2) the right number of players
+     is created, a deck with the right number of cards is created. */
+    
+    //directory where maps are stored
+    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
+    printMapDirectory(directory);
+    Maploader mymaploader;
+    //open map and test if valid, if valid, create map object
+    mymaploader.readmapfile();
+    GameStart game;
+    //player input
+    game.selectPlayers();
+    //create player objects with hand of empty cards and dice facilities
+    game.createPlayers();
+    game.createDeck(mymaploader.ptrgamemap);
+    game.playerOrder();
+
 }

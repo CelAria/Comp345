@@ -22,12 +22,13 @@ public:
     const int selectPlayers(); //return the number of players selected by user
     const vector<Player*> createPlayers();  //return vector of pointers to player objects
     const Deck* createDeck(GameMap* pointertogamemap);
+    const vector<Player*> assignCountries(GameMap* pointertogamemap); //assign countries to each player round robin style
     const vector<Player*> playerOrder(); //return vector of randomly ordered players ??
-    const GameMap* createGameMap();        //return pointer to global gamemap
-    const Player* assignCountries();          //assign countries to each player round robin style
-    const Player* placeArmies();              //assign armies to each country round robin style
+    
+    const vector<Player*> placeArmies();              //assign armies to each country round robin style
    //made public
     Deck* gamedeck;     //pointer to global deck
+    // declared outside of class definition
     
 private:
     int numberofplayers;  //number of players in game

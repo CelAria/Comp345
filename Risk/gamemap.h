@@ -23,6 +23,7 @@ class GameMap {
     void addContinent(Continent continent) { continents[continent.name] = continent; };
     void addCountry(string countryName, string continentName, vector<string> neighborNames);
     Country* getCountry(string countryName) { return countries[countryName]; };
+    vector<Country*> getAllCountries();
     vector<Country*> getAllByContinent(string continentName);
     Continent getContinent(string name) { return continents[name]; };
     int traverseAll(bool isDebug);

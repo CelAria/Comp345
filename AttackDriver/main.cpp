@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
     Player player(1);
     Player player2(2);
     GameMap gameMap;
-    AttackPhase attack(&player,&gameMap);
+//    AttackPhase attack(&player,&gameMap);
   
     
     
@@ -72,7 +72,10 @@ int main(int argc, const char * argv[]) {
     cout << "Player #" << player2.getPlayerId() << ":" << endl << endl;
     
     initMockGameMapAndPlayer(&gameMap, &player, &player2);
-    attack.attackLoop();
+    
+    player.attack(&gameMap);
+    
+//    attack.attackLoop();
     
     
     

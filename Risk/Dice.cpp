@@ -26,8 +26,6 @@ Dice::Dice(int player)
 {
     playerNumber = player;
 	vector<int> diceContainer1;
-   
-   
 
     srand((unsigned)time(0));
 }
@@ -37,6 +35,7 @@ Dice::Dice(int player)
 
 void Dice ::rollDice(int amountOfDice)
 {
+    
     
 	if (amountOfDice == 1) 
 	{
@@ -106,16 +105,16 @@ void Dice:: getDiceValuesAttack(int amountOfDice)
 {
     if(amountOfDice == 1)
     {
-        cout << diceRollsAttack[0] <<" " << endl;
+        cout<<"Attacker Rolled: " << diceRollsAttack[0] <<" " << endl;
         
     }
     else if(amountOfDice == 2)
     {
-        cout << diceRollsAttack[0] << " " << diceRollsAttack[1] << endl;
+        cout <<"Attacker Rolled: "<< diceRollsAttack[0] << " " << diceRollsAttack[1] << endl;
     }
    else  if(amountOfDice == 3)
     {
-      cout << diceRollsAttack[0] << " " << diceRollsAttack[1] << " " << diceRollsAttack[2] << endl;
+      cout<<"Attacker Rolled: " << diceRollsAttack[0] << " " << diceRollsAttack[1] << " " << diceRollsAttack[2] << endl;
     }
     
     
@@ -126,12 +125,12 @@ void Dice:: getDiceValuesDefend(int amountOfDice)
 {
     if(amountOfDice == 1)
     {
-        cout << diceRollsDefend[0] <<" " << endl;
+        cout <<"Defender Rolled: "<< diceRollsDefend[0] <<" " << endl;
         
     }
     else if(amountOfDice == 2)
     {
-        cout << diceRollsDefend[0] << " " << diceRollsDefend[1] << endl;
+        cout <<"Defender Rolled: "<< diceRollsDefend[0] << " " << diceRollsDefend[1] << endl;
     }
    
 

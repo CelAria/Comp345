@@ -13,8 +13,8 @@ using namespace std;
 
 void Player::attack(GameMap *gameMap) {
     cout << "This is attack" << endl;
-    AttackPhase playerAttack(this,gameMap);
-    playerAttack.attackLoop();
+//    AttackPhase playerAttack(this,gameMap);
+//    playerAttack.attackLoop();
     
 
                              

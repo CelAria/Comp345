@@ -64,7 +64,7 @@ int main(int argc, const char * argv[]) {
     Player player(1);
     Player player2(2);
     GameMap gameMap;
-//    AttackPhase attack(&player,&gameMap);
+    AttackPhase attack(&player,&gameMap);
   
     
     
@@ -73,9 +73,9 @@ int main(int argc, const char * argv[]) {
     
     initMockGameMapAndPlayer(&gameMap, &player, &player2);
     
-    player.attack(&gameMap);
+//    player.attack(&gameMap);
     
-//    attack.attackLoop();
+    attack.attackLoop();
     
     
     

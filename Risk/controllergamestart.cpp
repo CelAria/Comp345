@@ -105,6 +105,7 @@ const vector<Player*> GameStart::playerOrder(){
     return players;
 };
 
+// NOTE: NEED TO RANDOMIZE*** the order
 const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     //All countries in the map are randomly assigned to players one by one in a round-robin fashion.
     
@@ -118,26 +119,26 @@ const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     //randomize the "random order" array!
     srand((unsigned)time(0));
     shuffle(begin(randomorder), end(randomorder), randomizer);
-    //print
-    for (int j=0; j < randomorder.size(); j++){
-        cout <<  randomorder[j] << " "  << j << endl;
-    }
-    
-    //
+
     vector<int>::iterator it;
+    int m= 0;
     int i = 0;
     for(it = randomorder.begin(); it != randomorder.end(); it++,i++){
-        cout << "assign country number " << *it << endl;
+        cout << "assign country number " << *it << " to player ID" << m % players.size() + 1 << endl;
+        //HOW TO GO TO EACH COUNTRY IN THE GAMEMAP ONE BY ONE?
         
+//        for (auto const& x : pointertogamemap->countries){
+//            cout << x.first  // name (key)
+//            << ':'
+//            << x.second // Country pointer
+//            << std::endl ;
+//            //add country to player object
+//            players.at(m)->addCountry(x.second);
+//        }
+        m++;
     }
-    
         for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
             std::cout << " " << (*i)->getPlayerId() << ", ";
         }
-//
-//    for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
-//        visited[it->first] = false;
-//    }
-    
     return players;
 };

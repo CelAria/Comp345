@@ -99,6 +99,14 @@ void GameMap::traverseHelper(Country* country, map<string, bool> &visited, int &
     }
 }
 
+vector<Country*> GameMap::getAllCountries() {
+    vector<Country*> c;
+    for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
+        c.push_back(it->second);
+    }
+    return c;
+}
+
 /**
  Perform a depth-first-search traversal of a continent subgraph
  */

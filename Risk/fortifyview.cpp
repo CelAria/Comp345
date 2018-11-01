@@ -20,7 +20,7 @@ void FortifyView::presentFortify() {
 }
 
 Country* FortifyView::promptUserForOrigin(vector<Country *> countries) {
-    return promptCountrySelect("Choose a country to move armies from:", countries);
+    return promptCountrySelect("Choose a country to move armies from: (Enter 0 to skip)", countries);
 }
 
 Country* FortifyView::promptUserForDestination(vector<Country *> countries) {

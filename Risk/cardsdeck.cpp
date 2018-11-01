@@ -240,7 +240,7 @@ void Hand::incrementNumOfArmies()
 //implementing the exchange method for Hand
 int Hand::exchange(string s){
     //if and else if statments determines if the exchange requested by the hand is valid or not and returns the number of recieved armies
-    if(!isHandEmpty() && s.compare("1 of each Card Type") == 0 && handContainsOneOfEachCardType())
+    if(!isHandEmpty() && s.compare("1 of each") == 0 && handContainsOneOfEachCardType())
     {
         infantryMinusOne();
         artilleryMinusOne();
@@ -248,7 +248,7 @@ int Hand::exchange(string s){
         incrementNumOfArmies();
         return getNumOfArmies();
     }
-    else if(!isHandEmpty() && s.compare("3 Infantry Cards") == 0 && handContains3InfantryCards())
+    else if(!isHandEmpty() && s.compare("3 Infantry") == 0 && handContains3InfantryCards())
     {
         infantryMinusOne();
         artilleryMinusOne();
@@ -256,7 +256,7 @@ int Hand::exchange(string s){
         incrementNumOfArmies();
         return getNumOfArmies();
     }
-    else if(!isHandEmpty() && s.compare("3 Artillery Cards") == 0 && handContains3ArtilleryCards())
+    else if(!isHandEmpty() && s.compare("3 Artillery") == 0 && handContains3ArtilleryCards())
     {
         artilleryMinusOne();
         artilleryMinusOne();
@@ -264,7 +264,7 @@ int Hand::exchange(string s){
         incrementNumOfArmies();
         return getNumOfArmies();
     }
-    else if(!isHandEmpty() && s.compare("3 Cavalry Cards") == 0 && handContains3CavalryCards())
+    else if(!isHandEmpty() && s.compare("3 Cavalry") == 0 && handContains3CavalryCards())
     {
         cavalryMinusOne();
         cavalryMinusOne();

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E53B4F8218A4218003C85B1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E53B4F7218A4218003C85B1 /* main.cpp */; };
+		0E53B4FE218A4226003C85B1 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		34362E06218167C900838F6F /* attackphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34362E05218167C900838F6F /* attackphase.cpp */; };
 		34362E08218167EE00838F6F /* attackphase.h in Headers */ = {isa = PBXBuildFile; fileRef = 34362E07218167EE00838F6F /* attackphase.h */; };
 		34CB6CD92188E297004054F6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34CB6CD82188E297004054F6 /* main.cpp */; };
@@ -17,6 +19,10 @@
 		6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */; };
 		6B0E7695217FD5F0006CECD2 /* viewgamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */; };
 		6B0E769A217FF894006CECD2 /* viewgamestart.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B0E7699217FF894006CECD2 /* viewgamestart.h */; };
+		6B0E76BB218A6F55006CECD2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E76BA218A6F55006CECD2 /* main.cpp */; };
+		6B0E76C1218A6F65006CECD2 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		6B0E76C9218A6F7B006CECD2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E76C8218A6F7B006CECD2 /* main.cpp */; };
+		6B0E76CF218A6F86006CECD2 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B30C1660217BF2440091C565 /* mapvisualizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B30C165E217BF2440091C565 /* mapvisualizer.cpp */; };
 		B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B30C165F217BF2440091C565 /* mapvisualizer.h */; };
@@ -52,7 +58,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0E53B4FC218A4222003C85B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
 		34CB6CE121894D03004054F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		6B0E76BF218A6F60006CECD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		6B0E76CD218A6F81006CECD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
 			proxyType = 1;
@@ -104,7 +131,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0E53B4F3218A4218003C85B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		34CB6CD42188E297004054F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		6B0E76B6218A6F55006CECD2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		6B0E76C4218A6F7A006CECD2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -170,6 +224,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E53B4F5218A4218003C85B1 /* ReinforceDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ReinforceDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E53B4F7218A4218003C85B1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34362E05218167C900838F6F /* attackphase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackphase.cpp; sourceTree = "<group>"; };
 		34362E07218167EE00838F6F /* attackphase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackphase.h; sourceTree = "<group>"; };
 		34CB6CD62188E297004054F6 /* AttackDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AttackDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +234,10 @@
 		6B0E768E217E62D5006CECD2 /* controllergamestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = controllergamestart.h; sourceTree = "<group>"; };
 		6B0E7692217FD5F0006CECD2 /* viewgamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = viewgamestart.cpp; sourceTree = "<group>"; };
 		6B0E7699217FF894006CECD2 /* viewgamestart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = viewgamestart.h; sourceTree = "<group>"; };
+		6B0E76B8218A6F55006CECD2 /* GameStart */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameStart; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0E76BA218A6F55006CECD2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6B0E76C6218A6F7A006CECD2 /* GamePlay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GamePlay; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0E76C8218A6F7B006CECD2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6B690C36216FEF93001CFB90 /* Canada.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Canada.map; sourceTree = "<group>"; };
 		6B9E4A132170F5C3003F8DBC /* Africa.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Africa.map; sourceTree = "<group>"; };
 		6B9E4A142170F605003F8DBC /* Brazil(brokenmap).map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Brazil(brokenmap).map"; sourceTree = "<group>"; };
@@ -218,11 +278,35 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E53B4F2218A4218003C85B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E53B4FE218A4226003C85B1 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34CB6CD32188E297004054F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				34CB6CE321894D0D004054F6 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B0E76B5218A6F55006CECD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B0E76C1218A6F65006CECD2 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B0E76C3218A6F7A006CECD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B0E76CF218A6F86006CECD2 /* libRisk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,12 +368,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E53B4F6218A4218003C85B1 /* ReinforceDriver */ = {
+			isa = PBXGroup;
+			children = (
+				0E53B4F7218A4218003C85B1 /* main.cpp */,
+			);
+			path = ReinforceDriver;
+			sourceTree = "<group>";
+		};
 		34CB6CD72188E297004054F6 /* AttackDriver */ = {
 			isa = PBXGroup;
 			children = (
 				34CB6CD82188E297004054F6 /* main.cpp */,
 			);
 			path = AttackDriver;
+			sourceTree = "<group>";
+		};
+		6B0E76B9218A6F55006CECD2 /* GameStart */ = {
+			isa = PBXGroup;
+			children = (
+				6B0E76BA218A6F55006CECD2 /* main.cpp */,
+			);
+			path = GameStart;
+			sourceTree = "<group>";
+		};
+		6B0E76C7218A6F7B006CECD2 /* GamePlay */ = {
+			isa = PBXGroup;
+			children = (
+				6B0E76C8218A6F7B006CECD2 /* main.cpp */,
+			);
+			path = GamePlay;
 			sourceTree = "<group>";
 		};
 		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
@@ -339,6 +447,9 @@
 				B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
 				B35FED73217ADD2B00FE6FA7 /* FortifyControllerDriver */,
 				34CB6CD72188E297004054F6 /* AttackDriver */,
+				0E53B4F6218A4218003C85B1 /* ReinforceDriver */,
+				6B0E76B9218A6F55006CECD2 /* GameStart */,
+				6B0E76C7218A6F7B006CECD2 /* GamePlay */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -355,6 +466,9 @@
 				B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
 				B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */,
 				34CB6CD62188E297004054F6 /* AttackDriver */,
+				0E53B4F5218A4218003C85B1 /* ReinforceDriver */,
+				6B0E76B8218A6F55006CECD2 /* GameStart */,
+				6B0E76C6218A6F7A006CECD2 /* GamePlay */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -441,6 +555,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0E53B4F4218A4218003C85B1 /* ReinforceDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E53B4FB218A4218003C85B1 /* Build configuration list for PBXNativeTarget "ReinforceDriver" */;
+			buildPhases = (
+				0E53B4F1218A4218003C85B1 /* Sources */,
+				0E53B4F2218A4218003C85B1 /* Frameworks */,
+				0E53B4F3218A4218003C85B1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E53B4FD218A4222003C85B1 /* PBXTargetDependency */,
+			);
+			name = ReinforceDriver;
+			productName = ReinforceDriver;
+			productReference = 0E53B4F5218A4218003C85B1 /* ReinforceDriver */;
+			productType = "com.apple.product-type.tool";
+		};
 		34CB6CD52188E297004054F6 /* AttackDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34CB6CDC2188E297004054F6 /* Build configuration list for PBXNativeTarget "AttackDriver" */;
@@ -457,6 +589,42 @@
 			name = AttackDriver;
 			productName = AttackDriver;
 			productReference = 34CB6CD62188E297004054F6 /* AttackDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		6B0E76B7218A6F55006CECD2 /* GameStart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B0E76BE218A6F55006CECD2 /* Build configuration list for PBXNativeTarget "GameStart" */;
+			buildPhases = (
+				6B0E76B4218A6F55006CECD2 /* Sources */,
+				6B0E76B5218A6F55006CECD2 /* Frameworks */,
+				6B0E76B6218A6F55006CECD2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B0E76C0218A6F60006CECD2 /* PBXTargetDependency */,
+			);
+			name = GameStart;
+			productName = GameStart;
+			productReference = 6B0E76B8218A6F55006CECD2 /* GameStart */;
+			productType = "com.apple.product-type.tool";
+		};
+		6B0E76C5218A6F7A006CECD2 /* GamePlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B0E76CA218A6F7B006CECD2 /* Build configuration list for PBXNativeTarget "GamePlay" */;
+			buildPhases = (
+				6B0E76C2218A6F7A006CECD2 /* Sources */,
+				6B0E76C3218A6F7A006CECD2 /* Frameworks */,
+				6B0E76C4218A6F7A006CECD2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B0E76CE218A6F81006CECD2 /* PBXTargetDependency */,
+			);
+			name = GamePlay;
+			productName = GamePlay;
+			productReference = 6B0E76C6218A6F7A006CECD2 /* GamePlay */;
 			productType = "com.apple.product-type.tool";
 		};
 		B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
@@ -593,7 +761,16 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = comp345;
 				TargetAttributes = {
+					0E53B4F4218A4218003C85B1 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					34CB6CD52188E297004054F6 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					6B0E76B7218A6F55006CECD2 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					6B0E76C5218A6F7A006CECD2 = {
 						CreatedOnToolsVersion = 10.0;
 					};
 					B315A48B2165CCCC005CAFD4 = {
@@ -639,16 +816,43 @@
 				B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
 				B35FED71217ADD2B00FE6FA7 /* FortifyControllerDriver */,
 				34CB6CD52188E297004054F6 /* AttackDriver */,
+				0E53B4F4218A4218003C85B1 /* ReinforceDriver */,
+				6B0E76B7218A6F55006CECD2 /* GameStart */,
+				6B0E76C5218A6F7A006CECD2 /* GamePlay */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E53B4F1218A4218003C85B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E53B4F8218A4218003C85B1 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34CB6CD22188E297004054F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				34CB6CD92188E297004054F6 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B0E76B4218A6F55006CECD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B0E76BB218A6F55006CECD2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B0E76C2218A6F7A006CECD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B0E76C9218A6F7B006CECD2 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,10 +929,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0E53B4FD218A4222003C85B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = 0E53B4FC218A4222003C85B1 /* PBXContainerItemProxy */;
+		};
 		34CB6CE221894D03004054F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = 34CB6CE121894D03004054F6 /* PBXContainerItemProxy */;
+		};
+		6B0E76C0218A6F60006CECD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = 6B0E76BF218A6F60006CECD2 /* PBXContainerItemProxy */;
+		};
+		6B0E76CE218A6F81006CECD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = 6B0E76CD218A6F81006CECD2 /* PBXContainerItemProxy */;
 		};
 		B315A4942165CCD6005CAFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -763,6 +982,27 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0E53B4F9218A4218003C85B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9X7J3QK44H;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0E53B4FA218A4218003C85B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9X7J3QK44H;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		34CB6CDA2188E297004054F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -782,6 +1022,50 @@
 				DEVELOPMENT_TEAM = 3P43RQJDL8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		6B0E76BC218A6F55006CECD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B0E76BD218A6F55006CECD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6B0E76CB218A6F7B006CECD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B0E76CC218A6F7B006CECD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1063,11 +1347,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E53B4FB218A4218003C85B1 /* Build configuration list for PBXNativeTarget "ReinforceDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E53B4F9218A4218003C85B1 /* Debug */,
+				0E53B4FA218A4218003C85B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		34CB6CDC2188E297004054F6 /* Build configuration list for PBXNativeTarget "AttackDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				34CB6CDA2188E297004054F6 /* Debug */,
 				34CB6CDB2188E297004054F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B0E76BE218A6F55006CECD2 /* Build configuration list for PBXNativeTarget "GameStart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B0E76BC218A6F55006CECD2 /* Debug */,
+				6B0E76BD218A6F55006CECD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B0E76CA218A6F7B006CECD2 /* Build configuration list for PBXNativeTarget "GamePlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B0E76CB218A6F7B006CECD2 /* Debug */,
+				6B0E76CC218A6F7B006CECD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

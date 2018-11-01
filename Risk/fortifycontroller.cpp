@@ -35,10 +35,14 @@ void FortifyController::start() {
                     if(amount > 0) {
                         moveArmies(fromCountry, toCountry, amount);
                     } else {
-                        //invalid amount. go back?
+                        if(!view.promptUserYesNo("You can't move negative armies. Try again? (y/n)")) {
+                            start();
+                        }
                     }
                 } else {
-                    //bad destination. go back?
+                    if(!view.promptUserYesNo("Skip the fortify phase? (y/n)")) {
+                        start();
+                    }
                 }
             } else {
                 string prompt = fromCountry->getName() + " doesn't have any adjacent countries to move armies to. Try again? (y/n)";

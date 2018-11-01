@@ -11,10 +11,10 @@
 #include <vector>
 using namespace std;
 
-void Player::attack(GameMap *gameMap) {
+void Player::attack() {
     cout << "This is attack" << endl;
-    AttackPhase playerAttack(this, gameMap);
-    playerAttack.attackLoop();
+//    AttackPhase playerAttack(this);
+//    playerAttack.attackLoop();
     
     
                              
@@ -116,6 +116,9 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
     }
     return theCountries;
 }
+
+
+
 
 bool Player::controlsContinent(string name, GameMap *gameMap) {
     return getCountriesByContinent(name).size() == gameMap->getAllByContinent(name).size();

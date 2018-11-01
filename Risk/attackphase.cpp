@@ -13,7 +13,9 @@
 AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
 {
     this->player = player;
-    this-> gameMap = gameMap;
+    this->gameMap = gameMap;
+    
+    
 }
 
 void AttackPhase :: attackLoop()
@@ -36,22 +38,25 @@ void AttackPhase :: attackLoop()
         playerID = player->getPlayerId();
         
         cout<<"Player# " <<playerID<< " Attack" <<endl;
-        cout<<"getting countries owned "  <<endl <<endl;
+        cout<<"getting countries owned and armies on them"  <<endl <<endl;
        
-            vector<Country*> allCountries = player->getAllCountries();
-            for(int i = 0; i < allCountries.size(); i++) {
-                cout << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
-            }
-            cout << endl;
+        vector<Country*> allCountries = player->getAllCountries();
+
+        countrySelect(allCountries);
         
-        cout<<"Neighbours you can attack " << endl;
+      
+        
+        
+
+        
+
         
        
         cout << endl;
         
         
-        cout<<"" << endl;
-        cout<<" how many dice do you want to roll?" << endl;
+        
+        cout<<"how many dice do you want to roll?" << endl;
         
         while(attackDiceLoop){
         cin>> diceAmountAttack;
@@ -190,6 +195,42 @@ void AttackPhase :: compare(int attackDice, int defendDice)
    
     
   
+}
+
+void AttackPhase::countrySelect(vector<Country*> allCountries)
+{
+   cout<<"pick country you want to attack from: "  <<endl <<endl;
+    
+   for(int i = 0; i < allCountries.size(); i++) {
+    cout << i+1 << " " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << " Armies on country: " << allCountries[i]->getArmiesCount()<< endl;
+    }
+    cout << endl;
+    
+    int selection =0;
+    bool notEnoughArmies = true;
+
+    
+    while(notEnoughArmies){
+        cin>>selection;
+        if(selection<1 || selection> allCountries.size())
+        {
+            cout<<"invalid country selection, choose again" <<endl;
+            
+            
+        }else if((allCountries[selection-1]->getArmiesCount()>=2)){
+            notEnoughArmies = false;
+        } else
+             cout<<"Country does not have enough armies on it, choose again" <<endl;
+        
+    }
+    cout<< "you picked " << allCountries[selection - 1]->toString() <<endl;
+    
+    cout<<"Neighbours you can attack " << endl;
+    
+    vector<Country*> enemies = allCountries[selection - 1]->getAllNeighbors();
+    
+    
+    
 }
 
 

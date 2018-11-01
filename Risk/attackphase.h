@@ -18,10 +18,12 @@ class AttackPhase
 
     
 public:
-    AttackPhase(Player* player,GameMap *gameMap);
+    AttackPhase(Player* player, GameMap *gameMap);
     void attackLoop();
     void moveArmy();
     void compare(int attackDice, int defendDice);
+    void countrySelect(vector<Country*> countries);
+    void enemyNeighbour(Country* attackingCountry);
 
     
 private:

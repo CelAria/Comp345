@@ -22,15 +22,17 @@ int main(int argc, const char * argv[]) {
     // while loop to ask players how many dice they want to roll
     //if they want to keep rolling
     // and stores each dice value
+    int amountOfDice = 0;
     char keepGoing ='y';
     while (keepGoing == 'y')
     {
-        int amountOfDice = 0;
-        cout << "Player "<< dice1.getPlayerNumber() <<" roll " <<" \n";
-        cout << "Choose between 1-3 dice, please enter amount of dice: ";
-        cin >> amountOfDice;
+        
+        cout << "Player "<< dice1.getPlayerNumber() <<" roll " << endl;
+        cout << "Choose between 1-3 dice, please enter amount of dice: " <<endl;
+        cin >>amountOfDice;
         dice1.rollDice(amountOfDice);
         
+
         dice1.getDiceValuesAttack(amountOfDice);
         cout << "\n" << endl;
         cout << "Player " << dice2.getPlayerNumber() << " roll "<< " \n";
@@ -62,5 +64,6 @@ int main(int argc, const char * argv[]) {
     dice2.diceStats();
     dice2.diceContainerValues();
 
+  
     return 0;
 }

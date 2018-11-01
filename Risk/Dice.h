@@ -10,6 +10,16 @@
 #pragma once
 #include <vector>
 #include <array>
+#include <cstdlib>
+#include <ctime>
+#include<random>
+
+
+
+#include<random>
+#include <map>
+
+#include <algorithm>
 using namespace std;
 
 class Dice
@@ -57,8 +67,8 @@ private:
 	int numbOfDice;
     int containerValue;
 	vector<int> diceContainer;
-    array<int,3> diceRollsAttack;
-    array<int,2> diceRollsDefend;
+    array<int,3> diceRollsAttack{0,0,0};
+    array<int,2> diceRollsDefend{0,0};
    
     
 

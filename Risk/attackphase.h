@@ -19,6 +19,7 @@ class AttackPhase
     
 public:
     AttackPhase(Player* player, GameMap *gameMap);
+    AttackPhase(Player* player);
     void attackLoop();
     void moveArmy();
     void compare(int attackDice, int defendDice);
@@ -32,15 +33,17 @@ private:
     int playerID;
     int attackArmySize;
     int defendArmySize;
-    int diceAmountAttack;
-    int diceAmountDefend;
     Player* player;
     GameMap* gameMap;
     Country* country;
     char attacking;
     bool attackDiceLoop;
     bool defendDiceLoop;
-    
+    int winAttackCounter =0;
+    int winDefenseCounter =0;
+    int diceAmountAttack =0;
+    int diceAmountDefend =0;
+    int moveArmies =0;
     
     
     

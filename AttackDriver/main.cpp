@@ -10,6 +10,7 @@
 #include "player.h"
 #include "attackphase.h"
 
+
 using namespace std;
 
 
@@ -45,13 +46,17 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2)
 
     gameMap->getCountry("Costa Rica")->setArmiesCount(2);
     gameMap->getCountry("Venezuela")->setArmiesCount(4);
-    gameMap->getCountry("Colombia")->setArmiesCount(1);
-    gameMap->getCountry("Panama")->setArmiesCount(3);
+    gameMap->getCountry("Colombia")->setArmiesCount(4);
+    gameMap->getCountry("Panama")->setArmiesCount(2);
+    gameMap->getCountry("Nicaragua")->setArmiesCount(2);
 
     player->addCountry(gameMap->getCountry("Costa Rica"));
-    player->addCountry(gameMap->getCountry("Venezuela"));
     player->addCountry(gameMap->getCountry("Colombia"));
+    player->addCountry(gameMap->getCountry("Nicaragua"));
+    
+    player2->addCountry(gameMap->getCountry("Venezuela"));
     player2->addCountry(gameMap->getCountry("Panama"));
+    
 }
 
 int main(int argc, const char * argv[]) {
@@ -60,6 +65,7 @@ int main(int argc, const char * argv[]) {
     Player player2(2);
     GameMap gameMap;
     AttackPhase attack(&player,&gameMap);
+  
     
     
     cout << "Player #" << player.getPlayerId() << ":" << endl << endl;

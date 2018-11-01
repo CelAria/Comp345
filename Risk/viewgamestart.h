@@ -17,14 +17,8 @@
 
 using namespace std;
 
-class viewGameStart{
-  
-public:
-    
-private:
-    
-};
 
 // declared outside of class definition
-void printMapDirectory(const string& name);
-void printDeck(Deck* deck);
+void const printMapDirectory(const string& name);
+void const printDeck(Deck* deck);
+void const printPlayers(vector<Player>& players);

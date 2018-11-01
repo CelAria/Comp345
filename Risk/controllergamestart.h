@@ -28,6 +28,7 @@ public:
     const Player* placeArmies();              //assign armies to each country round robin style
    //made public
     Deck* gamedeck;     //pointer to global deck
+    // declared outside of class definition
     
 private:
     int numberofplayers;  //number of players in game

@@ -47,8 +47,8 @@ int main(int argc, const char * argv[]) {
     game.createPlayers();
     game.createDeck(mymaploader.ptrgamemap);
     game.playerOrder();
-    
-    //cout << game.gamedeck->getTotalCardsInDeck();
+    //printDeck(game.gamedeck);
+    cout << game.gamedeck->getTotalCardsInDeck();
 
    
 }

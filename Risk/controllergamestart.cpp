@@ -86,11 +86,14 @@ const vector<Player*> GameStart::createPlayers(){
 const Deck* GameStart::createDeck(GameMap* pointertogamemap){
     int numberofcards= (pointertogamemap)->getCount();
     Deck* gamedeck = new Deck(numberofcards);
+    cout << "there are " << numberofcards << " cards in the deck" << endl;
     return gamedeck;
+    
 };
 
 const vector<Player*> GameStart::playerOrder(){
     
+    //srand(time(0));
     auto randomizer = default_random_engine {};
     shuffle(begin(players), end(players), randomizer);
     
@@ -102,3 +105,39 @@ const vector<Player*> GameStart::playerOrder(){
     return players;
 };
 
+const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
+    //All countries in the map are randomly assigned to players one by one in a round-robin fashion.
+    
+    int size = pointertogamemap->getCount();
+    vector<int> randomorder;
+    //make a vector with integers of the number of countries.
+    for (int j=0; j < size; j++){
+        randomorder.push_back(j);
+    }
+    auto randomizer = default_random_engine {};
+    //randomize the "random order" array!
+    srand((unsigned)time(0));
+    shuffle(begin(randomorder), end(randomorder), randomizer);
+    //print
+    for (int j=0; j < randomorder.size(); j++){
+        cout <<  randomorder[j] << " "  << j << endl;
+    }
+    
+    //
+    vector<int>::iterator it;
+    int i = 0;
+    for(it = randomorder.begin(); it != randomorder.end(); it++,i++){
+        cout << "assign country number " << *it << endl;
+        
+    }
+    
+        for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
+            std::cout << " " << (*i)->getPlayerId() << ", ";
+        }
+//
+//    for(map<string, Country*>::iterator it = countries.begin(); it != countries.end(); it++) {
+//        visited[it->first] = false;
+//    }
+    
+    return players;
+};

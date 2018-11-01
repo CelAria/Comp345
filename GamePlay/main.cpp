@@ -7,9 +7,26 @@
 //
 
 #include <iostream>
+#include "maploader.h"
+#include "controllergamestart.h"
+#include "viewgamestart.h"
+#include "gamemap.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    
+    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
+    printMapDirectory(directory);
+    Maploader mymaploader;
+    //open map and test if valid, if valid, create map object
+    mymaploader.readmapfile();
+    GameStart game;
+    //player input
+    game.selectPlayers();
+    //create player objects with hand of empty cards and dice facilities
+    game.createPlayers();
+    game.playerOrder();
+    game.createDeck(mymaploader.ptrgamemap);
+    game.assignCountries(mymaploader.ptrgamemap);
+    
+    
 }

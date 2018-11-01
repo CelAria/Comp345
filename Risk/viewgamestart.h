@@ -20,5 +20,5 @@ using namespace std;
 
 // declared outside of class definition
 void const printMapDirectory(const string& name);
-void const printDeck(Deck* deck);
-void const printPlayers(vector<Player>& players);
+void printDeck(Deck* deck);
+void const printPlayers(const vector<Player>& players);

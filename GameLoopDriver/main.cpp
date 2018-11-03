@@ -12,6 +12,15 @@
 #include "viewgamestart.h"
 #include "controllergamestart.h"
 
+void moveCountries(Player* player, Player* nextPlayer) {
+    vector<Country*> countries = player->getAllCountries();
+    cout << "Moving all countries from player " << player->getPlayerId() << " to player " << nextPlayer->getPlayerId() << endl;
+    
+    for(int i = 0; i < countries.size(); ++i) {
+        player->transferCountryTo(countries[i]->getName(), nextPlayer);
+    }
+}
+
 int main(int argc, const char * argv[]) {
     
     GameMap* gameMap;
@@ -47,14 +56,8 @@ int main(int argc, const char * argv[]) {
         cout << "Starting turn " << turn << " with player " << player->getPlayerId() << endl;
         mainGame.executeTurn();
         
+        moveCountries(player, mainGame.getNextPlayer());
         
-        Player* nextPlayer = mainGame.getNextPlayer();
-        vector<Country*> countries = player->getAllCountries();
-        cout << "Moving all countries from player " << player->getPlayerId() << " to player " << nextPlayer->getPlayerId() << endl;
-        
-        for(int i = 0; i < countries.size(); ++i) {
-            player->transferCountryTo(countries[i]->getName(), nextPlayer);
-        }
         turn++;
     }
     

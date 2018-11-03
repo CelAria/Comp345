@@ -76,6 +76,7 @@ void Player::addCountry(Country *country) {
     countries[country->getName()] = country;
 }
 
+
 void Player::drawCard(Deck* deck) {
     deck->draw(&hand);
 }

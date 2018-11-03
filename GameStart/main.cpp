@@ -24,11 +24,15 @@ int main(int argc, const char * argv[]) {
      verified (i.e. it is a connected graph, etc), and invalid maps are gracefully rejected; 2) the right number of players
      is created, a deck with the right number of cards is created. */
     
+    //needed vec player, gamemap, deck
+    
+    
     //directory where maps are stored
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     printMapDirectory(directory);
     Maploader mymaploader;
     //open map and test if valid, if valid, create map object
+    //mae readmapfile return the map*
     mymaploader.readmapfile();
     GameStart game;
     //player input
@@ -37,5 +41,6 @@ int main(int argc, const char * argv[]) {
     game.createPlayers();
     game.createDeck(mymaploader.ptrgamemap);
     game.playerOrder();
+    
 
 }

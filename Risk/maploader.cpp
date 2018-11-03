@@ -98,6 +98,7 @@ GameMap* Maploader::readmapfile(string file){
 }
 
 GameMap* Maploader::readmapfile(){
+    
     ptrgamemap = new GameMap();
     
     //string variable for each line parsed by fstream

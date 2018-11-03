@@ -28,6 +28,10 @@
 		B30C1661217BF2440091C565 /* mapvisualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = B30C165F217BF2440091C565 /* mapvisualizer.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B32D3857218E4AA2000C1568 /* maingame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B32D3855218E4AA2000C1568 /* maingame.cpp */; };
+		B32D3858218E4AA2000C1568 /* maingame.h in Headers */ = {isa = PBXBuildFile; fileRef = B32D3856218E4AA2000C1568 /* maingame.h */; };
+		B32D3860218E54FE000C1568 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B32D385F218E54FE000C1568 /* main.cpp */; };
+		B32D3866218E5522000C1568 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */; };
 		B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */ = {isa = PBXBuildFile; fileRef = B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */; };
 		B35FED75217ADD2B00FE6FA7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B35FED74217ADD2B00FE6FA7 /* main.cpp */; };
@@ -87,6 +91,13 @@
 			remoteInfo = Risk;
 		};
 		B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
+		B32D3864218E551C000C1568 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
 			proxyType = 1;
@@ -176,6 +187,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		B32D385B218E54FE000C1568 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B35FED70217ADD2B00FE6FA7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +268,10 @@
 		B30C165F217BF2440091C565 /* mapvisualizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mapvisualizer.h; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B32D3855218E4AA2000C1568 /* maingame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = maingame.cpp; sourceTree = "<group>"; };
+		B32D3856218E4AA2000C1568 /* maingame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maingame.h; sourceTree = "<group>"; };
+		B32D385D218E54FE000C1568 /* GameLoopDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameLoopDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32D385F218E54FE000C1568 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fortifycontroller.cpp; sourceTree = "<group>"; };
 		B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fortifycontroller.h; sourceTree = "<group>"; };
 		B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FortifyControllerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +339,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B32D385A218E54FE000C1568 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32D3866218E5522000C1568 /* libRisk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +444,14 @@
 			path = MapLoaderDriver;
 			sourceTree = "<group>";
 		};
+		B32D385E218E54FE000C1568 /* GameLoopDriver */ = {
+			isa = PBXGroup;
+			children = (
+				B32D385F218E54FE000C1568 /* main.cpp */,
+			);
+			path = GameLoopDriver;
+			sourceTree = "<group>";
+		};
 		B35FED73217ADD2B00FE6FA7 /* FortifyControllerDriver */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +490,7 @@
 				0E53B4F6218A4218003C85B1 /* ReinforceDriver */,
 				6B0E76B9218A6F55006CECD2 /* GameStart */,
 				6B0E76C7218A6F7B006CECD2 /* GamePlay */,
+				B32D385E218E54FE000C1568 /* GameLoopDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -469,6 +510,7 @@
 				0E53B4F5218A4218003C85B1 /* ReinforceDriver */,
 				6B0E76B8218A6F55006CECD2 /* GameStart */,
 				6B0E76C6218A6F7A006CECD2 /* GamePlay */,
+				B32D385D218E54FE000C1568 /* GameLoopDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -502,6 +544,8 @@
 				B30C165F217BF2440091C565 /* mapvisualizer.h */,
 				34362E05218167C900838F6F /* attackphase.cpp */,
 				34362E07218167EE00838F6F /* attackphase.h */,
+				B32D3855218E4AA2000C1568 /* maingame.cpp */,
+				B32D3856218E4AA2000C1568 /* maingame.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -547,6 +591,7 @@
 				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
 				6B0E769A217FF894006CECD2 /* viewgamestart.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
+				B32D3858218E4AA2000C1568 /* maingame.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
 				6B0E7691217E62D5006CECD2 /* controllergamestart.h in Headers */,
 			);
@@ -643,6 +688,24 @@
 			name = MapLoaderDriver;
 			productName = MapLoaderDriver;
 			productReference = B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */;
+			productType = "com.apple.product-type.tool";
+		};
+		B32D385C218E54FE000C1568 /* GameLoopDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B32D3861218E54FE000C1568 /* Build configuration list for PBXNativeTarget "GameLoopDriver" */;
+			buildPhases = (
+				B32D3859218E54FE000C1568 /* Sources */,
+				B32D385A218E54FE000C1568 /* Frameworks */,
+				B32D385B218E54FE000C1568 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B32D3865218E551C000C1568 /* PBXTargetDependency */,
+			);
+			name = GameLoopDriver;
+			productName = GameLoopDriver;
+			productReference = B32D385D218E54FE000C1568 /* GameLoopDriver */;
 			productType = "com.apple.product-type.tool";
 		};
 		B35FED71217ADD2B00FE6FA7 /* FortifyControllerDriver */ = {
@@ -776,6 +839,9 @@
 					B315A48B2165CCCC005CAFD4 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					B32D385C218E54FE000C1568 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					B35FED71217ADD2B00FE6FA7 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -819,6 +885,7 @@
 				0E53B4F4218A4218003C85B1 /* ReinforceDriver */,
 				6B0E76B7218A6F55006CECD2 /* GameStart */,
 				6B0E76C5218A6F7A006CECD2 /* GamePlay */,
+				B32D385C218E54FE000C1568 /* GameLoopDriver */,
 			);
 		};
 /* End PBXProject section */
@@ -866,6 +933,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B32D3859218E54FE000C1568 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32D3860218E54FE000C1568 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B35FED6E217ADD2B00FE6FA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -908,6 +983,7 @@
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,
+				B32D3857218E4AA2000C1568 /* maingame.cpp in Sources */,
 				6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */,
 				34362E06218167C900838F6F /* attackphase.cpp in Sources */,
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
@@ -953,6 +1029,11 @@
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */;
+		};
+		B32D3865218E551C000C1568 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = B32D3864218E551C000C1568 /* PBXContainerItemProxy */;
 		};
 		B35FED7E217AEA6800FE6FA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1088,6 +1169,24 @@
 				DEVELOPMENT_TEAM = XM25KFD587;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		B32D3862218E54FE000C1568 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B32D3863218E54FE000C1568 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1390,6 +1489,15 @@
 			buildConfigurations = (
 				B315A4912165CCCC005CAFD4 /* Debug */,
 				B315A4922165CCCC005CAFD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B32D3861218E54FE000C1568 /* Build configuration list for PBXNativeTarget "GameLoopDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B32D3862218E54FE000C1568 /* Debug */,
+				B32D3863218E54FE000C1568 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

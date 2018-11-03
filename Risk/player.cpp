@@ -23,8 +23,8 @@ void Player::attack(GameMap *gameMap) {
 
 void Player::fortify(GameMap* gameMap) {
     cout << "This is fortify" << endl;
-    FortifyController fortifyController = FortifyController(this, gameMap);
-    fortifyController.start();
+//    FortifyController fortifyController = FortifyController(this, gameMap);
+//    fortifyController.start();
 }
 
 void Player::reinforce(GameMap* gameMap) {

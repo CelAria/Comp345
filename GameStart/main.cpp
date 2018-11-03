@@ -7,10 +7,13 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "maploader.h"
 #include "controllergamestart.h"
 #include "viewgamestart.h"
 #include "gamemap.h"
+#include "player.h"
+#include "cardsdeck.h"
 
 using namespace std;
 
@@ -28,19 +31,25 @@ int main(int argc, const char * argv[]) {
     
     
     //directory where maps are stored
-    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
+    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/MapLoaderDriver/";
+//    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     printMapDirectory(directory);
-    Maploader mymaploader;
+    
     //open map and test if valid, if valid, create map object
     //mae readmapfile return the map*
-    mymaploader.readmapfile();
+    Maploader mymaploader;
+    GameMap* gameMap = mymaploader.readmapfile();
+    
     GameStart game;
+    
+    //create game deck of cards
+    game.createDeck(gameMap);
+    
     //player input
-    game.selectPlayers();
+    int numberOfPlayers = game.selectPlayers();
+    
     //create player objects with hand of empty cards and dice facilities
-    game.createPlayers();
-    game.createDeck(mymaploader.ptrgamemap);
-    game.playerOrder();
-    game.assignCountries(mymaploader.ptrgamemap);
-    game.placeArmies(mymaploader.ptrgamemap);
+    vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
+ 
+    
 }

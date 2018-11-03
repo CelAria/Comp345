@@ -37,7 +37,7 @@ bool verifyInputStringIsInteger(string s){
 };
 
 // works but prints multiple times when the correct value is found?
-const int GameStart::selectPlayers(){
+int GameStart::selectPlayers(){
     cout << "please input the number of players (2-6). Type using numbers such as 2,3,4,5,6." << endl;
     string tempinput;
     cin >> tempinput;
@@ -75,17 +75,21 @@ const int GameStart::selectPlayers(){
 
 
 // returns vector array of player pointers
-const vector<Player*> GameStart::createPlayers(){
+vector<Player*> GameStart::createPlayers(int amount, GameMap* gameMap){
     
     for(int j=1; j <= numberofplayers; j++){
-        
         // create new player object (initialize with player ID= j and push into vector players
         players.push_back(new Player(j));
     }
+    
+    playerOrder();
+    assignCountries(gameMap);
+    placeArmies(gameMap);
+    
     return players;
 };
 
-const Deck* GameStart::createDeck(GameMap* pointertogamemap){
+Deck* GameStart::createDeck(GameMap* pointertogamemap){
     int numberofcards= (pointertogamemap)->getCount();
     Deck* gamedeck = new Deck(numberofcards);
     cout << "there are " << numberofcards << " cards in the deck" << endl;
@@ -93,7 +97,7 @@ const Deck* GameStart::createDeck(GameMap* pointertogamemap){
     
 };
 
-const vector<Player*> GameStart::playerOrder(){
+vector<Player*> GameStart::playerOrder(){
 
     std::random_device rng;
     std::mt19937 urng(rng());
@@ -107,10 +111,9 @@ const vector<Player*> GameStart::playerOrder(){
     return players;
 };
 
-const vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
+vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
     /*Players are given a number of armies (A), to be placed one by one in a round-robin fashion*/
     int numArmies= 0;
-    int i= players.size();
 
     switch(players.size()){
         case 2: numArmies=40;
@@ -126,32 +129,28 @@ const vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
     }
     cout << "\n number of armies:" << numArmies << endl;
 
-    //loop through players array repeatedly
-    
-    for(int playerid=1; playerid <= players.size(); playerid++){
+    //For each player one by one
+    for(int i = 0; i < players.size(); i++){
+        //get the player's countries
+        Player* player = players[i];
+        cout << "\nPlayer " << player->getPlayerId() << " is assigning armies:" << endl;
+        vector<Country*> playerCountries = player->getAllCountries();
         
-        // print the countries owned by that player ID
-        //CountriesOwned(pointertogamemap, playerid);
-        
-        //cout << "\nPlayer " << playerid << " pick country to place army" << endl;
-        int num = (CountriesOwned(pointertogamemap, playerid)).size();
-        //generate a random number between 0 and amount of countries they own
-        int randomnum = (rand() % ( num + 1 ));
-        cout << "\nadd army to Country number " << randomnum << endl;
-        //increment number of armies on that country by 1
-        (CountriesOwned(pointertogamemap, playerid).at(randomnum))->IncrementArmiesCount();
-    //go to next player
-    playerid++;
-        if((playerid > players.size())){
-            playerid= 1;
+        //as long as there are armies to give
+        for(int j = 0; j < numArmies; j++) {
+            //place one army at a random country
+            int randomnum = rand() %  playerCountries.size();
+            cout << "add army to " << playerCountries[randomnum]->getName() << endl;
+            playerCountries[randomnum]->IncrementArmiesCount();
         }
+        cout << endl;
     }
-    cout << "return players";
+    
     return players;
 };
 
 
-const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
+vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     //All countries in the map are randomly assigned to players one by one in a round-robin fashion.
     
     int size = pointertogamemap->getCount();
@@ -165,32 +164,20 @@ const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     std::mt19937 urng(rng());
     //randomize the "random order" array!
     shuffle(begin(randomorder), end(randomorder), urng);
-    for(vector<int>::const_iterator it = randomorder.begin(); it != randomorder.end(); it++){
-      //  cout <<"random " << *it << endl;
+    
+    
+    int m = 0;
+    vector<Country*> allCountries = pointertogamemap->getAllCountries();
+    
+    for(int i = 0; i < randomorder.size(); i++) {
+        Country* toBeAssigned = allCountries[randomorder[i]];
+        
+        cout << "assign " << toBeAssigned->getName() << " to player ID" << m % players.size() + 1 << endl;
+        
+        players.at(m % players.size())->addCountry(toBeAssigned);
+        
+        m++;
     }
     
-    vector<int>::iterator it;
-    int m = 0;
-    int i = 0;
-    for(it = randomorder.begin(); it != randomorder.end(); it++,i++){
-        cout << "assign country number " << *it << " to player ID" << m % players.size() + 1 << endl;
-        players.at(m % players.size())->addCountry((pointertogamemap->getAllCountries()).at(*it));
-        //increment m
-        m++;
-        if(m == players.size()) m=0;
-    }
     return players;
-};
-
-const vector<Country*> GameStart::CountriesOwned(GameMap* pointertogamemap, int playerid){
-   
-    vector<Country*> countriesowned;
-    for (auto const& x : pointertogamemap->getAllCountries()){
-        if(x->getOwner()== playerid) countriesowned.push_back(x);
-    }
-    cout << "\nPlayer " << playerid << " owns " << countriesowned.size() << " Countries:" << endl;
-    for (vector<Country*>::const_iterator it = countriesowned.begin(); it != countriesowned.end(); ++it){
-        cout << (*it)->getName() << ", ";
-    }
-    return countriesowned; 
 };

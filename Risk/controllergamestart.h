@@ -18,22 +18,18 @@
 class GameStart{
     
 public:
+    int selectPlayers(); //return the number of players selected by user
+    vector<Player*> createPlayers(int amount, GameMap* gameMap);  //return vector of pointers to player objects
+    Deck* createDeck(GameMap* pointertogamemap);
     
-    const int selectPlayers(); //return the number of players selected by user
-    const vector<Player*> createPlayers();  //return vector of pointers to player objects
-    const Deck* createDeck(GameMap* pointertogamemap);
-    const vector<Player*> assignCountries(GameMap* pointertogamemap); //assign countries to each player round robin style
-    const vector<Player*> playerOrder(); //return vector of randomly ordered players ??
-    const vector<Player*> placeArmies(GameMap* pointertogamemap);              //assign armies to each country round robin style
-    const vector<Country*> CountriesOwned(GameMap* pointertogamemap, int playerid); //traverse gamemap and return list of countries by owner
-   //made public
-    Deck* gamedeck;     //pointer to global deck
-    // declared outside of class definition
     
 private:
     int numberofplayers;  //number of players in game
-    static GameMap* map;       //pointer to global map
     vector<Player*> players; //vector of all players that has been created
+    
+    vector<Player*> assignCountries(GameMap* pointertogamemap); //assign countries to each player round robin style
+    vector<Player*> playerOrder(); //return vector of randomly ordered players ??
+    vector<Player*> placeArmies(GameMap* pointertogamemap); //assign armies to each country round robin style
 };
 
 bool verifyInputStringIsInteger(string s);

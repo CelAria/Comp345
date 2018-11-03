@@ -111,6 +111,7 @@ const vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
     /*Players are given a number of armies (A), to be placed one by one in a round-robin fashion*/
     int numArmies= 0;
     int i= players.size();
+    cout << i << endl; 
 
     switch(i){
         case 2: numArmies=40;
@@ -119,17 +120,26 @@ const vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
         case 5: numArmies=25;
         case 6: numArmies=20;
     }
+    cout << "number of armies " << numArmies << endl;
     /*be placed one by one in a round-robin fashion on some of
     the countries that they own, where A is*/
     
     //loop through players array repeatedly
     for (int playerid= 0; playerid < playerid % players.size(); playerid++){
-        // for player
+        
+        // for THIS player
         players.at(playerid);
-        cout << "pick country to place army";
-        // print the countries owned
+        
+        // print the countries owned by that player ID
         CountriesOwned(pointertogamemap, playerid);
-       // setArmiesCount();
+        cout << "Player " << playerid << " pick country to place army";
+        int num = CountriesOwned(pointertogamemap, playerid).size();
+        //generate a random number between 0 and amount of countries they own
+        int randomnum = (rand() % ( num + 1 ));
+        cout << "add army to Country number " << randomnum <<endl;
+        //increment number of armies on that country by 1
+        (CountriesOwned(pointertogamemap, playerid).at(randomnum))->IncrementArmiesCount();
+    //go to next player
     playerid++;
         if((playerid = players.size())){
             playerid= 0;
@@ -153,7 +163,7 @@ const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     //randomize the "random order" array!
     shuffle(begin(randomorder), end(randomorder), urng);
     for(vector<int>::const_iterator it = randomorder.begin(); it != randomorder.end(); it++){
-        cout <<"random " << *it << endl;
+      //  cout <<"random " << *it << endl;
     }
     
     vector<int>::iterator it;

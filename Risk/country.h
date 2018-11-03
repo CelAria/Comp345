@@ -30,6 +30,7 @@ class Country {
     void setOwner(int playerId) { this->playerId = playerId; };
     int getOwner() { return playerId; }
     void setArmiesCount(int count) { this->armiesCount = count; };
+    void IncrementArmiesCount() {this->armiesCount++;}
     vector<Country*> getAllNeighbors();
     string toString();
 };

@@ -12,11 +12,16 @@
 int main(int argc, const char * argv[]) {
     
     Player player;
-    Country canada = Country("Canada", "North America");
-//    Deck deck = Deck();
     
     
-    cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
+    
+    
+    
+//    Country canada = Country("Canada", "North America");
+////    Deck deck = Deck();
+//
+//
+//    cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
     
 
 //    player.fortify();
@@ -24,9 +29,9 @@ int main(int argc, const char * argv[]) {
     
 //    cout << endl;
 //
-    cout << "Player currently has " << player.getCountriesCount() << " countries..." << endl;
-    player.addCountry(&canada);
-    cout << "Player now has " << player.getCountriesCount() << " countries." << endl;
+//    cout << "Player currently has " << player.getCountriesCount() << " countries..." << endl;
+//    player.addCountry(&canada);
+//    cout << "Player now has " << player.getCountriesCount() << " countries." << endl;
     
 
     

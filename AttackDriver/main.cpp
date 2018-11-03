@@ -72,6 +72,9 @@ int main(int argc, const char * argv[]) {
     cout << "Player #" << player2.getPlayerId() << ":" << endl << endl;
     
     initMockGameMapAndPlayer(&gameMap, &player, &player2);
+    
+//    player.attack(&gameMap);
+    
     attack.attackLoop();
     
     

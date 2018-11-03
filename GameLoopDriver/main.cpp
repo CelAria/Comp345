@@ -47,11 +47,15 @@ int main(int argc, const char * argv[]) {
         cout << "Starting turn " << turn << " with player " << player->getPlayerId() << endl;
         mainGame.executeTurn();
         
-        cout << "Moving all countries from this player to the next" << endl;
+        
         Player* nextPlayer = mainGame.getNextPlayer();
-        for(int i = 0; i < player->getAllCountries().size(); ++i) {
-            player->getAllCountries()[i]->setOwner(nextPlayer->getPlayerId());
+        vector<Country*> countries = player->getAllCountries();
+        cout << "Moving all countries from player " << player->getPlayerId() << " to player " << nextPlayer->getPlayerId() << endl;
+        
+        for(int i = 0; i < countries.size(); ++i) {
+            player->transferCountryTo(countries[i]->getName(), nextPlayer);
         }
+        turn++;
     }
     
     cout << endl;

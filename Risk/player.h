@@ -47,6 +47,6 @@ public:
     inline int getDefenseDice1() {return dice.getDefenseDice1();}
     inline int getDefenseDice2() {return dice.getDefenseDice2();}
     
-    
+    void transferCountryTo(string countryName, Player* player);
    
 };

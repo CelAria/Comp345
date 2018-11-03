@@ -97,8 +97,15 @@ void Player:: getDiceRollsDefend(int amountOfDice){
     dice.getDiceValuesDefend(amountOfDice);
 }
 
-
-
+void Player::transferCountryTo(string countryName, Player *player) {
+    Country* toBeTransfered = countries[countryName];
+    toBeTransfered->setOwner(player->getPlayerId());
+    
+    map<string,Country*>::iterator it = countries.find(countryName);
+    countries.erase(it);
+    
+    player->addCountry(toBeTransfered);
+}
 
 vector<Country*> Player::getAllCountries() {
     vector<Country*> theCountries;

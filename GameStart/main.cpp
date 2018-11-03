@@ -42,5 +42,12 @@ int main(int argc, const char * argv[]) {
     game.createDeck(mymaploader.ptrgamemap);
     game.playerOrder();
     game.assignCountries(mymaploader.ptrgamemap);
-    game.placeArmies(mymaploader.ptrgamemap);
+    game.CountriesOwned(mymaploader.ptrgamemap, 1);
+    game.CountriesOwned(mymaploader.ptrgamemap, 2);
+    cout << " ";
+    game.CountriesOwned(mymaploader.ptrgamemap, 3);
+    cout << " ";
+    game.CountriesOwned(mymaploader.ptrgamemap, 4);
+    game.CountriesOwned(mymaploader.ptrgamemap, 5);
+   // game.placeArmies(mymaploader.ptrgamemap);
 }

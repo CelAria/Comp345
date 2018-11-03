@@ -174,11 +174,8 @@ const vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     int i = 0;
     for(it = randomorder.begin(); it != randomorder.end(); it++,i++){
         cout << "assign country number " << *it << " to player ID" << m % players.size() + 1 << endl;
-        //HOW TO GO TO EACH COUNTRY IN THE GAMEMAP ONE BY ONE?
-        
-        for (auto const& x : pointertogamemap->getAllCountries()){
-            players.at(m)->addCountry(x);
-        }
+        players.at(m % players.size())->addCountry((pointertogamemap->getAllCountries()).at(*it));
+        //increment m
         m++;
         if(m == players.size()) m=0;
     }
@@ -191,10 +188,9 @@ const vector<Country*> GameStart::CountriesOwned(GameMap* pointertogamemap, int 
     for (auto const& x : pointertogamemap->getAllCountries()){
         if(x->getOwner()== playerid) countriesowned.push_back(x);
     }
-    cout << "Player " << playerid << " owns Countries:" << endl;
+    cout << "Player " << playerid << " owns " << countriesowned.size() << " Countries:" << endl;
     for (vector<Country*>::const_iterator it = countriesowned.begin(); it != countriesowned.end(); ++it){
         cout << (*it)->getName() << endl;
-        cout << "^name";
     }
     return countriesowned; 
 };

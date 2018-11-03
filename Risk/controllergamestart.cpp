@@ -131,13 +131,13 @@ const vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
     for(int playerid=1; playerid <= players.size(); playerid++){
         
         // print the countries owned by that player ID
-        CountriesOwned(pointertogamemap, playerid);
+        //CountriesOwned(pointertogamemap, playerid);
         
-        cout << "Player " << playerid << " pick country to place army" << endl;
+        //cout << "\nPlayer " << playerid << " pick country to place army" << endl;
         int num = (CountriesOwned(pointertogamemap, playerid)).size();
         //generate a random number between 0 and amount of countries they own
         int randomnum = (rand() % ( num + 1 ));
-        cout << "add army to Country number " << randomnum << endl;
+        cout << "\nadd army to Country number " << randomnum << endl;
         //increment number of armies on that country by 1
         (CountriesOwned(pointertogamemap, playerid).at(randomnum))->IncrementArmiesCount();
     //go to next player
@@ -188,9 +188,9 @@ const vector<Country*> GameStart::CountriesOwned(GameMap* pointertogamemap, int 
     for (auto const& x : pointertogamemap->getAllCountries()){
         if(x->getOwner()== playerid) countriesowned.push_back(x);
     }
-    cout << "Player " << playerid << " owns " << countriesowned.size() << " Countries:" << endl;
+    cout << "\nPlayer " << playerid << " owns " << countriesowned.size() << " Countries:" << endl;
     for (vector<Country*>::const_iterator it = countriesowned.begin(); it != countriesowned.end(); ++it){
-        cout << (*it)->getName() << endl;
+        cout << (*it)->getName() << ", ";
     }
     return countriesowned; 
 };

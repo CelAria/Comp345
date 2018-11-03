@@ -42,6 +42,5 @@ int main(int argc, const char * argv[]) {
     game.createDeck(mymaploader.ptrgamemap);
     game.playerOrder();
     game.assignCountries(mymaploader.ptrgamemap);
-    cout << "ok ok " << endl;
     game.placeArmies(mymaploader.ptrgamemap);
 }

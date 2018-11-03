@@ -111,16 +111,21 @@ const vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
     /*Players are given a number of armies (A), to be placed one by one in a round-robin fashion*/
     int numArmies= 0;
     int i= players.size();
-    cout << i << endl; 
+    cout << i << endl;
 
-    switch(i){
+    switch(players.size()){
         case 2: numArmies=40;
+            break;
         case 3: numArmies=35;
+            break;
         case 4: numArmies=30;
+            break;
         case 5: numArmies=25;
+            break;
         case 6: numArmies=20;
+            break;
     }
-    cout << "number of armies " << numArmies << endl;
+    cout << " number of armies " << numArmies << endl;
     /*be placed one by one in a round-robin fashion on some of
     the countries that they own, where A is*/
     

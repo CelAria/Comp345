@@ -42,7 +42,7 @@ void Player::addCountry(Country *country) {
 
 
 void Player::drawCard(Deck* deck) {
-    deck->draw(&hand);
+    deck->draw(hand);
 }
 
 void Player::rollDice(int amountOfDice) {

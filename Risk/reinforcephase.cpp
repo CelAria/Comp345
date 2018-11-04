@@ -26,25 +26,25 @@ void ReinforceController::start()
     cout << "Num of Armies (before exchange): " << numOfArmiesRecieved << endl;
     cout << "Player currently has " << player->getCountriesCount() << " countries" << endl;
     cout << "Player currently has " << player->getCardsCount() << " cards" << endl;
-    cout << "Artillery: " << player->getHand().getNumOfArtilleryCards()
-    << " Cavalry: " << player->getHand().getNumOfCavalryCards()
-    << " Infantry: " << player->getHand().getNumOfInfantryCards() << endl;
+    cout << "Artillery: " << player->getHand()->getNumOfArtilleryCards()
+    << " Cavalry: " << player->getHand()->getNumOfCavalryCards()
+    << " Infantry: " << player->getHand()->getNumOfInfantryCards() << endl;
     
     while(player->getCardsCount() > 5){
         string userInput;
         cout <<"Type of card exchange: ";
         getline (cin, userInput);
-        numOfArmiesRecieved = numOfArmiesRecieved + player->getHand().exchange(userInput);
-        cout << player->getHand().getTotalCardsInHand() << endl;
+        numOfArmiesRecieved = numOfArmiesRecieved + player->getHand()->exchange(userInput);
+        cout << player->getHand()->getTotalCardsInHand() << endl;
     }
     cout << "Num of Armies (after exchange): " << numOfArmiesRecieved << endl;
     
     cout <<""<< endl;
     
     cout << "New card count is: " << player->getCardsCount() << endl;
-    cout << "Artillery: " << player->getHand().getNumOfArtilleryCards()
-    << " Cavalry: " << player->getHand().getNumOfCavalryCards()
-    << " Infantry: " << player->getHand().getNumOfInfantryCards() << endl << endl;
+    cout << "Artillery: " << player->getHand()->getNumOfArtilleryCards()
+    << " Cavalry: " << player->getHand()->getNumOfCavalryCards()
+    << " Infantry: " << player->getHand()->getNumOfInfantryCards() << endl << endl;
     
     vector<Country*> allCountries = player->getAllCountries();
     int numOfArmiesToPlace = (numOfArmiesRecieved/allCountries.size());

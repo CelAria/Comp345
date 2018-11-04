@@ -31,7 +31,7 @@ int main(int argc, const char * argv[]) {
     
     
     //directory where maps are stored
-//    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/MapLoaderDriver/";
+    //const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/MapLoaderDriver/";
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     printMapDirectory(directory);
     

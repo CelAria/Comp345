@@ -14,27 +14,27 @@ using namespace std;
 class Player {
 private:
     int id;
-    Hand hand;
+    Hand* hand;
     Dice dice;
     map<string, Country*> countries;
     
     
 public:
-    Player(): id(1), dice(1) {};
-    Player(int playerId): id(playerId), dice(playerId) {};
+    Player(): id(1), dice(1), hand(new Hand) {};
+    Player(int playerId): id(playerId), dice(playerId), hand(new Hand) {};
     void attack(GameMap* gameMap);
     void fortify(GameMap* gameMap);
     void reinforce(GameMap* gameMap);
     int getPlayerId() { return id; };
     void addCountry(Country* country);
-    int getCardsCount() { return hand.getTotalCardsInHand(); };
+    int getCardsCount() { return hand->getTotalCardsInHand(); };
     void drawCard(Deck* deck);
     //had to change this to fix dice container issue changed from int to void 
     void rollDice(int amountOfDice);
     void defendRollDice(int amountOfDice);
     void getDiceRollsAttack(int amountOfDice);
     void getDiceRollsDefend(int amountOfDice);
-    Hand getHand() { return hand; }
+    Hand* getHand() { return hand; }
     int getCountriesCount() { return (int)countries.size(); }
     vector<Country*> getAllCountries();
     vector<Country*> getCountriesByContinent(string continent);
@@ -50,4 +50,5 @@ public:
     void transferCountryTo(string countryName, Player* player);
     
    
+    ~Player() {delete hand;};
 };

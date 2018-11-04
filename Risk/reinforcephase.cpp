@@ -8,6 +8,8 @@
 
 #include "reinforcephase.h"
 #include "player.h"
+#include "continent.h"
+
 
 #include <iostream>
 #include <string>
@@ -18,10 +20,24 @@ using namespace std;
 
 void ReinforceController::start()
 {
-    int numOfCountriesOwned = this->player->getCountriesCount();
+    int numOfCountriesOwned = player->getCountriesCount();
     int numOfArmiesRecieved = (numOfCountriesOwned/3);
     if(numOfArmiesRecieved <= 3)
         numOfArmiesRecieved = 3;
+    
+    vector<Country*> allCountries = player->getAllCountries();
+    vector<string> continentContorlValue;
+    for(int i = 0; i < allCountries.size(); i++) {
+        if(player->controlsContinent(allCountries[i]->getContinentName(), gameMap)){
+            for(int j = 0; j < continentContorlValue.size(); j++){
+                if(continentContorlValue[j] == allCountries[i]->getContinentName()){
+                    vector<Country*> allCountries2 = player->getCountriesByContinent(allCountries[i]->getContinentName());
+                    numOfArmiesRecieved += allCountries2.size();
+                }
+            }
+            continentContorlValue.push_back(allCountries[i]->getContinentName());
+        }
+    }
     
     cout << "Num of Armies (before exchange): " << numOfArmiesRecieved << endl;
     cout << "Player currently has " << player->getCountriesCount() << " countries" << endl;
@@ -35,7 +51,6 @@ void ReinforceController::start()
         cout <<"Type of card exchange: ";
         getline (cin, userInput);
         numOfArmiesRecieved = numOfArmiesRecieved + player->getHand()->exchange(userInput);
-        cout << player->getHand()->getTotalCardsInHand() << endl;
     }
     cout << "Num of Armies (after exchange): " << numOfArmiesRecieved << endl;
     
@@ -46,7 +61,6 @@ void ReinforceController::start()
     << " Cavalry: " << player->getHand()->getNumOfCavalryCards()
     << " Infantry: " << player->getHand()->getNumOfInfantryCards() << endl << endl;
     
-    vector<Country*> allCountries = player->getAllCountries();
     int numOfArmiesToPlace = (numOfArmiesRecieved/allCountries.size());
     int numOfArmiesLeft = (numOfArmiesRecieved%allCountries.size());
     

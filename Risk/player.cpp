@@ -14,8 +14,8 @@ using namespace std;
 
 void Player::attack(GameMap *gameMap) {
     cout << "This is attack" << endl;
-//    AttackPhase playerAttack(this,gameMap);
-//    playerAttack.attackLoop();
+    AttackPhase playerAttack(this,gameMap);
+    playerAttack.attackLoop();
     
 
                              
@@ -24,8 +24,8 @@ void Player::attack(GameMap *gameMap) {
 
 void Player::fortify(GameMap* gameMap) {
     cout << "This is fortify" << endl;
-//    FortifyController fortifyController = FortifyController(this, gameMap);
-//    fortifyController.start();
+    FortifyController fortifyController = FortifyController(this, gameMap);
+    fortifyController.start();
 }
 
 void Player::reinforce(GameMap* gameMap) {
@@ -74,7 +74,11 @@ void Player::transferCountryTo(string countryName, Player *player) {
 vector<Country*> Player::getAllCountries() {
     vector<Country*> theCountries;
     for(auto &country: countries) {
-        theCountries.push_back(country.second);
+        if(country.second->getOwner() != this->id) {
+            countries.erase(country.second->getName());
+        } else {
+            theCountries.push_back(country.second);
+        }
     }
     return theCountries;
 }
@@ -83,7 +87,11 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
     vector<Country*> theCountries;
     for(auto &country: countries) {
         if(country.second->getContinentName() == continent) {
-            theCountries.push_back(country.second);
+            if(country.second->getOwner() != this->id) {
+                countries.erase(country.second->getName());
+            } else {
+                theCountries.push_back(country.second);
+            }
         }
     }
     return theCountries;

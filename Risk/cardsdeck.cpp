@@ -188,46 +188,31 @@ Hand::Hand()
 //return true if the number of cards in the hand is 0 and false otherwise
 bool Hand::isHandEmpty()
 {
-    if(getTotalCardsInHand() == 0)
-        return true;
-    else
-        return false;
+    return(getTotalCardsInHand() == 0);
 }
 
 //returns true if the hand contains one type of each card and false otherwise
 bool Hand::handContainsOneOfEachCardType()
 {
-    if(getNumOfInfantryCards() > 0 && getNumOfArtilleryCards() > 0 && getNumOfCavalryCards() > 0)
-        return true;
-    else
-        return false;
+    return(getNumOfInfantryCards() > 0 && getNumOfArtilleryCards() > 0 && getNumOfCavalryCards() > 0);
 }
 
 //returns ture is the hand contains 3 infrantry cards and false otherwise
 bool Hand::handContains3InfantryCards()
 {
-    if(getNumOfInfantryCards() >= 3)
-        return true;
-    else
-        return false;
+    return(getNumOfInfantryCards() >= 3);
 }
 
 //returns tru if the hand contains 3 artillery cards and false otherwise
 bool Hand::handContains3ArtilleryCards()
 {
-    if(getNumOfArtilleryCards() >= 3)
-        return true;
-    else
-        return false;
+    return(getNumOfArtilleryCards() >= 3);
 }
 
 //returns true if the hand contains 3 cavarly cards and false otherwise
 bool Hand::handContains3CavalryCards()
 {
-    if(getNumOfCavalryCards() >= 3)
-        return true;
-    else
-        return false;
+    return(getNumOfCavalryCards() >= 3);
 }
 
 //increments the number of armies the hand will recieve for the current and the next set of cards exchanged
@@ -246,6 +231,7 @@ int Hand::exchange(string s){
         artilleryMinusOne();
         cavalryMinusOne();
         incrementNumOfArmies();
+        //cout<< totalNumOfCardsInHand << endl;
         return getNumOfArmies();
     }
     else if(!isHandEmpty() && s.compare("3 Infantry") == 0 && handContains3InfantryCards())

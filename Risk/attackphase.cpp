@@ -257,7 +257,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     
     cout<<"Neighbours you can attack " << endl<<endl;
     
-//    vector<Country*> enemies = allCountries[selectCountry - 1]->getAllNeighbors();
+
     
     for(int i = 0; i < enemies.size(); i++) {
         

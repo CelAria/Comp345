@@ -43,7 +43,7 @@ void AttackPhase :: attackLoop()
         attackPhaseInput = false;
        } else if(attacking== 'n'){
            cout<<"Attack Phase over"<<endl;
-           exit(0);
+           return;
        }
        
        else
@@ -78,7 +78,7 @@ void AttackPhase :: attackLoop()
                 attackPhaseInput = false;
             } else if(attacking== 'n'){
                 cout<<"Attack Phase over"<<endl;
-                exit(0);
+                return;
             }
             
             else

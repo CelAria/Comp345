@@ -32,10 +32,6 @@ GameMap* Maploader::readmapfile(string file){
     //if file opens succesfully
     if(fstream.is_open()){
         
-        
-        cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
-        
-        
         bool isInContinent = false;
         bool isInTerritory = false;
         
@@ -73,7 +69,6 @@ GameMap* Maploader::readmapfile(string file){
         }
         
         fstream.close();
-        cout << "end of file, stream successfully closed\n" << endl;
         
         
         //If map invalid, reject and offer readmap() again, if valid, accept
@@ -116,83 +111,13 @@ GameMap* Maploader::readmapfile(){
         readmapfile();
     }
     
-    fstream.open(filename);
+    return readmapfile(filename);
     
-    //if file opens succesfully
-    if(fstream.is_open()){
-        
-        
-        cout << "\n" << "\"" << filename << "\" " << "opened successfully\n";
-        
-        //make gamemap (only one for program)
-        
-        bool isInContinent = false;
-        bool isInTerritory = false;
-        
-        while(!fstream.eof()){
-    
-            
-            getline(fstream,line);
-            
-            //Removing the windows \r character"
-            if(!line.empty() && *line.rbegin() == '\r') {
-                line.erase( line.length()-1, 1);
-            }
-            
-            if(line == "[Continents]") {
-                isInContinent = true;
-                isInTerritory = false;
-                continue;
-                
-            } else if(line == "[Territories]") {
-                isInContinent = false;
-                isInTerritory = true;
-                continue;
-                
-            } else if(line == "") {
-                continue;
-            }
-           
-                if(isInContinent) {
-                    parseContinent(line);
-                }
-                if(isInTerritory) {
-                    parseTerritory(line);
-                }
-        
-        }
-        
-        fstream.close();
-        cout << "end of file, stream successfully closed\n" << endl;
-        
-        
-        //If map invalid, reject and offer readmap() again, if valid, accept
-        
-        if(ptrgamemap->isValid()){
-            ptrgamemap->traverseAll(true);
-            cout << " This gamemap is valid!\n" << endl;
-        }
-        
-      
-        if(!ptrgamemap->isValid()){
-        cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
-        delete ptrgamemap;
-        ptrgamemap= NULL;
-        readmapfile();
-        }
-        
-    }
-    else{
-        cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
-        readmapfile();
-    }
-    return ptrgamemap;
 }
 
 void Maploader::parseContinent(string line) {
     //for each token, push into the array of tokens.
     
-    cout <<  line  << endl;
     std::string token;
     char delimiter = '=';
     
@@ -210,7 +135,6 @@ void Maploader::parseContinent(string line) {
 
 void Maploader::parseTerritory(string line) {
    
-    cout <<  line  << endl;
     std::string token;
     char delimiter = ',';
     

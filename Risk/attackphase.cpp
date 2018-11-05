@@ -2,14 +2,15 @@
 //  attackphase.cpp
 //  Risk
 //
-//  Created by Matthew Salaciak on 2018-10-24.
+//  Created by Matthew Salaciak 29644490
+//  ASSIGNMENT #2
 //  Copyright © 2018 comp345. All rights reserved.
 //
 
 #include <attackphase.h>
 
 
-
+//constructor for attackPhase
 AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
 {
     this->player = player;
@@ -29,10 +30,32 @@ void AttackPhase :: attackLoop()
   // calls moveArmy if wins
     //asks again if they want to attack
    
-    cout<<"Do you want to attack? " << endl;
-    cin >> attacking;
+    cout<<"Do you want to attack? Please enter y for yes, n for no " << endl;
+    bool attackPhaseInput = true;
+    char attacking =NULL;
+    
+
+    while(attackPhaseInput)
+    {
+        cin >> attacking;
+       if(attacking =='y')
+       {
+        attackPhaseInput = false;
+       } else if(attacking== 'n'){
+           cout<<"Attack Phase over"<<endl;
+           return;
+       }
+       
+       else
+            cout<<"Wrong input, please select y for yes, n for no" <<endl;
+        
+    }
+
+          
+    
     while(attacking == 'y')
     {
+        attackPhaseInput = true;
         attackDiceLoop = true;
         defendDiceLoop = true;
         playerID = player->getPlayerId();
@@ -45,8 +68,23 @@ void AttackPhase :: attackLoop()
         countrySelect(allCountries);
         
 
-        cout<<"Keep attacking? " <<endl;
-        cin>> attacking;
+        cout<<"Keep attacking? Please enter y for yes, n for no" <<endl;
+        
+        while(attackPhaseInput)
+        {
+            cin >> attacking;
+            if(attacking =='y')
+            {
+                attackPhaseInput = false;
+            } else if(attacking== 'n'){
+                cout<<"Attack Phase over"<<endl;
+                return;
+            }
+            
+            else
+                cout<<"Wrong input, please select y for yes, n for no" <<endl;
+            
+        }
         
     
     }
@@ -194,6 +232,7 @@ void AttackPhase :: compare(int attackDice, int defendDice)
 //carries out attack/defender dice rolls
 //subtracts armies lost
 //if country is defeated, asks winner to move x amount of armies
+
 void AttackPhase::countrySelect(vector<Country*> allCountries)
 {
    cout<<"pick country you want to attack from: "  <<endl <<endl;
@@ -241,23 +280,11 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
         
     }
      cout<< "The Country you picked to attack from is " << allCountries[selectCountry - 1]->toString() <<endl;
-    
-//     vector<Country*> potentialEnemies = allCountries[selectCountry - 1]->getAllNeighbors();
-//    vector<Country*> enemies;
-//    for(int i=0; i<potentialEnemies.size(); i++)
-//        {
-//            if((potentialEnemies[i]->hasNeighbors()) && potentialEnemies[i]->getOwner() != player->getPlayerId())
-//            {
-//                enemies.push_back(potentialEnemies[i]);
-//            }
-//
-//        }
-    
-    
-    
+
+
     cout<<"Neighbours you can attack " << endl<<endl;
     
-//    vector<Country*> enemies = allCountries[selectCountry - 1]->getAllNeighbors();
+
     
     for(int i = 0; i < enemies.size(); i++) {
         
@@ -283,7 +310,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     }
     cout<< "The Country you picked to attack is " << enemies[selectAttackCountry - 1]->toString() <<endl;
     
-    cout<<"how many attacking dice to roll" << endl;
+    cout<<"attacking player...how many dice to roll?" << endl;
 
     while(attackDiceLoop){
         cin>> diceAmountAttack;
@@ -317,9 +344,10 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     compare(diceAmountAttack, diceAmountDefend);
     
     
-    
+    cout<<""<<endl;
     cout<<"attacking army defeated this many armies: " <<winAttackCounter<<endl;
     cout<<"defending army defeated this many armies: " <<winDefenseCounter<<endl;
+    cout<<""<<endl;
     
     
     allCountries[selectCountry - 1]->setArmiesCount(allCountries[selectCountry - 1]->getArmiesCount() - winDefenseCounter);

@@ -2,7 +2,8 @@
 //  attackphase.h
 //  Risk
 //
-//  Created by Matthew Salaciak on 2018-10-24.
+//  Created by Matthew Salaciak 29644490
+//  ASSIGNMENT #2
 //  Copyright © 2018 comp345. All rights reserved.
 //
 

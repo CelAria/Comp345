@@ -27,16 +27,11 @@ int main(int argc, const char * argv[]) {
      verified (i.e. it is a connected graph, etc), and invalid maps are gracefully rejected; 2) the right number of players
      is created, a deck with the right number of cards is created. */
     
-    //needed vec player, gamemap, deck
-    
-    
     //directory where maps are stored
-//    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/MapLoaderDriver/";
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     printMapDirectory(directory);
     
     //open map and test if valid, if valid, create map object
-    //mae readmapfile return the map*
     Maploader mymaploader;
     GameMap* gameMap = mymaploader.readmapfile();
     

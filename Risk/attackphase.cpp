@@ -30,18 +30,20 @@ void AttackPhase :: attackLoop()
   // calls moveArmy if wins
     //asks again if they want to attack
    
-    cout<<"Do you want to attack? " << endl;
+    cout<<"Do you want to attack? Please enter y for yes, n for no " << endl;
     bool attackPhaseInput = true;
-    char attacking =NULL;
+    string attacking;
+    char input = NULL;
     
 
     while(attackPhaseInput)
     {
         cin >> attacking;
-       if(attacking =='y')
+        input = attacking.at(0);
+       if(input == 'y')
        {
         attackPhaseInput = false;
-       } else if(attacking== 'n'){
+       } else if(input =='n'){
            cout<<"Attack Phase over"<<endl;
            return;
        }
@@ -53,7 +55,7 @@ void AttackPhase :: attackLoop()
 
           
     
-    while(attacking == 'y')
+    while(input == 'y')
     {
         attackPhaseInput = true;
         attackDiceLoop = true;
@@ -68,15 +70,16 @@ void AttackPhase :: attackLoop()
         countrySelect(allCountries);
         
 
-        cout<<"Keep attacking? " <<endl;
+        cout<<"Keep attacking? Please enter y for yes, n for no" <<endl;
         
         while(attackPhaseInput)
         {
             cin >> attacking;
-            if(attacking =='y')
+            input = attacking.at(0);
+            if(input =='y')
             {
                 attackPhaseInput = false;
-            } else if(attacking== 'n'){
+            } else if(input== 'n'){
                 cout<<"Attack Phase over"<<endl;
                 return;
             }

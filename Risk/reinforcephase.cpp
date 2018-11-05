@@ -29,30 +29,35 @@ void ReinforceController::start()
         numOfArmiesRecieved = 3;
 
     vector<Country*> allCountries = player->getAllCountries();
-    vector<string> continentContorlValue;
-    //loops through all the countries the player has
+    vector<string> continentControlValue;
+    int myCounter = 0;
+    //loops through all the countries the player controls
     for(int i = 0; i < allCountries.size(); i++)
     {
         //if the player controls all contries in the continent
         if(player->controlsContinent(allCountries[i]->getContinentName(), gameMap))
         {
-            //loop through the vector and determines if there has been any duplications
-            for(int j = 0; j < continentContorlValue.size(); j++)
+            //add continent to vector continentControlValue to then check if it is only add once
+            continentControlValue.push_back(allCountries[i]->getContinentName());
+            for(int j = 0; j < continentControlValue.size(); j++)
             {
-                if(continentContorlValue[j] == allCountries[i]->getContinentName())
+                if(continentControlValue[j] == allCountries[i]->getContinentName())
                 {
-                    vector<Country*> allCountries2 = player->getCountriesByContinent(allCountries[i]->getContinentName());
-                    //adds the number of countries in the continent controled by the player to the number of armies to distribute
-                    numOfArmiesRecieved += allCountries2.size();
+                    myCounter++;
                 }
             }
-            //adds to continentContorlValue vector to avoid duplications
-            continentContorlValue.push_back(allCountries[i]->getContinentName());
+            //if a continent appears only once in the continentControlValue vector, then adjust the numOfArmiesRecieved
+            if(myCounter == 1)
+            {
+                vector<Country*> allCountries2 = player->getCountriesByContinent(allCountries[i]->getContinentName());
+                //if the player controls all the countries in a continent, then add the number of countries in that continent to the numOfArmiesRecieved
+                numOfArmiesRecieved += allCountries2.size();
+            }
+            myCounter = 0;
         }
     }
-    
     cout << "Number of armies (before exchange): " << numOfArmiesRecieved << endl;
-    cout << "Player" << player->getPlayerId() << " currently has " << player->getCountriesCount() << " countries and holds "
+    cout << "Player" << player->getPlayerId() << " currently controls " << player->getCountriesCount() << " countries and holds "
          << player->getCardsCount() << " cards" << endl;
     cout << "Type of cards the player holds:" << endl;
     cout << "Infantry: " << player->getHand()->getNumOfInfantryCards()
@@ -73,7 +78,7 @@ void ReinforceController::start()
     cout << "Player" << player->getPlayerId() << " currently holds " << player->getCardsCount() << " cards" << endl;
     cout<<endl;
     
-    cout << "The number of armies placed in each country that player " << player->getPlayerId() << " controls: " << endl;
+    cout << "The number of armies placed in each country that player " << player->getPlayerId() << " controls (before): " << endl;
     //displays the number of armies in each country the player controls
     for(int i = 0; i < allCountries.size(); i++)
     {
@@ -98,7 +103,7 @@ void ReinforceController::start()
     int randNum = (rand() % (allCountries.size()-1) + 0);
     gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
     
-    cout << "The number of armies placed in each country that player " << player->getPlayerId() << " controls: " << endl;
+    cout << "The number of armies placed in each country that player " << player->getPlayerId() << " controls (after): " << endl;
     for(int i = 0; i < allCountries.size(); i++)
     {
         cout << "\t• " << allCountries[i]->getArmiesCount() << " armies placed in " << allCountries[i]->getName() <<endl;
@@ -106,7 +111,6 @@ void ReinforceController::start()
     cout << endl;
     cout << "End of reinforce" << endl;
     cout << "---------------------------------------------------------------------------------------------------" << endl;
-    
 }
     
     

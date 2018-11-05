@@ -17,7 +17,7 @@ using namespace std;
 class AttackPhase
 {
 
-    
+    //AttackPhase class definition
 public:
     AttackPhase(Player* player, GameMap *gameMap);
     AttackPhase(Player* player);
@@ -29,7 +29,7 @@ public:
 
     
 private:
-  
+    //AttackPhase variables
     int armies;
     int playerID;
     int attackArmySize;

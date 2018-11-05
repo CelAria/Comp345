@@ -35,7 +35,7 @@ void FortifyController::start() {
                     if(amount > 0) {
                         moveArmies(fromCountry, toCountry, amount);
                     } else {
-                        if(!view.promptUserYesNo("You can't move negative armies. Try again? (y/n)")) {
+                        if(view.promptUserYesNo("That is an invalid amount. Try again? (y/n)")) {
                             start();
                         }
                     }

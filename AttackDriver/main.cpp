@@ -2,7 +2,8 @@
 //  main.cpp
 //  AttackDriver
 //
-//  Created by Matthew Salaciak on 2018-10-30.
+//  Created by Matthew Salaciak 29644490
+//  ASSIGNMENT #2
 //  Copyright © 2018 comp345. All rights reserved.
 //
 
@@ -13,7 +14,8 @@
 
 using namespace std;
 
-
+//mock game, creates 2 players, assigns them countries and armies on countries
+//tests functions to make sure enemy neighbours are correct, amount of armies are correct, and transfer of country after winning is correct
 void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2) {
     Continent centralAmerica = Continent("Central America", 3);
     Continent southAmerica = Continent("South America", 2);
@@ -61,30 +63,27 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2)
 
 int main(int argc, const char * argv[]) {
 
+    //creates 2 players with player ID's
+    //creates gamemap and attackphase class
+    
     Player player(1);
     Player player2(2);
     GameMap gameMap;
     AttackPhase attack(&player,&gameMap);
   
     
-    
+    //prints players ID just to check two players are playing
     cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
     cout << "Player #" << player2.getPlayerId() << ":" << endl << endl;
     
+    //creates the mockup test game
     initMockGameMapAndPlayer(&gameMap, &player, &player2);
     
-//    player.attack(&gameMap);
-    
+
+    //calls attack loop
     attack.attackLoop();
     
-    
-    
-    
 
-    
-    
-    
-    
     
     return 0;
 }

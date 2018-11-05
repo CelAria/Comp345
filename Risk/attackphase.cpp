@@ -30,7 +30,7 @@ void AttackPhase :: attackLoop()
   // calls moveArmy if wins
     //asks again if they want to attack
    
-    cout<<"Do you want to attack? " << endl;
+    cout<<"Do you want to attack? Please enter y for yes, n for no " << endl;
     bool attackPhaseInput = true;
     char attacking =NULL;
     
@@ -68,7 +68,7 @@ void AttackPhase :: attackLoop()
         countrySelect(allCountries);
         
 
-        cout<<"Keep attacking? " <<endl;
+        cout<<"Keep attacking? Please enter y for yes, n for no" <<endl;
         
         while(attackPhaseInput)
         {

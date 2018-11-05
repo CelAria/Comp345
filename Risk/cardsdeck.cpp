@@ -231,14 +231,13 @@ int Hand::exchange(string s){
         artilleryMinusOne();
         cavalryMinusOne();
         incrementNumOfArmies();
-        //cout<< totalNumOfCardsInHand << endl;
         return getNumOfArmies();
     }
     else if(!isHandEmpty() && s.compare("1") == 0 && handContains3InfantryCards())
     {
         infantryMinusOne();
-        artilleryMinusOne();
-        cavalryMinusOne();
+        infantryMinusOne();
+        infantryMinusOne();
         incrementNumOfArmies();
         return getNumOfArmies();
     }

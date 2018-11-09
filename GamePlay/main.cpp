@@ -22,11 +22,11 @@ int main(int argc, const char * argv[]) {
     
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     
-    printMapDirectory(directory);
     Maploader mymaploader;
+    mymaploader.printDirectory(directory);
+    // mymaploader.selectMap(directory);
     
-    GameMap* gameMap = mymaploader.readmapfile();
-    
+    GameMap* gameMap = mymaploader.readmapfile(mymaploader.selectMap(directory), directory);
     GameStart game;
     
     //create game deck of cards
@@ -37,4 +37,6 @@ int main(int argc, const char * argv[]) {
     
     //create player objects with hand of empty cards and dice facilities
     vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
+    
+    return 0;
 }

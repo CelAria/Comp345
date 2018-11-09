@@ -27,7 +27,7 @@ int main(int argc, const char * argv[]) {
     vector<Player*> players;
     Deck* deck;
     
-    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/MapLoaderDriver/";
+    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     printMapDirectory(directory);
     Maploader mapLoader;
     gameMap = mapLoader.readmapfile();

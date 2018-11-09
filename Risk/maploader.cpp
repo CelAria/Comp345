@@ -1,5 +1,6 @@
 #include "maploader.h"
 #include "gamemap.h"
+#include "viewgamestart.h"
 #include <vector>
 #include <string>
 #include <sstream>
@@ -10,8 +11,61 @@
 
 using namespace std;
 
+void Maploader::printDirectory(string directory){
+    boost::filesystem::path p(directory);
+    int counter=1;
+    for(auto & p : boost::filesystem::directory_iterator(directory)){
+        cout << counter << "." << p << endl;
+        counter++;
+    }
+}
 
-GameMap* Maploader::readmapfile(string file){
+string Maploader::selectMap(string directory){
+    cout << "Select which map you would like to load by typing the index number value" << endl;
+    int a;
+    cin >> a;
+    string selectedmap;
+    int counter=0;
+    
+    boost::filesystem::path p(directory);
+    for(auto & p : boost::filesystem::directory_iterator(directory)){
+        counter++;
+    }
+    
+    if (cin.good())
+    {
+        if(a > (counter) || a ==0 || a < 0){
+            cout << "value does not exist in list. Try again" << endl;
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+            return selectMap(directory);
+        }
+        else
+        {
+            cout << "\nmap number " << a << " selected" << endl;
+            int counter2=0;
+            for(auto & p : boost::filesystem::directory_iterator(directory)){
+                counter2++;
+                if(counter2==a){
+                    selectedmap.assign(p.path().string());
+                    cin.clear();
+                    cin.ignore(INT_MAX, '\n');
+                    return selectedmap;
+                }
+            }
+        }
+        return selectMap(directory);
+    }
+    else
+    {
+        cout << "Not an integer." << endl;
+        cin.clear();
+        cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
+        return selectMap(directory);
+    }
+}
+
+GameMap* Maploader::readmapfile(string file, string directory){
    ptrgamemap = new GameMap();
     
     filename = file;
@@ -25,6 +79,8 @@ GameMap* Maploader::readmapfile(string file){
         delete ptrgamemap;
         ptrgamemap= NULL;
         filename.clear();
+        readmapfile(selectMap(directory), directory);
+        
     }
     
     fstream.open(filename);
@@ -36,7 +92,6 @@ GameMap* Maploader::readmapfile(string file){
         bool isInTerritory = false;
         
         while(!fstream.eof()){
-            
             
             getline(fstream,line);
             
@@ -75,7 +130,7 @@ GameMap* Maploader::readmapfile(string file){
         
         if(ptrgamemap->isValid()){
             ptrgamemap->traverseAll(true);
-            cout << " This gamemap is valid! \n";
+            cout << "This gamemap is valid! \n";
         }
         
         
@@ -83,37 +138,17 @@ GameMap* Maploader::readmapfile(string file){
             cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
             delete ptrgamemap;
             ptrgamemap= NULL;
+            readmapfile(selectMap(directory), directory);
         }
         
     }
     else{
         cout << "\ncould not open file:" << " \"" << filename << "\"" << "\nTry again with a valid .map file\n";
+        readmapfile(selectMap(directory), directory);
     }
     return ptrgamemap;
 }
 
-GameMap* Maploader::readmapfile(){
-    
-    ptrgamemap = new GameMap();
-    
-    //string variable for each line parsed by fstream
-    string line;
-    //uses filename and fstream
-    cout << "\nplease type the complete file path of the map file you would like to open. File must be of the type .map. Do not include quotation marks in the file path.\n";
-    getline (cin, filename);
-    
-    //reject if not a .map file
-    if(filename.substr(filename.find_last_of(".") + 1) != "map"){
-        cout << "file is not of type map. Try again with a valid .map file.\n";
-        delete ptrgamemap;
-        ptrgamemap= NULL;
-        filename.clear();
-        readmapfile();
-    }
-    
-    return readmapfile(filename);
-    
-}
 
 void Maploader::parseContinent(string line) {
     //for each token, push into the array of tokens.

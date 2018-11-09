@@ -21,7 +21,11 @@ using namespace std;
 void const printMapDirectory(const string& name){
     cout << "here are all the maps in the directory:" << endl;
     boost::filesystem::path p(name);
-    for(auto & p : boost::filesystem::directory_iterator(name)){ std::cout << p << std::endl; }
+    int counter=0;
+    for(auto & p : boost::filesystem::directory_iterator(name)){
+        std::cout << counter << "." << p << std::endl;
+        counter++;
+    }
 };
 
 void printDeck(Deck* deck){

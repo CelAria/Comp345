@@ -15,6 +15,7 @@ AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
 {
     this->player = player;
     this->gameMap = gameMap;
+    AttackView attackView;
     
     
 }

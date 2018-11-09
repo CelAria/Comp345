@@ -11,6 +11,7 @@
 #include "player.h"
 #include "gamemap.h"
 #include "country.h"
+#include "attackview.h"
 #include <iostream>
 using namespace std;
 
@@ -37,6 +38,7 @@ private:
     Player* player;
     GameMap* gameMap;
     Country* country;
+    AttackView attackView;
     char attacking;
     bool attackDiceLoop;
     bool defendDiceLoop;

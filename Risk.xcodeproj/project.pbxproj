@@ -30,6 +30,10 @@
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B315F96D21976A0D005A899B /* strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F96C21976A0D005A899B /* strategy.h */; };
+		B315F96F21976BAF005A899B /* observer.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F96E21976BAF005A899B /* observer.h */; };
+		B315F97121976D80005A899B /* observable.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F97021976D80005A899B /* observable.h */; };
+		B315F97321976F06005A899B /* observable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315F97221976F06005A899B /* observable.cpp */; };
 		B32D3857218E4AA2000C1568 /* maingame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B32D3855218E4AA2000C1568 /* maingame.cpp */; };
 		B32D3858218E4AA2000C1568 /* maingame.h in Headers */ = {isa = PBXBuildFile; fileRef = B32D3856218E4AA2000C1568 /* maingame.h */; };
 		B32D3860218E54FE000C1568 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B32D385F218E54FE000C1568 /* main.cpp */; };
@@ -272,6 +276,10 @@
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B315F96C21976A0D005A899B /* strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strategy.h; sourceTree = "<group>"; };
+		B315F96E21976BAF005A899B /* observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = observer.h; sourceTree = "<group>"; };
+		B315F97021976D80005A899B /* observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = observable.h; sourceTree = "<group>"; };
+		B315F97221976F06005A899B /* observable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = observable.cpp; sourceTree = "<group>"; };
 		B32D3855218E4AA2000C1568 /* maingame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = maingame.cpp; sourceTree = "<group>"; };
 		B32D3856218E4AA2000C1568 /* maingame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maingame.h; sourceTree = "<group>"; };
 		B32D385D218E54FE000C1568 /* GameLoopDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameLoopDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -552,6 +560,10 @@
 				B32D3856218E4AA2000C1568 /* maingame.h */,
 				0E53B503218F5ECD003C85B1 /* reinforcephase.cpp */,
 				0E53B504218F5ECD003C85B1 /* reinforcephase.h */,
+				B315F96C21976A0D005A899B /* strategy.h */,
+				B315F96E21976BAF005A899B /* observer.h */,
+				B315F97021976D80005A899B /* observable.h */,
+				B315F97221976F06005A899B /* observable.cpp */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -589,8 +601,11 @@
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
 				34362E08218167EE00838F6F /* attackphase.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
+				B315F97121976D80005A899B /* observable.h in Headers */,
+				B315F96D21976A0D005A899B /* strategy.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
 				B3BB81052165BE18005177BB /* continent.h in Headers */,
+				B315F96F21976BAF005A899B /* observer.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
 				0E53B506218F5ECD003C85B1 /* reinforcephase.h in Headers */,
 				B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */,
@@ -988,6 +1003,7 @@
 				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
 				B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
+				B315F97321976F06005A899B /* observable.cpp in Sources */,
 				3400881B2195449C00D23A85 /* attackview.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,

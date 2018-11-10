@@ -29,12 +29,17 @@ int main(int argc, const char * argv[]) {
     
     //directory where maps are stored
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
-    printMapDirectory(directory);
+    //printMapDirectory(directory);
     
     //open map and test if valid, if valid, create map object
-    Maploader mymaploader;
-    GameMap* gameMap = mymaploader.readmapfile();
     
+  
+    
+    Maploader mymaploader;
+    mymaploader.printDirectory(directory);
+   // mymaploader.selectMap(directory);
+    
+    GameMap* gameMap = mymaploader.readmapfile(mymaploader.selectMap(directory), directory);
     GameStart game;
     
     //create game deck of cards
@@ -46,5 +51,5 @@ int main(int argc, const char * argv[]) {
     //create player objects with hand of empty cards and dice facilities
     vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
  
-    
+    return 0;
 }

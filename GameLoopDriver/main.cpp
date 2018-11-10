@@ -41,6 +41,7 @@ int main(int argc, const char * argv[]) {
      For each turn, all of the player's countries will be given to
      the next player.
      The final player should end up with all the countries
+     after n - 1 turns
      */
     
     MainGame mainGame = MainGame(gameMap, players, deck);

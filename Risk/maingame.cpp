@@ -51,6 +51,10 @@ void MainGame::executeTurn() {
 
 void MainGame::playGame() {
     
+    while(!isGameOver()) {
+        executeTurn();
+    }
+    
 }
 
 /**

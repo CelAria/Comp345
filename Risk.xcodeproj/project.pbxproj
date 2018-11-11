@@ -33,7 +33,8 @@
 		B315F96D21976A0D005A899B /* strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F96C21976A0D005A899B /* strategy.h */; };
 		B315F96F21976BAF005A899B /* observer.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F96E21976BAF005A899B /* observer.h */; };
 		B315F97121976D80005A899B /* observable.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F97021976D80005A899B /* observable.h */; };
-		B315F97321976F06005A899B /* observable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315F97221976F06005A899B /* observable.cpp */; };
+		B315F9762198A504005A899B /* phaseview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315F9742198A504005A899B /* phaseview.cpp */; };
+		B315F9772198A504005A899B /* phaseview.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F9752198A504005A899B /* phaseview.h */; };
 		B32D3857218E4AA2000C1568 /* maingame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B32D3855218E4AA2000C1568 /* maingame.cpp */; };
 		B32D3858218E4AA2000C1568 /* maingame.h in Headers */ = {isa = PBXBuildFile; fileRef = B32D3856218E4AA2000C1568 /* maingame.h */; };
 		B32D3860218E54FE000C1568 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B32D385F218E54FE000C1568 /* main.cpp */; };
@@ -279,7 +280,8 @@
 		B315F96C21976A0D005A899B /* strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strategy.h; sourceTree = "<group>"; };
 		B315F96E21976BAF005A899B /* observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = observer.h; sourceTree = "<group>"; };
 		B315F97021976D80005A899B /* observable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = observable.h; sourceTree = "<group>"; };
-		B315F97221976F06005A899B /* observable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = observable.cpp; sourceTree = "<group>"; };
+		B315F9742198A504005A899B /* phaseview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = phaseview.cpp; sourceTree = "<group>"; };
+		B315F9752198A504005A899B /* phaseview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = phaseview.h; sourceTree = "<group>"; };
 		B32D3855218E4AA2000C1568 /* maingame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = maingame.cpp; sourceTree = "<group>"; };
 		B32D3856218E4AA2000C1568 /* maingame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maingame.h; sourceTree = "<group>"; };
 		B32D385D218E54FE000C1568 /* GameLoopDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameLoopDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -563,7 +565,8 @@
 				B315F96C21976A0D005A899B /* strategy.h */,
 				B315F96E21976BAF005A899B /* observer.h */,
 				B315F97021976D80005A899B /* observable.h */,
-				B315F97221976F06005A899B /* observable.cpp */,
+				B315F9742198A504005A899B /* phaseview.cpp */,
+				B315F9752198A504005A899B /* phaseview.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				0E53B506218F5ECD003C85B1 /* reinforcephase.h in Headers */,
 				B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */,
 				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
+				B315F9772198A504005A899B /* phaseview.h in Headers */,
 				6B0E769A217FF894006CECD2 /* viewgamestart.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
 				B32D3858218E4AA2000C1568 /* maingame.h in Headers */,
@@ -1003,7 +1007,6 @@
 				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
 				B3BB810D2165BE6B005177BB /* Dice.cpp in Sources */,
 				B3BB810A2165BE5B005177BB /* continent.cpp in Sources */,
-				B315F97321976F06005A899B /* observable.cpp in Sources */,
 				3400881B2195449C00D23A85 /* attackview.cpp in Sources */,
 				B3BB810B2165BE5B005177BB /* country.cpp in Sources */,
 				6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,
@@ -1013,6 +1016,7 @@
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
+				B315F9762198A504005A899B /* phaseview.cpp in Sources */,
 				0E53B505218F5ECD003C85B1 /* reinforcephase.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
 			);

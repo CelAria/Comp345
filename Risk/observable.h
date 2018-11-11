@@ -18,6 +18,6 @@ private:
     set<Observer*> observers;
     
 public:
-    virtual void addObserver(Observer* observer);
+    virtual void addObserver(Observer* observer) {observers.insert(observer);};
     virtual void notifyObservers();
 };

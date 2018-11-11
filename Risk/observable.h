@@ -19,5 +19,5 @@ private:
     
 public:
     virtual void addObserver(Observer* observer) {observers.insert(observer);};
-    virtual void notifyObservers();
+    virtual void notifyObservers() = 0;
 };

@@ -11,6 +11,7 @@
 #include "maploader.h"
 #include "viewgamestart.h"
 #include "controllergamestart.h"
+#include "phaseview.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -23,6 +24,8 @@ int main(int argc, const char * argv[]) {
     
     
     MainGame mainGame = MainGame(gameMap, players, deck);
+    PhaseView phaseView;
     
+    mainGame.addObserver(&phaseView);
     mainGame.playGame();
 }

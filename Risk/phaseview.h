@@ -9,8 +9,14 @@
 #pragma once
 
 #include "observer.h"
+#include <string>
 
 class PhaseView : public Observer {
+private:
+    State state;
+    
+    string getPhaseHeader();
+    void clearScreen();
 public:
     void print();
     void update(State& state);

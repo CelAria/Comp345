@@ -12,11 +12,14 @@
 #include "player.h"
 #include "gamemap.h"
 #include "cardsdeck.h"
+#include "observable.h"
+#include "observer.h"
 
 using namespace std;
 
-class MainGame {
+class MainGame : public Observable {
 private:
+    Phase phase;
     GameMap* gameMap;
     vector<Player*> players;
     Deck* deck;
@@ -34,4 +37,6 @@ public:
     Player* getNextPlayer(){return players[turn];};
     Player* getWinner();
     bool isGameOver();
+    void playGame();
+    void notifyObservers();
 };

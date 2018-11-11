@@ -14,7 +14,7 @@
 using namespace std;
 
 class Observable {
-private:
+protected:
     set<Observer*> observers;
     
 public:

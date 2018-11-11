@@ -25,12 +25,42 @@ void MainGame::updateTurn() {
     turn = (turn + 1) % players.size();
 }
 
+/**
+ Will go through each phase of the game
+ updating the observer each time
+ */
 void MainGame::executeTurn() {
     Player* currentPlayer = getNextPlayer();
     
+    phase = REINFORCE;
+    notifyObservers();
     currentPlayer->reinforce(gameMap);
+    
+    phase = ATTACK;
+    notifyObservers();
     currentPlayer->attack(gameMap);
+    
+    phase = FORTIFY;
+    notifyObservers();
     currentPlayer->fortify(gameMap);
     
+    deck->draw(currentPlayer->getHand());
+    
     updateTurn();
+}
+
+void MainGame::playGame() {
+    
+}
+
+/**
+ Make a state object and put the relevant
+ info in it. Then iterate through each
+ observer, calling update()
+ */
+void MainGame::notifyObservers() {
+    State newState = State(phase, getNextPlayer(), gameMap);
+    for(auto observer : observers) {
+        observer->update(newState);
+    }
 }

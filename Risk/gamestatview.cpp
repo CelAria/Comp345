@@ -33,7 +33,6 @@ void GameStatView::clearScreen() {
 
 void GameStatView::print(MainGame* main){
    // clearScreen();
-    
     cout << worlddominationview(main);
 };
 

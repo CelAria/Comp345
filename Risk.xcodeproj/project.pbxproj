@@ -29,7 +29,6 @@
 		6B0E76CF218A6F86006CECD2 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		6B9B94BD2198E7BC00523ECD /* gamestatview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B94BB2198E7BC00523ECD /* gamestatview.cpp */; };
 		6B9B94BE2198E7BC00523ECD /* gamestatview.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B9B94BC2198E7BC00523ECD /* gamestatview.h */; };
-		6B9B94C62198FEF600523ECD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B94C52198FEF600523ECD /* main.cpp */; };
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
@@ -188,15 +187,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		6B9B94C12198FEF600523ECD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		B315A48A2165CCCC005CAFD4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,8 +274,6 @@
 		6B690C36216FEF93001CFB90 /* Canada.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Canada.map; sourceTree = "<group>"; };
 		6B9B94BB2198E7BC00523ECD /* gamestatview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamestatview.cpp; sourceTree = "<group>"; };
 		6B9B94BC2198E7BC00523ECD /* gamestatview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamestatview.h; sourceTree = "<group>"; };
-		6B9B94C32198FEF600523ECD /* StatsObserverDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StatsObserverDriver; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B9B94C52198FEF600523ECD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6B9E4A132170F5C3003F8DBC /* Africa.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Africa.map; sourceTree = "<group>"; };
 		6B9E4A142170F605003F8DBC /* Brazil(brokenmap).map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Brazil(brokenmap).map"; sourceTree = "<group>"; };
 		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
@@ -361,13 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0E76CF218A6F86006CECD2 /* libRisk.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6B9B94C02198FEF600523ECD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,14 +450,6 @@
 			path = GamePlay;
 			sourceTree = "<group>";
 		};
-		6B9B94C42198FEF600523ECD /* StatsObserverDriver */ = {
-			isa = PBXGroup;
-			children = (
-				6B9B94C52198FEF600523ECD /* main.cpp */,
-			);
-			path = StatsObserverDriver;
-			sourceTree = "<group>";
-		};
 		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,7 +509,6 @@
 				6B0E76B9218A6F55006CECD2 /* GameStart */,
 				6B0E76C7218A6F7B006CECD2 /* GamePlay */,
 				B32D385E218E54FE000C1568 /* GameLoopDriver */,
-				6B9B94C42198FEF600523ECD /* StatsObserverDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -557,7 +529,6 @@
 				6B0E76B8218A6F55006CECD2 /* GameStart */,
 				6B0E76C6218A6F7A006CECD2 /* GamePlay */,
 				B32D385D218E54FE000C1568 /* GameLoopDriver */,
-				6B9B94C32198FEF600523ECD /* StatsObserverDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -734,23 +705,6 @@
 			productReference = 6B0E76C6218A6F7A006CECD2 /* GamePlay */;
 			productType = "com.apple.product-type.tool";
 		};
-		6B9B94C22198FEF600523ECD /* StatsObserverDriver */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6B9B94C72198FEF600523ECD /* Build configuration list for PBXNativeTarget "StatsObserverDriver" */;
-			buildPhases = (
-				6B9B94BF2198FEF600523ECD /* Sources */,
-				6B9B94C02198FEF600523ECD /* Frameworks */,
-				6B9B94C12198FEF600523ECD /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = StatsObserverDriver;
-			productName = StatsObserverDriver;
-			productReference = 6B9B94C32198FEF600523ECD /* StatsObserverDriver */;
-			productType = "com.apple.product-type.tool";
-		};
 		B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */;
@@ -915,9 +869,6 @@
 					6B0E76C5218A6F7A006CECD2 = {
 						CreatedOnToolsVersion = 10.0;
 					};
-					6B9B94C22198FEF600523ECD = {
-						CreatedOnToolsVersion = 10.0;
-					};
 					B315A48B2165CCCC005CAFD4 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -968,7 +919,6 @@
 				6B0E76B7218A6F55006CECD2 /* GameStart */,
 				6B0E76C5218A6F7A006CECD2 /* GamePlay */,
 				B32D385C218E54FE000C1568 /* GameLoopDriver */,
-				6B9B94C22198FEF600523ECD /* StatsObserverDriver */,
 			);
 		};
 /* End PBXProject section */
@@ -1003,14 +953,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0E76C9218A6F7B006CECD2 /* main.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6B9B94BF2198FEF600523ECD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B9B94C62198FEF600523ECD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1236,28 +1178,6 @@
 			name = Debug;
 		};
 		6B0E76CC218A6F7B006CECD2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XM25KFD587;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		6B9B94C82198FEF600523ECD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XM25KFD587;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		6B9B94C92198FEF600523ECD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
@@ -1596,15 +1516,6 @@
 			buildConfigurations = (
 				6B0E76CB218A6F7B006CECD2 /* Debug */,
 				6B0E76CC218A6F7B006CECD2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6B9B94C72198FEF600523ECD /* Build configuration list for PBXNativeTarget "StatsObserverDriver" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6B9B94C82198FEF600523ECD /* Debug */,
-				6B9B94C92198FEF600523ECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

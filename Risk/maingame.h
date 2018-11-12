@@ -34,6 +34,7 @@ public:
         this->deck = deck;
     };
     void executeTurn();
+    vector<Player*>& getPlayers(){return players;}
     Player* getNextPlayer(){return players[turn];};
     Player* getWinner();
     bool isGameOver();

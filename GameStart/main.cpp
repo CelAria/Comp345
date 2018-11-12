@@ -14,6 +14,8 @@
 #include "gamemap.h"
 #include "player.h"
 #include "cardsdeck.h"
+#include "maingame.h"
+#include "gamestatview.h"
 
 using namespace std;
 
@@ -31,9 +33,7 @@ int main(int argc, const char * argv[]) {
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
     //printMapDirectory(directory);
     
-    //open map and test if valid, if valid, create map object
-    
-  
+    //open map and test if valid, if valid, create map object  
     
     Maploader mymaploader;
     mymaploader.printDirectory(directory);
@@ -43,13 +43,17 @@ int main(int argc, const char * argv[]) {
     GameStart game;
     
     //create game deck of cards
-    game.createDeck(gameMap);
+    Deck* deck =game.createDeck(gameMap);
     
     //player input
     int numberOfPlayers = game.selectPlayers();
     
     //create player objects with hand of empty cards and dice facilities
     vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
- 
-    return 0;
+    
+        MainGame* main= new MainGame(gameMap, players, deck);
+        GameStatView gamestatview;
+        gamestatview.print(main);
+        delete main;
+
 }

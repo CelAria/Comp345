@@ -51,9 +51,9 @@ int main(int argc, const char * argv[]) {
     //create player objects with hand of empty cards and dice facilities
     vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
     
-        MainGame* main= new MainGame(gameMap, players, deck);
-        GameStatView gamestatview;
-        gamestatview.print(main);
-        delete main;
+    MainGame* main= new MainGame(gameMap, players, deck);
+    GameStatView gamestatview;
+    gamestatview.print(main);
+    delete main;
 
 }

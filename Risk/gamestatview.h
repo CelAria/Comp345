@@ -16,11 +16,11 @@
 class GameStatView{
     
 private:
-    map<Player* ,int> worlddominationmap;
+    map<string ,int> worlddominationmap;
     void clearScreen();
     
 public:
     void print(MainGame* main);
     void update(State& state);
-    string worlddominationview(MainGame* main);
+    map<string ,int> worlddominationview(MainGame* main);
 };

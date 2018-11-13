@@ -35,6 +35,7 @@ public:
     };
     void executeTurn();
     vector<Player*>& getPlayers(){return players;}
+    GameMap* getGameMap(){return gameMap;}
     Player* getNextPlayer(){return players[turn];};
     Player* getWinner();
     bool isGameOver();

@@ -23,7 +23,6 @@ map<string,int> GameStatView::worlddominationview(MainGame* main){
         //get the number of countries owned by each player
         int numcountries=(*it)->getAllCountries().size();
         worlddominationmap[to_string((*it)->getPlayerId())]= round((float(numcountries)/main->getGameMap()->getCount())*100.0);
-
     }
     return worlddominationmap;
 };
@@ -35,9 +34,31 @@ void GameStatView::clearScreen() {
 void GameStatView::print(MainGame* main){
    // clearScreen();
     cout << "\nWorld Domination View" << endl;
+    cout << "************************" << endl;
+    
+    cout << "Countries owned: ";
+    
+    vector<Player*> a= main->getPlayers();
+    vector<Player*>::iterator it;
+    for ( it = a.begin(); it != a.end(); it++ )
+    {
+        cout << "Player " << (*it)->getPlayerId() << ":" << "[" << (*it)->getCountriesCount() << "], ";
+        
+    }
+    cout << endl;
+    
+    // PROGRESS BAR PRINTING
+    for(int x=0; x < 100; x++){
+        cout << "-";
+    }
+    cout << "| 100%" << endl;
     for( auto const& [player, owned] : worlddominationview(main))
     {
-        cout << "player " <<  player << ": " << "owns " << owned << "%" << endl;
+        for(int x=0; x < owned; x++){
+            cout << ".";
+        }
+        cout << "|  player " <<  player << ": " << owned << "%" << endl;
     }
+     cout << "************************" << endl;
 };
 

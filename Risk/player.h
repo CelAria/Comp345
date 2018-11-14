@@ -54,5 +54,5 @@ public:
     void transferCountryTo(string countryName, Player* player);
     
    
-    ~Player() {delete hand;};
+    ~Player() {delete hand;delete strategy;};
 };

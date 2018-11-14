@@ -7,17 +7,36 @@
 //
 #pragma once
 
+
+#include "player.h"
+#include "gamemap.h"
+#include "country.h"
+#include <iostream>
+using namespace std;
+
 class AttackView
 {
-private:
+
     
 public:
-    
+    AttackView();
     bool startAttackPhase();
     bool keepAttacking();
-    void playerCountryList();
+    void playerCountryList(vector<Country*> allCountries);
+    int pickAttackingCountry();
+    int pickDice();
+    int moveArmies();
+    void enemyCountryList(vector<Country*> enemies, Player* player);
     
     
+    
+    
+private:
+    bool attackPhaseInput;
+    string attacking;
+    char input;
+    bool start;
+    Country* countryList;
     
     
 };

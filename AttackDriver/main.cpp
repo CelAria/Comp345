@@ -12,6 +12,7 @@
 #include "attackphase.h"
 
 
+
 using namespace std;
 
 //mock game, creates 2 players, assigns them countries and armies on countries

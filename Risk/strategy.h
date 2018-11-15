@@ -18,4 +18,5 @@ public:
     virtual void attack(Player* player, GameMap* gameMap) = 0;
     virtual void fortify(Player* player, GameMap* gameMap) = 0;
     virtual void reinforce(Player* player, GameMap* gameMap) = 0;
+    virtual int getType() = 0;
 };

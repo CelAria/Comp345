@@ -52,7 +52,8 @@ public:
     inline int getDefenseDice2() {return dice.getDefenseDice2();}
     
     void transferCountryTo(string countryName, Player* player);
-    
+    Strategy* getStrategy() {return this->strategy;};
+    void setStrategy(Strategy* strategy) {this->strategy = strategy;};
    
     ~Player() {delete hand;delete strategy;};
 };

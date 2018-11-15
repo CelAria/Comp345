@@ -8,10 +8,12 @@
 #include "player.h"
 #include "gamemap.h"
 #include "country.h"
+#include "reinforceview.h"
 
 //ReinforceController class definition
 class ReinforceController {
 private:
+    ReinforceView view;
     Player* player;
     GameMap* gameMap;
         
@@ -20,6 +22,7 @@ public:
     ReinforceController(Player* player, GameMap* gameMap){
         this->player = player;
         this->gameMap = gameMap;
+        view = ReinforceView();
     };
     //start method to indicate the ReinforceController to start the reinforce method of the player
     void start();

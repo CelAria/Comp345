@@ -4,6 +4,8 @@
 #include "Dice.h"
 #include "country.h"
 #include "gamemap.h"
+#include "strategy.h"
+#include "HumanPlayerStrategy.h"
 
 
 #include <map>
@@ -14,14 +16,16 @@ using namespace std;
 class Player {
 private:
     int id;
+    Strategy* strategy;
     Hand* hand;
     Dice dice;
     map<string, Country*> countries;
     
     
 public:
-    Player(): id(1), dice(1), hand(new Hand) {};
-    Player(int playerId): id(playerId), dice(playerId), hand(new Hand) {};
+    Player(): id(1), dice(1), hand(new Hand), strategy(new HumanPlayerStrategy) {};
+    Player(int playerId): id(playerId), dice(playerId), hand(new Hand), strategy(new HumanPlayerStrategy) {};
+    Player(int playerId, Strategy* strategy): Player(playerId) {this->strategy = strategy;};
     void attack(GameMap* gameMap);
     void fortify(GameMap* gameMap);
     void reinforce(GameMap* gameMap);
@@ -50,5 +54,5 @@ public:
     void transferCountryTo(string countryName, Player* player);
     
    
-    ~Player() {delete hand;};
+    ~Player() {delete hand;delete strategy;};
 };

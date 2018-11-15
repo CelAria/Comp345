@@ -2,10 +2,6 @@
 #include "cardsdeck.h"
 #include "country.h"
 #include "gamemap.h"
-#include "fortifycontroller.h"
-#include "reinforcephase.h"
-#include "attackphase.h"
-
 #include <iostream>
 #include <string>
 #include <map>
@@ -13,26 +9,15 @@
 using namespace std;
 
 void Player::attack(GameMap *gameMap) {
-    cout << "This is attack" << endl;
-    AttackPhase playerAttack(this,gameMap);
-    playerAttack.attackLoop();
-    
-
-                             
-    
+    strategy->attack(this, gameMap);
 }
 
 void Player::fortify(GameMap* gameMap) {
-    cout << "This is fortify" << endl;
-    FortifyController fortifyController = FortifyController(this, gameMap);
-    fortifyController.start();
+    strategy->fortify(this, gameMap);
 }
 
 void Player::reinforce(GameMap* gameMap) {
-    cout << "This is reinforce" << endl;
-    ReinforceController reinforceController = ReinforceController(this, gameMap);
-    reinforceController.start();
-    
+    strategy->reinforce(this, gameMap);
 }
 
 void Player::addCountry(Country *country) {

@@ -15,7 +15,7 @@ AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
 {
     this->player = player;
     this->gameMap = gameMap;
-    AttackView attackView;
+    attackView = AttackView ();
     
     
 }
@@ -31,34 +31,14 @@ void AttackPhase :: attackLoop()
   // calls moveArmy if wins
     //asks again if they want to attack
    
-    cout<<"Do you want to attack? Please enter y for yes, n for no " << endl;
-    bool attackPhaseInput = true;
-    string attacking;
-    char input = NULL;
     
-
-    while(attackPhaseInput)
-    {
-        cin >> attacking;
-        input = attacking.at(0);
-       if(input == 'y')
-       {
-        attackPhaseInput = false;
-       } else if(input =='n'){
-           cout<<"Attack Phase over"<<endl;
-           return;
-       }
-       
-       else
-            cout<<"Wrong input, please select y for yes, n for no" <<endl;
-        
-    }
-
+    bool start = false;
+   start= attackView.startAttackPhase();
           
     
-    while(input == 'y')
+    while(start)
     {
-        attackPhaseInput = true;
+
         attackDiceLoop = true;
         defendDiceLoop = true;
         playerID = player->getPlayerId();
@@ -70,36 +50,15 @@ void AttackPhase :: attackLoop()
 
         countrySelect(allCountries);
         
+       start = attackView.keepAttacking();
 
-        cout<<"Keep attacking? Please enter y for yes, n for no" <<endl;
-        
-        while(attackPhaseInput)
-        {
-            cin >> attacking;
-            input = attacking.at(0);
-            if(input =='y')
-            {
-                attackPhaseInput = false;
-            } else if(input== 'n'){
-                cout<<"Attack Phase over"<<endl;
-                return;
-            }
-            
-            else
-                cout<<"Wrong input, please select y for yes, n for no" <<endl;
-            
-        }
-        
-    
-    }
-    
-
+}
 }
 
 //compares attackers and defenders dice
 //keeps track of how many wins and looses occur so we can subtract that from the army count later on
 void AttackPhase :: compare(int attackDice, int defendDice)
-{
+    {
     winAttackCounter=0;
     winDefenseCounter=0;
     if(attackDice ==3 && defendDice ==2) {
@@ -239,12 +198,9 @@ void AttackPhase :: compare(int attackDice, int defendDice)
 
 void AttackPhase::countrySelect(vector<Country*> allCountries)
 {
-   cout<<"pick country you want to attack from: "  <<endl <<endl;
+
     
-   for(int i = 0; i < allCountries.size(); i++) {
-    cout << i+1 << " " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << " Armies on country: " << allCountries[i]->getArmiesCount()<< endl;
-    }
-    cout << endl;
+    attackView.playerCountryList(allCountries);
     
     int selectCountry =0;
     bool notEnoughArmies = true;
@@ -252,7 +208,8 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
 
     
     while(notEnoughArmies){
-        cin>>selectCountry;
+       selectCountry = attackView.pickAttackingCountry();
+        
         if(selectCountry<1 || selectCountry> allCountries.size())
         {
             cout<<"invalid country selection, choose again" <<endl;
@@ -286,23 +243,15 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
      cout<< "The Country you picked to attack from is " << allCountries[selectCountry - 1]->toString() <<endl;
 
 
-    cout<<"Neighbours you can attack " << endl<<endl;
-    
 
     
-    for(int i = 0; i < enemies.size(); i++) {
-        
-       if(enemies[i]->getOwner() != player->getPlayerId()){
-        cout << i+1 << " " << enemies[i]->getName() << ", " << enemies[i]->getContinentName() << " Armies on country: " << enemies[i]->getArmiesCount()<< endl;
-        }
-    }
-    cout << endl;
+    attackView.enemyCountryList(enemies, player);
     
     int selectAttackCountry =0;
     bool wrongInput = true;
     
     while(wrongInput){
-        cin>>selectAttackCountry;
+        selectAttackCountry = attackView.pickAttackingCountry();
         if(selectAttackCountry<1 || selectAttackCountry> enemies.size())
         {
             cout<<"invalid country selection, choose again" <<endl;
@@ -317,7 +266,8 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     cout<<"attacking player...how many dice to roll?" << endl;
 
     while(attackDiceLoop){
-        cin>> diceAmountAttack;
+        diceAmountAttack = attackView.pickDice();
+        
         if((diceAmountAttack >=1 && (diceAmountAttack<4)) && (diceAmountAttack <=(allCountries[selectCountry - 1]->getArmiesCount()-1)))
         {
             player->rollDice(diceAmountAttack);
@@ -331,7 +281,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
 
     cout<<"defending player...how many dice do you want to roll? " << endl;
     while(defendDiceLoop){
-        cin>>diceAmountDefend;
+        diceAmountDefend = attackView.pickDice();
         if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
             
         {
@@ -364,7 +314,9 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
         
         bool moveArmyInput = true;
         while(moveArmyInput){
-            cin>>moveArmies;
+            
+            moveArmies=attackView.moveArmies();
+            
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
                 enemies[selectAttackCountry - 1]->setOwner(player->getPlayerId());
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
@@ -381,9 +333,6 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     }
     }
    
-    
-    
-
     
     
 }

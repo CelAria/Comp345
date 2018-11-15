@@ -48,6 +48,8 @@
 		B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */ = {isa = PBXBuildFile; fileRef = B35FED7A217AE56D00FE6FA7 /* fortifyview.h */; };
 		B35FED7F217AEA7400FE6FA7 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B38CB9572167D1B600EF5E5C /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
+		B3A97EEC219CB6D600998A5D /* HumanPlayerStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3A97EEA219CB6D600998A5D /* HumanPlayerStrategy.cpp */; };
+		B3A97EED219CB6D600998A5D /* HumanPlayerStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = B3A97EEB219CB6D600998A5D /* HumanPlayerStrategy.h */; };
 		B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */; };
 		B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */; };
 		B3B2E8D621669CE300C2A4BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3B2E8D521669CE300C2A4BA /* main.cpp */; };
@@ -296,6 +298,8 @@
 		B35FED74217ADD2B00FE6FA7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B35FED79217AE56D00FE6FA7 /* fortifyview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fortifyview.cpp; sourceTree = "<group>"; };
 		B35FED7A217AE56D00FE6FA7 /* fortifyview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fortifyview.h; sourceTree = "<group>"; };
+		B3A97EEA219CB6D600998A5D /* HumanPlayerStrategy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HumanPlayerStrategy.cpp; sourceTree = "<group>"; };
+		B3A97EEB219CB6D600998A5D /* HumanPlayerStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HumanPlayerStrategy.h; sourceTree = "<group>"; };
 		B3B2E8CB21669CAC00C2A4BA /* cardsdeck.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cardsdeck.cpp; sourceTree = "<group>"; };
 		B3B2E8CC21669CAC00C2A4BA /* cardsdeck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cardsdeck.h; sourceTree = "<group>"; };
 		B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CardsDeckDriver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -573,6 +577,8 @@
 				B315F9752198A504005A899B /* phaseview.h */,
 				6B9B94BB2198E7BC00523ECD /* gamestatview.cpp */,
 				6B9B94BC2198E7BC00523ECD /* gamestatview.h */,
+				B3A97EEA219CB6D600998A5D /* HumanPlayerStrategy.cpp */,
+				B3A97EEB219CB6D600998A5D /* HumanPlayerStrategy.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -610,6 +616,7 @@
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
 				34362E08218167EE00838F6F /* attackphase.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
+				B3A97EED219CB6D600998A5D /* HumanPlayerStrategy.h in Headers */,
 				B315F97121976D80005A899B /* observable.h in Headers */,
 				B315F96D21976A0D005A899B /* strategy.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
@@ -1019,6 +1026,7 @@
 				6B0E7694217FD5F0006CECD2 /* viewgamestart.cpp in Sources */,
 				B32D3857218E4AA2000C1568 /* maingame.cpp in Sources */,
 				6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */,
+				B3A97EEC219CB6D600998A5D /* HumanPlayerStrategy.cpp in Sources */,
 				34362E06218167C900838F6F /* attackphase.cpp in Sources */,
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,

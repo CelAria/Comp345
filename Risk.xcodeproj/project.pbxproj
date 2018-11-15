@@ -11,6 +11,8 @@
 		0E53B4FE218A4226003C85B1 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		0E53B505218F5ECD003C85B1 /* reinforcephase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E53B503218F5ECD003C85B1 /* reinforcephase.cpp */; };
 		0E53B506218F5ECD003C85B1 /* reinforcephase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E53B504218F5ECD003C85B1 /* reinforcephase.h */; };
+		0E573FBD219DF993005E1650 /* reinforceview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E573FBB219DF993005E1650 /* reinforceview.cpp */; };
+		0E573FBE219DF993005E1650 /* reinforceview.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FBC219DF993005E1650 /* reinforceview.h */; };
 		3400881B2195449C00D23A85 /* attackview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340088192195449C00D23A85 /* attackview.cpp */; };
 		3400881C2195449C00D23A85 /* attackview.h in Headers */ = {isa = PBXBuildFile; fileRef = 3400881A2195449C00D23A85 /* attackview.h */; };
 		34362E06218167C900838F6F /* attackphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34362E05218167C900838F6F /* attackphase.cpp */; };
@@ -259,6 +261,8 @@
 		0E53B4F7218A4218003C85B1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		0E53B503218F5ECD003C85B1 /* reinforcephase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reinforcephase.cpp; sourceTree = "<group>"; };
 		0E53B504218F5ECD003C85B1 /* reinforcephase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reinforcephase.h; sourceTree = "<group>"; };
+		0E573FBB219DF993005E1650 /* reinforceview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reinforceview.cpp; sourceTree = "<group>"; };
+		0E573FBC219DF993005E1650 /* reinforceview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reinforceview.h; sourceTree = "<group>"; };
 		340088192195449C00D23A85 /* attackview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackview.cpp; sourceTree = "<group>"; };
 		3400881A2195449C00D23A85 /* attackview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackview.h; sourceTree = "<group>"; };
 		34362E05218167C900838F6F /* attackphase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackphase.cpp; sourceTree = "<group>"; };
@@ -570,6 +574,8 @@
 				B32D3856218E4AA2000C1568 /* maingame.h */,
 				0E53B503218F5ECD003C85B1 /* reinforcephase.cpp */,
 				0E53B504218F5ECD003C85B1 /* reinforcephase.h */,
+				0E573FBB219DF993005E1650 /* reinforceview.cpp */,
+				0E573FBC219DF993005E1650 /* reinforceview.h */,
 				B315F96C21976A0D005A899B /* strategy.h */,
 				B315F96E21976BAF005A899B /* observer.h */,
 				B315F97021976D80005A899B /* observable.h */,
@@ -614,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB65C9D2166A444007AFC39 /* maploader.h in Headers */,
+				0E573FBE219DF993005E1650 /* reinforceview.h in Headers */,
 				34362E08218167EE00838F6F /* attackphase.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B3A97EED219CB6D600998A5D /* HumanPlayerStrategy.h in Headers */,
@@ -1035,6 +1042,7 @@
 				0E53B505218F5ECD003C85B1 /* reinforcephase.cpp in Sources */,
 				6B9B94BD2198E7BC00523ECD /* gamestatview.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
+				0E573FBD219DF993005E1650 /* reinforceview.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

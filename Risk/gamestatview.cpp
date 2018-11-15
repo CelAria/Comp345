@@ -15,12 +15,12 @@ using namespace std;
 
 // notes* doesn't return the worlddominationmap
 
-map<string,int> GameStatView::worlddominationview(MainGame* main){
+map<string,int> GameStatView::worlddominationview(){
     
-    for(vector<Player*>:: iterator it= main->getPlayers().begin(); it != main->getPlayers().end(); ++it){
+    for(vector<Player*>:: iterator it= maingame->getPlayers().begin(); it != maingame->getPlayers().end(); ++it){
         //get the number of countries owned by each player
         int numcountries=(*it)->getAllCountries().size();
-        worlddominationmap[to_string((*it)->getPlayerId())]= round((float(numcountries)/main->getGameMap()->getCount())*100.0);
+        worlddominationmap[to_string((*it)->getPlayerId())]= round((float(numcountries)/maingame->getGameMap()->getCount())*100.0);
     }
     return worlddominationmap;
 };
@@ -29,14 +29,20 @@ void GameStatView::clearScreen() {
     system("clear");
 };
 
-void GameStatView::print(MainGame* main){
+void GameStatView::update(State& state){
+    this->state = state;
+    print();
+};
+
+
+void GameStatView::print(){
    // clearScreen();
     cout << "\nWorld Domination View" << endl;
     cout << "************************" << endl;
     
     cout << "Countries owned: ";
     
-    vector<Player*> a= main->getPlayers();
+    vector<Player*> a= maingame->getPlayers();
     vector<Player*>::iterator it;
     for ( it = a.begin(); it != a.end(); it++ )
     {
@@ -50,7 +56,7 @@ void GameStatView::print(MainGame* main){
         cout << "-";
     }
     cout << "| 100%" << endl;
-    for( auto const& [player, owned] : worlddominationview(main))
+    for( auto const& [player, owned] : worlddominationview())
     {
         for(int x=0; x < owned; x++){
             cout << ".";

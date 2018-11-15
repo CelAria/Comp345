@@ -13,14 +13,18 @@
 #include <string>
 #include <map>
 
-class GameStatView{
+class GameStatView: public Observer{
     
 private:
+    State state;
+    MainGame* maingame;
     map<string ,int> worlddominationmap;
     void clearScreen();
     
 public:
-    void print(MainGame* main);
+    GameStatView(MainGame* main){maingame=main;}
+    void print();
     void update(State& state);
-    map<string ,int> worlddominationview(MainGame* main);
+    map<string ,int> worlddominationview();
 };
+

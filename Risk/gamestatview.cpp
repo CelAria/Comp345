@@ -16,8 +16,6 @@ using namespace std;
 // notes* doesn't return the worlddominationmap
 
 map<string,int> GameStatView::worlddominationview(MainGame* main){
-    stringstream outstream;
-    map<Player*, int> worlddom;
     
     for(vector<Player*>:: iterator it= main->getPlayers().begin(); it != main->getPlayers().end(); ++it){
         //get the number of countries owned by each player
@@ -60,5 +58,6 @@ void GameStatView::print(MainGame* main){
         cout << "|  player " <<  player << ": " << owned << "%" << endl;
     }
      cout << "************************" << endl;
+
 };
 

@@ -11,8 +11,4 @@
 #include "strategy.h"
 
 class HumanPlayerStrategy: public Strategy {
-    void attack(Player* player, GameMap* gameMap);
-    void fortify(Player* player, GameMap* gameMap);
-    void reinforce(Player* player, GameMap* gameMap);
-    int getType();
 };

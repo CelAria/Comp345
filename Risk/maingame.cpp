@@ -44,7 +44,7 @@ void MainGame::executeTurn() {
     notifyObservers();
     currentPlayer->fortify(gameMap);
     
-    deck->draw(currentPlayer->getHand());
+    currentPlayer->drawCard(deck);
     
     updateTurn();
 }

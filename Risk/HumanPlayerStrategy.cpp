@@ -14,21 +14,21 @@
 
 class Player;
 
-void HumanPlayerStrategy::reinforce(Player *player, GameMap *gameMap) {
+void HumanPlayerStrategy::Strategy::reinforce(Player *player, GameMap *gameMap) {
         ReinforceController reinforceController = ReinforceController(player, gameMap);
         reinforceController.start();
 }
 
-void HumanPlayerStrategy::attack(Player *player, GameMap *gameMap) {
+void HumanPlayerStrategy::Strategy::attack(Player *player, GameMap *gameMap) {
         AttackPhase playerAttack(player,gameMap);
         playerAttack.attackLoop();
 }
 
-void HumanPlayerStrategy::fortify(Player *player, GameMap *gameMap) {
+void HumanPlayerStrategy::Strategy::fortify(Player *player, GameMap *gameMap) {
         FortifyController fortifyController = FortifyController(player, gameMap);
         fortifyController.start();
 }
 
-int HumanPlayerStrategy::getType() {
+int HumanPlayerStrategy::Strategy::getType() {
     return 0;
 }

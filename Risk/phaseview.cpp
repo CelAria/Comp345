@@ -28,7 +28,9 @@ string PhaseView::getPhaseHeader() {
             break;
     }
     stringstream outstream;
-    outstream << "Player " << state.currentPlayer->getPlayerId() << " - " << phaseName << " Phase:" << endl << endl;
+    outstream << "****************************************************" << endl;
+    outstream << "Player " << state.currentPlayer->getPlayerId() << " - " << phaseName << " Phase:" << endl;
+    outstream << "****************************************************" << endl << endl;
     return outstream.str();
 }
 

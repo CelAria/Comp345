@@ -20,6 +20,7 @@ private:
     MainGame* maingame;
     map<string ,int> worlddominationmap;
     void clearScreen();
+    bool testWinner(Player* player);
     
 public:
     GameStatView(MainGame* main){maingame=main;}

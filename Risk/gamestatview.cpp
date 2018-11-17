@@ -13,8 +13,7 @@
 
 using namespace std;
 
-// notes* doesn't return the worlddominationmap
-
+//returns
 map<string,int> GameStatView::worlddominationview(){
     
     for(vector<Player*>:: iterator it= maingame->getPlayers().begin(); it != maingame->getPlayers().end(); ++it){
@@ -25,21 +24,27 @@ map<string,int> GameStatView::worlddominationview(){
     return worlddominationmap;
 };
 
-void GameStatView::clearScreen() {
-    system("clear");
-};
+//void GameStatView::clearScreen() {
+//    system("clear");
+//};
 
+//check the gamestate
 void GameStatView::update(State& state){
     this->state = state;
     print();
 };
 
+//tests if a player owns all the countries
+bool GameStatView::testWinner(Player* player){
+    if(player->getCountriesCount()==maingame->getGameMap()->getCount()){return true;}
+    else return false;
+};
 
+// print function which outputs to the terminal
 void GameStatView::print(){
    // clearScreen();
     cout << "\nWorld Domination View" << endl;
     cout << "************************" << endl;
-    
     cout << "Countries owned: ";
     
     vector<Player*> a= maingame->getPlayers();
@@ -47,7 +52,13 @@ void GameStatView::print(){
     for ( it = a.begin(); it != a.end(); it++ )
     {
         cout << "Player " << (*it)->getPlayerId() << ":" << "[" << (*it)->getCountriesCount() << "], ";
-        
+       
+        if(testWinner(*it)==true){
+            cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@"<< endl;
+            cout << "WINNER IS PLAYER "<< (*it)->getPlayerId() << endl;
+            cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@"<< endl;
+            exit(0);
+        }
     }
     cout << endl;
     
@@ -58,12 +69,13 @@ void GameStatView::print(){
     cout << "| 100%" << endl;
     for( auto const& [player, owned] : worlddominationview())
     {
+    if(!owned==0){
         for(int x=0; x < owned; x++){
-            cout << ".";
+        cout << ".";
         }
         cout << "|  player " <<  player << ": " << owned << "%" << endl;
     }
-     cout << "************************" << endl;
-
+    cout << "************************" << endl;
+    }
 };
 

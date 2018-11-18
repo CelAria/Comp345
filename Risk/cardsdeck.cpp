@@ -259,6 +259,7 @@ int Hand::exchange(string s){
     }
     else
     {
+        cout << "Invalid exchange!" << endl;
         return 0;
     }
 }

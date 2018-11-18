@@ -55,6 +55,8 @@ void MainGame::playGame() {
         executeTurn();
     }
     
+    phase = GAME_OVER;
+    notifyGameOver();
 }
 
 /**
@@ -64,6 +66,13 @@ void MainGame::playGame() {
  */
 void MainGame::notifyObservers() {
     State newState = State(phase, getNextPlayer(), gameMap);
+    for(auto observer : observers) {
+        observer->update(newState);
+    }
+}
+
+void MainGame::notifyGameOver() {
+    State newState = State(phase, getWinner(), gameMap);
     for(auto observer : observers) {
         observer->update(newState);
     }

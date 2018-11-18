@@ -281,7 +281,7 @@
 		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
 		6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
-		B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MapLoaderDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		B315A48C2165CCCC005CAFD4 /* StatsWinnerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StatsWinnerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B315F96C21976A0D005A899B /* strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strategy.h; sourceTree = "<group>"; };
 		B315F96E21976BAF005A899B /* observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = observer.h; sourceTree = "<group>"; };
@@ -524,7 +524,7 @@
 				B3BB80E12165B7D9005177BB /* GameMapDriver */,
 				B3BB81002165BE05005177BB /* libRisk.a */,
 				B3BB81142165BF08005177BB /* Dice */,
-				B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */,
+				B315A48C2165CCCC005CAFD4 /* StatsWinnerDriver */,
 				B3B2E8D321669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E22166AD0100C2A4BA /* PlayerDriver */,
 				B35FED72217ADD2B00FE6FA7 /* FortifyControllerDriver */,
@@ -712,9 +712,9 @@
 			productReference = 6B0E76C6218A6F7A006CECD2 /* GamePlay */;
 			productType = "com.apple.product-type.tool";
 		};
-		B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */ = {
+		B315A48B2165CCCC005CAFD4 /* StatsWinnerDriver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */;
+			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "StatsWinnerDriver" */;
 			buildPhases = (
 				B315A4882165CCCC005CAFD4 /* Sources */,
 				B315A4892165CCCC005CAFD4 /* Frameworks */,
@@ -725,9 +725,9 @@
 			dependencies = (
 				B315A4942165CCD6005CAFD4 /* PBXTargetDependency */,
 			);
-			name = MapLoaderDriver;
+			name = StatsWinnerDriver;
 			productName = MapLoaderDriver;
-			productReference = B315A48C2165CCCC005CAFD4 /* MapLoaderDriver */;
+			productReference = B315A48C2165CCCC005CAFD4 /* StatsWinnerDriver */;
 			productType = "com.apple.product-type.tool";
 		};
 		B32D385C218E54FE000C1568 /* GameLoopDriver */ = {
@@ -917,7 +917,7 @@
 				B3BB80FF2165BE05005177BB /* Risk */,
 				B3BB80E02165B7D9005177BB /* GameMapDriver */,
 				B3BB81132165BF08005177BB /* Dice */,
-				B315A48B2165CCCC005CAFD4 /* MapLoaderDriver */,
+				B315A48B2165CCCC005CAFD4 /* StatsWinnerDriver */,
 				B3B2E8D221669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E12166AD0100C2A4BA /* PlayerDriver */,
 				B35FED71217ADD2B00FE6FA7 /* FortifyControllerDriver */,
@@ -1528,7 +1528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "MapLoaderDriver" */ = {
+		B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "StatsWinnerDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B315A4912165CCCC005CAFD4 /* Debug */,

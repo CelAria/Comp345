@@ -114,7 +114,7 @@ vector<Player*> GameStart::playerOrder(){
 vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
     /*Players are given a number of armies (A), to be placed one by one in a round-robin fashion*/
     int numArmies= 0;
-    
+
     switch(players.size()){
         case 2: numArmies=40;
             break;
@@ -138,7 +138,7 @@ vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
         for(int k=0; k <playerCountries.size(); k++){
           playerCountries[k]->IncrementArmiesCount();
         }
-        //as long as there are remaining armies to give, continue placing randomly
+        //as long as there are remaining armies to give
         for(int j = 0; j < (numArmies-playerCountries.size()); j++) {
             //place one army at a random country
             int randomnum = rand() %  playerCountries.size();
@@ -146,6 +146,7 @@ vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
             playerCountries[randomnum]->IncrementArmiesCount();
         }
     }
+    
     return players;
 };
 

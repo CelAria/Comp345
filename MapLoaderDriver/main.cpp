@@ -4,6 +4,8 @@
 #include "gamemap.h"
 #include "viewgamestart.h"
 #include "controllergamestart.h"
+#include "gamestatview.h"
+#include "maingame.h"
 #include <vector>
 #include <string>
 #include <sstream>
@@ -38,18 +40,60 @@ int main(int argc, const char * argv[]) {
     
     //directory where maps are stored
     const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
-    // print maps
-    printMapDirectory(directory);
+    //printMapDirectory(directory);
+    
+    //open map and test if valid, if valid, create map object
+    
     Maploader mymaploader;
-    mymaploader.readmapfile();
+    mymaploader.printDirectory(directory);
+    // mymaploader.selectMap(directory);
+    
+    //GameMap* gameMap = mymaploader.readmapfile(mymaploader.selectMap(directory), directory);
+    GameMap* gameMap= new GameMap;
+    Continent NA;
+    vector<string> N2;
+    vector<string> N1;
+    N1.push_back("Canada");
+    N2.push_back("USA");
+    gameMap->addCountry("Canada", "NA", N2);
+    gameMap->addCountry("USA", "NA", N1);
+    Player* p1 = new Player();
+    Player* p2 = new Player();
+    vector<Player*> players;
+    players.push_back(p1);
+    players.push_back(p2);
+    Country* Canada = new Country("Canada" ,"NA");
+    Country* USA = new Country("USA", "NA");
+    p1->addCountry(Canada);
+    p2->addCountry(USA);
+    Canada->addNeighbor(*USA);
+    USA->addNeighbor(*Canada);
+    
+    vector<Country*> p1Countries = p1->getAllCountries();
+    vector<Country*> p2Countries = p2->getAllCountries();
+    p1Countries[0]->IncrementArmiesCount();
+    p1Countries[0]->IncrementArmiesCount();
+    p2Countries[0]->IncrementArmiesCount();
+    
+    
     GameStart game;
-    game.selectPlayers();
-    game.createPlayers();
-    game.createDeck(mymaploader.ptrgamemap);
-    game.playerOrder();
-    //printDeck(game.gamedeck);
-    cout << game.gamedeck->getTotalCardsInDeck();
-
-   
+    //create game deck of cards
+    Deck* deck =game.createDeck(gameMap);
+    //player input
+    //int numberOfPlayers = game.selectPlayers();
+    //create player objects with hand of empty cards and dice facilities
+    
+    //vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
+    MainGame* main= new MainGame(gameMap, players, deck);
+    GameStatView* gamestatview= new GameStatView(main);
+    gamestatview->print();
+    delete main;
+    //players.at(1).
+    MainGame* mainGame = new MainGame(gameMap, players, deck);
+    GameStatView* statsView= new GameStatView(mainGame);
+    mainGame->addObserver(statsView);
+    mainGame->playGame();
+    
+    
 }
 

@@ -23,8 +23,7 @@ public:
     vector<Player*> createPlayers(int amount, GameMap* gameMap);  //return vector of pointers to player objects
     Deck* createDeck(GameMap* pointertogamemap);
     GameMap* createGameMap(string directory); //use the directory to get the user's game map
-    
-    
+
 private:
     int numberofplayers;  //number of players in game
     vector<Player*> players; //vector of all players that has been created

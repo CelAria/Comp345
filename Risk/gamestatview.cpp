@@ -13,7 +13,7 @@
 
 using namespace std;
 
-//returns
+//returns map of player ID and percentage owned
 map<string,int> GameStatView::worlddominationview(){
     
     for(vector<Player*>:: iterator it= maingame->getPlayers().begin(); it != maingame->getPlayers().end(); ++it){
@@ -24,9 +24,6 @@ map<string,int> GameStatView::worlddominationview(){
     return worlddominationmap;
 };
 
-//void GameStatView::clearScreen() {
-//    system("clear");
-//};
 
 //check the gamestate
 void GameStatView::update(State& state){
@@ -53,7 +50,7 @@ void GameStatView::print(){
     
     cout << "\nCountries owned: ";
     
-   
+   // "Countries Owned" printing
     vector<Player*> a= maingame->getPlayers();
     vector<Player*>::iterator it;
     
@@ -71,6 +68,7 @@ void GameStatView::print(){
     cout << "| 100%" << endl;
     for( auto const& [player, owned] : worlddominationview())
     {
+    //check that players own a country before printing (remove players from view)
     if(!owned==0){
         for(int x=0; x < owned; x++){
         cout << ".";
@@ -80,6 +78,7 @@ void GameStatView::print(){
     }
     cout << "************************" << endl;
     
+    //Winner test
     for(int i=0; i < maingame->getPlayers().size(); i++){
         if(testWinner(a.at(i))==true){
             cout << endl;

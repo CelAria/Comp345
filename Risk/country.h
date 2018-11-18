@@ -30,7 +30,7 @@ class Country {
     int getNeighborCount() { return (int)neighbors.size(); };
     int getArmiesCount() { return armiesCount; };
     void setOwner(Player* player) { this->player = player; };
-    int getOwner() { return player; }
+    Player* getOwner() { return player; }
     void setStrat(int stratType) {this->stratType = stratType;};
     int getStrat(){return stratType;}
     void setArmiesCount(int count) { this->armiesCount = count; };

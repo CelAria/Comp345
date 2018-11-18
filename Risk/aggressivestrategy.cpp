@@ -11,7 +11,8 @@
 #include "gamemap.h"
 
 void AggressiveStrategy::attack(Player *player, GameMap *gameMap) {
-    
+    AgressiveAttack playerAttack(player,gameMap);
+    playerAttack.attackLoop();
 }
 
 void AggressiveStrategy::fortify(Player *player, GameMap *gameMap) {

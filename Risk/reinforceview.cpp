@@ -62,7 +62,7 @@ void ReinforceView::placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCo
         gameMap->getCountry(allCountries[i]->getName())->setArmiesCount((gameMap->getCountry(allCountries[i]->getName())->getArmiesCount() + numOfArmiesToPlace));
     }
     
-    int randNum = (rand() % (allCountries.size()-1) + 0);
+    int randNum = (rand() % (allCountries.size()) + 0);
     gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
 }
 

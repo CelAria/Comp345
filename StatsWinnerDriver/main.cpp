@@ -26,24 +26,22 @@ int main(int argc, const char * argv[]) {
     Continent NA = Continent("NA", 2);
     gameMap->addContinent(NA);
     
-    Country* Canada = new Country("Canada" ,"NA");
-    Country* USA = new Country("USA", "NA");
     vector<string> N2;
     vector<string> N1;
     N1.push_back("Canada");
     N2.push_back("USA");
     gameMap->addCountry("Canada", "NA", N2);
     gameMap->addCountry("USA", "NA", N1);
-    Player* p1 = new Player();
-    Player* p2 = new Player();
     gameMap->getCountry("Canada")->setArmiesCount(1);
-    gameMap->getCountry("USA")->setArmiesCount(10);
+    gameMap->getCountry("USA")->setArmiesCount(20);
     
     vector<Player*> players;
+    Player* p1 = new Player(1);
+    Player* p2 = new Player(2);
     players.push_back(p1);
     players.push_back(p2);
     p1->addCountry(gameMap->getCountry("Canada"));
-    p2->addCountry(gameMap->getCountry("USA"));
+    p1->addCountry(gameMap->getCountry("USA"));
     vector<Country*> p1Countries = p1->getAllCountries();
     vector<Country*> p2Countries = p2->getAllCountries();
 

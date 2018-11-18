@@ -21,7 +21,7 @@ void FortifyController::start() {
             vector<Country*> neighbors = fromCountry->getAllNeighbors();
             vector<Country*> eligibleNeighbors;
             for(int i = 0; i < neighbors.size(); ++i) {
-                if(neighbors[i]->getOwner() == player->getPlayerId()) {
+                if(neighbors[i]->getOwner()->getPlayerId() == player->getPlayerId()) {
                     eligibleNeighbors.push_back(neighbors[i]);
                 }
             }

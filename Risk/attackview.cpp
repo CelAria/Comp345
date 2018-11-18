@@ -107,7 +107,7 @@ void AttackView::enemyCountryList(vector<Country*> enemies, Player *player){
     
     for(int i = 0; i < enemies.size(); i++) {
         
-        if(enemies[i]->getOwner() != player->getPlayerId()){
+        if(enemies[i]->getOwner()->getPlayerId() != player->getPlayerId()){
             cout << i+1 << " " << enemies[i]->getName() << ", " << enemies[i]->getContinentName() << " Armies on country: " << enemies[i]->getArmiesCount()<< endl;
         }
     }

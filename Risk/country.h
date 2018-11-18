@@ -15,6 +15,7 @@ class Country {
     int iterationCount;
     int playerId;
     int armiesCount;
+    int stratType;
     set<Country*> neighbors;
 
     public:
@@ -29,6 +30,8 @@ class Country {
     int getArmiesCount() { return armiesCount; };
     void setOwner(int playerId) { this->playerId = playerId; };
     int getOwner() { return playerId; }
+    void setStrat(int stratType) {this->stratType = stratType;};
+    int getStrat(){return stratType;}
     void setArmiesCount(int count) { this->armiesCount = count; };
     void IncrementArmiesCount() {this->armiesCount++;}
     vector<Country*> getAllNeighbors();

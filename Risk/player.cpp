@@ -22,7 +22,9 @@ void Player::reinforce(GameMap* gameMap) {
 
 void Player::addCountry(Country *country) {
     country->setOwner(id);
+    country->setStrat(strategy->getType());
     countries[country->getName()] = country;
+    
 }
 
 
@@ -88,3 +90,6 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
 bool Player::controlsContinent(string name, GameMap *gameMap) {
     return getCountriesByContinent(name).size() == gameMap->getAllByContinent(name).size();
 }
+
+
+

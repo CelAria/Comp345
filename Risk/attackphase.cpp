@@ -267,6 +267,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
 
     while(attackDiceLoop){
         diceAmountAttack = attackView.pickDice();
+       
         
         if((diceAmountAttack >=1 && (diceAmountAttack<4)) && (diceAmountAttack <=(allCountries[selectCountry - 1]->getArmiesCount()-1)))
         {
@@ -281,7 +282,52 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
 
     cout<<"defending player...how many dice do you want to roll? " << endl;
     while(defendDiceLoop){
-        diceAmountDefend = attackView.pickDice();
+        
+        if(enemies[selectAttackCountry - 1]->getStrat() == 0){
+            diceAmountDefend = attackView.pickDice();
+        }
+        
+        if(enemies[selectAttackCountry - 1]->getStrat() == 1){
+            cout<<2<<endl;
+            diceAmountDefend =2;
+            if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
+                
+            {
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            } else{
+                cout<<"Dice Amount invalid, please choose again " <<endl;
+                cout<<1<<endl;
+                defendDiceLoop = 1;
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            }
+            
+            
+        }
+           
+        
+        
+        if(enemies[selectAttackCountry - 1]->getStrat() == 2){
+            
+            cout<<2<<endl;
+            diceAmountDefend =2;
+            if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
+                
+            {
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            } else{
+                cout<<"Dice Amount invalid, please choose again " <<endl;
+                cout<<1<<endl;
+                defendDiceLoop = 1;
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            }
+            
+        }
+        
+        
         if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
             
         {
@@ -318,6 +364,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             moveArmies=attackView.moveArmies();
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
+                enemies[selectAttackCountry - 1]->setStrat(0);
                 enemies[selectAttackCountry - 1]->setOwner(player->getPlayerId());
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
                 player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));

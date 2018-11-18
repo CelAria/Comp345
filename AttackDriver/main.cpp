@@ -68,12 +68,12 @@ int main(int argc, const char * argv[]) {
 
     //creates 2 players with player ID's
     //creates gamemap and attackphase class
-    
+    Strategy* strategy(new AggressiveStrategy);
     Player player(1);
-    Player player2(2);
+    Player player2(2,strategy);
     GameMap gameMap;
     AttackPhase attack(&player,&gameMap);
-    Strategy* strategy(new AggressiveStrategy);
+   
     
     
     

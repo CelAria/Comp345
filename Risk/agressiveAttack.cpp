@@ -32,6 +32,7 @@ void AgressiveAttack :: attackLoop()
     bool start = true;
 //    start= attackView.startAttackPhase();
     cout<<"Do you want to attack?"<<endl;
+    cout<<"yes "<<endl;
     
     while(start)
     {
@@ -46,8 +47,9 @@ void AgressiveAttack :: attackLoop()
         vector<Country*> allCountries = player->getAllCountries();
         
         countrySelect(allCountries);
-        
-        start = attackView.keepAttacking();
+        cout<<"Do you want to attack again? "<<endl;
+        cout<<"yes "<<endl;
+        start = true;
         
     }
 }
@@ -202,10 +204,18 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
     int selectCountry =0;
     bool notEnoughArmies = true;
     vector<Country*> enemies;
+    vector<Country*> allEnemies;
+    
+  
     
     
     while(notEnoughArmies){
-        selectCountry = attackView.pickAttackingCountry();
+       
+        sort(allCountries.rbegin(), allCountries.rend());
+         int bigArmyCountry =1;
+        
+        selectCountry = bigArmyCountry;
+        
         
         if(selectCountry<1 || selectCountry> allCountries.size())
         {
@@ -214,6 +224,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
             
         }
         else if((allCountries[selectCountry-1]->getArmiesCount()>=2)){
+            
             
             vector<Country*> potentialEnemies = allCountries[selectCountry - 1]->getAllNeighbors();
             
@@ -232,6 +243,9 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
                 notEnoughArmies = false;
             } else{
                 cout<<"Country has no attackable neighbours, choose again" <<endl;
+               
+                bigArmyCountry++;
+                
             }
         } else
             cout<<"Country does not have enough armies on it, choose again" <<endl;
@@ -263,26 +277,78 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
     cout<<"attacking player...how many dice to roll?" << endl;
     
     while(attackDiceLoop){
-        diceAmountAttack = attackView.pickDice();
+        
+        diceAmountAttack =3;
+        cout<<3<<endl;
+        
         
         if((diceAmountAttack >=1 && (diceAmountAttack<4)) && (diceAmountAttack <=(allCountries[selectCountry - 1]->getArmiesCount()-1)))
         {
             player->rollDice(diceAmountAttack);
             attackDiceLoop = false;
-        }else
-            cout<<"Dice Amount invalid, please choose again " <<endl;
+        }
+        else
+        { cout<<"Dice Amount invalid, please choose again " <<endl;
+            diceAmountAttack--;
+        }
+        
         
         
     }
     player ->getDiceRollsAttack(diceAmountAttack);
     
-    cout<<"defending player...how many dice do you want to roll? " << endl;
+    
+        cout<<"defending player...how many dice to roll?" << endl;
     while(defendDiceLoop){
-        diceAmountDefend = attackView.pickDice();
+        
+        if(enemies[selectAttackCountry - 1]->getStrat() == 0){
+            diceAmountDefend = attackView.pickDice();
+        }
+        
+        if(enemies[selectAttackCountry - 1]->getStrat() == 1){
+            cout<<2<<endl;
+            diceAmountDefend =2;
+            if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
+                
+            {
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            } else{
+                cout<<"Dice Amount invalid, please choose again " <<endl;
+                cout<<1<<endl;
+                defendDiceLoop = 1;
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            }
+            
+            
+        }
+        
+        
+        
+        if(enemies[selectAttackCountry - 1]->getStrat() == 2){
+            
+            cout<<2<<endl;
+            diceAmountDefend =2;
+            if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
+                
+            {
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            } else{
+                cout<<"Dice Amount invalid, please choose again " <<endl;
+                cout<<1<<endl;
+                defendDiceLoop = 1;
+                player ->defendRollDice(diceAmountDefend);
+                defendDiceLoop = false;
+            }
+            
+        }
+        
+        
         if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
             
         {
-            
             player ->defendRollDice(diceAmountDefend);
             defendDiceLoop = false;
         } else
@@ -290,6 +356,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
         
         
     }
+    
     
     player ->getDiceRollsDefend(diceAmountDefend);
     
@@ -313,10 +380,13 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
         bool moveArmyInput = true;
         while(moveArmyInput){
             
-            moveArmies=attackView.moveArmies();
+//            moveArmies=attackView.moveArmies();
+            moveArmies =1;
+            
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
                 enemies[selectAttackCountry - 1]->setOwner(player->getPlayerId());
+                enemies[selectAttackCountry - 1]->setStrat(1);
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
                 player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));
                 gameMap->getCountry(allCountries[selectCountry - 1]->getName())->setArmiesCount(allCountries[selectCountry - 1]->getArmiesCount()-moveArmies);

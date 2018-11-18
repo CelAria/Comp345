@@ -5,20 +5,19 @@
 #include <map>
 #include <iostream>
 #include <sstream>
+#include "player.h"
 using namespace std;
 
 Country::Country() {
     name = "";
     continentName = "";
     armiesCount = 0;
-    playerId = 0;
 }
 
 Country::Country(string countryName, string continentName) {
     this->name = countryName;
     this->continentName = continentName;
     armiesCount = 0;
-    playerId = 0;
 }
 
 /**
@@ -46,6 +45,7 @@ vector<Country*> Country::getAllNeighbors() {
 
 string Country::toString() {
     stringstream str;
-    str << this->getName() << ", " << this->getContinentName() << "\t(" << this->getArmiesCount() << " Armies)" << " [P" << this->getOwner() << "]";
+    str << this->getName() << ", " << this->getContinentName() << "\t(" << this->getArmiesCount() << " Armies)" << " [P" << this->getOwner()->getPlayerId() << "]";
     return str.str();
 }
+

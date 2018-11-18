@@ -28,12 +28,24 @@ string PhaseView::getPhaseHeader() {
             break;
     }
     stringstream outstream;
-    outstream << "Player " << state.currentPlayer->getPlayerId() << " - " << phaseName << " Phase:" << endl << endl;
+    outstream << "****************************************************" << endl;
+    outstream << "Player " << state.currentPlayer->getPlayerId() << " - " << phaseName << " Phase:" << endl;
+    outstream << "****************************************************" << endl << endl;
     return outstream.str();
 }
 
 void PhaseView::print() {
     clearScreen();
+    if(state.phase == REINFORCE) {
+        cout << endl;
+        cout << "****************************************************" << endl;
+        cout << "Player " << state.currentPlayer->getPlayerId() << " Turn Start" << endl;
+        cout << "****************************************************" << endl;
+        cout << endl;
+        if(promptUserYesNo("Would you like to see the game map? (y/n)")) {
+            state.gameMap->traverseAll(true);
+        }
+    }
     cout << getPhaseHeader();
 }
 
@@ -43,5 +55,24 @@ void PhaseView::update(State &state) {
 }
 
 void PhaseView::clearScreen() {
-    system("clear");
+    //system("clear");
+}
+
+bool PhaseView::promptUserYesNo(string prompt) {
+    cout << prompt << endl;
+    
+    char answer;
+    cin >> answer;
+    
+    if(cin.good()) {
+        if(answer == 'y' || answer == 'Y') {
+            return true;
+        } else if(answer == 'n' || answer == 'N') {
+            return false;
+        } else {
+            return promptUserYesNo(prompt);
+        }
+    } else {
+        return false;
+    }
 }

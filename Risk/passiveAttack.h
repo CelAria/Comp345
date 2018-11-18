@@ -1,9 +1,8 @@
 //
-//  attackphase.h
+//  passiveAttack.hpp
 //  Risk
 //
-//  Created by Matthew Salaciak 29644490
-//  ASSIGNMENT #2
+//  Created by Matthew Salaciak on 2018-11-16.
 //  Copyright © 2018 comp345. All rights reserved.
 //
 
@@ -15,19 +14,19 @@
 #include <iostream>
 using namespace std;
 
-class AttackPhase
+class PassiveAttack
 {
-
+    
     //AttackPhase class definition
 public:
-    AttackPhase(Player* player, GameMap *gameMap);
-    AttackPhase(Player* player);
+    PassiveAttack(Player* player, GameMap *gameMap);
+    PassiveAttack(Player* player);
     void attackLoop();
     void moveArmy();
     void compare(int attackDice, int defendDice);
     void countrySelect(vector<Country*> countries);
     void enemyNeighbour(Country* attackingCountry);
-  
+    
     
 private:
     //AttackPhase variables
@@ -47,8 +46,6 @@ private:
     int diceAmountAttack =0;
     int diceAmountDefend =0;
     int moveArmies =0;
-    bool start;
-    bool noAttack;
     
     
     

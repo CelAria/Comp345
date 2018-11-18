@@ -5,6 +5,8 @@
 #include <vector>
 using namespace std;
 
+class Player;
+
 /**
  Represents a node in the GameMap graph
  */
@@ -13,8 +15,9 @@ class Country {
     string name;
     string continentName;
     int iterationCount;
-    int playerId;
+    Player* player;
     int armiesCount;
+    int stratType;
     set<Country*> neighbors;
 
     public:
@@ -27,8 +30,10 @@ class Country {
     void addNeighbor(Country &neighbor);
     int getNeighborCount() { return (int)neighbors.size(); };
     int getArmiesCount() { return armiesCount; };
-    void setOwner(int playerId) { this->playerId = playerId; };
-    int getOwner() { return playerId; }
+    void setOwner(Player* player) { this->player = player; };
+    Player* getOwner() { return player; }
+    void setStrat(int stratType) {this->stratType = stratType;};
+    int getStrat(){return stratType;}
     void setArmiesCount(int count) { this->armiesCount = count; };
     void IncrementArmiesCount() {this->armiesCount++;}
     vector<Country*> getAllNeighbors();

@@ -22,7 +22,6 @@ int main(int argc, const char * argv[]) {
     Deck* deck = gameStart.createDeck(gameMap);
     vector<Player*> players = gameStart.createPlayers(gameStart.selectPlayers(), gameMap);
     
-    
     MainGame mainGame = MainGame(gameMap, players, deck);
     PhaseView phaseView;
     

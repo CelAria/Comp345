@@ -1,8 +1,8 @@
 //
-//  HumanPlayerStrategy.hpp
+//  aggressivestrategy.hpp
 //  Risk
 //
-//  Created by Allan Pichardo on 11/14/18.
+//  Created by Allan Pichardo on 11/15/18.
 //  Copyright © 2018 comp345. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 #include "strategy.h"
 
-class HumanPlayerStrategy: public Strategy {
+class AggressiveStrategy: public Strategy {
     void attack(Player* player, GameMap* gameMap);
     void fortify(Player* player, GameMap* gameMap);
     void reinforce(Player* player, GameMap* gameMap);

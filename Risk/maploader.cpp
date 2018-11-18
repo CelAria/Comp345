@@ -129,7 +129,7 @@ GameMap* Maploader::readmapfile(string file, string directory){
         //If map invalid, reject and offer readmap() again, if valid, accept
         
         if(ptrgamemap->isValid()){
-            ptrgamemap->traverseAll(true);
+            ptrgamemap->traverseAll(false);
             cout << "This gamemap is valid! \n";
         }
         

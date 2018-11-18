@@ -19,12 +19,11 @@ private:
     Player* player;
     GameMap* gameMap;
     
-    /**
-     Transfer armies from one country to another
-     */
-    bool moveArmies(Country* fromCountry, Country* toCountry, int amount);
-    
 public:
+    FortifyController() {
+        view = FortifyView();
+    };
+    
     FortifyController(Player* player, GameMap* gameMap) {
         this->player = player;
         this->gameMap = gameMap;
@@ -35,5 +34,9 @@ public:
      Executes the Fortify phase
      */
     void start();
+    /**
+     Transfer armies from one country to another
+     */
+    bool moveArmies(Country* fromCountry, Country* toCountry, int amount);
 };
 

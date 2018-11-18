@@ -28,3 +28,7 @@ void HumanPlayerStrategy::fortify(Player *player, GameMap *gameMap) {
         FortifyController fortifyController = FortifyController(player, gameMap);
         fortifyController.start();
 }
+
+int HumanPlayerStrategy::getType() {
+    return 0;
+}

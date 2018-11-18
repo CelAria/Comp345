@@ -244,10 +244,11 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             
             for(int i=0; i<potentialEnemies.size(); i++)
             {
-                if( potentialEnemies[i]->getOwner() != player->getPlayerId())
+                if( potentialEnemies[i]->getOwner()->getPlayderId() != player->getPlayerId())
                 {
                     enemies.push_back(potentialEnemies[i]);
                 }
+                
                 
             }
             
@@ -305,11 +306,11 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     cout<<"defending player...how many dice do you want to roll? " << endl;
     while(defendDiceLoop){
         
-        if(enemies[selectAttackCountry - 1]->getStrat() == 0){
+        if(enemies[selectAttackCountry - 1]->getOwner()->getStrat()->getType() == 0){
             diceAmountDefend = attackView.pickDice();
         }
         
-        if(enemies[selectAttackCountry - 1]->getStrat() == 1){
+        if(enemies[selectAttackCountry - 1]->getOwner()->getStrat()->getType() == 1){
             cout<<2<<endl;
             diceAmountDefend =2;
             if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
@@ -330,7 +331,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
            
         
         
-        if(enemies[selectAttackCountry - 1]->getStrat() == 2){
+        if(enemies[selectAttackCountry - 1]->getOwner()->getStrat()->getType() == 2){
             
             cout<<2<<endl;
             diceAmountDefend =2;
@@ -385,8 +386,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             moveArmies=attackView.moveArmies();
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
-                enemies[selectAttackCountry - 1]->setStrat(0);
-                enemies[selectAttackCountry - 1]->setOwner(player->getPlayerId());
+                enemies[selectAttackCountry - 1]->setOwner(player);
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
                 player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));
                 gameMap->getCountry(allCountries[selectCountry - 1]->getName())->setArmiesCount(allCountries[selectCountry - 1]->getArmiesCount()-moveArmies);

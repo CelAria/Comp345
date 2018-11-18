@@ -10,9 +10,11 @@
 
 AttackView:: AttackView() {
     
+    
 }
 
 bool AttackView:: startAttackPhase() {
+    
     cout<<"Do you want to attack? Please enter y for yes, n for no " << endl;
     bool attackPhaseInput = true;
     string attacking;

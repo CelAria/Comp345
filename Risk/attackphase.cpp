@@ -32,8 +32,11 @@ void AttackPhase :: attackLoop()
     //asks again if they want to attack
    
     
-    bool start = false;
-   start= attackView.startAttackPhase();
+    start = false;
+    playerID = player->getPlayerId();
+    cout<<"Player# " <<playerID <<endl;
+    start= attackView.startAttackPhase();
+    noAttack = true;
           
     
     while(start)
@@ -49,8 +52,13 @@ void AttackPhase :: attackLoop()
         vector<Country*> allCountries = player->getAllCountries();
 
         countrySelect(allCountries);
-        
+       
+
+        if(noAttack){
        start = attackView.keepAttacking();
+        }
+        else
+            start = false;
 
 }
 }
@@ -200,19 +208,33 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
 {
 
     
+    
+    
     attackView.playerCountryList(allCountries);
     
-    int selectCountry =0;
-    bool notEnoughArmies = true;
+    
+  
+ 
+    
     vector<Country*> enemies;
-
+    bool notEnoughArmies = true;
+    int selectCountry =0;
+    
+  
     
     while(notEnoughArmies){
+     
        selectCountry = attackView.pickAttackingCountry();
+        
+        if(selectCountry ==0) {
+            cout<<"ending attack phase" <<endl;
+            noAttack = false;
+            return;
+        }
         
         if(selectCountry<1 || selectCountry> allCountries.size())
         {
-            cout<<"invalid country selection, choose again" <<endl;
+            cout<<"invalid country selection, choose again or type 0 to exit attack phase" <<endl;
             
             
         }
@@ -222,7 +244,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             
             for(int i=0; i<potentialEnemies.size(); i++)
             {
-                if((potentialEnemies[i]->hasNeighbors()) && potentialEnemies[i]->getOwner() != player->getPlayerId())
+                if( potentialEnemies[i]->getOwner() != player->getPlayerId())
                 {
                     enemies.push_back(potentialEnemies[i]);
                 }
@@ -234,10 +256,10 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             
             notEnoughArmies = false;
             } else{
-                cout<<"Country has no attackable neighbours, choose again" <<endl;
+                cout<<"Country has no attackable neighbours, choose again or type 0 to exit attack phase" <<endl;
             }
         } else
-             cout<<"Country does not have enough armies on it, choose again" <<endl;
+             cout<<"Country does not have enough armies on it, choose again or type 0 to exit attack phase" <<endl;
         
     }
      cout<< "The Country you picked to attack from is " << allCountries[selectCountry - 1]->toString() <<endl;
@@ -298,7 +320,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             } else{
                 cout<<"Dice Amount invalid, please choose again " <<endl;
                 cout<<1<<endl;
-                defendDiceLoop = 1;
+                diceAmountDefend = 1;
                 player ->defendRollDice(diceAmountDefend);
                 defendDiceLoop = false;
             }
@@ -320,7 +342,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             } else{
                 cout<<"Dice Amount invalid, please choose again " <<endl;
                 cout<<1<<endl;
-                defendDiceLoop = 1;
+                diceAmountDefend = 1;
                 player ->defendRollDice(diceAmountDefend);
                 defendDiceLoop = false;
             }
@@ -329,7 +351,6 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
         
         
         if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
-            
         {
             player ->defendRollDice(diceAmountDefend);
             defendDiceLoop = false;
@@ -378,11 +399,15 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             
         
     }
+        
+
     }
    
     
     
 }
+
+
 
 
 

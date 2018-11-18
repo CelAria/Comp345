@@ -27,7 +27,7 @@ public:
     void compare(int attackDice, int defendDice);
     void countrySelect(vector<Country*> countries);
     void enemyNeighbour(Country* attackingCountry);
-    
+  
     
 private:
     //AttackPhase variables
@@ -47,6 +47,8 @@ private:
     int diceAmountAttack =0;
     int diceAmountDefend =0;
     int moveArmies =0;
+    bool start;
+    bool noAttack;
     
     
     

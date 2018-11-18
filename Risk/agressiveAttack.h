@@ -46,6 +46,8 @@ private:
     int diceAmountAttack =0;
     int diceAmountDefend =0;
     int moveArmies =0;
+    bool start;
+    bool continueAttack;
     
     
     

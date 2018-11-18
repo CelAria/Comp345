@@ -50,9 +50,9 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2)
     gameMap->addCountry("Venezuela", "South America", venNeighbors);
 
     gameMap->getCountry("Costa Rica")->setArmiesCount(2);
-    gameMap->getCountry("Venezuela")->setArmiesCount(4);
-    gameMap->getCountry("Colombia")->setArmiesCount(4);
-    gameMap->getCountry("Panama")->setArmiesCount(2);
+    gameMap->getCountry("Venezuela")->setArmiesCount(1);
+    gameMap->getCountry("Colombia")->setArmiesCount(1);
+    gameMap->getCountry("Panama")->setArmiesCount(3);
     gameMap->getCountry("Nicaragua")->setArmiesCount(2);
 
     player->addCountry(gameMap->getCountry("Costa Rica"));
@@ -92,6 +92,7 @@ int main(int argc, const char * argv[]) {
 //    attack.attackLoop();
     player.attack(&gameMap);
     player2.attack(&gameMap);
+    player.attack(&gameMap);
     
 
     

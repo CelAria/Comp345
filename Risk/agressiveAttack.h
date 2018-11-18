@@ -14,13 +14,13 @@
 #include <iostream>
 using namespace std;
 
-class AttackPhase
+class AgressiveAttack
 {
     
     //AttackPhase class definition
 public:
-    AttackPhase(Player* player, GameMap *gameMap);
-    AttackPhase(Player* player);
+    AgressiveAttack(Player* player, GameMap *gameMap);
+    AgressiveAttack(Player* player);
     void attackLoop();
     void moveArmy();
     void compare(int attackDice, int defendDice);

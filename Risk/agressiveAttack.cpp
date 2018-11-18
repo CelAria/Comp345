@@ -8,7 +8,7 @@
 
 #include "agressiveAttack.h"
 //constructor for attackPhase
-AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
+AgressiveAttack :: AgressiveAttack(Player *player, GameMap *gameMap)
 {
     this->player = player;
     this->gameMap = gameMap;
@@ -17,7 +17,7 @@ AttackPhase :: AttackPhase(Player *player, GameMap *gameMap)
     
 }
 
-void AttackPhase :: attackLoop()
+void AgressiveAttack :: attackLoop()
 {
     //asks to attack
     //gets countries owned, picks country, gets armysize from country, gets neighbours owned by other playerID
@@ -54,7 +54,7 @@ void AttackPhase :: attackLoop()
 
 //compares attackers and defenders dice
 //keeps track of how many wins and looses occur so we can subtract that from the army count later on
-void AttackPhase :: compare(int attackDice, int defendDice)
+void AgressiveAttack :: compare(int attackDice, int defendDice)
 {
     winAttackCounter=0;
     winDefenseCounter=0;
@@ -193,7 +193,7 @@ void AttackPhase :: compare(int attackDice, int defendDice)
 //subtracts armies lost
 //if country is defeated, asks winner to move x amount of armies
 
-void AttackPhase::countrySelect(vector<Country*> allCountries)
+void AgressiveAttack::countrySelect(vector<Country*> allCountries)
 {
     
     

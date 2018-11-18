@@ -69,24 +69,7 @@ void ReinforceView::displayContriesPlayerOwns(vector<Country*> allCountries, Pla
     }
 }
 
-void ReinforceView::placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCountries, int numOfArmiesRecieved, Player *player){
-//    //calculates the number of armies to give per country
-//    int numOfArmiesToPlace = (numOfArmiesRecieved/allCountries.size());
-//    int numOfArmiesLeft = (numOfArmiesRecieved%allCountries.size());
-//
-//    cout << endl;
-//    cout << "The number of armies to be placed  country: " << numOfArmiesToPlace << endl;
-//    cout << "The number of armies left over be placed in a random country: " << numOfArmiesLeft << endl;
-//    cout << endl;
-    
-//    //loops through all the countries the player has and distributes the number of armies evenly among the countries
-//    for(int i = 0; i < allCountries.size(); i++)
-//    {
-//        gameMap->getCountry(allCountries[i]->getName())->setArmiesCount((gameMap->getCountry(allCountries[i]->getName())->getArmiesCount() + numOfArmiesToPlace));
-//    }
-//
-//    int randNum = (rand() % (allCountries.size()-1) + 0);
-//    gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
+bool ReinforceView::placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCountries, int numOfArmiesRecieved, Player *player){
     int numOfArmiesToPlace = numOfArmiesRecieved;
      cout << endl;
      cout << "The number of armies to be placed: " << numOfArmiesToPlace << endl;
@@ -94,23 +77,25 @@ void ReinforceView::placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCo
     do{
         for(int i = 0; i < allCountries.size(); i++)
         {
-            int userInput;
+            int userInput2;
             cout << "How many armies do you want to placed in " << allCountries[i]->getName() << "? -> ";
-            //do error validation
-            cin >> userInput;
-            
-            if(userInput > numOfArmiesToPlace){
-                cout << "Input entered is greater than the number of armies left to place" << endl;
-            }else{
-                numOfArmiesToPlace -= userInput;
-                gameMap->getCountry(allCountries[i]->getName())->setArmiesCount((gameMap->getCountry(allCountries[i]->getName())->getArmiesCount() + userInput));
+            cin >> userInput2;
+            if(!cin.good()){
+                return false;
             }
-            if(numOfArmiesToPlace == 0){
-                break;
-            }
+                if(userInput2 > numOfArmiesToPlace){
+                    cout << "Input entered is greater than the number of armies left to place" << endl;
+                }else{
+                    numOfArmiesToPlace -= userInput2;
+                    gameMap->getCountry(allCountries[i]->getName())->setArmiesCount((gameMap->getCountry(allCountries[i]->getName())->getArmiesCount() + userInput2));
+                }
+                if(numOfArmiesToPlace == 0){
+                    break;
+                }
         }
     }while(numOfArmiesToPlace > 0);
      cout << endl;
+     return true;
 }
 
 

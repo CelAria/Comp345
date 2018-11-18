@@ -88,25 +88,25 @@ int main(int argc, const char * argv[]) {
     //calls the reinforce method of the player to test it
     player.reinforce(&gameMap);
     
-    //case2
-    //add a new country to player
-    player.addCountry(gameMap.getCountry("Nicaragua"));
-    //give more cards to the player
-    for(int i=0; i< 3; ++i)
-    {
-        player.drawCard(&deck);
-    }
-    //number of countries owened by the player
-    cout << "Player1 now controls " << player.getCountriesCount() << " countries:" << endl;
-    allCountries = player.getAllCountries();
-    //displays the countries and their continents player 1 owns
-    for(int i = 0; i < allCountries.size(); i++)
-    {
-        cout << "\t• " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
-    }
-    cout << endl;
-    //calls the reinforce method of the player to test it again
-    player.reinforce(&gameMap);
+//    //case2
+//    //add a new country to player
+//    player.addCountry(gameMap.getCountry("Nicaragua"));
+//    //give more cards to the player
+//    for(int i=0; i< 3; ++i)
+//    {
+//        player.drawCard(&deck);
+//    }
+//    //number of countries owened by the player
+//    cout << "Player1 now controls " << player.getCountriesCount() << " countries:" << endl;
+//    allCountries = player.getAllCountries();
+//    //displays the countries and their continents player 1 owns
+//    for(int i = 0; i < allCountries.size(); i++)
+//    {
+//        cout << "\t• " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
+//    }
+//    cout << endl;
+//    //calls the reinforce method of the player to test it again
+//    player.reinforce(&gameMap);
     
     return 0;
 }

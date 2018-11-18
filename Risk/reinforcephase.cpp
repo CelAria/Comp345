@@ -67,8 +67,6 @@ void ReinforceController::start()
     
     view.displayContriesPlayerOwns(allCountries, player);
     
-
-    //randomly places the player's armies evenly in each of his or her countries
     view.placeArmiesRandomly(gameMap, allCountries, numOfArmiesRecieved , player);
 
 }

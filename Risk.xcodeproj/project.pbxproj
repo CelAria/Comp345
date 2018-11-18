@@ -21,6 +21,8 @@
 		34189EB7219E9F750059D6C0 /* passiveAttack.h in Headers */ = {isa = PBXBuildFile; fileRef = 34189EB5219E9F750059D6C0 /* passiveAttack.h */; };
 		34362E06218167C900838F6F /* attackphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34362E05218167C900838F6F /* attackphase.cpp */; };
 		34362E08218167EE00838F6F /* attackphase.h in Headers */ = {isa = PBXBuildFile; fileRef = 34362E07218167EE00838F6F /* attackphase.h */; };
+		34AD28D721A14B8700669DB6 /* BenevolentStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */; };
+		34AD28D821A14B8700669DB6 /* BenevolentStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 34AD28D621A14B8700669DB6 /* BenevolentStrategy.h */; };
 		34CB6CD92188E297004054F6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34CB6CD82188E297004054F6 /* main.cpp */; };
 		34CB6CE321894D0D004054F6 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */; };
@@ -277,6 +279,8 @@
 		34189EB5219E9F750059D6C0 /* passiveAttack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = passiveAttack.h; sourceTree = "<group>"; };
 		34362E05218167C900838F6F /* attackphase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackphase.cpp; sourceTree = "<group>"; };
 		34362E07218167EE00838F6F /* attackphase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackphase.h; sourceTree = "<group>"; };
+		34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BenevolentStrategy.cpp; sourceTree = "<group>"; };
+		34AD28D621A14B8700669DB6 /* BenevolentStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BenevolentStrategy.h; sourceTree = "<group>"; };
 		34CB6CD62188E297004054F6 /* AttackDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AttackDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CB6CD82188E297004054F6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6B0E768D217E62D5006CECD2 /* controllergamestart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = controllergamestart.cpp; sourceTree = "<group>"; };
@@ -603,6 +607,8 @@
 				B3A97EEB219CB6D600998A5D /* HumanPlayerStrategy.h */,
 				B3907F1A219E1A7400975BFC /* aggressivestrategy.cpp */,
 				B3907F1B219E1A7400975BFC /* aggressivestrategy.h */,
+				34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */,
+				34AD28D621A14B8700669DB6 /* BenevolentStrategy.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 				34362E08218167EE00838F6F /* attackphase.h in Headers */,
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B3A97EED219CB6D600998A5D /* HumanPlayerStrategy.h in Headers */,
+				34AD28D821A14B8700669DB6 /* BenevolentStrategy.h in Headers */,
 				B315F97121976D80005A899B /* observable.h in Headers */,
 				B315F96D21976A0D005A899B /* strategy.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
@@ -1046,6 +1053,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F5B9DB216E5F6300A20B50 /* maploader.cpp in Sources */,
+				34AD28D721A14B8700669DB6 /* BenevolentStrategy.cpp in Sources */,
 				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
 				B3907F1C219E1A7400975BFC /* aggressivestrategy.cpp in Sources */,
 				34189EB6219E9F750059D6C0 /* passiveAttack.cpp in Sources */,

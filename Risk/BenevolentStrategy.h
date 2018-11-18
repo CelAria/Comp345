@@ -15,3 +15,4 @@ class BenevolentStrategy: public Strategy {
     void reinforce(Player* player, GameMap* gameMap);
     int getType();
 };
+

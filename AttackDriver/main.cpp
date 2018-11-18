@@ -68,7 +68,8 @@ int main(int argc, const char * argv[]) {
 
     //creates 2 players with player ID's
     //creates gamemap and attackphase class
-    Strategy* strategy(new AggressiveStrategy);
+//    Strategy* strategy(new AggressiveStrategy);
+    Strategy* strategy(new BenevolentStrategy);
     Player player(1);
     Player player2(2,strategy);
     GameMap gameMap;
@@ -92,7 +93,7 @@ int main(int argc, const char * argv[]) {
 //    attack.attackLoop();
     player.attack(&gameMap);
     player2.attack(&gameMap);
-    player.attack(&gameMap);
+//    player.attack(&gameMap);
     
 
     

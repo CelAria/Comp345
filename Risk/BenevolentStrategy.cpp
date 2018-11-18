@@ -23,7 +23,7 @@ void BenevolentStrategy::reinforce(Player *player, GameMap *gameMap) {
     
 }
 
-int AggressiveStrategy::getType() {
+int BenevolentStrategy::getType() {
     return 2;
 }
 

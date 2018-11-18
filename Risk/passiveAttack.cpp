@@ -31,7 +31,10 @@ void PassiveAttack :: attackLoop()
     
     
     bool start = false;
-    cout<<"Do you want to attack?"<<endl;
+    
+    playerID = player->getPlayerId();
+    cout<<"Player# " <<playerID <<" Do you want to attack?"<<endl;
+    cout<<"no"<<endl;
     
     
     while(start)

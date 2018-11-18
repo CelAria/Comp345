@@ -7,6 +7,7 @@
 #include "strategy.h"
 #include "HumanPlayerStrategy.h"
 #include "aggressivestrategy.h"
+#include "BenevolentStrategy.h"
 
 
 #include <map>

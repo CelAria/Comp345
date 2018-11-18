@@ -454,7 +454,7 @@
 			path = GamePlay;
 			sourceTree = "<group>";
 		};
-		B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */ = {
+		B315A48D2165CCCC005CAFD4 /* StatsWinnerDriver */ = {
 			isa = PBXGroup;
 			children = (
 				6B9E4A142170F605003F8DBC /* Brazil(brokenmap).map */,
@@ -463,7 +463,7 @@
 				6BB65C9E216BEFD0007AFC39 /* World.map */,
 				B315A48E2165CCCC005CAFD4 /* main.cpp */,
 			);
-			path = MapLoaderDriver;
+			path = StatsWinnerDriver;
 			sourceTree = "<group>";
 		};
 		B32D385E218E54FE000C1568 /* GameLoopDriver */ = {
@@ -504,7 +504,7 @@
 				B3BB80A02165ABE9005177BB /* Risk */,
 				B3BB80E22165B7DA005177BB /* GameMapDriver */,
 				B3BB81152165BF08005177BB /* DiceDriver */,
-				B315A48D2165CCCC005CAFD4 /* MapLoaderDriver */,
+				B315A48D2165CCCC005CAFD4 /* StatsWinnerDriver */,
 				B3B2E8D421669CE300C2A4BA /* CardsDeckDriver */,
 				B3B2E8E32166AD0100C2A4BA /* PlayerDriver */,
 				B35FED73217ADD2B00FE6FA7 /* FortifyControllerDriver */,

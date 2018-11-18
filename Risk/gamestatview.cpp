@@ -45,20 +45,29 @@ void GameStatView::print(){
    // clearScreen();
     cout << "\nWorld Domination View" << endl;
     cout << "************************" << endl;
-    cout << "Countries owned: ";
+    cout << "Order of Play: ";
+    for (vector<Player*>::const_iterator i = maingame->getPlayers().begin(); i != maingame->getPlayers().end(); ++i){
+        std::cout << "player " << (*i)->getPlayerId() << ", ";
+    }
+    cout << "\nTotal Countries in Map: " << maingame->getGameMap()->getCount();
     
+    cout << "\nCountries owned: ";
+    
+   
     vector<Player*> a= maingame->getPlayers();
     vector<Player*>::iterator it;
+    int j=0;
     for ( it = a.begin(); it != a.end(); it++ )
     {
-        cout << "Player " << (*it)->getPlayerId() << ":" << "[" << (*it)->getCountriesCount() << "], ";
-       
+        cout << "Player " << (*it)->getPlayerId() << ":" << "[" << (*it)->getAllCountries().size() << "], ";
+        
         if(testWinner(*it)==true){
             cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@"<< endl;
             cout << "WINNER IS PLAYER "<< (*it)->getPlayerId() << endl;
             cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@"<< endl;
             exit(0);
         }
+        j++;
     }
     cout << endl;
     
@@ -75,7 +84,7 @@ void GameStatView::print(){
         }
         cout << "|  player " <<  player << ": " << owned << "%" << endl;
     }
-    cout << "************************" << endl;
     }
+    cout << "************************" << endl;
 };
 

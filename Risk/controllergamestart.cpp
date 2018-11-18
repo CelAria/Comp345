@@ -55,7 +55,7 @@ int GameStart::selectPlayers(){
             selectPlayers();
         }
         else{
-            cout << "(" <<  numberofplayers << ")" << " players have been created. Assign each player a unique player number ID between (1) and" << " (" << numberofplayers << ")." << " Player order will now be shuffled...\n" << endl;
+//            cout << "(" <<  numberofplayers << ")" << " players have been created. Assign each player a unique player number ID between (1) and" << " (" << numberofplayers << ")." << " Player order will now be shuffled...\n" << endl;
             return numberofplayers;
         }
     }
@@ -103,11 +103,11 @@ vector<Player*> GameStart::playerOrder(){
     std::mt19937 urng(rng());
     shuffle(begin(players), end(players), urng);
     
-    cout << "Order of Play: ";
-    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
-        std::cout << "player " << (*i)->getPlayerId() << ", ";
-    }
-    cout << endl;
+//    cout << "Order of Play: ";
+//    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
+//        std::cout << "player " << (*i)->getPlayerId() << ", ";
+//    }
+//    cout << endl;
     return players;
 };
 

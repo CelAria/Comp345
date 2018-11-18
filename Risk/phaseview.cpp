@@ -36,6 +36,14 @@ string PhaseView::getPhaseHeader() {
 
 void PhaseView::print() {
     clearScreen();
+    if(state.phase == REINFORCE) {
+        cout << endl;
+        cout << "****************************************************" << endl;
+        cout << "Player " << state.currentPlayer->getPlayerId() << " Turn Start" << endl;
+        cout << "****************************************************" << endl;
+        cout << endl;
+        state.gameMap->traverseAll(true);
+    }
     cout << getPhaseHeader();
 }
 
@@ -45,5 +53,5 @@ void PhaseView::update(State &state) {
 }
 
 void PhaseView::clearScreen() {
-    system("clear");
+    //system("clear");
 }

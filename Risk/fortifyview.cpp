@@ -86,6 +86,6 @@ bool FortifyView::promptUserYesNo(string prompt) {
             return promptUserYesNo(prompt);
         }
     } else {
-        return promptUserYesNo(prompt);
+        return false;
     }
 }

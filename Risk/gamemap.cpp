@@ -1,6 +1,7 @@
 #include "gamemap.h"
 #include "country.h"
 #include "continent.h"
+#include "player.h"
 #include <vector>
 #include <string>
 #include <set>
@@ -83,10 +84,10 @@ void GameMap::traverseHelper(Country* country, map<string, bool> &visited, int &
     vector<Country*> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
-        cout << "[ P" << country->getOwner() << ": " << country->getName() << ", " << country->getContinentName() << " (" << country->getArmiesCount() << " Armies) ]\t---> " << endl;
+        cout << country->toString() << endl;
         
         for(int i = 0; i < neighbors.size(); i++) {
-            cout << "{ P" << neighbors[i]->getOwner() << ": " << neighbors[i]->getName() << ", " << neighbors[i]->getContinentName() << " (" << neighbors[i]->getArmiesCount() << " Armies) }  ";
+            cout << "---\t" << neighbors[i]->toString() << endl;
         }
         
         cout << endl << endl;
@@ -131,10 +132,10 @@ void GameMap::continentTraverseHelper(Country* country, map<string, bool> &visit
     vector<Country*> neighbors = country->getAllNeighbors();
 
     if(isDebug) {
-        cout << "[ P" << country->getOwner() << ": " << country->getName() << ", " << country->getContinentName() << " (" << country->getArmiesCount() << " Armies) ]\t---> " << endl;
+        cout << "[ P" << country->getOwner()->getPlayerId() << ": " << country->getName() << ", " << country->getContinentName() << " (" << country->getArmiesCount() << " Armies) ]\t---> " << endl;
         
         for(int i = 0; i < neighbors.size(); i++) {
-            cout << "{ P" << neighbors[i]->getOwner() << ": " << neighbors[i]->getName() << ", " << neighbors[i]->getContinentName() << " (" << neighbors[i]->getArmiesCount() << " Armies) }  ";
+            cout << "{ P" << neighbors[i]->getOwner()->getPlayerId() << ": " << neighbors[i]->getName() << ", " << neighbors[i]->getContinentName() << " (" << neighbors[i]->getArmiesCount() << " Armies) }  ";
         }
         
         cout << endl << endl;

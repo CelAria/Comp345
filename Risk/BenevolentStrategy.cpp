@@ -7,6 +7,8 @@
 //
 
 #include "BenevolentStrategy.h"
+#include "fortifycontroller.h"
+#include "country.h"
 #include "passiveAttack.h"
 #include "gamemap.h"
 
@@ -16,7 +18,27 @@ void BenevolentStrategy::attack(Player *player, GameMap *gameMap) {
 }
 
 void BenevolentStrategy::fortify(Player *player, GameMap *gameMap) {
+    FortifyController fortifyController;
     
+    vector<Country*> countries = player->getAllCountries();
+    
+    Country* weakestCountry = countries[0];
+    for(int i = 0; i < countries.size(); ++i) {
+        if(countries[i]->getArmiesCount() < weakestCountry->getArmiesCount()) {
+            weakestCountry = countries[i];
+        }
+    }
+    
+    cout << "Weakest country is:" << endl;
+    cout << "\t" << weakestCountry->toString() << endl << endl;
+    
+    for(int i = 0; i < countries.size(); ++i) {
+        if(countries[i] != weakestCountry && countries[i]->getArmiesCount() > 1) {
+            int amount = countries[i]->getArmiesCount() - 1;
+            cout << "Moving " << amount << " armies from " << countries[i]->getName() << " to " << weakestCountry->getName() << endl;
+            fortifyController.moveArmies(countries[i], weakestCountry, amount);
+        }
+    }
 }
 
 void BenevolentStrategy::reinforce(Player *player, GameMap *gameMap) {

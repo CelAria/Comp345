@@ -14,51 +14,53 @@ using namespace std;
 void FortifyController::start() {
     view.presentFortify();
     
-    Country* fromCountry = view.promptUserForOrigin(player->getAllCountries());
-    
-    if(fromCountry != NULL) {
-        if(fromCountry->getArmiesCount() > 1) {
-            vector<Country*> neighbors = fromCountry->getAllNeighbors();
-            vector<Country*> eligibleNeighbors;
-            for(int i = 0; i < neighbors.size(); ++i) {
-                if(neighbors[i]->getOwner()->getPlayerId() == player->getPlayerId()) {
-                    eligibleNeighbors.push_back(neighbors[i]);
+    if(view.promptUserYesNo("Would you like to fortify? (y/n)")) {
+        Country* fromCountry = view.promptUserForOrigin(player->getAllCountries());
+        
+        if(fromCountry != NULL) {
+            if(fromCountry->getArmiesCount() > 1) {
+                vector<Country*> neighbors = fromCountry->getAllNeighbors();
+                vector<Country*> eligibleNeighbors;
+                for(int i = 0; i < neighbors.size(); ++i) {
+                    if(neighbors[i]->getOwner()->getPlayerId() == player->getPlayerId()) {
+                        eligibleNeighbors.push_back(neighbors[i]);
+                    }
                 }
-            }
-            
-            if(eligibleNeighbors.size() > 0) {
-                Country* toCountry = view.promptUserForDestination(eligibleNeighbors);
                 
-                if(toCountry != NULL) {
-                    int amount = view.promptUserForAmountOfArmies(fromCountry);
+                if(eligibleNeighbors.size() > 0) {
+                    Country* toCountry = view.promptUserForDestination(eligibleNeighbors);
                     
-                    if(amount > 0) {
-                        moveArmies(fromCountry, toCountry, amount);
+                    if(toCountry != NULL) {
+                        int amount = view.promptUserForAmountOfArmies(fromCountry);
+                        
+                        if(amount > 0) {
+                            moveArmies(fromCountry, toCountry, amount);
+                        } else {
+                            if(view.promptUserYesNo("That is an invalid amount. Try again? (y/n)")) {
+                                start();
+                            }
+                        }
                     } else {
-                        if(view.promptUserYesNo("That is an invalid amount. Try again? (y/n)")) {
+                        if(!view.promptUserYesNo("Skip the fortify phase? (y/n)")) {
                             start();
                         }
                     }
                 } else {
-                    if(!view.promptUserYesNo("Skip the fortify phase? (y/n)")) {
+                    string prompt = fromCountry->getName() + " doesn't have any adjacent countries to move armies to. Try again? (y/n)";
+                    if(view.promptUserYesNo(prompt)) {
                         start();
                     }
                 }
             } else {
-                string prompt = fromCountry->getName() + " doesn't have any adjacent countries to move armies to. Try again? (y/n)";
+                string prompt = fromCountry->getName() + " doesn't have enough armies. Try again? (y/n)";
                 if(view.promptUserYesNo(prompt)) {
                     start();
                 }
             }
         } else {
-            string prompt = fromCountry->getName() + " doesn't have enough armies. Try again? (y/n)";
-            if(view.promptUserYesNo(prompt)) {
+            if(!view.promptUserYesNo("Skip the fortify phase? (y/n)")) {
                 start();
             }
-        }
-    } else {
-        if(!view.promptUserYesNo("Skip the fortify phase? (y/n)")) {
-            start();
         }
     }
     

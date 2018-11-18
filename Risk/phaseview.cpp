@@ -42,7 +42,9 @@ void PhaseView::print() {
         cout << "Player " << state.currentPlayer->getPlayerId() << " Turn Start" << endl;
         cout << "****************************************************" << endl;
         cout << endl;
-        state.gameMap->traverseAll(true);
+        if(promptUserYesNo("Would you like to see the game map? (y/n)")) {
+            state.gameMap->traverseAll(true);
+        }
     }
     cout << getPhaseHeader();
 }
@@ -54,4 +56,23 @@ void PhaseView::update(State &state) {
 
 void PhaseView::clearScreen() {
     //system("clear");
+}
+
+bool PhaseView::promptUserYesNo(string prompt) {
+    cout << prompt << endl;
+    
+    char answer;
+    cin >> answer;
+    
+    if(cin.good()) {
+        if(answer == 'y' || answer == 'Y') {
+            return true;
+        } else if(answer == 'n' || answer == 'N') {
+            return false;
+        } else {
+            return promptUserYesNo(prompt);
+        }
+    } else {
+        return false;
+    }
 }

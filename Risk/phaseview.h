@@ -20,4 +20,5 @@ private:
 public:
     void print();
     void update(State& state);
+    bool promptUserYesNo(string prompt);
 };

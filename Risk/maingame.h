@@ -41,4 +41,5 @@ public:
     bool isGameOver();
     void playGame();
     void notifyObservers();
+    void notifyGameOver();
 };

@@ -15,6 +15,7 @@ typedef enum : int {
     ATTACK,
     REINFORCE,
     FORTIFY,
+    GAME_OVER
 } Phase;
 
 class State {

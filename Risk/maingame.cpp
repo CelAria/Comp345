@@ -56,6 +56,7 @@ void MainGame::playGame() {
     }
     
     phase = GAME_OVER;
+    notifyGameOver();
 }
 
 /**

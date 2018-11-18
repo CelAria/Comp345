@@ -223,7 +223,7 @@ void PassiveAttack::countrySelect(vector<Country*> allCountries)
             
             for(int i=0; i<potentialEnemies.size(); i++)
             {
-                if((potentialEnemies[i]->hasNeighbors()) && potentialEnemies[i]->getOwner() != player->getPlayerId())
+                if((potentialEnemies[i]->hasNeighbors()) && potentialEnemies[i]->getOwner()->getPlayerId() != player->getPlayerId())
                 {
                     enemies.push_back(potentialEnemies[i]);
                 }
@@ -320,7 +320,7 @@ void PassiveAttack::countrySelect(vector<Country*> allCountries)
             moveArmies=attackView.moveArmies();
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
-                enemies[selectAttackCountry - 1]->setOwner(player->getPlayerId());
+                enemies[selectAttackCountry - 1]->setOwner(player);
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
                 player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));
                 gameMap->getCountry(allCountries[selectCountry - 1]->getName())->setArmiesCount(allCountries[selectCountry - 1]->getArmiesCount()-moveArmies);

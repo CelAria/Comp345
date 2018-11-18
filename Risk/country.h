@@ -1,5 +1,6 @@
 #pragma once
 
+#include "player.h"
 #include <set>
 #include <string>
 #include <vector>
@@ -13,7 +14,7 @@ class Country {
     string name;
     string continentName;
     int iterationCount;
-    int playerId;
+    Player* player;
     int armiesCount;
     int stratType;
     set<Country*> neighbors;
@@ -28,8 +29,8 @@ class Country {
     void addNeighbor(Country &neighbor);
     int getNeighborCount() { return (int)neighbors.size(); };
     int getArmiesCount() { return armiesCount; };
-    void setOwner(int playerId) { this->playerId = playerId; };
-    int getOwner() { return playerId; }
+    void setOwner(Player* player) { this->player = player; };
+    int getOwner() { return player; }
     void setStrat(int stratType) {this->stratType = stratType;};
     int getStrat(){return stratType;}
     void setArmiesCount(int count) { this->armiesCount = count; };

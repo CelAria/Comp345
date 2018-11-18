@@ -21,10 +21,8 @@ void Player::reinforce(GameMap* gameMap) {
 }
 
 void Player::addCountry(Country *country) {
-    country->setOwner(id);
-    country->setStrat(strategy->getType());
+    country->setOwner(this);
     countries[country->getName()] = country;
-    
 }
 
 
@@ -50,7 +48,7 @@ void Player:: getDiceRollsDefend(int amountOfDice){
 
 void Player::transferCountryTo(string countryName, Player *player) {
     Country* toBeTransfered = countries[countryName];
-    toBeTransfered->setOwner(player->getPlayerId());
+    toBeTransfered->setOwner(player);
     
     map<string,Country*>::iterator it = countries.find(countryName);
     countries.erase(it);

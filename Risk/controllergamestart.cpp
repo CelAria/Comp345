@@ -55,7 +55,7 @@ int GameStart::selectPlayers(){
             selectPlayers();
         }
         else{
-            cout << "(" <<  numberofplayers << ")" << " players have been created. Assign each player a unique player number ID between (1) and" << " (" << numberofplayers << ")." << " Player order will now be shuffled...\n" << endl;
+//            cout << "(" <<  numberofplayers << ")" << " players have been created. Assign each player a unique player number ID between (1) and" << " (" << numberofplayers << ")." << " Player order will now be shuffled...\n" << endl;
             return numberofplayers;
         }
     }
@@ -103,11 +103,11 @@ vector<Player*> GameStart::playerOrder(){
     std::mt19937 urng(rng());
     shuffle(begin(players), end(players), urng);
     
-    cout << "Order of Play: ";
-    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
-        std::cout << "player " << (*i)->getPlayerId() << ", ";
-    }
-    cout << endl;
+//    cout << "Order of Play: ";
+//    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
+//        std::cout << "player " << (*i)->getPlayerId() << ", ";
+//    }
+//    cout << endl;
     return players;
 };
 
@@ -127,23 +127,24 @@ vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
         case 6: numArmies=20;
             break;
     }
-    //cout << "\n number of armies:" << numArmies << endl;
 
     //For each player one by one
     for(int i = 0; i < players.size(); i++){
         //get the player's countries
         Player* player = players[i];
-       // cout << "\nPlayer " << player->getPlayerId() << " is assigning armies:" << endl;
         vector<Country*> playerCountries = player->getAllCountries();
         
-        //as long as there are armies to give
-        for(int j = 0; j < numArmies; j++) {
+        //check that one army is placed on each country owned
+        for(int k=0; k <playerCountries.size(); k++){
+          playerCountries[k]->IncrementArmiesCount();
+        }
+        //as long as there are remaining armies to give
+        for(int j = 0; j < (numArmies-playerCountries.size()); j++) {
             //place one army at a random country
             int randomnum = rand() %  playerCountries.size();
             //cout << "add army to " << playerCountries[randomnum]->getName() << endl;
             playerCountries[randomnum]->IncrementArmiesCount();
         }
-       // cout << endl;
     }
     
     return players;
@@ -171,8 +172,6 @@ vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
     
     for(int i = 0; i < randomorder.size(); i++) {
         Country* toBeAssigned = allCountries[randomorder[i]];
-        
-       // cout << "assign " << toBeAssigned->getName() << " to player ID" << m % players.size() + 1 << endl;
         
         players.at(m % players.size())->addCountry(toBeAssigned);
         

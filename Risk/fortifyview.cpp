@@ -50,7 +50,6 @@ Country* FortifyView::promptCountrySelect(string prompt, vector<Country*> countr
         if(!oneline) {
             vector<Country*> neighbors = countries[i]->getAllNeighbors();
             for(int j = 0; j < neighbors.size(); j++) {
-                cout << "\t|" << endl;
                 cout << "\t -- ";
                 cout << neighbors[j]->toString() << endl;
             }
@@ -86,6 +85,6 @@ bool FortifyView::promptUserYesNo(string prompt) {
             return promptUserYesNo(prompt);
         }
     } else {
-        return promptUserYesNo(prompt);
+        return false;
     }
 }

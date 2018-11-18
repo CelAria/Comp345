@@ -6,6 +6,8 @@
 #include "gamemap.h"
 #include "strategy.h"
 #include "HumanPlayerStrategy.h"
+#include "aggressivestrategy.h"
+#include "BenevolentStrategy.h"
 
 
 #include <map>
@@ -54,6 +56,8 @@ public:
     void transferCountryTo(string countryName, Player* player);
     Strategy* getStrategy() {return this->strategy;};
     void setStrategy(Strategy* strategy) {this->strategy = strategy;};
+   
+    
    
     ~Player() {delete hand;delete strategy;};
 };

@@ -20,6 +20,10 @@ private:
     GameMap* gameMap;
     
 public:
+    FortifyController() {
+        view = FortifyView();
+    };
+    
     FortifyController(Player* player, GameMap* gameMap) {
         this->player = player;
         this->gameMap = gameMap;

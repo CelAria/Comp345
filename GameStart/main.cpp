@@ -41,19 +41,18 @@ int main(int argc, const char * argv[]) {
     
     GameMap* gameMap = mymaploader.readmapfile(mymaploader.selectMap(directory), directory);
     GameStart game;
-    
     //create game deck of cards
     Deck* deck =game.createDeck(gameMap);
-    
     //player input
     int numberOfPlayers = game.selectPlayers();
-    
     //create player objects with hand of empty cards and dice facilities
     vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
-    
     MainGame* main= new MainGame(gameMap, players, deck);
-    GameStatView gamestatview;
-    gamestatview.print(main);
+    GameStatView* gamestatview= new GameStatView(main);
+    gamestatview->print();
     delete main;
-
+    MainGame* mainGame = new MainGame(gameMap, players, deck);
+    GameStatView* statsView= new GameStatView(mainGame);
+    mainGame->addObserver(statsView);
+    mainGame->playGame();
 }

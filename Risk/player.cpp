@@ -21,7 +21,7 @@ void Player::reinforce(GameMap* gameMap) {
 }
 
 void Player::addCountry(Country *country) {
-    country->setOwner(id);
+    country->setOwner(this);
     countries[country->getName()] = country;
 }
 
@@ -48,7 +48,7 @@ void Player:: getDiceRollsDefend(int amountOfDice){
 
 void Player::transferCountryTo(string countryName, Player *player) {
     Country* toBeTransfered = countries[countryName];
-    toBeTransfered->setOwner(player->getPlayerId());
+    toBeTransfered->setOwner(player);
     
     map<string,Country*>::iterator it = countries.find(countryName);
     countries.erase(it);
@@ -59,7 +59,7 @@ void Player::transferCountryTo(string countryName, Player *player) {
 vector<Country*> Player::getAllCountries() {
     vector<Country*> theCountries;
     for(auto &country: countries) {
-        if(country.second->getOwner() != this->id) {
+        if(country.second->getOwner()->getPlayerId() != this->id) {
             countries.erase(country.second->getName());
         } else {
             theCountries.push_back(country.second);
@@ -72,7 +72,7 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
     vector<Country*> theCountries;
     for(auto &country: countries) {
         if(country.second->getContinentName() == continent) {
-            if(country.second->getOwner() != this->id) {
+            if(country.second->getOwner()->getPlayerId() != this->id) {
                 countries.erase(country.second->getName());
             } else {
                 theCountries.push_back(country.second);
@@ -88,3 +88,6 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
 bool Player::controlsContinent(string name, GameMap *gameMap) {
     return getCountriesByContinent(name).size() == gameMap->getAllByContinent(name).size();
 }
+
+
+

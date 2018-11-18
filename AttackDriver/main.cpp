@@ -10,6 +10,8 @@
 #include <iostream>
 #include "player.h"
 #include "attackphase.h"
+#include "strategy.h"
+
 
 
 
@@ -48,9 +50,9 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2)
     gameMap->addCountry("Venezuela", "South America", venNeighbors);
 
     gameMap->getCountry("Costa Rica")->setArmiesCount(2);
-    gameMap->getCountry("Venezuela")->setArmiesCount(4);
+    gameMap->getCountry("Venezuela")->setArmiesCount(1);
     gameMap->getCountry("Colombia")->setArmiesCount(4);
-    gameMap->getCountry("Panama")->setArmiesCount(2);
+    gameMap->getCountry("Panama")->setArmiesCount(1);
     gameMap->getCountry("Nicaragua")->setArmiesCount(2);
 
     player->addCountry(gameMap->getCountry("Costa Rica"));
@@ -66,12 +68,18 @@ int main(int argc, const char * argv[]) {
 
     //creates 2 players with player ID's
     //creates gamemap and attackphase class
-    
+//    Strategy* strategy(new AggressiveStrategy);
+    Strategy* strategy(new BenevolentStrategy);
     Player player(1);
-    Player player2(2);
+    Player player2(2,strategy);
     GameMap gameMap;
     AttackPhase attack(&player,&gameMap);
-  
+   
+    
+    
+    
+    
+   
     
     //prints players ID just to check two players are playing
     cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
@@ -82,7 +90,10 @@ int main(int argc, const char * argv[]) {
     
 
     //calls attack loop
-    attack.attackLoop();
+//    attack.attackLoop();
+    player.attack(&gameMap);
+    player2.attack(&gameMap);
+//    player.attack(&gameMap);
     
 
     

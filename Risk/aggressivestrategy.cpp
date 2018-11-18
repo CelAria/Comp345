@@ -8,18 +8,18 @@
 
 #include "aggressivestrategy.h"
 
-void AggressiveStrategy::Strategy::attack(Player *player, GameMap *gameMap) {
+void AggressiveStrategy::attack(Player *player, GameMap *gameMap) {
     
 }
 
-void AggressiveStrategy::Strategy::fortify(Player *player, GameMap *gameMap) {
+void AggressiveStrategy::fortify(Player *player, GameMap *gameMap) {
     
 }
 
-void AggressiveStrategy::Strategy::reinforce(Player *player, GameMap *gameMap) {
+void AggressiveStrategy::reinforce(Player *player, GameMap *gameMap) {
     
 }
 
-int AggressiveStrategy::Strategy::getType() {
+int AggressiveStrategy::getType() {
     return 1;
 }

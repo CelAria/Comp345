@@ -6,6 +6,7 @@
 #include "gamemap.h"
 #include "strategy.h"
 #include "HumanPlayerStrategy.h"
+#include "aggressivestrategy.h"
 
 
 #include <map>

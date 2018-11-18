@@ -7,8 +7,12 @@
 //
 
 #include "aggressivestrategy.h"
+#include "agressiveAttack.h"
+#include "gamemap.h"
 
 void AggressiveStrategy::Strategy::attack(Player *player, GameMap *gameMap) {
+    AgressiveAttack playerAttack(player,gameMap);
+    playerAttack.attackLoop();
     
 }
 

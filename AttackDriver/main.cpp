@@ -10,6 +10,7 @@
 #include <iostream>
 #include "player.h"
 #include "attackphase.h"
+#include "strategy.h"
 
 
 
@@ -68,11 +69,16 @@ int main(int argc, const char * argv[]) {
     //creates 2 players with player ID's
     //creates gamemap and attackphase class
     
-    Player player(1,);
+    Player player(1);
     Player player2(2);
     GameMap gameMap;
     AttackPhase attack(&player,&gameMap);
+    Strategy* strategy(new AggressiveStrategy);
     
+    
+    
+    
+   
     
     //prints players ID just to check two players are playing
     cout << "Player #" << player.getPlayerId() << ":" << endl << endl;

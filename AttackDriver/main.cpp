@@ -51,8 +51,8 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2)
 
     gameMap->getCountry("Costa Rica")->setArmiesCount(2);
     gameMap->getCountry("Venezuela")->setArmiesCount(1);
-    gameMap->getCountry("Colombia")->setArmiesCount(1);
-    gameMap->getCountry("Panama")->setArmiesCount(3);
+    gameMap->getCountry("Colombia")->setArmiesCount(4);
+    gameMap->getCountry("Panama")->setArmiesCount(1);
     gameMap->getCountry("Nicaragua")->setArmiesCount(2);
 
     player->addCountry(gameMap->getCountry("Costa Rica"));

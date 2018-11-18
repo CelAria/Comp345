@@ -244,11 +244,12 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             
             for(int i=0; i<potentialEnemies.size(); i++)
             {
-                if( potentialEnemies[i]->getOwner()->getPlayderId() != player->getPlayerId())
+                if( potentialEnemies[i]->getOwner()->getPlayerId() != player->getPlayerId())
                 {
                     enemies.push_back(potentialEnemies[i]);
                 }
                 
+            
                 
             }
             
@@ -306,11 +307,11 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
     cout<<"defending player...how many dice do you want to roll? " << endl;
     while(defendDiceLoop){
         
-        if(enemies[selectAttackCountry - 1]->getOwner()->getStrat()->getType() == 0){
+        if(enemies[selectAttackCountry - 1]->getOwner()->getStrategy()->getType() == 0){
             diceAmountDefend = attackView.pickDice();
         }
         
-        if(enemies[selectAttackCountry - 1]->getOwner()->getStrat()->getType() == 1){
+        if(enemies[selectAttackCountry - 1]->getOwner()->getStrategy()->getType() == 1){
             cout<<2<<endl;
             diceAmountDefend =2;
             if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
@@ -331,7 +332,7 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
            
         
         
-        if(enemies[selectAttackCountry - 1]->getOwner()->getStrat()->getType() == 2){
+        if(enemies[selectAttackCountry - 1]->getOwner()->getStrategy()->getType() == 2){
             
             cout<<2<<endl;
             diceAmountDefend =2;

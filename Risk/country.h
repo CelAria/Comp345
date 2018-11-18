@@ -1,10 +1,11 @@
 #pragma once
 
-#include "player.h"
 #include <set>
 #include <string>
 #include <vector>
 using namespace std;
+
+class Player;
 
 /**
  Represents a node in the GameMap graph

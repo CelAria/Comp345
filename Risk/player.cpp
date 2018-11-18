@@ -59,7 +59,7 @@ void Player::transferCountryTo(string countryName, Player *player) {
 vector<Country*> Player::getAllCountries() {
     vector<Country*> theCountries;
     for(auto &country: countries) {
-        if(country.second->getOwner() != this->id) {
+        if(country.second->getOwner()->getPlayerId() != this->id) {
             countries.erase(country.second->getName());
         } else {
             theCountries.push_back(country.second);
@@ -72,7 +72,7 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
     vector<Country*> theCountries;
     for(auto &country: countries) {
         if(country.second->getContinentName() == continent) {
-            if(country.second->getOwner() != this->id) {
+            if(country.second->getOwner()->getPlayerId() != this->id) {
                 countries.erase(country.second->getName());
             } else {
                 theCountries.push_back(country.second);

@@ -1,7 +1,7 @@
-// Team project assignment #2 - Part 4
+// Team project assignment #3
 // COMP 345: Advanced program design with C++, Fall 2018
 // Written by: Martin-John Hearty
-// Description: header file for the deck and hand
+//
 // ------------------------------------------------------
 
 #include "agressiveReinforce.h"

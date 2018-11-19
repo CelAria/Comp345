@@ -1,10 +1,8 @@
+// Team project assignment #3
+// COMP 345: Advanced program design with C++, Fall 2018
+// Written by: Martin-John Hearty
 //
-//  agressiveReinforce.hpp
-//  Risk
-//
-//  Created by Martin-John Hearty on 2018-11-18.
-//  Copyright © 2018 comp345. All rights reserved.
-//
+// ------------------------------------------------------
 
 #pragma once
 

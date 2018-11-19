@@ -51,7 +51,7 @@ int main(int argc, const char * argv[]) {
     Deck* deck =game.createDeck(gameMap);
 
     MainGame* mainGame = new MainGame(gameMap, players, deck);
-    GameStatView* statsView= new GameStatView(players);
+    GameStatView* statsView= new GameStatView(gameMap, players);
     mainGame->addObserver(statsView);
     p1->addObserver(statsView);
     p2->addObserver(statsView);

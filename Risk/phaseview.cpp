@@ -19,15 +19,23 @@ string PhaseView::getPhaseHeader() {
     string phaseName = "";
     switch(state.phase) {
         case REINFORCE:
-            phaseName = "Reinforce";
+            return getHeaderWith("Reinforce");
             break;
         case ATTACK:
-            phaseName = "Attack";
+            return getHeaderWith("Attack");
             break;
         case FORTIFY:
-            phaseName = "Fortify";
+            return getHeaderWith("Fortify");
             break;
+        case MOVE_COUNTRY:
+            return "";
+            break;
+        case GAME_OVER:
+            return "";
     }
+}
+
+string PhaseView::getHeaderWith(string phaseName) {
     stringstream outstream;
     outstream << "****************************************************" << endl;
     outstream << "Player " << state.currentPlayer->getPlayerId() << " - " << phaseName << " Phase:" << endl;

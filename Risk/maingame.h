@@ -37,9 +37,9 @@ public:
     vector<Player*>& getPlayers(){return players;}
     GameMap* getGameMap(){return gameMap;}
     Player* getNextPlayer(){return players[turn];};
-    Player* getWinner();
+    Player* getWinner(); //returns winner or NULL if game is not over yet
     bool isGameOver();
-    void playGame();
+    void playGame(); //game entry point
     void notifyObservers();
     void notifyGameOver();
 };

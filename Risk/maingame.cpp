@@ -49,6 +49,9 @@ void MainGame::executeTurn() {
     updateTurn();
 }
 
+/**
+ The main loop of the game
+ */
 void MainGame::playGame() {
     
     while(!isGameOver()) {

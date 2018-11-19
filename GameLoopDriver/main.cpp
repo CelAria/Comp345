@@ -18,15 +18,18 @@ int main(int argc, const char * argv[]) {
     
     const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/StatsWinnerDriver";
     
+    //initialize a game
     GameStart gameStart;
     GameMap* gameMap = gameStart.createGameMap(directory);
     Deck* deck = gameStart.createDeck(gameMap);
     vector<Player*> players = gameStart.createPlayers(gameStart.selectPlayers(), gameMap);
     
+    //initialize views
     MainGame mainGame = MainGame(gameMap, players, deck);
     PhaseView phaseView;
     GameStatView gameStatView(gameMap, players);
     
+    //set observers
     mainGame.addObserver(&phaseView);
     for(int i = 0; i < players.size(); ++i) {
         players[i]->addObserver(&gameStatView);

@@ -12,6 +12,7 @@
 
 class Player;
 
+//Enum for keeping track of the game state
 typedef enum : int {
     ATTACK,
     REINFORCE,
@@ -20,6 +21,8 @@ typedef enum : int {
     MOVE_COUNTRY
 } Phase;
 
+//A data structure that represents
+//the game at a certain moment in time
 class State {
 public:
     Phase phase;
@@ -34,7 +37,7 @@ public:
 
 class Observer {
 public:
-    virtual void update(State& state) = 0;
+    virtual void update(State& state) = 0; //update observer with the curren state of the game
 };
 
 

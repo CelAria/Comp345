@@ -16,10 +16,10 @@ using namespace std;
 //returns map of player ID and percentage owned
 map<string,int> GameStatView::worlddominationview(){
     
-    for(vector<Player*>:: iterator it= maingame->getPlayers().begin(); it != maingame->getPlayers().end(); ++it){
+    for(vector<Player*>:: iterator it= players.begin(); it != players.end(); ++it){
         //get the number of countries owned by each player
         int numcountries=(*it)->getAllCountries().size();
-        worlddominationmap[to_string((*it)->getPlayerId())]= round((float(numcountries)/maingame->getGameMap()->getCount())*100.0);
+        worlddominationmap[to_string((*it)->getPlayerId())]= round((float(numcountries)/state.gameMap->getCount())*100.0);
     }
     return worlddominationmap;
 };
@@ -33,28 +33,28 @@ void GameStatView::update(State& state){
 
 //tests if a player owns all the countries
 bool GameStatView::testWinner(Player* player){
-    if(player->getCountriesCount()==maingame->getGameMap()->getCount()){return true;}
+    if(player->getCountriesCount()==state.gameMap->getCount()){return true;}
     else return false;
 };
 
 // print function which outputs to the terminal
 void GameStatView::print(){
-   // clearScreen();
+
     cout << "\nWorld Domination View" << endl;
     cout << "************************" << endl;
     cout << "Order of Play: ";
-    for (vector<Player*>::const_iterator i = maingame->getPlayers().begin(); i != maingame->getPlayers().end(); ++i){
+    for (vector<Player*>::const_iterator i = players.begin(); i != players.end(); ++i){
         std::cout << "player " << (*i)->getPlayerId() << ", ";
     }
-    cout << "\nTotal Countries in Map: " << maingame->getGameMap()->getCount();
+    cout << "\nTotal Countries in Map: " << state.gameMap->getCount();
     
     cout << "\nCountries owned: ";
     
    // "Countries Owned" printing
-    vector<Player*> a= maingame->getPlayers();
+    //vector<Player*> a= players;
     vector<Player*>::iterator it;
     
-    for ( it = a.begin(); it != a.end(); it++ )
+    for ( it = players.begin(); it != players.end(); it++ )
     {
         cout << "Player " << (*it)->getPlayerId() << ":" << "[" << (*it)->getAllCountries().size() << "], ";
     }
@@ -79,13 +79,15 @@ void GameStatView::print(){
     cout << "************************" << endl;
     
     //Winner test
-    for(int i=0; i < maingame->getPlayers().size(); i++){
-        if(testWinner(a.at(i))==true){
+    if(state.phase== GAME_OVER){
+        
+        for (it = players.begin(); it != players.end(); it++){
+            if(testWinner(*it)==true){
             cout << endl;
             cout<<"\n@@@@@@@@@@@@@@@@@@@@@@"<< endl;
             cout<<"! ! ! ! ! ! ! ! ! ! ! " << endl;
             cout<<"----------------------" << endl;
-            cout << "WINNER IS PLAYER "<< a.at(i)->getPlayerId() << endl;
+            cout << "WINNER IS PLAYER "<< (*it)->getPlayerId() << endl;
             cout<<"----------------------" << endl;
             cout<<"! ! ! ! ! ! ! ! ! ! ! " << endl;
             cout<<"@@@@@@@@@@@@@@@@@@@@@@"<< endl;
@@ -101,6 +103,7 @@ void GameStatView::print(){
             _____\//\\\__\//\\\_______/\\\\\\\\\\\_\/\\\___\//\\\\\_\/\\\___\//\\\\\_\/\\\\\\\\\\\\\\\_\/\\\______\//\\\_
             ______\///____\///_______\///////////__\///_____\/////__\///_____\/////__\///////////////__\///________\///__
             )" << endl;
+            }
         }
     }
 };

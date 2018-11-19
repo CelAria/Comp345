@@ -14,6 +14,7 @@
 #include "country.h"
 #include "cardsdeck.h"
 #include "Dice.h"
+#include "observer.h"
 #include <string>
 
 class GameStart{
@@ -23,6 +24,7 @@ public:
     vector<Player*> createPlayers(int amount, GameMap* gameMap);  //return vector of pointers to player objects
     Deck* createDeck(GameMap* pointertogamemap);
     GameMap* createGameMap(string directory); //use the directory to get the user's game map
+    void addPlayerObservers(Observer* obs);
 
 private:
     int numberofplayers;  //number of players in game
@@ -31,6 +33,7 @@ private:
     vector<Player*> assignCountries(GameMap* pointertogamemap); //assign countries to each player round robin style
     vector<Player*> playerOrder(); //return vector of randomly ordered players ??
     vector<Player*> placeArmies(GameMap* pointertogamemap); //assign armies to each country round robin style
+    
 };
 
 bool verifyInputStringIsInteger(string s);

@@ -50,5 +50,10 @@ int main(int argc, const char * argv[]) {
     MainGame* mainGame = new MainGame(gameMap, players, deck);
     GameStatView* statsView= new GameStatView(players);
     mainGame->addObserver(statsView);
+   game.addPlayerObservers(statsView);
+    vector<Player*>::iterator it;
+    for(it=players.begin(); it != players.end(); it++){
+        (*it)->addObserver(statsView);
+    }
     mainGame->playGame();
 }

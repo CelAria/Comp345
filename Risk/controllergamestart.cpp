@@ -187,3 +187,10 @@ GameMap* GameStart::createGameMap(string directory) {
     string mapPath = maploader.selectMap(directory);
     return maploader.readmapfile(mapPath, directory);
 }
+
+void GameStart::addPlayerObservers(Observer* obs){
+    vector<Player*>::iterator it;
+    for(it= players.begin(); it!= players.end(); it++){
+        (*it)->addObserver(obs);
+    }
+}

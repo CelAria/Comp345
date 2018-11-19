@@ -1,10 +1,10 @@
 //
 //  passiveAttack.cpp
 //  Risk
-//
-//  Created by Matthew Salaciak on 2018-11-16.
+//  Created by Matthew Salaciak 29644490
+//  ASSIGNMENT #3
 //  Copyright © 2018 comp345. All rights reserved.
-//
+// this strategy makes sure that the player will never attack, so the loop never begins
 
 #include "passiveAttack.h"
 

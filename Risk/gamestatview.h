@@ -9,7 +9,8 @@
  If there is a STATE change on "moveArmy" then map needs to be updated. */
 #pragma once
 
-#include "maingame.h"
+#include "gamemap.h"
+#include "observer.h"
 #include <string>
 #include <map>
 
@@ -17,13 +18,13 @@ class GameStatView: public Observer{
     
 private:
     State state;
-    MainGame* maingame;
+    GameMap* gameMap;
     map<string ,int> worlddominationmap;
     void clearScreen();
     bool testWinner(Player* player);
     vector<Player*> players;
 public:
-    GameStatView(vector<Player*> playerlist){players=playerlist;};
+    GameStatView(GameMap* gameMap, vector<Player*> playerlist){this->gameMap = gameMap; players=playerlist;};
     void print();
     void update(State& state);
     map<string ,int> worlddominationview();

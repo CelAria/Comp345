@@ -42,6 +42,7 @@ int main(int argc, const char * argv[]) {
     players.push_back(p2);
     p1->addCountry(gameMap->getCountry("Canada"));
     p1->addCountry(gameMap->getCountry("USA"));
+    
     vector<Country*> p1Countries = p1->getAllCountries();
     vector<Country*> p2Countries = p2->getAllCountries();
 
@@ -50,8 +51,10 @@ int main(int argc, const char * argv[]) {
     Deck* deck =game.createDeck(gameMap);
 
     MainGame* mainGame = new MainGame(gameMap, players, deck);
-    GameStatView* statsView= new GameStatView(players);
+    GameStatView* statsView= new GameStatView(gameMap, players);
     mainGame->addObserver(statsView);
+    p1->addObserver(statsView);
+    p2->addObserver(statsView);
     mainGame->playGame();
     
 }

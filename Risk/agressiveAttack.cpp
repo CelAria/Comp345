@@ -2,9 +2,11 @@
 //  agressiveAttack.cpp
 //  Risk
 //
-//  Created by Matthew Salaciak on 2018-11-16.
+//  Created by Matthew Salaciak 29644490
+//  ASSIGNMENT #3
 //  Copyright © 2018 comp345. All rights reserved.
-//
+// this agressive attack takes the biggest army and always attacks with it until its too weak or no attackable neighbours
+// when it wins, it moves just 1 army in order to keep the strongest country still strong
 
 #include "agressiveAttack.h"
 //constructor for attackPhase
@@ -216,15 +218,15 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
     
   
     
-    
+   
     while(notEnoughArmies){
         int bigArmyCountry =0;
         int bigArmyCount =0;
         for(int i =0; i<allCountries.size(); i++){
-            bigArmyCountry = allCountries[i]->getArmiesCount();
+            bigArmyCount = allCountries[i]->getArmiesCount();
             for (int j=0;j<allCountries.size(); j++){
-                if(bigArmyCount < allCountries[i]->getArmiesCount()){
-                    bigArmyCount =allCountries[i]->getArmiesCount();
+                if(bigArmyCount < allCountries[j]->getArmiesCount()){
+                    bigArmyCount =allCountries[j]->getArmiesCount();
                     bigArmyCountry=j;
                 }
                 
@@ -236,7 +238,8 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
         
         
         
-        selectCountry = bigArmyCountry;
+        selectCountry = bigArmyCountry+1;
+        
         
         
         if(selectCountry<1 || selectCountry> allCountries.size())

@@ -8,14 +8,14 @@
 #include "HumanPlayerStrategy.h"
 #include "aggressivestrategy.h"
 #include "BenevolentStrategy.h"
-
+#include "observable.h"
 
 #include <map>
 #include <vector>
 #include <string>
 using namespace std;
 
-class Player {
+class Player : public Observable {
 private:
     int id;
     Strategy* strategy;
@@ -56,8 +56,8 @@ public:
     void transferCountryTo(string countryName, Player* player);
     Strategy* getStrategy() {return this->strategy;};
     void setStrategy(Strategy* strategy) {this->strategy = strategy;};
-   
     
+    void notifyObservers();
    
     ~Player() {delete hand;delete strategy;};
 };

@@ -117,13 +117,14 @@ bool ReinforceView::placeArmiesHuman(GameMap* gameMap, vector<Country*> allCount
     do{
         for(int i = 0; i < allCountries.size(); i++)
         {
-            int userInput2;
+            string userInput;
             cout << "How many armies do you want to placed in " << allCountries[i]->getName() << "? -> ";
-            cin >> userInput2;
+            getline (cin, userInput);
             
-            if(!cin.good()){
+            if(!isdigit(userInput[0])){
                 continue;
             }
+            int userInput2 = (userInput.at(0)-48);
                 if(userInput2 > numOfArmiesToPlace){
                     cout << "Input entered is greater than the number of armies left to place" << endl;
                 }else{

@@ -23,6 +23,17 @@ int main(int argc, const char * argv[]) {
     GameMap* gameMap = gameStart.createGameMap(directory);
     Deck* deck = gameStart.createDeck(gameMap);
     vector<Player*> players = gameStart.createPlayers(gameStart.selectPlayers(), gameMap);
+    if(players.size() == 3) {
+        //first player will be human
+        //second will be aggressive
+        //third will be benevolent
+        
+        BenevolentStrategy benevolent;
+        AggressiveStrategy aggressive;
+        
+        players[1]->setStrategy(&aggressive);
+        players[2]->setStrategy(&benevolent);
+    }
     
     //initialize views
     MainGame mainGame = MainGame(gameMap, players, deck);

@@ -49,7 +49,8 @@ void AgressiveReinforceController::start(Country* strongestCountry)
     view.displayContriesPlayerOwns(allCountries, player);
     
     gameMap->getCountry(strongestCountry->getName())->setArmiesCount((gameMap->getCountry(strongestCountry->getName())->getArmiesCount() + numOfArmiesRecieved));
-        
+    
+     view.displayContriesPlayerOwns(allCountries, player);
     
 }
 

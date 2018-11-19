@@ -50,6 +50,7 @@ void PassiveReinforceController::start(Country* weakeastCountry)
     
     gameMap->getCountry(weakeastCountry->getName())->setArmiesCount((gameMap->getCountry(weakeastCountry->getName())->getArmiesCount() + numOfArmiesRecieved));
     
+    view.displayContriesPlayerOwns(allCountries, player);
     
 }
 

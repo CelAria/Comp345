@@ -11,6 +11,7 @@
 #include "gamemap.h"
 #include "cardsdeck.h"
 #include "maploader.h"
+#include "strategy.h"
 
 
 int main(int argc, const char * argv[]) {
@@ -18,12 +19,19 @@ int main(int argc, const char * argv[]) {
     cout << "---------------------------------------------------------------------------------------------------" << endl;
     
     //instantiate a player, a game map and a deck of cards
-    Player player(1);
+    Strategy* strategy1(new HumanPlayerStrategy);
+    Strategy* strategy2(new BenevolentStrategy);
+    Strategy* strategy3(new AggressiveStrategy);
+    
+    //declare 3 players with 3 different strategies
+    Player player1(1, strategy1);
+    Player player2(2, strategy2);
+    Player player3(3, strategy3);
+    //declare a game map
     GameMap gameMap;
+    //declare a deck
     Deck deck = Deck(42);
     
-    //Maploader mymaoloader;
-    //mymaoloader.readmapfile("/Users/martin-john/Documents/Comp345/MapLoaderDriver/World.map");
     //the following indented block of code is to fill up a test game map
     
         Continent centralAmerica = Continent("Central America", 3);
@@ -57,22 +65,23 @@ int main(int argc, const char * argv[]) {
         venNeighbors.push_back("Colombia");
         gameMap.addCountry("Venezuela", "South America", venNeighbors);
     
+        //sets the army count
         gameMap.getCountry("Costa Rica")->setArmiesCount(2);
         gameMap.getCountry("Venezuela")->setArmiesCount(4);
         gameMap.getCountry("Colombia")->setArmiesCount(1);
         gameMap.getCountry("Panama")->setArmiesCount(1);
         gameMap.getCountry("Nicaragua")->setArmiesCount(1);
     
-    //case 1
+    //case 1 - human strategy
     //add countries to player 1
-    player.addCountry(gameMap.getCountry("Costa Rica"));
-    player.addCountry(gameMap.getCountry("Venezuela"));
-    player.addCountry(gameMap.getCountry("Colombia"));
-    player.addCountry(gameMap.getCountry("Panama"));
+    player1.addCountry(gameMap.getCountry("Costa Rica"));
+    player1.addCountry(gameMap.getCountry("Venezuela"));
+    player1.addCountry(gameMap.getCountry("Colombia"));
+    player1.addCountry(gameMap.getCountry("Panama"));
   
     //number of countries owened by the player
-    cout << "Player1 now has " << player.getCountriesCount() << " countries:" << endl;
-    vector<Country*> allCountries = player.getAllCountries();
+    cout << "Player1 now has " << player1.getCountriesCount() << " countries:" << endl;
+    vector<Country*> allCountries = player1.getAllCountries();
     //displays the countries and their continents player 1 owns
     for(int i = 0; i < allCountries.size(); i++)
     {
@@ -83,30 +92,75 @@ int main(int argc, const char * argv[]) {
     //gives player 1, six cards in its hand
     for(int i=0; i< 9; ++i)
     {
-        player.drawCard(&deck);
+        player1.drawCard(&deck);
     }
     //calls the reinforce method of the player to test it
-    player.reinforce(&gameMap);
+    player1.reinforce(&gameMap);
     
-//    //case2
-//    //add a new country to player
-//    player.addCountry(gameMap.getCountry("Nicaragua"));
-//    //give more cards to the player
-//    for(int i=0; i< 3; ++i)
-//    {
-//        player.drawCard(&deck);
-//    }
-//    //number of countries owened by the player
-//    cout << "Player1 now controls " << player.getCountriesCount() << " countries:" << endl;
-//    allCountries = player.getAllCountries();
-//    //displays the countries and their continents player 1 owns
-//    for(int i = 0; i < allCountries.size(); i++)
-//    {
-//        cout << "\t• " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
-//    }
-//    cout << endl;
-//    //calls the reinforce method of the player to test it again
-//    player.reinforce(&gameMap);
+    //case 2 - agressive strategy
+    //add countries to player 1
+    player2.addCountry(gameMap.getCountry("Costa Rica"));
+    player2.addCountry(gameMap.getCountry("Venezuela"));
+    player2.addCountry(gameMap.getCountry("Colombia"));
+    player2.addCountry(gameMap.getCountry("Panama"));
+    
+    //resets the army count
+    gameMap.getCountry("Costa Rica")->setArmiesCount(2);
+    gameMap.getCountry("Venezuela")->setArmiesCount(4);
+    gameMap.getCountry("Colombia")->setArmiesCount(1);
+    gameMap.getCountry("Panama")->setArmiesCount(1);
+    gameMap.getCountry("Nicaragua")->setArmiesCount(1);
+
+    //number of countries owened by the player
+    cout << "Player2 now has " << player2.getCountriesCount() << " countries:" << endl;
+    allCountries = player2.getAllCountries();
+    //displays the countries and their continents player 1 owns
+    for(int i = 0; i < allCountries.size(); i++)
+    {
+        cout << "\t• " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
+    }
+    cout << endl;
+
+    //gives player 1, six cards in its hand
+    for(int i=0; i< 9; ++i)
+    {
+        player2.drawCard(&deck);
+    }
+    //calls the reinforce method of the player to test it
+    player2.reinforce(&gameMap);
+    
+    //case 3 - passive strategy
+    //add countries to player 1
+    player3.addCountry(gameMap.getCountry("Costa Rica"));
+    player3.addCountry(gameMap.getCountry("Venezuela"));
+    player3.addCountry(gameMap.getCountry("Colombia"));
+    player3.addCountry(gameMap.getCountry("Panama"));
+    
+    //resets the army count
+    gameMap.getCountry("Costa Rica")->setArmiesCount(2);
+    gameMap.getCountry("Venezuela")->setArmiesCount(4);
+    gameMap.getCountry("Colombia")->setArmiesCount(1);
+    gameMap.getCountry("Panama")->setArmiesCount(1);
+    gameMap.getCountry("Nicaragua")->setArmiesCount(1);
+    
+    //number of countries owened by the player
+    cout << "Player2 now has " << player3.getCountriesCount() << " countries:" << endl;
+    allCountries = player3.getAllCountries();
+    //displays the countries and their continents player 1 owns
+    for(int i = 0; i < allCountries.size(); i++)
+    {
+        cout << "\t• " << allCountries[i]->getName() << ", " << allCountries[i]->getContinentName() << endl;
+    }
+    cout << endl;
+    
+    //gives player 1, six cards in its hand
+    for(int i=0; i< 9; ++i)
+    {
+        player3.drawCard(&deck);
+    }
+    //calls the reinforce method of the player to test it
+    player3.reinforce(&gameMap);
+    
     
     return 0;
 }

@@ -8,8 +8,9 @@
 
 #pragma once
 
-#include "player.h"
 #include "gamemap.h"
+
+class Player;
 
 typedef enum : int {
     ATTACK,

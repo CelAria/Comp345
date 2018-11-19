@@ -15,7 +15,7 @@
 
 int main(int argc, const char * argv[]) {
     
-    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/MapLoaderDriver";
+    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/StatsWinnerDriver";
     
     GameStart gameStart;
     GameMap* gameMap = gameStart.createGameMap(directory);

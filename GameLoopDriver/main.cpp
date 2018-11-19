@@ -12,6 +12,7 @@
 #include "viewgamestart.h"
 #include "controllergamestart.h"
 #include "phaseview.h"
+#include "gamestatview.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -24,7 +25,12 @@ int main(int argc, const char * argv[]) {
     
     MainGame mainGame = MainGame(gameMap, players, deck);
     PhaseView phaseView;
+    GameStatView gameStatView(gameMap, players);
     
     mainGame.addObserver(&phaseView);
+    for(int i = 0; i < players.size(); ++i) {
+        players[i]->addObserver(&gameStatView);
+    }
+    
     mainGame.playGame();
 }

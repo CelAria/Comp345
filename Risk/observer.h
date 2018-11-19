@@ -28,7 +28,7 @@ public:
     State(): phase(REINFORCE), currentPlayer(NULL), gameMap(NULL) {};
     State(Phase phase, Player* player, GameMap* gameMap): phase(phase), currentPlayer(player), gameMap(gameMap) {};
     State(GameMap* gameMap): gameMap(gameMap) {};
-    State(Phase phase): phase(phase);
+    State(Phase phase): phase(phase) {};
 };
 
 class Observer {

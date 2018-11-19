@@ -2,9 +2,10 @@
 //  attackview.cpp
 //  Risk
 //
-//  Created by Matthew Salaciak on 2018-11-08.
+//  Created by Matthew Salaciak 29644490
+//  ASSIGNMENT #3
 //  Copyright © 2018 comp345. All rights reserved.
-//
+// attackview implementation
 
 #include <attackview.h>
 
@@ -13,6 +14,7 @@ AttackView:: AttackView() {
     
 }
 
+//start attack
 bool AttackView:: startAttackPhase() {
     
     cout<<"Do you want to attack? Please enter y for yes, n for no " << endl;
@@ -44,6 +46,7 @@ bool AttackView:: startAttackPhase() {
     return start;
 }
 
+//keep attacking
 bool AttackView::keepAttacking() {
     bool attackPhaseInput = true;
     string attacking;
@@ -72,7 +75,7 @@ bool AttackView::keepAttacking() {
     
 }
     
-
+//country list
 void AttackView::playerCountryList(vector<Country*> allCountries){
      cout<<"pick country you want to attack from: "  <<endl <<endl;
     for(int i = 0; i < allCountries.size(); i++) {
@@ -81,25 +84,27 @@ void AttackView::playerCountryList(vector<Country*> allCountries){
     cout << endl;
     
 }
-
+//pick country
 int AttackView:: pickAttackingCountry(){
     int selectCountry;
      cin>>selectCountry;
     return selectCountry;
 }
 
+//amount of dice
 int AttackView:: pickDice(){
     int diceAmount;
     cin>>diceAmount;
     return diceAmount;
 }
 
+//move armies
 int AttackView:: moveArmies(){
     int armies;
     cin>>armies;
     return armies;
 }
-
+//view enemies to attack
 void AttackView::enemyCountryList(vector<Country*> enemies, Player *player){
     cout<<"Neighbours you can attack " << endl<<endl;
     

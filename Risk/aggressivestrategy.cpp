@@ -12,6 +12,7 @@
 #include "fortifycontroller.h"
 #include <vector>
 #include "country.h"
+#include "agressiveReinforce.h"
 
 void AggressiveStrategy::attack(Player *player, GameMap *gameMap) {
     AgressiveAttack playerAttack(player,gameMap);
@@ -43,7 +44,16 @@ void AggressiveStrategy::fortify(Player *player, GameMap *gameMap) {
 }
 
 void AggressiveStrategy::reinforce(Player *player, GameMap *gameMap) {
+    vector<Country*> countries = player->getAllCountries();
     
+    Country* strongestCountry = countries[0];
+    for(int i = 0; i < countries.size(); ++i) {
+        if(countries[i]->getArmiesCount() > strongestCountry->getArmiesCount()) {
+            strongestCountry = countries[i];
+        }
+    }
+    AgressiveReinforceController reinforceController = AgressiveReinforceController(player, gameMap);
+    reinforceController.start(strongestCountry);
 }
 
 int AggressiveStrategy::getType() {

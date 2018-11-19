@@ -16,6 +16,46 @@ void ReinforceView::presentReinforce(){
      cout << "Reinforce phase:" << endl << endl;
 }
 
+int ReinforceView::getNumOfArmiesToPlace(GameMap* gameMap, Player *player){
+    //number of countries owend by the player
+    int numOfCountriesOwned = player->getCountriesCount();
+    //number of armies the player recived based on the number of countries owend by the player /3
+    //if this number is less then 3 give the player 3 armies
+    int numOfArmiesRecieved = (numOfCountriesOwned/3);
+    if(numOfArmiesRecieved <= 3)
+        numOfArmiesRecieved = 3;
+    
+    vector<Country*> allCountries = player->getAllCountries();
+    vector<string> continentControlValue;
+    int myCounter = 0;
+    //loops through all the countries the player controls
+    for(int i = 0; i < allCountries.size(); i++)
+    {
+        //if the player controls all contries in the continent
+        if(player->controlsContinent(allCountries[i]->getContinentName(), gameMap))
+        {
+            //add continent to vector continentControlValue to then check if it is only add once
+            continentControlValue.push_back(allCountries[i]->getContinentName());
+            for(int j = 0; j < continentControlValue.size(); j++)
+            {
+                if(continentControlValue[j] == allCountries[i]->getContinentName())
+                {
+                    myCounter++;
+                }
+            }
+            //if a continent appears only once in the continentControlValue vector, then adjust the numOfArmiesRecieved
+            if(myCounter == 1)
+            {
+                vector<Country*> allCountries2 = player->getCountriesByContinent(allCountries[i]->getContinentName());
+                //if the player controls all the countries in a continent, then add the number of countries in that continent to the numOfArmiesRecieved
+                numOfArmiesRecieved += allCountries2.size();
+            }
+            myCounter = 0;
+        }
+    }
+    return numOfArmiesRecieved;
+}
+
 void ReinforceView::displayStats(int numOfArmiesRecieved, Player *player){
     cout << "Number of armies: " << numOfArmiesRecieved << endl;
     cout << "Player" << player->getPlayerId() << " currently controls " << player->getCountriesCount() << " countries and holds "
@@ -69,7 +109,7 @@ void ReinforceView::displayContriesPlayerOwns(vector<Country*> allCountries, Pla
     }
 }
 
-bool ReinforceView::placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCountries, int numOfArmiesRecieved, Player *player){
+bool ReinforceView::placeArmiesHuman(GameMap* gameMap, vector<Country*> allCountries, int numOfArmiesRecieved, Player *player){
     int numOfArmiesToPlace = numOfArmiesRecieved;
      cout << endl;
      cout << "The number of armies to be placed: " << numOfArmiesToPlace << endl;
@@ -80,8 +120,9 @@ bool ReinforceView::placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCo
             int userInput2;
             cout << "How many armies do you want to placed in " << allCountries[i]->getName() << "? -> ";
             cin >> userInput2;
+            
             if(!cin.good()){
-                return false;
+                continue;
             }
                 if(userInput2 > numOfArmiesToPlace){
                     cout << "Input entered is greater than the number of armies left to place" << endl;

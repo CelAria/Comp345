@@ -8,14 +8,16 @@
 
 #pragma once
 
-#include "player.h"
 #include "gamemap.h"
+
+class Player;
 
 typedef enum : int {
     ATTACK,
     REINFORCE,
     FORTIFY,
-    GAME_OVER
+    GAME_OVER,
+    MOVE_COUNTRY
 } Phase;
 
 class State {
@@ -27,6 +29,7 @@ public:
     State(): phase(REINFORCE), currentPlayer(NULL), gameMap(NULL) {};
     State(Phase phase, Player* player, GameMap* gameMap): phase(phase), currentPlayer(player), gameMap(gameMap) {};
     State(GameMap* gameMap): gameMap(gameMap) {};
+    State(Phase phase): phase(phase) {};
 };
 
 class Observer {

@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
      is created, a deck with the right number of cards is created. */
     
     //directory where maps are stored
-    const string directory = "/Users/celestepimm/git/Comp345-Xcode/MapLoaderDriver";
+    const string directory = "/Users/celestepimm/git/Comp345-Xcode/StatsWinnerDriver";
     //printMapDirectory(directory);
     
     //open map and test if valid, if valid, create map object  

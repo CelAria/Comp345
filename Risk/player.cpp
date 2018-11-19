@@ -23,6 +23,7 @@ void Player::reinforce(GameMap* gameMap) {
 void Player::addCountry(Country *country) {
     country->setOwner(this);
     countries[country->getName()] = country;
+    notifyObservers();
 }
 
 
@@ -84,10 +85,14 @@ vector<Country*> Player::getCountriesByContinent(string continent) {
 
 
 
-
 bool Player::controlsContinent(string name, GameMap *gameMap) {
     return getCountriesByContinent(name).size() == gameMap->getAllByContinent(name).size();
 }
 
 
-
+void Player::notifyObservers(){
+    State newState = State(MOVE_COUNTRY);
+    for(auto observer : observers) {
+        observer->update(newState);
+    }
+};

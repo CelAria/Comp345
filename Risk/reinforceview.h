@@ -25,7 +25,8 @@ public:
     void displayStats(int numOfArmiesRecieved, Player *player);
     void userInputCardExchange(int numOfArmiesRecieved, Player *player);
     void displayContriesPlayerOwns(vector<Country*> allCountries, Player *player);
-    void placeArmiesRandomly(GameMap* gameMap, vector<Country*> allCountries, int numOfArmiesRecieved, Player *player);
+    bool placeArmiesHuman(GameMap* gameMap, vector<Country*> allCountries, int numOfArmiesRecieved, Player *player);
+    int getNumOfArmiesToPlace(GameMap* gameMap, Player *player);
 };
 
 

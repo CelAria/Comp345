@@ -21,9 +21,9 @@ private:
     map<string ,int> worlddominationmap;
     void clearScreen();
     bool testWinner(Player* player);
-    
+    vector<Player*> players;
 public:
-    GameStatView(MainGame* main){maingame=main;}
+    GameStatView(vector<Player*> playerlist){players=playerlist;};
     void print();
     void update(State& state);
     map<string ,int> worlddominationview();

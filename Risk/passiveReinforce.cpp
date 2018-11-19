@@ -4,7 +4,7 @@
 // Description: header file for the deck and hand
 // ------------------------------------------------------
 
-#include "reinforcephase.h"
+#include "passiveReinforce.h"
 #include "player.h"
 #include "continent.h"
 
@@ -16,7 +16,7 @@
 using namespace std;
 
 //implementation of the start method of the ReinforceController
-void ReinforceController::start()
+void PassiveReinforceController::start(Country* weakeastCountry)
 {
     srand((unsigned)time(0));
     
@@ -27,14 +27,32 @@ void ReinforceController::start()
     
     view.displayStats(numOfArmiesRecieved, player);
     
-    view.userInputCardExchange(numOfArmiesRecieved, player);
+    while(player->getCardsCount() > 5)
+    {
+        string computerInput;
+        int randNum = (0 + (rand() % (int)(3 - 0 + 1)));
+        if(randNum == 0){
+            computerInput = "0";
+        }else if(randNum == 1){
+            computerInput = "1";
+        }else if(randNum == 2){
+            computerInput = "2";
+        }else if(randNum == 3){
+            computerInput = "3";
+        }
+        numOfArmiesRecieved = numOfArmiesRecieved + player->getHand()->exchange(computerInput);
+    }
+    cout << endl;
     
     view.displayStats(numOfArmiesRecieved, player);
     
     view.displayContriesPlayerOwns(allCountries, player);
     
-    view.placeArmiesHuman(gameMap, allCountries, numOfArmiesRecieved , player);
-
+    gameMap->getCountry(weakeastCountry->getName())->setArmiesCount((gameMap->getCountry(weakeastCountry->getName())->getArmiesCount() + numOfArmiesRecieved));
+    
+    
 }
-    
-    
+
+
+
+

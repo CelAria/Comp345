@@ -13,6 +13,10 @@
 		0E53B506218F5ECD003C85B1 /* reinforcephase.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E53B504218F5ECD003C85B1 /* reinforcephase.h */; };
 		0E573FBD219DF993005E1650 /* reinforceview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E573FBB219DF993005E1650 /* reinforceview.cpp */; };
 		0E573FBE219DF993005E1650 /* reinforceview.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FBC219DF993005E1650 /* reinforceview.h */; };
+		0E573FC121A24143005E1650 /* agressiveReinforce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E573FBF21A24143005E1650 /* agressiveReinforce.cpp */; };
+		0E573FC221A24143005E1650 /* agressiveReinforce.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FC021A24143005E1650 /* agressiveReinforce.h */; };
+		0E573FC521A2467E005E1650 /* passiveReinforce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E573FC321A2467E005E1650 /* passiveReinforce.cpp */; };
+		0E573FC621A2467E005E1650 /* passiveReinforce.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FC421A2467E005E1650 /* passiveReinforce.h */; };
 		3400881B2195449C00D23A85 /* attackview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340088192195449C00D23A85 /* attackview.cpp */; };
 		3400881C2195449C00D23A85 /* attackview.h in Headers */ = {isa = PBXBuildFile; fileRef = 3400881A2195449C00D23A85 /* attackview.h */; };
 		34189EB2219E9E710059D6C0 /* agressiveAttack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34189EB0219E9E710059D6C0 /* agressiveAttack.cpp */; };
@@ -271,6 +275,10 @@
 		0E53B504218F5ECD003C85B1 /* reinforcephase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reinforcephase.h; sourceTree = "<group>"; };
 		0E573FBB219DF993005E1650 /* reinforceview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reinforceview.cpp; sourceTree = "<group>"; };
 		0E573FBC219DF993005E1650 /* reinforceview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = reinforceview.h; sourceTree = "<group>"; };
+		0E573FBF21A24143005E1650 /* agressiveReinforce.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = agressiveReinforce.cpp; sourceTree = "<group>"; };
+		0E573FC021A24143005E1650 /* agressiveReinforce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = agressiveReinforce.h; sourceTree = "<group>"; };
+		0E573FC321A2467E005E1650 /* passiveReinforce.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = passiveReinforce.cpp; sourceTree = "<group>"; };
+		0E573FC421A2467E005E1650 /* passiveReinforce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = passiveReinforce.h; sourceTree = "<group>"; };
 		340088192195449C00D23A85 /* attackview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackview.cpp; sourceTree = "<group>"; };
 		3400881A2195449C00D23A85 /* attackview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackview.h; sourceTree = "<group>"; };
 		34189EB0219E9E710059D6C0 /* agressiveAttack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = agressiveAttack.cpp; sourceTree = "<group>"; };
@@ -609,6 +617,10 @@
 				B3907F1B219E1A7400975BFC /* aggressivestrategy.h */,
 				34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */,
 				34AD28D621A14B8700669DB6 /* BenevolentStrategy.h */,
+				0E573FBF21A24143005E1650 /* agressiveReinforce.cpp */,
+				0E573FC021A24143005E1650 /* agressiveReinforce.h */,
+				0E573FC321A2467E005E1650 /* passiveReinforce.cpp */,
+				0E573FC421A2467E005E1650 /* passiveReinforce.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -656,6 +668,8 @@
 				6B9B94BE2198E7BC00523ECD /* gamestatview.h in Headers */,
 				34189EB7219E9F750059D6C0 /* passiveAttack.h in Headers */,
 				34189EB3219E9E710059D6C0 /* agressiveAttack.h in Headers */,
+				0E573FC221A24143005E1650 /* agressiveReinforce.h in Headers */,
+				0E573FC621A2467E005E1650 /* passiveReinforce.h in Headers */,
 				B315F96F21976BAF005A899B /* observer.h in Headers */,
 				B3907F1D219E1A7400975BFC /* aggressivestrategy.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
@@ -1054,6 +1068,7 @@
 			files = (
 				B3F5B9DB216E5F6300A20B50 /* maploader.cpp in Sources */,
 				34AD28D721A14B8700669DB6 /* BenevolentStrategy.cpp in Sources */,
+				0E573FC521A2467E005E1650 /* passiveReinforce.cpp in Sources */,
 				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
 				B3907F1C219E1A7400975BFC /* aggressivestrategy.cpp in Sources */,
 				34189EB6219E9F750059D6C0 /* passiveAttack.cpp in Sources */,
@@ -1073,6 +1088,7 @@
 				B315F9762198A504005A899B /* phaseview.cpp in Sources */,
 				0E53B505218F5ECD003C85B1 /* reinforcephase.cpp in Sources */,
 				6B9B94BD2198E7BC00523ECD /* gamestatview.cpp in Sources */,
+				0E573FC121A24143005E1650 /* agressiveReinforce.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
 				0E573FBD219DF993005E1650 /* reinforceview.cpp in Sources */,
 			);

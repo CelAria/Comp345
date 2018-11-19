@@ -7,6 +7,7 @@
 //
 
 #include "phaseview.h"
+#include "player.h"
 #include <stdlib.h>
 #include <iostream>
 #include <string>

@@ -49,12 +49,8 @@ int main(int argc, const char * argv[]) {
     //create game deck of cards
     Deck* deck =game.createDeck(gameMap);
 
-    MainGame* main= new MainGame(gameMap, players, deck);
-    GameStatView* gamestatview= new GameStatView(main);
-    gamestatview->print();
-    delete main;
     MainGame* mainGame = new MainGame(gameMap, players, deck);
-    GameStatView* statsView= new GameStatView(mainGame);
+    GameStatView* statsView= new GameStatView(players);
     mainGame->addObserver(statsView);
     mainGame->playGame();
     

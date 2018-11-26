@@ -42,6 +42,8 @@
 		6B9B94BD2198E7BC00523ECD /* gamestatview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B9B94BB2198E7BC00523ECD /* gamestatview.cpp */; };
 		6B9B94BE2198E7BC00523ECD /* gamestatview.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B9B94BC2198E7BC00523ECD /* gamestatview.h */; };
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
+		6BB7267D21ACB1FD00C26153 /* tournament.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BB7267B21ACB1FD00C26153 /* tournament.cpp */; };
+		6BB7267E21ACB1FD00C26153 /* tournament.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB7267C21ACB1FD00C26153 /* tournament.h */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B315F96D21976A0D005A899B /* strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F96C21976A0D005A899B /* strategy.h */; };
@@ -307,6 +309,8 @@
 		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
 		6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
+		6BB7267B21ACB1FD00C26153 /* tournament.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tournament.cpp; sourceTree = "<group>"; };
+		6BB7267C21ACB1FD00C26153 /* tournament.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tournament.h; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* StatsWinnerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StatsWinnerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B315F96C21976A0D005A899B /* strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strategy.h; sourceTree = "<group>"; };
@@ -621,6 +625,8 @@
 				0E573FC021A24143005E1650 /* agressiveReinforce.h */,
 				0E573FC321A2467E005E1650 /* passiveReinforce.cpp */,
 				0E573FC421A2467E005E1650 /* passiveReinforce.h */,
+				6BB7267B21ACB1FD00C26153 /* tournament.cpp */,
+				6BB7267C21ACB1FD00C26153 /* tournament.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -676,6 +682,7 @@
 				0E53B506218F5ECD003C85B1 /* reinforcephase.h in Headers */,
 				B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */,
 				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
+				6BB7267E21ACB1FD00C26153 /* tournament.h in Headers */,
 				B315F9772198A504005A899B /* phaseview.h in Headers */,
 				6B0E769A217FF894006CECD2 /* viewgamestart.h in Headers */,
 				B3B2E8CE21669CAC00C2A4BA /* cardsdeck.h in Headers */,
@@ -1082,6 +1089,7 @@
 				6B0E768F217E62D5006CECD2 /* controllergamestart.cpp in Sources */,
 				B3A97EEC219CB6D600998A5D /* HumanPlayerStrategy.cpp in Sources */,
 				34362E06218167C900838F6F /* attackphase.cpp in Sources */,
+				6BB7267D21ACB1FD00C26153 /* tournament.cpp in Sources */,
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,

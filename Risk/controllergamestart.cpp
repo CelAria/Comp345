@@ -183,7 +183,7 @@ vector<Player*> GameStart::assignCountries(GameMap* pointertogamemap){
 
 GameMap* GameStart::createGameMap(string directory) {
     Maploader maploader;
-    maploader.printDirectory(directory);
+    printDirectory(directory);
     string mapPath = maploader.selectMap(directory);
     return maploader.readmapfile(mapPath, directory);
 }

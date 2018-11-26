@@ -11,7 +11,7 @@
 
 using namespace std;
 
-void Maploader::printDirectory(string directory){
+static void printDirectory(string directory){
     boost::filesystem::path p(directory);
     int counter=1;
     for(auto & p : boost::filesystem::directory_iterator(directory)){

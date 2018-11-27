@@ -33,26 +33,28 @@ tournament, a report of the results should be displayed, e.g.
 class Tournament{
     
 private:
+    vector<Player*> players;
     vector<string> selectedmaps;
-    vector<string> selectedstrategies;
+    vector<int> selectedstrategies;
     int nummaps;
     int numstrategies;
     int numgames;
-    int numturns; 
-    
-public:
+    int numturns;
+    void assignStrategies();
     int inputnumMaps();
-    int inputnumStrategies();
+    int inputnumPlayers();
     int inputnumGames();
     int inputnumTurns();
+    void StrategySwitch();
+    
+public:
     void selectgamemode();
     void printStrategies();
-    void StrategySwitch();
     int selectnumgames();
     int selectnumturns();
-    void tournamentloop();
+    void tournamentloop(string directory);
     void print();
-    vector<string> selectstrategies();
+    vector<int> selectstrategies();
     vector<string> inputmaps(const string directory);
     
 };

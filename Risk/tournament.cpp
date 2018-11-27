@@ -9,6 +9,10 @@
 #include "tournament.h"
 #include "maingame.h"
 #include "maploader.h"
+#include "viewgamestart.h"
+#include "controllergamestart.h"
+#include "phaseview.h"
+#include "gamestatview.h"
 
 void printvecString(vector<string> vec){
     vector<string>::iterator it;
@@ -85,8 +89,8 @@ vector<string> Tournament::inputmaps(const string directory){
     return selectedmaps;
 };
 
-int Tournament::inputnumStrategies(){
-    cout << "How many strateges would you like to select? Enter an integer between 2 and 4" << endl;
+int Tournament::inputnumPlayers(){
+    cout << "How many players would you like to select? Enter an integer between 2 and 4" << endl;
     cin >> numstrategies;
     if(cin.good())
     {
@@ -94,14 +98,14 @@ int Tournament::inputnumStrategies(){
             cout << "Bad value. Enter a value between 2 and 4";
             cin.clear();
             cin.ignore(INT_MAX, '\n');
-            inputnumStrategies();
+            inputnumPlayers();
         }
     }
     else{
         cout << "Not an integer.";
         cin.clear();
         cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
-        inputnumStrategies();
+        inputnumPlayers();
     }
     return numstrategies;
 }
@@ -124,16 +128,20 @@ void Tournament::StrategySwitch(){
         }
     switch(selection){
         case 1:
-            selectedstrategies.push_back("Aggressive");
+            //aggresive
+            selectedstrategies.push_back(1);
             return;
         case 2:
-             selectedstrategies.push_back("Benevolent");
+            //benevolent
+             selectedstrategies.push_back(2);
             return;
         case 3:
-            selectedstrategies.push_back("Cheater");
+            //cheater
+            selectedstrategies.push_back(3);
             return;
         case 4:
-            selectedstrategies.push_back("Random");
+            //random
+            selectedstrategies.push_back(4);
             return;
         }
     }
@@ -145,13 +153,13 @@ void Tournament::StrategySwitch(){
     }
 }
 
-vector<string> Tournament::selectstrategies(){
-    inputnumStrategies();
+vector<int> Tournament::selectstrategies(){
+    inputnumPlayers();
     printStrategies();
     for (int i=0; i < numstrategies; i++){
         StrategySwitch();
     }
-    printvecString(selectedstrategies);
+    //printvecString(selectedstrategies);
     return selectedstrategies;
 }
 
@@ -206,7 +214,71 @@ int Tournament::selectnumturns(){
     return numturns;
 }
 
-void tournamentloop();
+//TO DO: change case 3 to CHEATER and case 4 to RANDOM
+void Tournament::assignStrategies(){
+    for(int m=0; m <players.size(); m++){
+        for(int i=0; i < selectedstrategies.size(); i++){
+            switch(selectedstrategies.at(i)){
+                case 1:{
+                    //aggresive
+                    AggressiveStrategy aggressive;
+                    players[m]->setStrategy(&aggressive);
+                    return;
+                }
+                case 2:{
+                    //benevolent
+                    BenevolentStrategy benevolent;
+                    players[m]->setStrategy(&benevolent);
+                    return;
+                }
+                case 3:{
+                    //cheater
+                    AggressiveStrategy aggressive;
+                    players[m]->setStrategy(&aggressive);
+                    return;
+                }
+                case 4:{
+                    //random
+                    AggressiveStrategy aggressive;
+                    players[m]->setStrategy(&aggressive);
+                    return;
+                }
+            }
+        }
+    }
+}
+
+
+void Tournament::tournamentloop(string directory){
+string mapPath;
+GameStart gameStart;
+Maploader maploader;
+    
+//for each MAP, play GAMES number games until TURNS
+    
+    //FOR EACH MAP
+    for(int i=0; i < selectedmaps.size(); i++){
+        //for the selected map
+        mapPath= selectedmaps.at(i);
+        //make the gamemap
+        GameMap* gameMap=maploader.readmapfile(mapPath, directory);
+        Deck* deck = gameStart.createDeck(gameMap);
+        vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
+        assignStrategies();
+        
+        //PLAY THIS NUMBER OF GAMES
+        for(int j=0; j < numgames; j++){
+            
+            
+            //for THIS NUMBER OF TURNS
+            for (int k=0; k < numturns; k++){
+                
+            }
+        }
+    }
+maploader.readmapfile(mapPath, directory);
+    
+}
 
 //final print of 
 void print();

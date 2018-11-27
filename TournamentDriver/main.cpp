@@ -16,8 +16,8 @@ int main(int argc, const char * argv[]) {
 const string directory = "/Users/celestepimm/git/Comp345-Xcode/StatsWinnerDriver";
 Tournament tournament;
     
-/*TO DO: finish select gamemode, tournament loop*/
-
+/*TO DO: finish select gamemode, tournament loop,
+ FINISH PRINT (at end) ADD IN THE DIFFERENT STRATEGIES, ONCE THEY ARE MADE*/
     
     // tournament.selectgamemode();
 tournament.inputmaps(directory);

@@ -155,9 +155,57 @@ vector<string> Tournament::selectstrategies(){
     return selectedstrategies;
 }
 
+int Tournament::inputnumGames(){
+    cout << "How many Games per maps? Enter an integer between 1 and 5" << endl;
+    cin >> numgames;
+    if(cin.good())
+    {
+        if(numgames < 1 || numgames > 5) {
+            cout << "Bad value. Enter a value between 1 and 5";
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+            inputnumGames();
+        }
+    }
+    else{
+        cout << "Not an integer.";
+        cin.clear();
+        cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
+        inputnumGames();
+    }
+    return numgames;
+}
 
-int selectnumgames();
-int selectnumturns();
+int Tournament::selectnumgames(){
+    inputnumGames();
+    return numgames;
+}
+
+int Tournament::inputnumTurns(){
+    cout << "How many Turns per Game? Enter an integer between 10 and 50" << endl;
+    cin >> numturns;
+    if(cin.good())
+    {
+        if(numturns < 1 || numturns > 5) {
+            cout << "Bad value. Enter a value between 1 and 5";
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+            inputnumTurns();
+        }
+    }
+    else{
+        cout << "Not an integer.";
+        cin.clear();
+        cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
+        inputnumTurns();
+    }
+    return numturns;
+}
+int Tournament::selectnumturns(){
+    inputnumTurns();
+    return numturns;
+}
+
 void tournamentloop();
 void print();
 

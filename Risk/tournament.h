@@ -43,6 +43,8 @@ private:
 public:
     int inputnumMaps();
     int inputnumStrategies();
+    int inputnumGames();
+    int inputnumTurns();
     void selectgamemode();
     void printStrategies();
     void StrategySwitch();

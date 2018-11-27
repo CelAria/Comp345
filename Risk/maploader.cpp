@@ -11,7 +11,7 @@
 
 using namespace std;
 
-static void printDirectory(string directory){
+void printDirectory(string directory){
     boost::filesystem::path p(directory);
     int counter=1;
     for(auto & p : boost::filesystem::directory_iterator(directory)){
@@ -20,7 +20,7 @@ static void printDirectory(string directory){
     }
 }
 
-string Maploader::selectMap(string directory){
+string selectMap(string directory){
     cout << "Select which map you would like to load by typing the index number value" << endl;
     int a;
     cin >> a;

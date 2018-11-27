@@ -44,6 +44,8 @@
 		6BB65C9D2166A444007AFC39 /* maploader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB65C9C2166A444007AFC39 /* maploader.h */; };
 		6BB7267D21ACB1FD00C26153 /* tournament.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BB7267B21ACB1FD00C26153 /* tournament.cpp */; };
 		6BB7267E21ACB1FD00C26153 /* tournament.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB7267C21ACB1FD00C26153 /* tournament.h */; };
+		6BB7268621ACC07500C26153 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BB7268521ACC07500C26153 /* main.cpp */; };
+		6BB7268A21ACC16B00C26153 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B315A48F2165CCCC005CAFD4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B315A48E2165CCCC005CAFD4 /* main.cpp */; };
 		B315A4952165CCDB005CAFD4 /* libRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BB81002165BE05005177BB /* libRisk.a */; };
 		B315F96D21976A0D005A899B /* strategy.h in Headers */ = {isa = PBXBuildFile; fileRef = B315F96C21976A0D005A899B /* strategy.h */; };
@@ -205,6 +207,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		6BB7268121ACC07500C26153 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		B315A48A2165CCCC005CAFD4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,6 +322,8 @@
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
 		6BB7267B21ACB1FD00C26153 /* tournament.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tournament.cpp; sourceTree = "<group>"; };
 		6BB7267C21ACB1FD00C26153 /* tournament.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tournament.h; sourceTree = "<group>"; };
+		6BB7268321ACC07500C26153 /* TournamentDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TournamentDriver; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB7268521ACC07500C26153 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B315A48C2165CCCC005CAFD4 /* StatsWinnerDriver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = StatsWinnerDriver; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315A48E2165CCCC005CAFD4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B315F96C21976A0D005A899B /* strategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = strategy.h; sourceTree = "<group>"; };
@@ -385,6 +398,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0E76CF218A6F86006CECD2 /* libRisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BB7268021ACC07500C26153 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BB7268A21ACC16B00C26153 /* libRisk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +507,14 @@
 			path = GamePlay;
 			sourceTree = "<group>";
 		};
+		6BB7268421ACC07500C26153 /* TournamentDriver */ = {
+			isa = PBXGroup;
+			children = (
+				6BB7268521ACC07500C26153 /* main.cpp */,
+			);
+			path = TournamentDriver;
+			sourceTree = "<group>";
+		};
 		B315A48D2165CCCC005CAFD4 /* StatsWinnerDriver */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +574,7 @@
 				6B0E76B9218A6F55006CECD2 /* GameStart */,
 				6B0E76C7218A6F7B006CECD2 /* GamePlay */,
 				B32D385E218E54FE000C1568 /* GameLoopDriver */,
+				6BB7268421ACC07500C26153 /* TournamentDriver */,
 				B3BB809F2165ABE9005177BB /* Products */,
 				B3BB810E2165BEB9005177BB /* Frameworks */,
 			);
@@ -565,6 +595,7 @@
 				6B0E76B8218A6F55006CECD2 /* GameStart */,
 				6B0E76C6218A6F7A006CECD2 /* GamePlay */,
 				B32D385D218E54FE000C1568 /* GameLoopDriver */,
+				6BB7268321ACC07500C26153 /* TournamentDriver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -768,6 +799,23 @@
 			productReference = 6B0E76C6218A6F7A006CECD2 /* GamePlay */;
 			productType = "com.apple.product-type.tool";
 		};
+		6BB7268221ACC07500C26153 /* TournamentDriver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BB7268721ACC07500C26153 /* Build configuration list for PBXNativeTarget "TournamentDriver" */;
+			buildPhases = (
+				6BB7267F21ACC07500C26153 /* Sources */,
+				6BB7268021ACC07500C26153 /* Frameworks */,
+				6BB7268121ACC07500C26153 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TournamentDriver;
+			productName = TournamentDriver;
+			productReference = 6BB7268321ACC07500C26153 /* TournamentDriver */;
+			productType = "com.apple.product-type.tool";
+		};
 		B315A48B2165CCCC005CAFD4 /* StatsWinnerDriver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B315A4902165CCCC005CAFD4 /* Build configuration list for PBXNativeTarget "StatsWinnerDriver" */;
@@ -932,6 +980,9 @@
 					6B0E76C5218A6F7A006CECD2 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					6BB7268221ACC07500C26153 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					B315A48B2165CCCC005CAFD4 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -982,6 +1033,7 @@
 				6B0E76B7218A6F55006CECD2 /* GameStart */,
 				6B0E76C5218A6F7A006CECD2 /* GamePlay */,
 				B32D385C218E54FE000C1568 /* GameLoopDriver */,
+				6BB7268221ACC07500C26153 /* TournamentDriver */,
 			);
 		};
 /* End PBXProject section */
@@ -1016,6 +1068,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B0E76C9218A6F7B006CECD2 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BB7267F21ACC07500C26153 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BB7268621ACC07500C26153 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,6 +1314,28 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6BB7268821ACC07500C26153 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XM25KFD587;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6BB7268921ACC07500C26153 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XM25KFD587;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1598,6 +1680,15 @@
 			buildConfigurations = (
 				6B0E76CB218A6F7B006CECD2 /* Debug */,
 				6B0E76CC218A6F7B006CECD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BB7268721ACC07500C26153 /* Build configuration list for PBXNativeTarget "TournamentDriver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BB7268821ACC07500C26153 /* Debug */,
+				6BB7268921ACC07500C26153 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

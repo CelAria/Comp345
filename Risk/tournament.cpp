@@ -33,14 +33,14 @@ void selectgamemode(){
         else{
             cout << "Invalid. Try again";
             cin.clear();
-            cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
+            cin.ignore(INT_MAX, '\n');
             selectgamemode();
         }
         if(input == 1){
-           // START GAME
+            // TO DO: START GAME
         }
         else if(input == 2){
-            // START TOURNAMENT
+            //TO DO: START TOURNAMENT
         }
     }
 }
@@ -186,7 +186,7 @@ int Tournament::inputnumTurns(){
     cin >> numturns;
     if(cin.good())
     {
-        if(numturns < 1 || numturns > 5) {
+        if(numturns < 10 || numturns > 50) {
             cout << "Bad value. Enter a value between 1 and 5";
             cin.clear();
             cin.ignore(INT_MAX, '\n');
@@ -207,5 +207,7 @@ int Tournament::selectnumturns(){
 }
 
 void tournamentloop();
+
+//final print of 
 void print();
 

@@ -10,6 +10,12 @@
 #include "maingame.h"
 #include "maploader.h"
 
+void printvecString(vector<string> vec){
+    vector<string>::iterator it;
+    for(it=vec.begin(); it !=vec.end(); it++){
+        cout << *it << " ";
+    }
+}
 
 void selectgamemode(){
     cout << "would you like to enter GAME mode or TOURNAMENT mode?" << endl;
@@ -75,6 +81,7 @@ vector<string> Tournament::inputmaps(const string directory){
         map=selectMap(directory);
         selectedmaps.push_back(map);
     }
+    printvecString(selectedmaps);
     return selectedmaps;
 };
 
@@ -100,21 +107,53 @@ int Tournament::inputnumStrategies(){
 }
 
 void Tournament::printStrategies(){
-    cout << "Available Strategies:" << endl << "1.Aggresive Player" << endl << "2.Benevolent Player" << endl << "3.Cheater" << endl << "4.Random";
+    cout << "Available Strategies:" << endl << "1.Aggresive Player" << endl << "2.Benevolent Player" << endl << "3.Cheater" << endl << "4.Random" << endl;
 }
 
 
+void Tournament::StrategySwitch(){
+    cout << "enter selection" << endl;
+    int selection;
+    cin >> selection;
+    if(cin.good()){
+        if(selection < 1 || selection > 4){
+            cout << "bad value! Try again" << endl;
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+            StrategySwitch();
+        }
+    switch(selection){
+        case 1:
+            selectedstrategies.push_back("Aggressive");
+            return;
+        case 2:
+             selectedstrategies.push_back("Benevolent");
+            return;
+        case 3:
+            selectedstrategies.push_back("Cheater");
+            return;
+        case 4:
+            selectedstrategies.push_back("Random");
+            return;
+        }
+    }
+    else{
+        cout << "Not an integer.";
+        cin.clear();
+        cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
+        StrategySwitch();
+    }
+}
 
-vector<Strategy*> Tournament::selectstrategies(){
+vector<string> Tournament::selectstrategies(){
     inputnumStrategies();
     printStrategies();
     for (int i=0; i < numstrategies; i++){
-        Strategy* s;
-        selectedstrategies.push_back(s);
+        StrategySwitch();
     }
+    printvecString(selectedstrategies);
     return selectedstrategies;
 }
-
 
 
 int selectnumgames();

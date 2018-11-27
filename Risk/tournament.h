@@ -34,7 +34,7 @@ class Tournament{
     
 private:
     vector<string> selectedmaps;
-    vector<Strategy*> selectedstrategies;
+    vector<string> selectedstrategies;
     int nummaps;
     int numstrategies;
     int numgames;
@@ -45,11 +45,12 @@ public:
     int inputnumStrategies();
     void selectgamemode();
     void printStrategies();
-    vector<string> inputmaps(const string directory);
-    vector<Strategy*> selectstrategies();
+    void StrategySwitch();
     int selectnumgames();
     int selectnumturns();
     void tournamentloop();
     void print();
+    vector<string> selectstrategies();
+    vector<string> inputmaps(const string directory);
     
 };

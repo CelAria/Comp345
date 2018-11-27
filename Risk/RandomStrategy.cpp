@@ -10,9 +10,11 @@
 #include "gamemap.h"
 #include <vector>
 #include "country.h"
+#include "RandomAttack.h"
 
 void RandomStrategy :: attack(Player* player, GameMap* gameMap){
-    
+    RandomAttack playerAttack(player,gameMap);
+    playerAttack.attackLoop();
 }
 
 void RandomStrategy ::fortify(Player* player, GameMap* gameMap){

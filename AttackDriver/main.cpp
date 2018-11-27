@@ -70,7 +70,7 @@ int main(int argc, const char * argv[]) {
     //creates 3 players with player ID's and strategies
     //creates gamemap, strategy and attackphase class
     
-    Strategy* strategyAgressive(new AggressiveStrategy);
+    Strategy* strategyAgressive(new RandomStrategy);
     Strategy* strategyBenevolent(new BenevolentStrategy);
     Player player(1);
     Player player2(2,strategyAgressive);

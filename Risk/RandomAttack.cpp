@@ -1,25 +1,25 @@
 //
-//  agressiveAttack.cpp
+//  RandomAttack.cpp
 //  Risk
 //
-//  Created by Matthew Salaciak 29644490
-//  ASSIGNMENT #3
+//  Created by Matthew Salaciak on 2018-11-27.
 //  Copyright © 2018 comp345. All rights reserved.
-// this agressive attack takes the biggest army and always attacks with it until its too weak or no attackable neighbours
-// when it wins, it moves just 1 army in order to keep the strongest country still strong
+//
 
-#include "agressiveAttack.h"
+#include "RandomAttack.h"
+
 //constructor for attackPhase
-AgressiveAttack :: AgressiveAttack(Player *player, GameMap *gameMap)
+RandomAttack :: RandomAttack(Player *player, GameMap *gameMap)
 {
     this->player = player;
     this->gameMap = gameMap;
     attackView = AttackView ();
+    srand((unsigned)time(0));
     
     
 }
 
-void AgressiveAttack :: attackLoop()
+void RandomAttack :: attackLoop()
 {
     //asks to attack
     //gets countries owned, picks country, gets armysize from country, gets neighbours owned by other playerID
@@ -30,12 +30,27 @@ void AgressiveAttack :: attackLoop()
     // calls moveArmy if wins
     //asks again if they want to attack
     
+    int randomAmountStart  =0;
+    randomAmountStart = (rand() % 4 + 1);
     
-    start = true;
-//    start= attackView.startAttackPhase();
-     playerID = player->getPlayerId();
+    if(randomAmountStart == 1 || randomAmountStart == 4){
+        start = true;
+    }
+    else {
+        start = false;
+    }
+    
+    
+    
+    //    start= attackView.startAttackPhase();
+    playerID = player->getPlayerId();
     cout<<"Player# " <<playerID <<" Do you want to attack?"<<endl;
-    cout<<"yes "<<endl;
+    if(start) {
+        cout<<"Yes "<<endl;
+    }
+    else {
+        cout<<"No "<<endl;
+    }
     
     while(start)
     {
@@ -51,13 +66,17 @@ void AgressiveAttack :: attackLoop()
         
         
         countrySelect(allCountries);
-        if (continueAttack){
-        cout<<"Do you want to attack again? "<<endl;
-        cout<<"yes "<<endl;
-        start = true;
+        
+        int randomAmountContinue  =0;
+        randomAmountContinue = (rand() % 3 + 1);
+
+        if (continueAttack && randomAmountContinue == 1){
+            cout<<"Do you want to attack again? "<<endl;
+            cout<<"yes "<<endl;
+            start = true;
         }
         else {
-            cout<<"stop attacking...no neighbours or too weak"<<endl;
+            cout<<"stop attacking..."<<endl;
             start = false;
         }
         
@@ -66,7 +85,7 @@ void AgressiveAttack :: attackLoop()
 
 //compares attackers and defenders dice
 //keeps track of how many wins and looses occur so we can subtract that from the army count later on
-void AgressiveAttack :: compare(int attackDice, int defendDice)
+void RandomAttack:: compare(int attackDice, int defendDice)
 {
     winAttackCounter=0;
     winDefenseCounter=0;
@@ -205,7 +224,7 @@ void AgressiveAttack :: compare(int attackDice, int defendDice)
 //subtracts armies lost
 //if country is defeated, asks winner to move x amount of armies
 
-void AgressiveAttack::countrySelect(vector<Country*> allCountries)
+void RandomAttack::countrySelect(vector<Country*> allCountries)
 {
     
     
@@ -216,29 +235,13 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
     vector<Country*> enemies;
     vector<Country*> allEnemies;
     
-  
     
-   
+    
+    
     while(notEnoughArmies){
-        int bigArmyCountry =0;
-        int bigArmyCount =0;
-        for(int i =0; i<allCountries.size(); i++){
-            bigArmyCount = allCountries[i]->getArmiesCount();
-            for (int j=0;j<allCountries.size(); j++){
-                if(bigArmyCount < allCountries[j]->getArmiesCount()){
-                    bigArmyCount =allCountries[j]->getArmiesCount();
-                    bigArmyCountry=j;
-                }
-                
-            }
-            
-        }
        
-        
-        
-        
-        
-        selectCountry = bigArmyCountry+1;
+
+        selectCountry = (rand() % allCountries.size() + 1);
         
         
         
@@ -289,7 +292,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
     
     attackView.enemyCountryList(enemies, player);
     
-    int selectAttackCountry =1;
+    int selectAttackCountry =(rand() % enemies.size() + 1);
     bool wrongInput = true;
     
     while(wrongInput){
@@ -332,7 +335,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
     player ->getDiceRollsAttack(diceAmountAttack);
     
     
-        cout<<"defending player...how many dice to roll?" << endl;
+    cout<<"defending player...how many dice to roll?" << endl;
     while(defendDiceLoop){
         
         if(enemies[selectAttackCountry - 1]->getOwner()->getStrategy()->getType() == 0){
@@ -419,6 +422,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
         }
         
         
+        
         if((diceAmountDefend >=1 && diceAmountDefend<3) && (diceAmountDefend <= enemies[selectAttackCountry - 1]->getArmiesCount()))
         {
             player ->defendRollDice(diceAmountDefend);
@@ -452,7 +456,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
         bool moveArmyInput = true;
         while(moveArmyInput){
             
-//            moveArmies=attackView.moveArmies();
+            //            moveArmies=attackView.moveArmies();
             moveArmies =1;
             
             

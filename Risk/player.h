@@ -8,6 +8,8 @@
 #include "HumanPlayerStrategy.h"
 #include "aggressivestrategy.h"
 #include "BenevolentStrategy.h"
+#include "RandomStrategy.h"
+#include "CheaterStrategy.h"
 #include "observable.h"
 
 #include <map>

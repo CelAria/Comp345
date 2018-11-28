@@ -301,11 +301,9 @@ Maploader maploader;
         
         //initialize views
         MainGame mainGame = MainGame(gameMap, players, deck);
-        PhaseView phaseView;
         GameStatView gameStatView(gameMap, players);
         
         //set observers
-        mainGame.addObserver(&phaseView);
         for(int i = 0; i < players.size(); ++i) {
             players[i]->addObserver(&gameStatView);
         }

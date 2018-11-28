@@ -266,10 +266,9 @@ Maploader maploader;
         vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
         
        // ASSIGN STRATEGIES
-        for(int m=0; m <players.size(); m++){
-            for(int i=0; i < players.size(); i++){
+            for(int m=0; m < players.size(); m++){
         
-                switch(selectedstrategies.at(i)){
+                switch(selectedstrategies.at(m)){
                     case 1:{
                         //aggresive
                         AggressiveStrategy aggressive;
@@ -296,7 +295,7 @@ Maploader maploader;
                     }
                 }
             }
-        }
+        
         //initialize views
         MainGame mainGame = MainGame(gameMap, players, deck);
         PhaseView phaseView;

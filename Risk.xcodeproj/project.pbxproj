@@ -127,6 +127,13 @@
 			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
 			remoteInfo = Risk;
 		};
+		6BB7268B21AF4B7200C26153 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3BB80FF2165BE05005177BB;
+			remoteInfo = Risk;
+		};
 		B315A4932165CCD6005CAFD4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3BB80962165ABE9005177BB /* Project object */;
@@ -836,6 +843,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6BB7268C21AF4B7200C26153 /* PBXTargetDependency */,
 			);
 			name = TournamentDriver;
 			productName = TournamentDriver;
@@ -1222,6 +1230,11 @@
 			isa = PBXTargetDependency;
 			target = B3BB80FF2165BE05005177BB /* Risk */;
 			targetProxy = 6B0E76CD218A6F81006CECD2 /* PBXContainerItemProxy */;
+		};
+		6BB7268C21AF4B7200C26153 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3BB80FF2165BE05005177BB /* Risk */;
+			targetProxy = 6BB7268B21AF4B7200C26153 /* PBXContainerItemProxy */;
 		};
 		B315A4942165CCD6005CAFD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

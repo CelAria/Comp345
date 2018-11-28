@@ -84,7 +84,7 @@ int main(int argc, const char * argv[]) {
    
  
     
-    //prints players ID just to check 3 players are playing
+    //prints players ID just to check 4 players are playing and prints the strategy they are using
     cout << "Player #" << player.getPlayerId() << " : Cheater" << endl << endl;
     cout << "Player #" << player2.getPlayerId() << " : Random" << endl << endl;
     cout << "Player #" << player3.getPlayerId() << " : Benevolent" << endl << endl;
@@ -95,15 +95,11 @@ int main(int argc, const char * argv[]) {
     initMockGameMapAndPlayer(&gameMap, &player, &player2,&player3,&player4);
     
 
-    //calls attack loop for human, benevolent and agressive strategy
+    //calls attack loop for cheater, random, benevolent and agressive strategy
 
     player.attack(&gameMap);
-
     player2.attack(&gameMap);
     player3.attack(&gameMap);
-   
-    
-    
     player4.attack(&gameMap);
   
     

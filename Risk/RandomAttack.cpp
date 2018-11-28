@@ -32,6 +32,7 @@ void RandomAttack :: attackLoop()
     
     int randomAmountStart  =0;
     randomAmountStart = (rand() % 4 + 1);
+   
     
     if(randomAmountStart == 1 || randomAmountStart == 4){
         start = true;
@@ -68,9 +69,9 @@ void RandomAttack :: attackLoop()
         countrySelect(allCountries);
         
         int randomAmountContinue  =0;
-        randomAmountContinue = (rand() % 3 + 1);
-
-        if (continueAttack && randomAmountContinue == 1){
+        randomAmountContinue = (rand() % 4 + 1);
+      
+        if (randomAmountContinue == 1 || randomAmountContinue ==3){
             cout<<"Do you want to attack again? "<<endl;
             cout<<"yes "<<endl;
             start = true;

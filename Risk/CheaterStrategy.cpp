@@ -7,12 +7,14 @@
 //
 
 #include "CheaterStrategy.h"
-
 #include "gamemap.h"
 #include <vector>
 #include "country.h"
+#include "CheaterAttack.h"
 
 void CheaterStrategy :: attack(Player* player, GameMap* gameMap){
+    CheaterAttack playerAttack(player,gameMap);
+    playerAttack.attackLoop();
     
 }
 

@@ -12,6 +12,9 @@
 #include "country.h"
 #include "attackview.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include<random>
 
 using namespace std;
 

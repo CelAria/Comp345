@@ -16,15 +16,14 @@ int main(int argc, const char * argv[]) {
 const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDriver";
 Tournament tournament;
     
-/*TO DO: finish select gamemode, tournament loop,
- , number of turns*/
+/*TO DO: finish select gamemode, tournament loop, number of turns*/
     
     // tournament.selectgamemode();
 tournament.inputmaps(directory);
 tournament.selectstrategies();
 tournament.selectnumgames();
 tournament.selectnumturns();
-    //tournament.tournamentloop();
-    tournament.print();
+tournament.tournamentloop(directory);
+tournament.print();
     
 }

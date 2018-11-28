@@ -49,6 +49,7 @@ private:
     void printheader();
     void printcolumns();
     void extractFileName(const string& fullPath);
+    vector<Player*> winners; 
     
 public:
     void selectgamemode();

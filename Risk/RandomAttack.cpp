@@ -30,6 +30,12 @@ void RandomAttack :: attackLoop()
     // calls moveArmy if wins
     //asks again if they want to attack
     
+    if(player->getCountriesCount() == 0){
+        cout<<"No more Countries"<<endl;
+        start = false;
+        return;
+    }
+    
     int randomAmountStart  =0;
     randomAmountStart = (rand() % 4 + 1);
    
@@ -271,6 +277,7 @@ void RandomAttack::countrySelect(vector<Country*> allCountries)
                 
                 notEnoughArmies = false;
             } else{
+                cout<<allCountries[selectCountry-1]->getName()<<endl;
                 cout<<"Country has no attackable neighbours" <<endl;
                 continueAttack = false;
                 return;
@@ -462,9 +469,10 @@ void RandomAttack::countrySelect(vector<Country*> allCountries)
             
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
-                enemies[selectAttackCountry - 1]->setOwner(player);
+              
+                enemies[selectAttackCountry - 1]->getOwner()->transferCountryTo(enemies[selectAttackCountry - 1]->getName(), player);
+                  enemies[selectAttackCountry - 1]->setOwner(player);
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
-                player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));
                 gameMap->getCountry(allCountries[selectCountry - 1]->getName())->setArmiesCount(allCountries[selectCountry - 1]->getArmiesCount()-moveArmies);
                 cout<<"Moved " <<moveArmies <<" armies" <<endl;
                 moveArmyInput=false;

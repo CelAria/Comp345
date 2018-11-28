@@ -30,6 +30,12 @@ void AttackPhase :: attackLoop()
     //checks army size of defending country - if 0 attacker wins
   // calls moveArmy if wins
     //asks again if they want to attack
+    
+    if(player->getCountriesCount() == 0){
+        cout<<"No more Countries"<<endl;
+        start = false;
+        return;
+    }
    
     
     start = false;
@@ -258,9 +264,11 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             
             notEnoughArmies = false;
             } else{
+                   cout<<allCountries[selectCountry-1]->getName()<<endl;
                 cout<<"Country has no attackable neighbours, choose again or type 0 to exit attack phase" <<endl;
             }
         } else
+               cout<<allCountries[selectCountry-1]->getName()<<endl;
              cout<<"Country does not have enough armies on it, choose again or type 0 to exit attack phase" <<endl;
         
     }
@@ -387,9 +395,11 @@ void AttackPhase::countrySelect(vector<Country*> allCountries)
             moveArmies=attackView.moveArmies();
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
-                enemies[selectAttackCountry - 1]->setOwner(player);
+               
+                enemies[selectAttackCountry - 1]->getOwner()->transferCountryTo(enemies[selectAttackCountry - 1]->getName(), player);
+                 enemies[selectAttackCountry - 1]->setOwner(player);
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
-                player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));
+
                 gameMap->getCountry(allCountries[selectCountry - 1]->getName())->setArmiesCount(allCountries[selectCountry - 1]->getArmiesCount()-moveArmies);
                 cout<<"Moved " <<moveArmies <<" armies" <<endl;
                 moveArmyInput=false;

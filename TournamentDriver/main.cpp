@@ -17,14 +17,14 @@ const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDrive
 Tournament tournament;
     
 /*TO DO: finish select gamemode, tournament loop,
- FINISH PRINT (at end), number of turns*/
+ , number of turns*/
     
     // tournament.selectgamemode();
 tournament.inputmaps(directory);
 tournament.selectstrategies();
 tournament.selectnumgames();
 tournament.selectnumturns();
-tournament.print();
     //tournament.tournamentloop();
+    tournament.print();
     
 }

@@ -254,7 +254,7 @@ string mapPath;
 GameStart gameStart;
 Maploader maploader;
     
-//for each MAP, play GAMES number games until TURNS
+    //for each MAP, play # GAMES until # TURNS
     
     //FOR EACH MAP
     for(int i=0; i < selectedmaps.size(); i++){
@@ -266,13 +266,26 @@ Maploader maploader;
         vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
         assignStrategies();
         
+        //initialize views
+        MainGame mainGame = MainGame(gameMap, players, deck);
+        PhaseView phaseView;
+        GameStatView gameStatView(gameMap, players);
+        
+        //set observers
+        mainGame.addObserver(&phaseView);
+        for(int i = 0; i < players.size(); ++i) {
+            players[i]->addObserver(&gameStatView);
+        }
+        
         //PLAY THIS NUMBER OF GAMES
         for(int j=0; j < numgames; j++){
             
             
             //for THIS NUMBER OF TURNS
             for (int k=0; k < numturns; k++){
-                
+                mainGame.playGame();
+                //INCREMENT COUNTER FOR NUMBER OF TURNS
+                //PRINT FUNCTION
             }
         }
     }

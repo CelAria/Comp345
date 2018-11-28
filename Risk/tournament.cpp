@@ -50,7 +50,7 @@ void selectgamemode(){
 }
 
 int Tournament::inputnumMaps(){
-    cout << "How many maps would you like to select? Enter an integer between 1 and 5" << endl;
+    cout << "\nHow many maps would you like to select? Enter an integer between 1 and 5" << endl;
     cin >> nummaps;
     if(cin.good())
     {
@@ -76,7 +76,6 @@ vector<string> Tournament::inputmaps(const string directory){
     //display directory
     //get number of maps
     inputnumMaps();
-    cout << nummaps << endl;
     printDirectory(directory);
     
     string map;
@@ -90,7 +89,7 @@ vector<string> Tournament::inputmaps(const string directory){
 };
 
 int Tournament::inputnumPlayers(){
-    cout << "How many players would you like to select? Enter an integer between 2 and 4" << endl;
+    cout << "\nHow many players would you like to select? Enter an integer between 2 and 4" << endl;
     cin >> numstrategies;
     if(cin.good())
     {
@@ -218,6 +217,7 @@ int Tournament::selectnumturns(){
 void Tournament::assignStrategies(){
     for(int m=0; m <players.size(); m++){
         for(int i=0; i < selectedstrategies.size(); i++){
+            cout<< " i ";
             switch(selectedstrategies.at(i)){
                 case 1:{
                     //aggresive
@@ -233,21 +233,20 @@ void Tournament::assignStrategies(){
                 }
                 case 3:{
                     //cheater
-                    AggressiveStrategy aggressive;
-                    players[m]->setStrategy(&aggressive);
+                    CheaterStrategy cheater;
+                    players[m]->setStrategy(&cheater);
                     return;
                 }
                 case 4:{
                     //random
-                    AggressiveStrategy aggressive;
-                    players[m]->setStrategy(&aggressive);
+                    RandomStrategy random;
+                    players[m]->setStrategy(&random);
                     return;
                 }
             }
         }
     }
 }
-
 
 void Tournament::tournamentloop(string directory){
 string mapPath;
@@ -294,5 +293,77 @@ maploader.readmapfile(mapPath, directory);
 }
 
 //final print of 
-void print();
+void Tournament::printheader(){
+    //output selected maps
+    
+    cout << "\nMaps:";
+    for(vector<string>::const_iterator i = selectedmaps.begin(); i != selectedmaps.end(); ++i){
+        extractFileName(*i);
+    }
+     //output selected players
+     cout << "\nPlayers:";
+    
+//    for(int i=0; i < selectedstrategies.size(); i++){
+//        cout << selectedstrategies.at(i) << " ";
+//    }
+    for(int i=0; i < selectedstrategies.size(); i++){
+        switch(selectedstrategies.at(i)){
+            case 1:{
+                cout << "Agressive, ";
+                break;
+            }
+            case 2:{
+                //benevolent
+                cout << "Benevolent, ";
+                break;
+            }
+            case 3:{
+                //cheater
+                cout << "Cheater, ";
+                break;
+            }
+            case 4:{
+                //random
+                cout << "Random, ";
+                break;
+            }
+        }
+    }
+    
+    cout << "\nGames:" << numgames;
+    cout << "\nTurns:" << numturns;
+}
+
+// make a vector of size (# games) that stores "winner"
+void Tournament::printcolumns(){
+    cout << endl << endl;
+    cout << "                  ";
+    for(int i=1; i <= numgames; i++){
+        cout << "Game " << i << "            ";
+    }
+    cout << endl;
+    //top row for "games"
+    for(vector<string>::const_iterator i = selectedmaps.begin(); i != selectedmaps.end(); ++i){
+        extractFileName(*i);
+        cout << "      ";
+        //for each game, print winner.
+        for (int i=0; i < numgames; i++){
+            cout<< "winner ";
+            cout << "           ";
+        }
+cout << endl;
+    }
+}
+
+void Tournament::extractFileName(const string& fullPath)
+{
+    const size_t lastSlashIndex = fullPath.find_last_of("/\\");
+    cout << fullPath.substr(lastSlashIndex + 1) << ", ";
+}
+
+
+void Tournament::print(){
+    printheader();
+    printcolumns();
+}
 

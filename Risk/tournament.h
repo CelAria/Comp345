@@ -46,6 +46,9 @@ private:
     int inputnumGames();
     int inputnumTurns();
     void StrategySwitch();
+    void printheader();
+    void printcolumns();
+    void extractFileName(const string& fullPath);
     
 public:
     void selectgamemode();
@@ -53,8 +56,9 @@ public:
     int selectnumgames();
     int selectnumturns();
     void tournamentloop(string directory);
-    void print();
     vector<int> selectstrategies();
     vector<string> inputmaps(const string directory);
+    void print();
+    
     
 };

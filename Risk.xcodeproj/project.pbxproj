@@ -332,7 +332,6 @@
 		6B9B94BB2198E7BC00523ECD /* gamestatview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamestatview.cpp; sourceTree = "<group>"; };
 		6B9B94BC2198E7BC00523ECD /* gamestatview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gamestatview.h; sourceTree = "<group>"; };
 		6B9E4A132170F5C3003F8DBC /* Africa.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = Africa.map; sourceTree = "<group>"; };
-		6B9E4A142170F605003F8DBC /* Brazil(brokenmap).map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = "Brazil(brokenmap).map"; sourceTree = "<group>"; };
 		6BB65C9A2166A42E007AFC39 /* maploader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maploader.cpp; sourceTree = "<group>"; };
 		6BB65C9C2166A444007AFC39 /* maploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maploader.h; sourceTree = "<group>"; };
 		6BB65C9E216BEFD0007AFC39 /* World.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = World.map; sourceTree = "<group>"; };
@@ -534,7 +533,6 @@
 		B315A48D2165CCCC005CAFD4 /* StatsWinnerDriver */ = {
 			isa = PBXGroup;
 			children = (
-				6B9E4A142170F605003F8DBC /* Brazil(brokenmap).map */,
 				6B9E4A132170F5C3003F8DBC /* Africa.map */,
 				6B690C36216FEF93001CFB90 /* Canada.map */,
 				6BB65C9E216BEFD0007AFC39 /* World.map */,

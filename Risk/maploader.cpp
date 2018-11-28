@@ -1,6 +1,7 @@
 #include "maploader.h"
 #include "gamemap.h"
 #include "viewgamestart.h"
+#include "tournament.h"
 #include <vector>
 #include <string>
 #include <sstream>

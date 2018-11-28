@@ -13,18 +13,18 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
    
-const string directory = "/Users/celestepimm/git/Comp345-Xcode/StatsWinnerDriver";
+const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDriver";
 Tournament tournament;
     
 /*TO DO: finish select gamemode, tournament loop,
- FINISH PRINT (at end) ADD IN THE DIFFERENT STRATEGIES, ONCE THEY ARE MADE
- number of turns*/
+ FINISH PRINT (at end), number of turns*/
     
     // tournament.selectgamemode();
 tournament.inputmaps(directory);
 tournament.selectstrategies();
 tournament.selectnumgames();
 tournament.selectnumturns();
+tournament.print();
     //tournament.tournamentloop();
     
 }

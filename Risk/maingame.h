@@ -39,7 +39,7 @@ public:
     Player* getNextPlayer(){return players[turn];};
     Player* getWinner(); //returns winner or NULL if game is not over yet
     bool isGameOver();
-    void playGame(); //game entry point
+    void playGame(int = 0); //game entry point
     void notifyObservers();
     void notifyGameOver();
 };

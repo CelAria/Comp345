@@ -52,10 +52,18 @@ void MainGame::executeTurn() {
 /**
  The main loop of the game
  */
-void MainGame::playGame() {
+void MainGame::playGame(int turns) {
     
-    while(!isGameOver()) {
-        executeTurn();
+    if(turns > 0) {
+        int i = 0;
+        while(!isGameOver() && i < turns) {
+            executeTurn();
+            i++;
+        }
+    } else {
+        while(!isGameOver()) {
+            executeTurn();
+        }
     }
     
     phase = GAME_OVER;

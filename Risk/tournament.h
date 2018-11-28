@@ -33,7 +33,7 @@ tournament, a report of the results should be displayed, e.g.
 class Tournament{
     
 private:
-    vector<Player*> players;
+    //vector<Player*> players;
     vector<string> selectedmaps;
     vector<int> selectedstrategies;
     int nummaps;

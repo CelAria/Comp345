@@ -24,7 +24,9 @@ public:
     vector<Player*> createPlayers(int amount, GameMap* gameMap);  //return vector of pointers to player objects
     Deck* createDeck(GameMap* pointertogamemap);
     GameMap* createGameMap(string directory); //use the directory to get the user's game map
+    GameMap* createGameMap(string mappath, string directory);//overload
     void addPlayerObservers(Observer* obs);
+    void setNumPlayers(int i){numberofplayers=i; }
 
 private:
     int numberofplayers;  //number of players in game

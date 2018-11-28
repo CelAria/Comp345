@@ -18,12 +18,14 @@ Tournament tournament;
     
 /*TO DO: finish select gamemode, tournament loop, number of turns*/
     
-    // tournament.selectgamemode();
+// tournament.selectgamemode();
 tournament.inputmaps(directory);
 tournament.selectstrategies();
 tournament.selectnumgames();
 tournament.selectnumturns();
 tournament.tournamentloop(directory);
 tournament.print();
+    
+
     
 }

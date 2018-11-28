@@ -42,9 +42,11 @@ void selectgamemode(){
         }
         if(input == 1){
             // TO DO: START GAME
+            //
         }
         else if(input == 2){
             //TO DO: START TOURNAMENT
+            //tournamentloop();
         }
     }
 }
@@ -251,6 +253,7 @@ void Tournament::tournamentloop(string directory){
 string mapPath;
 GameStart gameStart;
 Maploader maploader;
+
     
     //for each MAP, play # GAMES until # TURNS
     
@@ -259,12 +262,12 @@ Maploader maploader;
         //for the selected map
         mapPath= selectedmaps.at(i);
         //make the gamemap
-        GameMap* gameMap=maploader.readmapfile(mapPath, directory);
+        GameMap* gameMap= gameStart.createGameMap(mapPath, directory);
         //make the deck
         Deck* deck = gameStart.createDeck(gameMap);
         //make the players
-        vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
-        
+        gameStart.setNumPlayers(numstrategies);
+         vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
        // ASSIGN STRATEGIES
             for(int m=0; m < players.size(); m++){
         
@@ -334,9 +337,6 @@ void Tournament::printheader(){
      //output selected players
      cout << "\nPlayers:";
     
-//    for(int i=0; i < selectedstrategies.size(); i++){
-//        cout << selectedstrategies.at(i) << " ";
-//    }
     for(int i=0; i < selectedstrategies.size(); i++){
         switch(selectedstrategies.at(i)){
             case 1:{

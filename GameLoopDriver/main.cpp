@@ -16,7 +16,7 @@
 
 int main(int argc, const char * argv[]) {
     
-    const string directory = "/Users/allanpichardo/Documents/Dev/Comp345/StatsWinnerDriver";
+    const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDriver";
     
     //initialize a game
     GameStart gameStart;

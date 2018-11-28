@@ -84,7 +84,6 @@ vector<string> Tournament::inputmaps(const string directory){
         map=selectMap(directory);
         selectedmaps.push_back(map);
     }
-    printvecString(selectedmaps);
     return selectedmaps;
 };
 

@@ -110,30 +110,41 @@ void CheaterAttack::countrySelect(vector<Country*> allCountries)
     while(notEnoughArmies){
         vector<Country*> allNeighbours;
         vector <Country*> StealCountries;
+       
         
         for (int i =0; i<allCountries.size();i++){
            allNeighbours = allCountries[i]->getAllNeighbors();
             for(int j =0; j<allNeighbours.size();j++){
-                if(allNeighbours[j]->getOwner()->getPlayerId() != player->getPlayerId()){
+                if(allNeighbours[j]->getOwner()->getPlayerId() != this->player->getPlayerId()){
                 StealCountries.push_back(allNeighbours[j]);
+                cout<<"You have taken " << allNeighbours[j]->toString()<<endl;
+                allNeighbours[j]->setOwner(this->player);
+                   
             }
             }
         }
+        
+        
+        
+        for(int i = 0; i<StealCountries.size(); i++){
+
+        player->addCountry(gameMap->getCountry(StealCountries[i]->getName()));
+           
+            
+        }
+        
         
         if(StealCountries.size() ==0)
         {
             cout<<"No more enemey neighbours to take..."<<endl;
+            notEnoughArmies = false;
             return;
             
         }
         
-        for(int i = 0; i<StealCountries.size(); i++){
-            cout<<"You have taken " << StealCountries[i]->toString()<<endl;
-            StealCountries[i]->setOwner(player);
-            player->addCountry(gameMap->getCountry(StealCountries[i]->getName()));
-            
-        }
+      
         StealCountries.clear();
+       
 
     }
 }

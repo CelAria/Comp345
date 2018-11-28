@@ -98,6 +98,7 @@ int main(int argc, const char * argv[]) {
     //calls attack loop for human, benevolent and agressive strategy
 
     player.attack(&gameMap);
+
     player2.attack(&gameMap);
     player3.attack(&gameMap);
    

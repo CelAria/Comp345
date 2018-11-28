@@ -23,6 +23,14 @@
 		34189EB3219E9E710059D6C0 /* agressiveAttack.h in Headers */ = {isa = PBXBuildFile; fileRef = 34189EB1219E9E710059D6C0 /* agressiveAttack.h */; };
 		34189EB6219E9F750059D6C0 /* passiveAttack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34189EB4219E9F750059D6C0 /* passiveAttack.cpp */; };
 		34189EB7219E9F750059D6C0 /* passiveAttack.h in Headers */ = {isa = PBXBuildFile; fileRef = 34189EB5219E9F750059D6C0 /* passiveAttack.h */; };
+		341F25DC21ADFEC10059C202 /* RandomStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341F25DA21ADFEC10059C202 /* RandomStrategy.cpp */; };
+		341F25DD21ADFEC10059C202 /* RandomStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 341F25DB21ADFEC10059C202 /* RandomStrategy.h */; };
+		341F25E021ADFED90059C202 /* CheaterStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341F25DE21ADFED90059C202 /* CheaterStrategy.cpp */; };
+		341F25E121ADFED90059C202 /* CheaterStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 341F25DF21ADFED90059C202 /* CheaterStrategy.h */; };
+		341F25E421AE015F0059C202 /* RandomAttack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341F25E221AE015F0059C202 /* RandomAttack.cpp */; };
+		341F25E521AE015F0059C202 /* RandomAttack.h in Headers */ = {isa = PBXBuildFile; fileRef = 341F25E321AE015F0059C202 /* RandomAttack.h */; };
+		341F25E821AE09970059C202 /* CheaterAttack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 341F25E621AE09970059C202 /* CheaterAttack.cpp */; };
+		341F25E921AE09970059C202 /* CheaterAttack.h in Headers */ = {isa = PBXBuildFile; fileRef = 341F25E721AE09970059C202 /* CheaterAttack.h */; };
 		34362E06218167C900838F6F /* attackphase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34362E05218167C900838F6F /* attackphase.cpp */; };
 		34362E08218167EE00838F6F /* attackphase.h in Headers */ = {isa = PBXBuildFile; fileRef = 34362E07218167EE00838F6F /* attackphase.h */; };
 		34AD28D721A14B8700669DB6 /* BenevolentStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */; };
@@ -298,6 +306,14 @@
 		34189EB1219E9E710059D6C0 /* agressiveAttack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = agressiveAttack.h; sourceTree = "<group>"; };
 		34189EB4219E9F750059D6C0 /* passiveAttack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = passiveAttack.cpp; sourceTree = "<group>"; };
 		34189EB5219E9F750059D6C0 /* passiveAttack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = passiveAttack.h; sourceTree = "<group>"; };
+		341F25DA21ADFEC10059C202 /* RandomStrategy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RandomStrategy.cpp; sourceTree = "<group>"; };
+		341F25DB21ADFEC10059C202 /* RandomStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomStrategy.h; sourceTree = "<group>"; };
+		341F25DE21ADFED90059C202 /* CheaterStrategy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CheaterStrategy.cpp; sourceTree = "<group>"; };
+		341F25DF21ADFED90059C202 /* CheaterStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheaterStrategy.h; sourceTree = "<group>"; };
+		341F25E221AE015F0059C202 /* RandomAttack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RandomAttack.cpp; sourceTree = "<group>"; };
+		341F25E321AE015F0059C202 /* RandomAttack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomAttack.h; sourceTree = "<group>"; };
+		341F25E621AE09970059C202 /* CheaterAttack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CheaterAttack.cpp; sourceTree = "<group>"; };
+		341F25E721AE09970059C202 /* CheaterAttack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheaterAttack.h; sourceTree = "<group>"; };
 		34362E05218167C900838F6F /* attackphase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackphase.cpp; sourceTree = "<group>"; };
 		34362E07218167EE00838F6F /* attackphase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackphase.h; sourceTree = "<group>"; };
 		34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BenevolentStrategy.cpp; sourceTree = "<group>"; };
@@ -609,6 +625,10 @@
 				6BB65C9C2166A444007AFC39 /* maploader.h */,
 				B35FED6A217ADB1B00FE6FA7 /* fortifycontroller.cpp */,
 				B35FED6B217ADB1B00FE6FA7 /* fortifycontroller.h */,
+				341F25E221AE015F0059C202 /* RandomAttack.cpp */,
+				341F25E321AE015F0059C202 /* RandomAttack.h */,
+				341F25E621AE09970059C202 /* CheaterAttack.cpp */,
+				341F25E721AE09970059C202 /* CheaterAttack.h */,
 				34189EB0219E9E710059D6C0 /* agressiveAttack.cpp */,
 				34189EB1219E9E710059D6C0 /* agressiveAttack.h */,
 				34189EB4219E9F750059D6C0 /* passiveAttack.cpp */,
@@ -652,6 +672,10 @@
 				B3907F1B219E1A7400975BFC /* aggressivestrategy.h */,
 				34AD28D521A14B8700669DB6 /* BenevolentStrategy.cpp */,
 				34AD28D621A14B8700669DB6 /* BenevolentStrategy.h */,
+				341F25DA21ADFEC10059C202 /* RandomStrategy.cpp */,
+				341F25DB21ADFEC10059C202 /* RandomStrategy.h */,
+				341F25DE21ADFED90059C202 /* CheaterStrategy.cpp */,
+				341F25DF21ADFED90059C202 /* CheaterStrategy.h */,
 				0E573FBF21A24143005E1650 /* agressiveReinforce.cpp */,
 				0E573FC021A24143005E1650 /* agressiveReinforce.h */,
 				0E573FC321A2467E005E1650 /* passiveReinforce.cpp */,
@@ -698,6 +722,7 @@
 				B3BB81042165BE18005177BB /* Dice.h in Headers */,
 				B3A97EED219CB6D600998A5D /* HumanPlayerStrategy.h in Headers */,
 				34AD28D821A14B8700669DB6 /* BenevolentStrategy.h in Headers */,
+				341F25DD21ADFEC10059C202 /* RandomStrategy.h in Headers */,
 				B315F97121976D80005A899B /* observable.h in Headers */,
 				B315F96D21976A0D005A899B /* strategy.h in Headers */,
 				B35FED6D217ADB1B00FE6FA7 /* fortifycontroller.h in Headers */,
@@ -705,6 +730,7 @@
 				6B9B94BE2198E7BC00523ECD /* gamestatview.h in Headers */,
 				34189EB7219E9F750059D6C0 /* passiveAttack.h in Headers */,
 				34189EB3219E9E710059D6C0 /* agressiveAttack.h in Headers */,
+				341F25E121ADFED90059C202 /* CheaterStrategy.h in Headers */,
 				0E573FC221A24143005E1650 /* agressiveReinforce.h in Headers */,
 				0E573FC621A2467E005E1650 /* passiveReinforce.h in Headers */,
 				B315F96F21976BAF005A899B /* observer.h in Headers */,
@@ -720,7 +746,9 @@
 				B32D3858218E4AA2000C1568 /* maingame.h in Headers */,
 				B3BB81072165BE18005177BB /* gamemap.h in Headers */,
 				6B0E7691217E62D5006CECD2 /* controllergamestart.h in Headers */,
+				341F25E921AE09970059C202 /* CheaterAttack.h in Headers */,
 				3400881C2195449C00D23A85 /* attackview.h in Headers */,
+				341F25E521AE015F0059C202 /* RandomAttack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,9 +1161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341F25E821AE09970059C202 /* CheaterAttack.cpp in Sources */,
 				B3F5B9DB216E5F6300A20B50 /* maploader.cpp in Sources */,
 				34AD28D721A14B8700669DB6 /* BenevolentStrategy.cpp in Sources */,
 				0E573FC521A2467E005E1650 /* passiveReinforce.cpp in Sources */,
+				341F25E021ADFED90059C202 /* CheaterStrategy.cpp in Sources */,
 				B3B2E8CD21669CAC00C2A4BA /* cardsdeck.cpp in Sources */,
 				B3907F1C219E1A7400975BFC /* aggressivestrategy.cpp in Sources */,
 				34189EB6219E9F750059D6C0 /* passiveAttack.cpp in Sources */,
@@ -1153,8 +1183,10 @@
 				B35FED7B217AE56D00FE6FA7 /* fortifyview.cpp in Sources */,
 				B35FED6C217ADB1B00FE6FA7 /* fortifycontroller.cpp in Sources */,
 				B3BB810C2165BE5B005177BB /* gamemap.cpp in Sources */,
+				341F25DC21ADFEC10059C202 /* RandomStrategy.cpp in Sources */,
 				B315F9762198A504005A899B /* phaseview.cpp in Sources */,
 				0E53B505218F5ECD003C85B1 /* reinforcephase.cpp in Sources */,
+				341F25E421AE015F0059C202 /* RandomAttack.cpp in Sources */,
 				6B9B94BD2198E7BC00523ECD /* gamestatview.cpp in Sources */,
 				0E573FC121A24143005E1650 /* agressiveReinforce.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,

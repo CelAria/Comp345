@@ -20,7 +20,7 @@ using namespace std;
 //mock game, creates 3 players, assigns them countries and armies on countries
 //tests players strategies
 //tests functions to make sure enemy neighbours are correct, amount of armies are correct, and transfer of country after winning is correct
-void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2, Player* player3) {
+void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2, Player* player3,Player* player4) {
     Continent centralAmerica = Continent("Central America", 3);
     Continent southAmerica = Continent("South America", 2);
 
@@ -57,11 +57,11 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2,
     gameMap->getCountry("Nicaragua")->setArmiesCount(3);
 
     player->addCountry(gameMap->getCountry("Costa Rica"));
-    player->addCountry(gameMap->getCountry("Colombia"));
+    player2->addCountry(gameMap->getCountry("Colombia"));
 
-    player2->addCountry(gameMap->getCountry("Venezuela"));
-    player2->addCountry(gameMap->getCountry("Panama"));
-    player3->addCountry(gameMap->getCountry("Nicaragua"));
+    player2->addCountry(gameMap->getCountry("Nicaragua"));
+    player3->addCountry(gameMap->getCountry("Panama"));
+    player4->addCountry(gameMap->getCountry("Venezuela"));
     
 }
 
@@ -70,29 +70,37 @@ int main(int argc, const char * argv[]) {
     //creates 3 players with player ID's and strategies
     //creates gamemap, strategy and attackphase class
     
-    Strategy* strategyAgressive(new AggressiveStrategy);
+    Strategy* strategyCheater(new CheaterStrategy);
     Strategy* strategyBenevolent(new BenevolentStrategy);
-    Player player(1);
-    Player player2(2,strategyAgressive);
+    Strategy* strategyAgressive(new AggressiveStrategy);
+    Strategy* strategyRandom(new RandomStrategy);
+
+    Player player(1,strategyCheater);
+    Player player2(2,strategyRandom);
     Player player3(3,strategyBenevolent);
+    Player player4(4,strategyAgressive);
     GameMap gameMap;
     AttackPhase attack(&player,&gameMap);
    
  
     
-    //prints players ID just to check 3 players are playing
-    cout << "Player #" << player.getPlayerId() << ":" << endl << endl;
-    cout << "Player #" << player2.getPlayerId() << ":" << endl << endl;
-    cout << "Player #" << player3.getPlayerId() << ":" << endl << endl;
+    //prints players ID just to check 4 players are playing and prints the strategy they are using
+    cout << "Player #" << player.getPlayerId() << " : Cheater" << endl << endl;
+    cout << "Player #" << player2.getPlayerId() << " : Random" << endl << endl;
+    cout << "Player #" << player3.getPlayerId() << " : Benevolent" << endl << endl;
+    cout << "Player #" << player4.getPlayerId() << " : Agressive" << endl << endl;
+
     
     //creates the mockup test game
-    initMockGameMapAndPlayer(&gameMap, &player, &player2,&player3);
+    initMockGameMapAndPlayer(&gameMap, &player, &player2,&player3,&player4);
     
 
-    //calls attack loop for human, benevolent and agressive strategy
+    //calls attack loop for cheater, random, benevolent and agressive strategy
+
     player.attack(&gameMap);
     player2.attack(&gameMap);
     player3.attack(&gameMap);
+    player4.attack(&gameMap);
   
     
 

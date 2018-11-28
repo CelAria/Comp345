@@ -29,6 +29,12 @@ void CheaterAttack :: attackLoop()
     // calls moveArmy if wins
     //asks again if they want to attack
     
+    if(player->getCountriesCount() == 0){
+        cout<<"No more Countries"<<endl;
+        start = false;
+        return;
+    }
+    
     int randomAmountStart  =0;
     randomAmountStart = (rand() % 4 + 1);
     
@@ -118,19 +124,22 @@ void CheaterAttack::countrySelect(vector<Country*> allCountries)
                 if(allNeighbours[j]->getOwner()->getPlayerId() != this->player->getPlayerId()){
                 StealCountries.push_back(allNeighbours[j]);
                 cout<<"You have taken " << allNeighbours[j]->toString()<<endl;
+                allNeighbours[j]->getOwner()->transferCountryTo(allNeighbours[j]->getName(), player);
                 allNeighbours[j]->setOwner(this->player);
+                    
                    
             }
             }
         }
         
+     
         
         
         for(int i = 0; i<StealCountries.size(); i++){
 
         player->addCountry(gameMap->getCountry(StealCountries[i]->getName()));
-           
-            
+
+
         }
         
         

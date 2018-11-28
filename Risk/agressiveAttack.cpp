@@ -31,11 +31,19 @@ void AgressiveAttack :: attackLoop()
     //asks again if they want to attack
     
     
+    
+    
     start = true;
 //    start= attackView.startAttackPhase();
      playerID = player->getPlayerId();
     cout<<"Player# " <<playerID <<" Do you want to attack?"<<endl;
     cout<<"yes "<<endl;
+    if(player->getCountriesCount() == 0){
+        cout<<"No more Countries"<<endl;
+        start = false;
+        return;
+    }
+   
     
     while(start)
     {
@@ -46,8 +54,12 @@ void AgressiveAttack :: attackLoop()
         
         cout<<"Player# " <<playerID<< " Attack" <<endl;
         cout<<"getting countries owned and armies on them"  <<endl;
+       
+       
+       
         
         vector<Country*> allCountries = player->getAllCountries();
+      
         
         
         countrySelect(allCountries);
@@ -457,6 +469,7 @@ void AgressiveAttack::countrySelect(vector<Country*> allCountries)
             
             
             if((moveArmies >=1) && (moveArmies <=allCountries[selectCountry - 1]->getArmiesCount()-1)){
+                enemies[selectAttackCountry - 1]->getOwner()->transferCountryTo(enemies[selectAttackCountry - 1]->getName(), player);
                 enemies[selectAttackCountry - 1]->setOwner(player);
                 gameMap->getCountry(enemies[selectAttackCountry - 1]->getName())->setArmiesCount(moveArmies);
                 player->addCountry(gameMap->getCountry(enemies[selectAttackCountry - 1]->getName()));

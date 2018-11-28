@@ -52,16 +52,16 @@ void initMockGameMapAndPlayer(GameMap* gameMap, Player* player, Player* player2,
 
     gameMap->getCountry("Costa Rica")->setArmiesCount(3);
     gameMap->getCountry("Venezuela")->setArmiesCount(4);
-    gameMap->getCountry("Colombia")->setArmiesCount(4);
-    gameMap->getCountry("Panama")->setArmiesCount(5);
-    gameMap->getCountry("Nicaragua")->setArmiesCount(3);
+    gameMap->getCountry("Colombia")->setArmiesCount(8);
+    gameMap->getCountry("Panama")->setArmiesCount(1);
+    gameMap->getCountry("Nicaragua")->setArmiesCount(30);
 
     player->addCountry(gameMap->getCountry("Costa Rica"));
     player2->addCountry(gameMap->getCountry("Colombia"));
 
-    player2->addCountry(gameMap->getCountry("Nicaragua"));
+    player2->addCountry(gameMap->getCountry("Venezuela"));
     player3->addCountry(gameMap->getCountry("Panama"));
-    player4->addCountry(gameMap->getCountry("Venezuela"));
+    player4->addCountry(gameMap->getCountry("Nicaragua"));
     
 }
 
@@ -101,6 +101,7 @@ int main(int argc, const char * argv[]) {
     player2.attack(&gameMap);
     player3.attack(&gameMap);
     player4.attack(&gameMap);
+    player2.attack(&gameMap);
   
     
 

@@ -12,6 +12,7 @@
 #include "country.h"
 #include "RandomAttack.h"
 #include "fortifycontroller.h"
+#include <iostream>
 
 using namespace std;
 
@@ -36,7 +37,11 @@ void RandomStrategy ::fortify(Player* player, GameMap* gameMap){
         
         int amount = rand() % fromCountry->getArmiesCount() + 1;
         
+        cout << "Moving " << amount << " armies from " << fromCountry->getName() << " to " << toCountry->getName() << "\n";
+        
         fortifyController.moveArmies(fromCountry, toCountry, amount);
+    } else {
+        cout << "Can't fortify\n";
     }
 }
 

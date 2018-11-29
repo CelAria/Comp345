@@ -42,6 +42,8 @@ void BenevolentStrategy::fortify(Player *player, GameMap *gameMap) {
                 fortifyController.moveArmies(countries[i], weakestCountry, amount);
             }
         }
+    } else {
+        cout << "Can't fortify\n";
     }
 }
 

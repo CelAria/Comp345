@@ -12,6 +12,7 @@
 #include "country.h"
 #include "CheaterAttack.h"
 #include "fortifycontroller.h"
+#include <iostream>
 
 using namespace std;
 
@@ -28,11 +29,14 @@ void CheaterStrategy ::fortify(Player* player, GameMap* gameMap){
             vector<Country*> neighbors = countries[i]->getAllNeighbors();
             for(int j = 0; j < neighbors.size(); j++) {
                 if(neighbors[j]->getOwner()->getPlayerId() != player->getPlayerId()) {
+                    cout << "Doubling armies on " << countries[i]->getName() << "\n";
                     countries[i]->setArmiesCount(countries[i]->getArmiesCount() * 2);
                     break;
                 }
             }
         }
+    } else {
+        cout << "Can't fortify\n";
     }
 }
 

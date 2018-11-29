@@ -42,6 +42,8 @@ void AggressiveStrategy::fortify(Player *player, GameMap *gameMap) {
                 fortifyController.moveArmies(countries[i], strongestCountry, amount);
             }
         }
+    } else {
+        cout << "Can't fortify\n";
     }
 }
 

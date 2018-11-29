@@ -27,7 +27,7 @@ void CheaterStrategy ::fortify(Player* player, GameMap* gameMap){
         for(int i = 0; i < countries.size(); ++i) {
             vector<Country*> neighbors = countries[i]->getAllNeighbors();
             for(int j = 0; j < neighbors.size(); j++) {
-                if(neighbors[i]->getOwner()->getPlayerId() != player->getPlayerId()) {
+                if(neighbors[j]->getOwner()->getPlayerId() != player->getPlayerId()) {
                     countries[i]->setArmiesCount(countries[i]->getArmiesCount() * 2);
                     break;
                 }

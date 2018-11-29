@@ -216,8 +216,6 @@ int Tournament::selectnumturns(){
 
 void Tournament::tournamentloop(string directory){
     
-    //for each MAP, play # GAMES until # TURNS
-    
     //FOR EACH MAP
     for(int i=0; i < selectedmaps.size(); i++){
         string mapPath;

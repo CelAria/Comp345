@@ -284,7 +284,7 @@ void Tournament::tournamentloop(string directory){
             if(mainGame.getWinner() != NULL){
                 //winners.push_back(to_string(mainGame.printWinner()));
                 winners.push_back("WINNER!");
-                cout << "************* WINNER! *************" << mainGame.getWinner() << endl;
+                cout << "************* WINNER! ************* Player " << mainGame.getWinner()->getPlayerId() << endl;
             }
             if(mainGame.getWinner()== NULL){
                 winners.push_back("DRAW");

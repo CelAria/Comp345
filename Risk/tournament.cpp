@@ -215,14 +215,15 @@ int Tournament::selectnumturns(){
 }
 
 void Tournament::tournamentloop(string directory){
-    string mapPath;
-    GameStart gameStart;
-    Maploader maploader;
     
     //for each MAP, play # GAMES until # TURNS
     
     //FOR EACH MAP
     for(int i=0; i < selectedmaps.size(); i++){
+        string mapPath;
+        GameStart gameStart;
+        Maploader maploader;
+        
         //for the selected map
         mapPath= selectedmaps.at(i);
         //make the gamemap
@@ -291,7 +292,17 @@ void Tournament::tournamentloop(string directory){
                 cout << "************* DRAW! *************" << endl;
             }
         }
+        
+        cleanup(players, gameMap, deck);
     }
+}
+
+void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) {
+    for(int i = 0; i < players.size(); ++i) {
+        delete players[i];
+    }
+    delete gameMap;
+    delete deck;
 }
 
 //final print of 

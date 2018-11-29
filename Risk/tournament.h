@@ -29,6 +29,7 @@ tournament, a report of the results should be displayed, e.g.
  map; (2d) the number of turns after which each game is to be considered a draw (3 to 50 turns); (3) after being
  started, the tournament runs without any user interaction; (4) upon completion, the results of the tournament are
  displayed as depicted above. */
+class Deck;
 
 class Tournament{
     
@@ -50,6 +51,7 @@ private:
     void printcolumns();
     void extractFileName(const string& fullPath);
     vector<string> winners;
+    void cleanup(vector<Player*>, GameMap* gameMap, Deck* deck);
     
 public:
     void selectgamemode();

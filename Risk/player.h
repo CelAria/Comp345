@@ -61,5 +61,5 @@ public:
     
     void notifyObservers();
    
-    ~Player() {delete hand;delete strategy;};
+    ~Player() {delete hand; strategy = NULL;};
 };

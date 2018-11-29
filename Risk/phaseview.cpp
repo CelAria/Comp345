@@ -51,8 +51,10 @@ void PhaseView::print() {
         cout << "Player " << state.currentPlayer->getPlayerId() << " Turn Start" << endl;
         cout << "****************************************************" << endl;
         cout << endl;
-        if(promptUserYesNo("Would you like to see the game map? (y/n)")) {
-            state.gameMap->traverseAll(true);
+        if(state.currentPlayer->getStrategy()->getType() == 0) {
+            if(promptUserYesNo("Would you like to see the game map? (y/n)")) {
+                state.gameMap->traverseAll(true);
+            }
         }
     }
     cout << getPhaseHeader();

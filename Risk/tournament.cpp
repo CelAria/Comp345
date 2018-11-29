@@ -56,18 +56,18 @@ int Tournament::inputnumMaps(){
     cin >> nummaps;
     if(cin.good())
     {
-    if(nummaps < 0 || nummaps > 5) {
-        cout << "Bad value. Enter a value between 1 and 5";
-        cin.clear();
-        cin.ignore(INT_MAX, '\n');
-        inputnumMaps();
+        if(nummaps < 0 || nummaps > 5) {
+            cout << "Bad value. Enter a value between 1 and 5";
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+            inputnumMaps();
         }
     }
     else{
-    cout << "Not an integer.";
-    cin.clear();
-    cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
-    inputnumMaps();
+        cout << "Not an integer.";
+        cin.clear();
+        cin.ignore(INT_MAX, '\n'); // NB: preferred method for flushing cin
+        inputnumMaps();
     }
     return nummaps;
 }
@@ -126,23 +126,23 @@ void Tournament::StrategySwitch(){
             cin.ignore(INT_MAX, '\n');
             StrategySwitch();
         }
-    switch(selection){
-        case 1:
-            //aggresive
-            selectedstrategies.push_back(1);
-            return;
-        case 2:
-            //benevolent
-             selectedstrategies.push_back(2);
-            return;
-        case 3:
-            //cheater
-            selectedstrategies.push_back(3);
-            return;
-        case 4:
-            //random
-            selectedstrategies.push_back(4);
-            return;
+        switch(selection){
+            case 1:
+                //aggresive
+                selectedstrategies.push_back(1);
+                return;
+            case 2:
+                //benevolent
+                selectedstrategies.push_back(2);
+                return;
+            case 3:
+                //cheater
+                selectedstrategies.push_back(3);
+                return;
+            case 4:
+                //random
+                selectedstrategies.push_back(4);
+                return;
         }
     }
     else{
@@ -215,10 +215,10 @@ int Tournament::selectnumturns(){
 }
 
 void Tournament::tournamentloop(string directory){
-string mapPath;
-GameStart gameStart;
-Maploader maploader;
-
+    string mapPath;
+    GameStart gameStart;
+    Maploader maploader;
+    
     //for each MAP, play # GAMES until # TURNS
     
     //FOR EACH MAP
@@ -231,58 +231,61 @@ Maploader maploader;
         Deck* deck = gameStart.createDeck(gameMap);
         //make the players
         gameStart.setNumPlayers(numstrategies);
-         vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
-       // ASSIGN STRATEGIES
-            for(int m=0; m < players.size(); m++){
-        
-                switch(selectedstrategies.at(m)){
-                    case 1:{
-                        //aggresive
-                        AggressiveStrategy aggressive;
-                        players[m]->setStrategy(&aggressive);
-                        break;
-                    }
-                    case 2:{
-                        //benevolent
-                        BenevolentStrategy benevolent;
-                        players[m]->setStrategy(&benevolent);
-                        break;
-                    }
-                    case 3:{
-                        //cheater
-                        CheaterStrategy cheater;
-                        players[m]->setStrategy(&cheater);
-                        break;
-                    }
-                    case 4:{
-                        //random
-                        RandomStrategy random;
-                        players[m]->setStrategy(&random);
-                        break;
-                    }
+        vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
+        // ASSIGN STRATEGIES
+        for(int m=0; m < players.size(); m++){
+            
+            switch(selectedstrategies.at(m)){
+                case 1:{
+                    //aggresive
+                    AggressiveStrategy aggressive;
+                    players[m]->setStrategy(&aggressive);
+                    break;
+                }
+                case 2:{
+                    //benevolent
+                    BenevolentStrategy benevolent;
+                    players[m]->setStrategy(&benevolent);
+                    break;
+                }
+                case 3:{
+                    //cheater
+                    CheaterStrategy cheater;
+                    players[m]->setStrategy(&cheater);
+                    break;
+                }
+                case 4:{
+                    //random
+                    RandomStrategy random;
+                    players[m]->setStrategy(&random);
+                    break;
                 }
             }
+        }
         
         //initialize views
         MainGame mainGame = MainGame(gameMap, players, deck);
         GameStatView gameStatView(gameMap, players);
+        PhaseView phaseView;
         
         //set observers
         for(int i = 0; i < players.size(); ++i) {
             players[i]->addObserver(&gameStatView);
         }
+        mainGame.addObserver(&phaseView);
+        
         //PLAY THIS NUMBER OF GAMES
         for(int j=0; j < numgames; j++){
             
             //for THIS NUMBER OF TURNS
-                mainGame.playGame(numturns);
-                //INCREMENT COUNTER FOR NUMBER OF TURNS
+            mainGame.playGame(numturns);
+            //INCREMENT COUNTER FOR NUMBER OF TURNS
             
-                if(mainGame.getWinner() != NULL){
-                    //winners.push_back(to_string(mainGame.printWinner()));
-                    winners.push_back("WINNER!");
-                    cout << "************* WINNER! *************" << mainGame.getWinner() << endl;
-                }
+            if(mainGame.getWinner() != NULL){
+                //winners.push_back(to_string(mainGame.printWinner()));
+                winners.push_back("WINNER!");
+                cout << "************* WINNER! *************" << mainGame.getWinner() << endl;
+            }
             if(mainGame.getWinner()== NULL){
                 winners.push_back("DRAW");
                 cout << "************* DRAW! *************" << endl;
@@ -299,8 +302,8 @@ void Tournament::printheader(){
     for(vector<string>::const_iterator i = selectedmaps.begin(); i != selectedmaps.end(); ++i){
         extractFileName(*i);
     }
-     //output selected players
-     cout << "\nPlayers:";
+    //output selected players
+    cout << "\nPlayers:";
     
     for(int i=0; i < selectedstrategies.size(); i++){
         switch(selectedstrategies.at(i)){
@@ -347,7 +350,7 @@ void Tournament::printcolumns(){
             cout << *it <<"              ";
         }
         
-cout << endl;
+        cout << endl;
     }
 }
 

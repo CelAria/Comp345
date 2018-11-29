@@ -38,6 +38,7 @@ public:
     GameMap* getGameMap(){return gameMap;}
     Player* getNextPlayer(){return players[turn];};
     Player* getWinner(); //returns winner or NULL if game is not over yet
+    int printWinner(); // prints winner ID
     bool isGameOver();
     void playGame(int = 0); //game entry point
     void notifyObservers();

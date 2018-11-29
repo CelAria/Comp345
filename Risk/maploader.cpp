@@ -131,6 +131,7 @@ GameMap* Maploader::readmapfile(string file, string directory){
         
         if(ptrgamemap->isValid()){
             ptrgamemap->traverseAll(false);
+            cout << "NEW GAME!";
             cout << "This gamemap is valid! \n";
         }
         

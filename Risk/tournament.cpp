@@ -214,47 +214,11 @@ int Tournament::selectnumturns(){
     return numturns;
 }
 
-////TO DO: change case 3 to CHEATER and case 4 to RANDOM
-//void Tournament::assignStrategies(){
-//    for(int m=0; m <players.size(); m++){
-//        for(int i=0; i < selectedstrategies.size(); i++){
-//            cout<< " i ";
-//            switch(selectedstrategies.at(i)){
-//                case 1:{
-//                    //aggresive
-//                    AggressiveStrategy aggressive;
-//                    players[m]->setStrategy(&aggressive);
-//                    break;
-//                }
-//                case 2:{
-//                    //benevolent
-//                    BenevolentStrategy benevolent;
-//                    players[m]->setStrategy(&benevolent);
-//                    break;
-//                }
-//                case 3:{
-//                    //cheater
-//                    CheaterStrategy cheater;
-//                    players[m]->setStrategy(&cheater);
-//                    break;
-//                }
-//                case 4:{
-//                    //random
-//                    RandomStrategy random;
-//                    players[m]->setStrategy(&random);
-//                    break;
-//                }
-//            }
-//        }
-//    }
-//}
-
 void Tournament::tournamentloop(string directory){
 string mapPath;
 GameStart gameStart;
 Maploader maploader;
 
-    
     //for each MAP, play # GAMES until # TURNS
     
     //FOR EACH MAP
@@ -311,17 +275,20 @@ Maploader maploader;
         for(int j=0; j < numgames; j++){
             
             //for THIS NUMBER OF TURNS
-            for (int k=0; k < numturns; k++){
-                mainGame.playGame();
+                mainGame.playGame(numturns);
                 //INCREMENT COUNTER FOR NUMBER OF TURNS
-                //PRINT FUNCTION
+            
                 if(mainGame.getWinner() != NULL){
-                    winners.push_back(mainGame.getWinner());
+                    //winners.push_back(to_string(mainGame.printWinner()));
+                    winners.push_back("WINNER!");
+                    cout << "************* WINNER! *************" << mainGame.getWinner() << endl;
                 }
+            if(mainGame.getWinner()== NULL){
+                winners.push_back("DRAW");
+                cout << "************* DRAW! *************" << endl;
             }
         }
     }
-//maploader.readmapfile(mapPath, directory);
 }
 
 //final print of 
@@ -376,8 +343,8 @@ void Tournament::printcolumns(){
         extractFileName(*i);
         cout << "      ";
         //for each game, print winner.
-        for (vector<Player*>::const_iterator it= winners.begin(); it !=winners.end(); it++){
-            cout << &it;
+        for (vector<string>::const_iterator it= winners.begin(); it !=winners.end(); it++){
+            cout << *it <<"              ";
         }
         
 cout << endl;

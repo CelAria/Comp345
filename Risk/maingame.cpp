@@ -17,6 +17,15 @@ Player* MainGame::getWinner() {
     return NULL;
 }
 
+int MainGame::printWinner(){
+    for(int i = 0; i < players.size(); ++i) {
+        if(players[i]->getAllCountries().size() == gameMap->getCount()) {
+            return players[i]->getPlayerId();
+        }
+    }
+    return NULL;
+}
+
 bool MainGame::isGameOver() {
     return getWinner() != NULL;
 }

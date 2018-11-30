@@ -288,7 +288,7 @@ void Tournament::tournamentloop(string directory){
                 cout << "************* WINNER! " << printStrategy(mainGame.getWinner()->getStrategy()) << "*************";
             }
             if(mainGame.getWinner()== NULL){
-                winners.push_back("DRAW");
+                winners.push_back("*DRAW!*");
                 cout << "************* DRAW! *************" << endl;
             }
             
@@ -355,7 +355,7 @@ void Tournament::printcolumns(){
     cout << endl << endl;
     cout << "                  ";
     for(int i=1; i <= numgames; i++){
-        cout << "Game " << i << "           ";
+        cout << "Game " << i << "              ";
     }
     cout << endl;
     //top row for "games"

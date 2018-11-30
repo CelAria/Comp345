@@ -284,20 +284,22 @@ void Tournament::tournamentloop(string directory){
             //INCREMENT COUNTER FOR NUMBER OF TURNS
             
             if(mainGame.getWinner() != NULL){
-                winners.push_back("WINNER!");
-                cout << "************* WINNER! ************* Player ";
-                printStrategy(mainGame.getWinner()->getStrategy());
+                winners.push_back(printStrategy(mainGame.getWinner()->getStrategy()));
+                cout << "************* WINNER! *************";
+                cout << " " << printStrategy(mainGame.getWinner()->getStrategy());
             }
             if(mainGame.getWinner()== NULL){
                 winners.push_back("DRAW");
                 cout << "************* DRAW! *************" << endl;
             }
+            //print all stats
+            print();
             
             //delete all objects
             cleanup(players, gameMap, deck);
         }
-        //print all stats
-        print();
+//        //print all stats
+//        print();
     }
 }
 
@@ -410,26 +412,24 @@ void Tournament::startSingleGame(string directory){
     mainGame->playGame();
 }
 
-void Tournament::printStrategy(Strategy* strategy){
+string Tournament::printStrategy(Strategy* strategy){
     switch(strategy->getType()){
         case 0:
-            cout << "Human";
-            break;
+            return "Human";
             
         case 1:
-            cout << "Aggresive";
-            break;
+            return "Aggresive";
+            
             
         case 2:
-            cout << "Benevolent";
-            break;
+           return "Benevolent";
             
         case 3:
-            cout << "Random";
-            break;
+            return "Random";
             
         case 4:
-            cout << "Cheater";
-            break;
+            return "Cheater";
+        
     }
+    return "bad_value";
 };

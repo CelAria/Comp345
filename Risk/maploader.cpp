@@ -130,7 +130,6 @@ GameMap* Maploader::readmapfile(string file, string directory){
         //If map invalid, reject and offer readmap() again, if valid, accept
         
         if(ptrgamemap->isValid()){
-            ptrgamemap->traverseAll(false);
             cout << "NEW GAME!";
             cout << "This gamemap is valid! \n";
         }
@@ -138,9 +137,6 @@ GameMap* Maploader::readmapfile(string file, string directory){
         
         if(!ptrgamemap->isValid()){
             cout << "gamemap is invalid. It has been deleted. Try again with a valid map file\n";
-            delete ptrgamemap;
-            ptrgamemap= NULL;
-            readmapfile(selectMap(directory), directory);
         }
         
     }

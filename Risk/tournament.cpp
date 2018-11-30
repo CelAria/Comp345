@@ -225,6 +225,12 @@ void Tournament::tournamentloop(string directory){
             string mapPath= selectedmaps.at(i);
             //make the gamemap
             GameMap* gameMap= gameStart.createGameMap(mapPath, directory);
+            //Check if map is valid
+            if(!gameMap->isValid()) {
+                //if not valid, go to next map
+                delete gameMap;
+                continue;
+            }
             //make the deck
             Deck* deck = gameStart.createDeck(gameMap);
             //make the players

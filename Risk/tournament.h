@@ -64,5 +64,6 @@ public:
     void print();
     void startTournament(string directory);
     void startSingleGame(string directory);
-    
+    void printStrategy(Strategy* strategy);
+
 };

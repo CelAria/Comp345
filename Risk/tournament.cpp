@@ -279,7 +279,8 @@ void Tournament::tournamentloop(string directory){
             
             if(mainGame.getWinner() != NULL){
                 winners.push_back("WINNER!");
-                cout << "************* WINNER! ************* Player " << mainGame.getWinner()->getStrategy() << endl;
+                cout << "************* WINNER! ************* Player ";
+                printStrategy(mainGame.getWinner()->getStrategy());
             }
             if(mainGame.getWinner()== NULL){
                 winners.push_back("DRAW");
@@ -402,3 +403,27 @@ void Tournament::startSingleGame(string directory){
     game.addPlayerObservers(statsView);
     mainGame->playGame();
 }
+
+void Tournament::printStrategy(Strategy* strategy){
+    switch(strategy->getType()){
+        case 0:
+            cout << "Human";
+            break;
+            
+        case 1:
+            cout << "Aggresive";
+            break;
+            
+        case 2:
+            cout << "Benevolent";
+            break;
+            
+        case 3:
+            cout << "Random";
+            break;
+            
+        case 4:
+            cout << "Cheater";
+            break;
+    }
+};

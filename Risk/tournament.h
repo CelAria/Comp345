@@ -61,6 +61,7 @@ public:
     void tournamentloop(string directory);
     vector<int> selectstrategies();
     vector<string> inputmaps(const string directory);
+    vector<string> inputmapsGame(const string directory);
     void print();
     void startTournament(string directory);
     void startSingleGame(string directory);

@@ -88,6 +88,19 @@ vector<string> Tournament::inputmaps(const string directory){
     return selectedmaps;
 };
 
+vector<string> Tournament::inputmapsGame(const string directory){
+    nummaps=1;
+    printDirectory(directory);
+    string map;
+    //loop and push each map string into vector
+    for (int i=0; i < nummaps; i++){
+        map=selectMap(directory);
+        selectedmaps.push_back(map);
+    }
+    return selectedmaps;
+}
+
+
 int Tournament::inputnumPlayers(){
     cout << "\nHow many players would you like to select? Enter an integer between 2 and 4" << endl;
     cin >> numstrategies;
@@ -288,7 +301,7 @@ void Tournament::tournamentloop(string directory){
                 cout << "************* WINNER! " << printStrategy(mainGame.getWinner()->getStrategy()) << "*************";
             }
             if(mainGame.getWinner()== NULL){
-                winners.push_back("DRAW");
+                winners.push_back("*DRAW!*");
                 cout << "************* DRAW! *************" << endl;
             }
             
@@ -355,7 +368,7 @@ void Tournament::printcolumns(){
     cout << endl << endl;
     cout << "                  ";
     for(int i=1; i <= numgames; i++){
-        cout << "Game " << i << "           ";
+        cout << "Game " << i << "              ";
     }
     cout << endl;
     //top row for "games"
@@ -392,21 +405,11 @@ void Tournament::startTournament(string directory){
 }
 
 void Tournament::startSingleGame(string directory){
-    Maploader mymaploader;
-    printDirectory(directory);
-    GameMap* gameMap = mymaploader.readmapfile(selectMap(directory), directory);
-    GameStart game;
-    //create game deck of cards
-    Deck* deck =game.createDeck(gameMap);
-    //player input
-    int numberOfPlayers = game.selectPlayers();
-    //create player objects with hand of empty cards and dice facilities
-    vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
-    MainGame* mainGame = new MainGame(gameMap, players, deck);
-    GameStatView* statsView= new GameStatView(gameMap,players);
-    mainGame->addObserver(statsView);
-    game.addPlayerObservers(statsView);
-    mainGame->playGame();
+    inputmapsGame(directory);
+    selectstrategies();
+    numgames=1;
+    numturns=1000;
+    tournamentloop(directory);
 }
 
 string Tournament::printStrategy(Strategy* strategy){

@@ -20,6 +20,10 @@ using namespace std;
 //implementation of the start method of the ReinforceController
 void RandomReinforceController::start()
 {
+    if(player->getCountriesCount() == 0){
+        cout<<"No more Countries"<<endl;
+        return;
+    }
     srand((unsigned)time(0));
     
     view.presentReinforce();

@@ -36,11 +36,13 @@ void RandomStrategy ::fortify(Player* player, GameMap* gameMap){
         Country* fromCountry = countries[idx1];
         Country* toCountry = countries[idx2];
         
-        int amount = rand() % fromCountry->getArmiesCount() + 1;
-        
-        cout << "Moving " << amount << " armies from " << fromCountry->getName() << " to " << toCountry->getName() << "\n";
-        
-        fortifyController.moveArmies(fromCountry, toCountry, amount);
+        if(fromCountry->getArmiesCount() > 1) {
+            int amount = rand() % fromCountry->getArmiesCount() + 1;
+            cout << "Moving " << amount << " armies from " << fromCountry->getName() << " to " << toCountry->getName() << "\n";
+            fortifyController.moveArmies(fromCountry, toCountry, amount);
+        } else {
+            cout << "Nothing to move" << endl;
+        }
     } else {
         cout << "Can't fortify\n";
     }

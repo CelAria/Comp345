@@ -6,7 +6,7 @@
 //  Copyright © 2018 comp345. All rights reserved.
 //
 
-#include "randomReinforce.h"
+#include "cheaterReinforce.h"
 #include "player.h"
 #include "continent.h"
 
@@ -18,7 +18,7 @@
 using namespace std;
 
 //implementation of the start method of the ReinforceController
-void RandomReinforceController::start()
+void CheaterReinforceController::start()
 {
     if(player->getCountriesCount() == 0){
         cout<<"No more Countries"<<endl;

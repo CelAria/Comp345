@@ -21,7 +21,7 @@ void printvecString(vector<string> vec){
     }
 }
 
-void selectgamemode(){
+void Tournament::selectgamemode(string directory){
     cout << "would you like to enter GAME mode or TOURNAMENT mode?" << endl;
     cout << "1. GAME MODE" << endl;
     cout << "2. TOURNAMENT MODE" << endl;
@@ -32,21 +32,19 @@ void selectgamemode(){
             cout << "invalid value. Try again" << endl;
             cin.clear();
             cin.ignore(INT_MAX, '\n');
-            selectgamemode();
+            selectgamemode(directory);
+        }
+        if(input == 1){
+            startSingleGame(directory);
+        }
+        else if(input == 2){
+            startTournament(directory);
         }
         else{
             cout << "Invalid. Try again";
             cin.clear();
             cin.ignore(INT_MAX, '\n');
-            selectgamemode();
-        }
-        if(input == 1){
-            // TO DO: START GAME
-            //
-        }
-        else if(input == 2){
-            //TO DO: START TOURNAMENT
-            //tournamentloop();
+            selectgamemode(directory);
         }
     }
 }
@@ -375,3 +373,29 @@ void Tournament::print(){
     printcolumns();
 }
 
+void Tournament::startTournament(string directory){
+    inputmaps(directory);
+    selectstrategies();
+    selectnumgames();
+    selectnumturns();
+    tournamentloop(directory);
+    print();
+}
+
+void Tournament::startSingleGame(string directory){
+    Maploader mymaploader;
+    printDirectory(directory);
+    GameMap* gameMap = mymaploader.readmapfile(selectMap(directory), directory);
+    GameStart game;
+    //create game deck of cards
+    Deck* deck =game.createDeck(gameMap);
+    //player input
+    int numberOfPlayers = game.selectPlayers();
+    //create player objects with hand of empty cards and dice facilities
+    vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
+    MainGame* mainGame = new MainGame(gameMap, players, deck);
+    GameStatView* statsView= new GameStatView(gameMap,players);
+    mainGame->addObserver(statsView);
+    game.addPlayerObservers(statsView);
+    mainGame->playGame();
+}

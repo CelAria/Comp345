@@ -35,21 +35,19 @@ int main(int argc, const char * argv[]) {
     
     //open map and test if valid, if valid, create map object  
     
-    Maploader mymaploader;
-    mymaploader.printDirectory(directory);
-   // mymaploader.selectMap(directory);
-    
-    GameMap* gameMap = mymaploader.readmapfile(mymaploader.selectMap(directory), directory);
-    GameStart game;
-    //create game deck of cards
-    Deck* deck =game.createDeck(gameMap);
-    //player input
-    int numberOfPlayers = game.selectPlayers();
-    //create player objects with hand of empty cards and dice facilities
-    vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
-    MainGame* mainGame = new MainGame(gameMap, players, deck);
-    GameStatView* statsView= new GameStatView(gameMap,players);
-    mainGame->addObserver(statsView);
-    game.addPlayerObservers(statsView);
-    mainGame->playGame();
+        Maploader mymaploader;
+        printDirectory(directory);
+        GameMap* gameMap = mymaploader.readmapfile(selectMap(directory), directory);
+        GameStart game;
+        //create game deck of cards
+        Deck* deck =game.createDeck(gameMap);
+        //player input
+        int numberOfPlayers = game.selectPlayers();
+        //create player objects with hand of empty cards and dice facilities
+        vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
+        MainGame* mainGame = new MainGame(gameMap, players, deck);
+        GameStatView* statsView= new GameStatView(gameMap,players);
+        mainGame->addObserver(statsView);
+        game.addPlayerObservers(statsView);
+        mainGame->playGame();
 }

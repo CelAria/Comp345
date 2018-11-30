@@ -54,7 +54,7 @@ private:
     void cleanup(vector<Player*>, GameMap* gameMap, Deck* deck);
     
 public:
-    void selectgamemode();
+    void selectgamemode(string directory);
     void printStrategies();
     int selectnumgames();
     int selectnumturns();
@@ -62,6 +62,7 @@ public:
     vector<int> selectstrategies();
     vector<string> inputmaps(const string directory);
     void print();
-    
+    void startTournament(string directory);
+    void startSingleGame(string directory);
     
 };

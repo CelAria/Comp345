@@ -62,7 +62,7 @@ void PhaseView::print() {
 
 void PhaseView::update(State &state) {
     this->state = state;
-    if(state.currentPlayer->getAllCountries().size() > 0) {
+    if(state.currentPlayer != NULL && state.currentPlayer->getAllCountries().size() > 0) {
         print();
     }
 }

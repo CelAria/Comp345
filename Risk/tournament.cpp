@@ -285,21 +285,19 @@ void Tournament::tournamentloop(string directory){
             
             if(mainGame.getWinner() != NULL){
                 winners.push_back(printStrategy(mainGame.getWinner()->getStrategy()));
-                cout << "************* WINNER! *************";
-                cout << " " << printStrategy(mainGame.getWinner()->getStrategy());
+                cout << "************* WINNER! " << printStrategy(mainGame.getWinner()->getStrategy()) << "*************";
             }
             if(mainGame.getWinner()== NULL){
                 winners.push_back("DRAW");
                 cout << "************* DRAW! *************" << endl;
             }
-            //print all stats
-            print();
             
             //delete all objects
             cleanup(players, gameMap, deck);
         }
-//        //print all stats
-//        print();
+        //print all stats
+        print();
+        winners.clear();
     }
 }
 
@@ -308,7 +306,6 @@ void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) 
     for(int i = 0; i < players.size(); ++i) {
         delete players[i];
     }
-    winners.clear();
     delete gameMap;
     delete deck;
     
@@ -358,7 +355,7 @@ void Tournament::printcolumns(){
     cout << endl << endl;
     cout << "                  ";
     for(int i=1; i <= numgames; i++){
-        cout << "Game " << i << "            ";
+        cout << "Game " << i << "           ";
     }
     cout << endl;
     //top row for "games"
@@ -367,7 +364,7 @@ void Tournament::printcolumns(){
         cout << "      ";
         //for each game, print winner.
         for (vector<string>::const_iterator it= winners.begin(); it !=winners.end(); it++){
-            cout << *it <<"              ";
+            cout << *it <<"             ";
         }
         
         cout << endl;

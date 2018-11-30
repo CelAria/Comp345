@@ -53,19 +53,20 @@ void RandomReinforceController::start()
     view.displayStats(numOfArmiesRecieved, player);
     
     view.displayContriesPlayerOwns(allCountries, player);
-    
+    numOfArmiesRecieved += 1;
     int numOfArmiesToPlace = (numOfArmiesRecieved/allCountries.size());
     int numOfArmiesLeft = (numOfArmiesRecieved%allCountries.size());
     
     //loops through all the countries the player has and distributes the number of armies evenly among the countries
-    for(int I = 0; I < allCountries.size(); I++)
-        gameMap->getCountry(allCountries[I]->getName())->setArmiesCount((gameMap->getCountry(allCountries[I]->getName())->getArmiesCount() + numOfArmiesToPlace));
+    for(int i = 0; i < allCountries.size(); i++)
+        gameMap->getCountry(allCountries[i]->getName())->setArmiesCount((gameMap->getCountry(allCountries[i]->getName())->getArmiesCount() + numOfArmiesToPlace));
     
     
-    int randNum = (rand() % (allCountries.size()-1) + 0);
-    
-    gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
-    
+    if(numOfArmiesLeft != 0){
+        int randNum = (rand() % (allCountries.size()) + 0);
+        cout << "testing------------------------- " << endl;
+        gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
+    }
     view.displayContriesPlayerOwns(allCountries, player);
     
 }

@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     cout << "---------------------------------------------------------------------------------------------------" << endl;
     
     //instantiate a player, a game map and a deck of cards
-    Strategy* strategy1(new HumanPlayerStrategy);
+    Strategy* strategy1(new RandomStrategy);
     Strategy* strategy2(new BenevolentStrategy);
     Strategy* strategy3(new AggressiveStrategy);
     

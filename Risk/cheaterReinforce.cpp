@@ -33,8 +33,8 @@ void CheaterReinforceController::start()
     view.displayContriesPlayerOwns(allCountries, player);
     
     //loops through all the countries the player has and distributes the number of armies evenly among the countries
-    for(int I = 0; I < allCountries.size(); I++)
-        gameMap->getCountry(allCountries[I]->getName())->setArmiesCount((gameMap->getCountry(allCountries[I]->getName())->getArmiesCount() * 2));
+    for(int i = 0; i < allCountries.size(); i++)
+        gameMap->getCountry(allCountries[i]->getName())->setArmiesCount((gameMap->getCountry(allCountries[i]->getName())->getArmiesCount() * 2));
     
     
     view.displayContriesPlayerOwns(allCountries, player);

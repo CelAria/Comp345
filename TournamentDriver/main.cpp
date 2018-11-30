@@ -13,20 +13,20 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    string directory = "/Users/allanpichardo/Documents/Dev/Comp345/StatsWinnerDriver";
-//    const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDriver";
+  //  string directory = "/Users/allanpichardo/Documents/Dev/Comp345/StatsWinnerDriver";
+  const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDriver";
     Tournament tournament;
+    tournament.selectgamemode(directory);
     
-    /*TO DO: finish select gamemode, tournament loop, number of turns*/
+
+// tournament.selectgamemode();
+//    tournament.inputmaps(directory);
+//    tournament.selectstrategies();
+//    tournament.selectnumgames();
+//    tournament.selectnumturns();
+//    tournament.tournamentloop(directory);
+//    tournament.print();
     
-    // tournament.selectgamemode();
-    tournament.inputmaps(directory);
-    tournament.selectstrategies();
-    tournament.selectnumgames();
-    tournament.selectnumturns();
-    tournament.tournamentloop(directory);
-    tournament.print();
-    
-    
+
     
 }

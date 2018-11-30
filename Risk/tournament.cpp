@@ -13,6 +13,7 @@
 #include "controllergamestart.h"
 #include "phaseview.h"
 #include "gamestatview.h"
+#include <vector>
 
 void printvecString(vector<string> vec){
     vector<string>::iterator it;
@@ -21,7 +22,7 @@ void printvecString(vector<string> vec){
     }
 }
 
-void selectgamemode(){
+void Tournament::selectgamemode(string directory){
     cout << "would you like to enter GAME mode or TOURNAMENT mode?" << endl;
     cout << "1. GAME MODE" << endl;
     cout << "2. TOURNAMENT MODE" << endl;
@@ -32,21 +33,19 @@ void selectgamemode(){
             cout << "invalid value. Try again" << endl;
             cin.clear();
             cin.ignore(INT_MAX, '\n');
-            selectgamemode();
+            selectgamemode(directory);
+        }
+        if(input == 1){
+            startSingleGame(directory);
+        }
+        else if(input == 2){
+            startTournament(directory);
         }
         else{
             cout << "Invalid. Try again";
             cin.clear();
             cin.ignore(INT_MAX, '\n');
-            selectgamemode();
-        }
-        if(input == 1){
-            // TO DO: START GAME
-            //
-        }
-        else if(input == 2){
-            //TO DO: START TOURNAMENT
-            //tournamentloop();
+            selectgamemode(directory);
         }
     }
 }
@@ -159,7 +158,6 @@ vector<int> Tournament::selectstrategies(){
     for (int i=0; i < numstrategies; i++){
         StrategySwitch();
     }
-    //printvecString(selectedstrategies);
     return selectedstrategies;
 }
 
@@ -231,7 +229,9 @@ void Tournament::tournamentloop(string directory){
         //make the players
         gameStart.setNumPlayers(numstrategies);
         vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
+        
         // ASSIGN STRATEGIES
+        
         for(int m=0; m < players.size(); m++){
             
             switch(selectedstrategies.at(m)){
@@ -281,7 +281,6 @@ void Tournament::tournamentloop(string directory){
             //INCREMENT COUNTER FOR NUMBER OF TURNS
             
             if(mainGame.getWinner() != NULL){
-                //winners.push_back(to_string(mainGame.printWinner()));
                 winners.push_back("WINNER!");
                 cout << "************* WINNER! ************* Player " << mainGame.getWinner()->getPlayerId() << endl;
             }
@@ -290,8 +289,11 @@ void Tournament::tournamentloop(string directory){
                 cout << "************* DRAW! *************" << endl;
             }
         }
+        //print all stats
+        print();
         
-        cleanup(players, gameMap, deck);
+        //delete all objects
+    cleanup(players, gameMap, deck);
     }
 }
 
@@ -300,8 +302,10 @@ void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) 
     for(int i = 0; i < players.size(); ++i) {
         delete players[i];
     }
+    winners.clear();
     delete gameMap;
     delete deck;
+
 }
 
 //final print of 
@@ -376,3 +380,28 @@ void Tournament::print(){
     printcolumns();
 }
 
+void Tournament::startTournament(string directory){
+    inputmaps(directory);
+    selectstrategies();
+    selectnumgames();
+    selectnumturns();
+    tournamentloop(directory);
+}
+
+void Tournament::startSingleGame(string directory){
+    Maploader mymaploader;
+    printDirectory(directory);
+    GameMap* gameMap = mymaploader.readmapfile(selectMap(directory), directory);
+    GameStart game;
+    //create game deck of cards
+    Deck* deck =game.createDeck(gameMap);
+    //player input
+    int numberOfPlayers = game.selectPlayers();
+    //create player objects with hand of empty cards and dice facilities
+    vector<Player*> players = game.createPlayers(numberOfPlayers, gameMap);
+    MainGame* mainGame = new MainGame(gameMap, players, deck);
+    GameStatView* statsView= new GameStatView(gameMap,players);
+    mainGame->addObserver(statsView);
+    game.addPlayerObservers(statsView);
+    mainGame->playGame();
+}

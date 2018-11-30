@@ -53,7 +53,6 @@ void RandomReinforceController::start()
     view.displayStats(numOfArmiesRecieved, player);
     
     view.displayContriesPlayerOwns(allCountries, player);
-    numOfArmiesRecieved += 1;
     int numOfArmiesToPlace = (numOfArmiesRecieved/allCountries.size());
     int numOfArmiesLeft = (numOfArmiesRecieved%allCountries.size());
     

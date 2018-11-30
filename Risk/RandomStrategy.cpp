@@ -12,6 +12,7 @@
 #include "country.h"
 #include "RandomAttack.h"
 #include "fortifycontroller.h"
+#include "randomReinforce.h"
 #include <iostream>
 
 using namespace std;
@@ -46,7 +47,8 @@ void RandomStrategy ::fortify(Player* player, GameMap* gameMap){
 }
 
 void RandomStrategy :: reinforce(Player* player, GameMap* gameMap) {
-    
+    RandomReinforceController reinforceController = RandomReinforceController(player, gameMap);
+    reinforceController.start();
 }
 
 int RandomStrategy :: getType() {

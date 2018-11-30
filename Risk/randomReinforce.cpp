@@ -1,10 +1,12 @@
-// Team project assignment #3
-// COMP 345: Advanced program design with C++, Fall 2018
-// Written by: Martin-John Hearty
 //
-// ------------------------------------------------------
+//  randomReinforce.cpp
+//  Risk
+//
+//  Created by Martin-John Hearty on 2018-11-29.
+//  Copyright © 2018 comp345. All rights reserved.
+//
 
-#include "agressiveReinforce.h"
+#include "randomReinforce.h"
 #include "player.h"
 #include "continent.h"
 
@@ -16,7 +18,7 @@
 using namespace std;
 
 //implementation of the start method of the ReinforceController
-void AgressiveReinforceController::start(Country* strongestCountry)
+void RandomReinforceController::start()
 {
     srand((unsigned)time(0));
     
@@ -48,11 +50,18 @@ void AgressiveReinforceController::start(Country* strongestCountry)
     
     view.displayContriesPlayerOwns(allCountries, player);
     
-    gameMap->getCountry(strongestCountry->getName())->setArmiesCount((gameMap->getCountry(strongestCountry->getName())->getArmiesCount() + numOfArmiesRecieved));
+    int numOfArmiesToPlace = (numOfArmiesRecieved/allCountries.size());
+    int numOfArmiesLeft = (numOfArmiesRecieved%allCountries.size());
+    
+    //loops through all the countries the player has and distributes the number of armies evenly among the countries
+    for(int I = 0; I < allCountries.size(); I++)
+        gameMap->getCountry(allCountries[I]->getName())->setArmiesCount((gameMap->getCountry(allCountries[I]->getName())->getArmiesCount() + numOfArmiesToPlace));
+    
+    
+    int randNum = (rand() % (allCountries.size()-1) + 0);
+    
+    gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
     
     view.displayContriesPlayerOwns(allCountries, player);
     
 }
-
-
-

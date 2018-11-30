@@ -19,6 +19,8 @@
 		0E573FC621A2467E005E1650 /* passiveReinforce.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FC421A2467E005E1650 /* passiveReinforce.h */; };
 		0E573FCB21B0E822005E1650 /* randomReinforce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E573FC921B0E822005E1650 /* randomReinforce.cpp */; };
 		0E573FCC21B0E822005E1650 /* randomReinforce.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FCA21B0E822005E1650 /* randomReinforce.h */; };
+		0E573FCF21B0EC91005E1650 /* cheaterReinforce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E573FCD21B0EC91005E1650 /* cheaterReinforce.cpp */; };
+		0E573FD021B0EC91005E1650 /* cheaterReinforce.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E573FCE21B0EC91005E1650 /* cheaterReinforce.h */; };
 		3400881B2195449C00D23A85 /* attackview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340088192195449C00D23A85 /* attackview.cpp */; };
 		3400881C2195449C00D23A85 /* attackview.h in Headers */ = {isa = PBXBuildFile; fileRef = 3400881A2195449C00D23A85 /* attackview.h */; };
 		34189EB2219E9E710059D6C0 /* agressiveAttack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34189EB0219E9E710059D6C0 /* agressiveAttack.cpp */; };
@@ -311,6 +313,8 @@
 		0E573FC421A2467E005E1650 /* passiveReinforce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = passiveReinforce.h; sourceTree = "<group>"; };
 		0E573FC921B0E822005E1650 /* randomReinforce.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = randomReinforce.cpp; sourceTree = "<group>"; };
 		0E573FCA21B0E822005E1650 /* randomReinforce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = randomReinforce.h; sourceTree = "<group>"; };
+		0E573FCD21B0EC91005E1650 /* cheaterReinforce.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cheaterReinforce.cpp; sourceTree = "<group>"; };
+		0E573FCE21B0EC91005E1650 /* cheaterReinforce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cheaterReinforce.h; sourceTree = "<group>"; };
 		340088192195449C00D23A85 /* attackview.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = attackview.cpp; sourceTree = "<group>"; };
 		3400881A2195449C00D23A85 /* attackview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = attackview.h; sourceTree = "<group>"; };
 		34189EB0219E9E710059D6C0 /* agressiveAttack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = agressiveAttack.cpp; sourceTree = "<group>"; };
@@ -693,6 +697,8 @@
 				6BB7267C21ACB1FD00C26153 /* tournament.h */,
 				0E573FC921B0E822005E1650 /* randomReinforce.cpp */,
 				0E573FCA21B0E822005E1650 /* randomReinforce.h */,
+				0E573FCD21B0EC91005E1650 /* cheaterReinforce.cpp */,
+				0E573FCE21B0EC91005E1650 /* cheaterReinforce.h */,
 			);
 			path = Risk;
 			sourceTree = "<group>";
@@ -747,6 +753,7 @@
 				B315F96F21976BAF005A899B /* observer.h in Headers */,
 				B3907F1D219E1A7400975BFC /* aggressivestrategy.h in Headers */,
 				B3BB81062165BE18005177BB /* country.h in Headers */,
+				0E573FD021B0EC91005E1650 /* cheaterReinforce.h in Headers */,
 				0E53B506218F5ECD003C85B1 /* reinforcephase.h in Headers */,
 				B35FED7C217AE56D00FE6FA7 /* fortifyview.h in Headers */,
 				B3B2E8DD2166A89100C2A4BA /* player.h in Headers */,
@@ -1204,6 +1211,7 @@
 				6B9B94BD2198E7BC00523ECD /* gamestatview.cpp in Sources */,
 				0E573FC121A24143005E1650 /* agressiveReinforce.cpp in Sources */,
 				B3B2E8DC2166A89100C2A4BA /* player.cpp in Sources */,
+				0E573FCF21B0EC91005E1650 /* cheaterReinforce.cpp in Sources */,
 				0E573FBD219DF993005E1650 /* reinforceview.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

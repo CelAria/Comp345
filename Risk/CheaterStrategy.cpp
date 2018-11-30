@@ -12,6 +12,7 @@
 #include "country.h"
 #include "CheaterAttack.h"
 #include "fortifycontroller.h"
+#include "cheaterReinforce.h"
 #include <iostream>
 
 using namespace std;
@@ -41,7 +42,8 @@ void CheaterStrategy ::fortify(Player* player, GameMap* gameMap){
 }
 
 void CheaterStrategy :: reinforce(Player* player, GameMap* gameMap) {
-    
+    CheaterReinforceController reinforceController = CheaterReinforceController(player, gameMap);
+    reinforceController.start();
 }
 
 int CheaterStrategy :: getType() {

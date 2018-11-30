@@ -13,6 +13,7 @@
 #include "controllergamestart.h"
 #include "phaseview.h"
 #include "gamestatview.h"
+#include <vector>
 
 void printvecString(vector<string> vec){
     vector<string>::iterator it;
@@ -157,7 +158,6 @@ vector<int> Tournament::selectstrategies(){
     for (int i=0; i < numstrategies; i++){
         StrategySwitch();
     }
-    //printvecString(selectedstrategies);
     return selectedstrategies;
 }
 
@@ -229,7 +229,9 @@ void Tournament::tournamentloop(string directory){
         //make the players
         gameStart.setNumPlayers(numstrategies);
         vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
+        
         // ASSIGN STRATEGIES
+        
         for(int m=0; m < players.size(); m++){
             
             switch(selectedstrategies.at(m)){
@@ -279,7 +281,6 @@ void Tournament::tournamentloop(string directory){
             //INCREMENT COUNTER FOR NUMBER OF TURNS
             
             if(mainGame.getWinner() != NULL){
-                //winners.push_back(to_string(mainGame.printWinner()));
                 winners.push_back("WINNER!");
                 cout << "************* WINNER! ************* Player " << mainGame.getWinner()->getPlayerId() << endl;
             }
@@ -288,8 +289,11 @@ void Tournament::tournamentloop(string directory){
                 cout << "************* DRAW! *************" << endl;
             }
         }
+        //print all stats
+        print();
         
-        cleanup(players, gameMap, deck);
+        //delete all objects
+    cleanup(players, gameMap, deck);
     }
 }
 
@@ -297,8 +301,10 @@ void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) 
     for(int i = 0; i < players.size(); ++i) {
         delete players[i];
     }
+    winners.clear();
     delete gameMap;
     delete deck;
+
 }
 
 //final print of 
@@ -379,7 +385,6 @@ void Tournament::startTournament(string directory){
     selectnumgames();
     selectnumturns();
     tournamentloop(directory);
-    print();
 }
 
 void Tournament::startSingleGame(string directory){

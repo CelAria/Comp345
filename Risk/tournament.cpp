@@ -216,66 +216,63 @@ void Tournament::tournamentloop(string directory){
     
     //FOR EACH MAP
     for(int i=0; i < selectedmaps.size(); i++){
-        string mapPath;
-        GameStart gameStart;
-        Maploader maploader;
-        
-        //for the selected map
-        mapPath= selectedmaps.at(i);
-        //make the gamemap
-        GameMap* gameMap= gameStart.createGameMap(mapPath, directory);
-        //make the deck
-        Deck* deck = gameStart.createDeck(gameMap);
-        //make the players
-        gameStart.setNumPlayers(numstrategies);
-        vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
-        
-        // ASSIGN STRATEGIES
-        
-        for(int m=0; m < players.size(); m++){
-            
-            switch(selectedstrategies.at(m)){
-                case 1:{
-                    //aggresive
-                    AggressiveStrategy aggressive;
-                    players[m]->setStrategy(&aggressive);
-                    break;
-                }
-                case 2:{
-                    //benevolent
-                    BenevolentStrategy benevolent;
-                    players[m]->setStrategy(&benevolent);
-                    break;
-                }
-                case 3:{
-                    //cheater
-                    CheaterStrategy cheater;
-                    players[m]->setStrategy(&cheater);
-                    break;
-                }
-                case 4:{
-                    //random
-                    RandomStrategy random;
-                    players[m]->setStrategy(&random);
-                    break;
-                }
-            }
-        }
-        
-        //initialize views
-        MainGame mainGame = MainGame(gameMap, players, deck);
-        GameStatView gameStatView(gameMap, players);
-        PhaseView phaseView;
-        
-        //set observers
-        for(int i = 0; i < players.size(); ++i) {
-            players[i]->addObserver(&gameStatView);
-        }
-        mainGame.addObserver(&phaseView);
-        
         //PLAY THIS NUMBER OF GAMES
         for(int j=0; j < numgames; j++){
+            GameStart gameStart;
+            Maploader maploader;
             
+            //for the selected map
+            string mapPath= selectedmaps.at(i);
+            //make the gamemap
+            GameMap* gameMap= gameStart.createGameMap(mapPath, directory);
+            //make the deck
+            Deck* deck = gameStart.createDeck(gameMap);
+            //make the players
+            gameStart.setNumPlayers(numstrategies);
+            vector<Player*> players = gameStart.createPlayers(numstrategies, gameMap);
+            
+            // ASSIGN STRATEGIES
+            
+            for(int m=0; m < players.size(); m++){
+                
+                switch(selectedstrategies.at(m)){
+                    case 1:{
+                        //aggresive
+                        AggressiveStrategy aggressive;
+                        players[m]->setStrategy(&aggressive);
+                        break;
+                    }
+                    case 2:{
+                        //benevolent
+                        BenevolentStrategy benevolent;
+                        players[m]->setStrategy(&benevolent);
+                        break;
+                    }
+                    case 3:{
+                        //cheater
+                        CheaterStrategy cheater;
+                        players[m]->setStrategy(&cheater);
+                        break;
+                    }
+                    case 4:{
+                        //random
+                        RandomStrategy random;
+                        players[m]->setStrategy(&random);
+                        break;
+                    }
+                }
+            }
+            
+            //initialize views
+            MainGame mainGame = MainGame(gameMap, players, deck);
+            GameStatView gameStatView(gameMap, players);
+            PhaseView phaseView;
+            
+            //set observers
+            for(int i = 0; i < players.size(); ++i) {
+                players[i]->addObserver(&gameStatView);
+            }
+            mainGame.addObserver(&phaseView);
             //for THIS NUMBER OF TURNS
             mainGame.playGame(numturns);
             //INCREMENT COUNTER FOR NUMBER OF TURNS
@@ -288,15 +285,16 @@ void Tournament::tournamentloop(string directory){
                 winners.push_back("DRAW");
                 cout << "************* DRAW! *************" << endl;
             }
+            
+            //delete all objects
+            cleanup(players, gameMap, deck);
         }
         //print all stats
         print();
-        
-        //delete all objects
-    cleanup(players, gameMap, deck);
     }
 }
 
+//Free memory used in the old game
 void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) {
     for(int i = 0; i < players.size(); ++i) {
         delete players[i];
@@ -304,7 +302,7 @@ void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) 
     winners.clear();
     delete gameMap;
     delete deck;
-
+    
 }
 
 //final print of 

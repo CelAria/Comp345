@@ -96,3 +96,27 @@ void Player::notifyObservers(){
         observer->update(newState);
     }
 };
+
+void printStrategy(Strategy* strategy){
+    switch(strategy->getType()){
+        case 0:
+            cout << "Human";
+            break;
+            
+        case 1:
+            cout << "Aggresive";
+            break;
+            
+        case 2:
+            cout << "Benevolent";
+            break;
+            
+        case 3:
+            cout << "Random";
+            break;
+
+        case 4:
+            cout << "Cheater";
+            break;
+    }
+};

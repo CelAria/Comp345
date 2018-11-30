@@ -282,7 +282,7 @@ void Tournament::tournamentloop(string directory){
             
             if(mainGame.getWinner() != NULL){
                 winners.push_back("WINNER!");
-                cout << "************* WINNER! ************* Player " << mainGame.getWinner()->getPlayerId() << endl;
+                cout << "************* WINNER! ************* Player " << mainGame.getWinner()->getStrategy() << endl;
             }
             if(mainGame.getWinner()== NULL){
                 winners.push_back("DRAW");

@@ -57,8 +57,8 @@ public:
     
     void transferCountryTo(string countryName, Player* player);
     Strategy* getStrategy() {return this->strategy;};
+    void printStrategy(Strategy* strategy);
     void setStrategy(Strategy* strategy) {this->strategy = strategy;};
-    
     void notifyObservers();
    
     ~Player() {delete hand; strategy = NULL;};

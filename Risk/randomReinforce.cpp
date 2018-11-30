@@ -63,7 +63,6 @@ void RandomReinforceController::start()
     
     if(numOfArmiesLeft != 0){
         int randNum = (rand() % (allCountries.size()) + 0);
-        cout << "testing------------------------- " << endl;
         gameMap->getCountry(allCountries[randNum]->getName())->setArmiesCount((gameMap->getCountry(allCountries[randNum]->getName())->getArmiesCount()+numOfArmiesLeft));
     }
     view.displayContriesPlayerOwns(allCountries, player);

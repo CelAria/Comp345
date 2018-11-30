@@ -135,7 +135,7 @@ vector<Player*> GameStart::placeArmies(GameMap* pointertogamemap){
         vector<Country*> playerCountries = player->getAllCountries();
         
         //check that one army is placed on each country owned
-        for(int k=0; k <numArmies-player->getCountriesCount(); k++){
+        for(int k=0; k <player->getCountriesCount(); k++){
           playerCountries[k]->IncrementArmiesCount();
         }
         //as long as there are remaining armies to give

@@ -295,6 +295,7 @@ void Tournament::tournamentloop(string directory){
     }
 }
 
+//Free memory used in the old game
 void Tournament::cleanup(vector<Player*> players, GameMap* gameMap, Deck* deck) {
     for(int i = 0; i < players.size(); ++i) {
         delete players[i];

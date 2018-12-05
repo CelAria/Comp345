@@ -22,6 +22,7 @@ void RandomStrategy :: attack(Player* player, GameMap* gameMap){
     playerAttack.attackLoop();
 }
 
+//select random countries and move random amount of armies
 void RandomStrategy ::fortify(Player* player, GameMap* gameMap){
     vector<Country*> countries = player->getAllCountries();
     if(countries.size() > 1) {

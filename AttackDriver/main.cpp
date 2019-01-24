@@ -3,7 +3,8 @@
 //  AttackDriver
 //
 //  Created by Matthew Salaciak 29644490
-//  ASSIGNMENT #3
+//  ASSIGNMENT #4
+//testing all 4 strategies test
 //  Copyright © 2018 comp345. All rights reserved.
 //
 

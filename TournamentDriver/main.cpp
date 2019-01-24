@@ -13,7 +13,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    string directory = "/Users/allanpichardo/Documents/Dev/Comp345/StatsWinnerDriver";
+    string directory = "/Users/Matthew /Documents/school/FALL 2018/COMP 345/git/Comp345/StatsWinnerDriver";
 //   const string directory = "/Users/celestepimm/git/Comp345-newnew/StatsWinnerDriver";
     Tournament tournament;
     tournament.selectgamemode(directory);

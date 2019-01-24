@@ -18,15 +18,4 @@ int main(int argc, const char * argv[]) {
     Tournament tournament;
     tournament.selectgamemode(directory);
     
-
-// tournament.selectgamemode();
-//    tournament.inputmaps(directory);
-//    tournament.selectstrategies();
-//    tournament.selectnumgames();
-//    tournament.selectnumturns();
-//    tournament.tournamentloop(directory);
-//    tournament.print();
-    
-
-    
 }

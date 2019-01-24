@@ -422,14 +422,14 @@ string Tournament::printStrategy(Strategy* strategy){
             
             
         case 2:
-           return "Benevolent";
+            return "Benevolent";
             
         case 3:
             return "Random";
             
         case 4:
             return "Cheater";
-        
+            
     }
     return "bad_value";
 };

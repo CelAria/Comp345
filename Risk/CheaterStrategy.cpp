@@ -23,6 +23,7 @@ void CheaterStrategy :: attack(Player* player, GameMap* gameMap){
     
 }
 
+//double armies on each country that has adjacent enemies
 void CheaterStrategy ::fortify(Player* player, GameMap* gameMap){
     vector<Country*> countries = player->getAllCountries();
     if(countries.size() > 0) {
